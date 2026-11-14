@@ -18,5 +18,6 @@ export default [
   ...tree('en'),
   ...prefix('bn', tree('bn')),
   route('sitemap.xml', 'routes/sitemap.ts', { id: 'sitemap' }),
+  route('llms.txt', 'routes/llms.ts', { id: 'llms' }),
   route('*', 'routes/not-found.tsx', { id: 'not-found' }),
 ] satisfies RouteConfig

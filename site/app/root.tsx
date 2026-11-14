@@ -35,6 +35,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#eef0f4" />
+        <meta name="author" content="Abdullah Al Imran" />
         <Meta />
         <Links />
         {locale === 'bn' && <link rel="preload" href={banglaRegular} as="font" type="font/woff2" crossOrigin="anonymous" />}

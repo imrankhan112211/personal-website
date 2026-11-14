@@ -4,3 +4,4 @@ Allow: /
 Disallow: /__spa-fallback.html
 
 Sitemap: https://abdullahalimran.com/sitemap.xml
+# Summary for AI assistants: https://abdullahalimran.com/llms.txt

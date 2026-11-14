@@ -8,7 +8,7 @@ export default {
   // Static hosting: every page is prerendered to HTML at build time (EN + BN).
   ssr: false,
   prerender: {
-    paths: [...base.flatMap((p) => [p, p === '/' ? '/bn/' : `/bn${p}`]), '/sitemap.xml'],
+    paths: [...base.flatMap((p) => [p, p === '/' ? '/bn/' : `/bn${p}`]), '/sitemap.xml', '/llms.txt'],
     concurrency: 4,
   },
 } satisfies Config

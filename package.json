@@ -9,6 +9,7 @@
     "preview": "npm --prefix site run preview",
     "typecheck": "npm --prefix site run typecheck",
     "assets": "npm --prefix site run assets",
-    "images": "npm --prefix site run images"
+    "images": "npm --prefix site run images",
+    "check": "npm --prefix site run check"
   }
 }

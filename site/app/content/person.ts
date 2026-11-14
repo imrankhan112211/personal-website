@@ -9,6 +9,8 @@ export const SITE_URL = 'https://abdullahalimran.com'
 export const person = {
   name: { en: 'Abdullah Al Imran', bn: 'আব্দুল্লাহ আল ইমরান' } satisfies Localized,
   shortName: 'Imran',
+  /** Other spellings people search for (used in Person.alternateName) — only real, used spellings. */
+  alternateNames: ['আব্দুল্লাহ আল ইমরান', 'আবদুল্লাহ আল ইমরান'],
   monogram: 'AI',
   title: {
     en: 'Technology Entrepreneur | Cyber Safety Advocate | Trainer | Consultant',
@@ -41,8 +43,8 @@ export const person = {
   portrait: '/images/abdullah-al-imran-portrait-960.webp' as string | null,
   /** Relaxed photo used on the About page */
   portraitCasual: '/images/abdullah-al-imran-casual-1200.webp' as string | null,
-  /** [INSERT VERIFIED CONTACT EMAIL] */
-  email: null as string | null,
+  /** Public contact email */
+  email: 'imran@probfly.com' as string | null,
   /**
    * Official profiles — these become Person.sameAs. Add only accounts you control.
    */

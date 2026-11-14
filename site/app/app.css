@@ -138,3 +138,24 @@ html[lang="bn"] .t-eyebrow { letter-spacing: 0.04em; text-transform: none; font-
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }
+
+/* ───────────── Article body (Markdown) ───────────── */
+.prose-article { font-size: 1.0625rem; line-height: 1.85; color: var(--text); }
+@media (width >= 768px) { .prose-article { font-size: 1.125rem; } }
+.prose-article > * + * { margin-top: 1.25em; }
+.prose-article h2 { font-family: var(--font-display); font-weight: 700; font-size: clamp(1.4rem, 1.2rem + 0.8vw, 1.85rem); line-height: 1.25; letter-spacing: -0.02em; color: var(--ink); margin-top: 2.2em; scroll-margin-top: 7rem; }
+.prose-article h3 { font-family: var(--font-display); font-weight: 650; font-size: 1.25rem; color: var(--ink); margin-top: 1.8em; scroll-margin-top: 7rem; }
+.prose-article a { color: var(--accent); text-decoration: underline; text-underline-offset: 4px; }
+.prose-article strong { color: var(--ink); font-weight: 650; }
+.prose-article ul, .prose-article ol { padding-left: 1.4em; }
+.prose-article ul { list-style: disc; } .prose-article ol { list-style: decimal; }
+.prose-article li + li { margin-top: 0.4em; }
+.prose-article li::marker { color: var(--accent); }
+.prose-article blockquote { border-left: 3px solid var(--accent); padding-left: 1.2em; font-family: var(--font-display); font-weight: 600; font-size: 1.25em; line-height: 1.45; color: var(--ink); }
+.prose-article code { background: var(--mist); padding: 0.15em 0.4em; border-radius: 6px; font-size: 0.9em; }
+.prose-article pre { background: var(--ink); color: var(--on-ink); padding: 1rem 1.25rem; border-radius: 14px; overflow-x: auto; font-size: 0.9em; }
+.prose-article pre code { background: none; padding: 0; }
+.prose-article img { border-radius: 16px; width: 100%; height: auto; }
+.prose-article table { width: 100%; border-collapse: collapse; font-size: 0.95em; display: block; overflow-x: auto; }
+.prose-article th, .prose-article td { border-bottom: 1px solid var(--line); padding: 0.6em 0.8em; text-align: left; }
+.prose-article hr { border: 0; border-top: 1px solid var(--line); margin: 2.5em 0; }

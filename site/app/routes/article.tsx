@@ -1,4 +1,4 @@
-import { AlertTriangle, ArrowLeft, Check, Link2 } from 'lucide-react'
+import { AlertTriangle, ArrowLeft, ArrowRight, Check, Link2, Plus } from 'lucide-react'
 import { useState } from 'react'
 import { data } from 'react-router'
 import type { Route } from './+types/article'
@@ -7,11 +7,11 @@ import { Breadcrumbs } from '~/components/layout/Breadcrumbs'
 import { AuthorBox } from '~/components/sections/shared/AuthorBox'
 import { Badge } from '~/components/ui/Badge'
 import { ButtonLink } from '~/components/ui/Button'
-import { ImageSlot } from '~/components/ui/Placeholder'
 import { LocalLink } from '~/components/ui/LocalLink'
-import { allArticles, articleCategories, listedArticles, type Article, type Block } from '~/content/articles'
+import { allArticles, articleCategories, listedArticles, type Article, type LocaleContent } from '~/content/articles'
+import { ctaLinks } from '~/content/navigation'
 import { person, SITE_URL } from '~/content/person'
-import { isFallback, localeFromPath, localizePath, tr, type Locale } from '~/i18n/locales'
+import { localeFromPath, localizePath, tr, type Locale } from '~/i18n/locales'
 import { ui } from '~/i18n/ui'
 import { useLocale } from '~/i18n/useLocale'
 import { breadcrumbSchema } from '~/lib/schema'
@@ -22,20 +22,37 @@ export function loader({ params }: Route.LoaderArgs) {
   return { slug: params.slug }
 }
 
+/** Content for the requested language, falling back to the other one. */
+function pick(a: Article, locale: Locale): { c: LocaleContent; lang: Locale; fallback: boolean } {
+  const own = a.content[locale]
+  if (own) return { c: own, lang: locale, fallback: false }
+  const other: Locale = locale === 'en' ? 'bn' : 'en'
+  return { c: a.content[other]!, lang: other, fallback: true }
+}
+
 function articleSchema(a: Article, locale: Locale) {
+  const { c, lang } = pick(a, locale)
   return {
     '@context': 'https://schema.org',
     '@type': 'Article',
-    headline: tr(a.title, locale),
-    description: tr(a.excerpt, locale),
+    headline: c.title,
+    description: c.excerpt,
     datePublished: a.published,
     dateModified: a.updated ?? a.published,
-    inLanguage: isFallback(a.title, locale) ? 'en' : locale,
+    inLanguage: lang,
     author: { '@type': 'Person', '@id': `${SITE_URL}/#person`, name: person.name.en, url: `${SITE_URL}/about/biography/` },
     publisher: { '@id': `${SITE_URL}/#person` },
     mainEntityOfPage: SITE_URL + localizePath(`/insights/${a.slug}/`, locale),
     ...(a.cover ? { image: SITE_URL + a.cover } : {}),
-    articleSection: articleCategories.find((c) => c.slug === a.category)!.name.en,
+    articleSection: articleCategories.find((x) => x.slug === a.category)!.name.en,
+  }
+}
+
+function faqSchema(c: LocaleContent) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: c.faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
   }
 }
 
@@ -44,6 +61,7 @@ export function meta({ location, params }: Route.MetaArgs) {
   const a = allArticles.find((x) => x.slug === params.slug)
   if (!a) return [{ title: 'Not found' }]
   const path = `/insights/${a.slug}/`
+  const { c } = pick(a, locale)
   return buildMeta({
     locale,
     path,
@@ -51,10 +69,14 @@ export function meta({ location, params }: Route.MetaArgs) {
     description: a.excerpt,
     image: a.cover ?? undefined,
     type: 'article',
-    noindex: a.sample,
-    jsonLd: a.sample
+    noindex: a.sample || a.draft,
+    jsonLd: a.sample || a.draft
       ? []
-      : [articleSchema(a, locale), breadcrumbSchema(locale, [{ name: ui['nav.home'][locale], path: '/' }, { name: ui['nav.insights'][locale], path: '/insights/' }, { name: tr(a.title, locale), path }])],
+      : [
+          articleSchema(a, locale),
+          ...(c.faq.length ? [faqSchema(c)] : []),
+          breadcrumbSchema(locale, [{ name: ui['nav.home'][locale], path: '/' }, { name: ui['nav.insights'][locale], path: '/insights/' }, { name: tr(a.title, locale), path }]),
+        ],
   })
 }
 
@@ -62,70 +84,105 @@ export default function ArticlePage({ loaderData }: Route.ComponentProps) {
   const { t, l, locale } = useLocale()
   const fmt = useDate()
   const a = allArticles.find((x) => x.slug === loaderData.slug)!
-  const cat = articleCategories.find((c) => c.slug === a.category)!
-  const toc = a.body.filter((b): b is Extract<Block, { type: 'h2' }> => b.type === 'h2')
-  const fallback = isFallback(a.title, locale)
+  const cat = articleCategories.find((x) => x.slug === a.category)!
+  const { c, lang, fallback } = pick(a, locale)
   const related = listedArticles.filter((x) => x.slug !== a.slug && x.category === a.category).slice(0, 3)
   const url = SITE_URL + localizePath(`/insights/${a.slug}/`, locale)
 
   return (
     <main id="main">
-      <article lang={fallback ? 'en' : undefined}>
-        <header className="border-b border-line">
-          <div className="container-x pb-12 pt-8 md:pb-16">
+      <article lang={fallback ? lang : undefined}>
+        <header className="container-x pb-2 pt-4 md:pt-6">
+          <div className="rounded-[var(--radius-card)] bg-surface px-6 pb-12 pt-7 md:px-12 md:pb-16 md:pt-9">
             <Breadcrumbs items={[{ label: t('nav.insights'), to: '/insights/' }, { label: l(cat.name), to: `/insights/category/${cat.slug}/` }]} />
-            {a.sample && (
+            {(a.sample || a.draft) && (
               <p className="mt-8 flex gap-3 rounded-2xl border border-amber/40 bg-amber-soft p-4 text-sm text-text">
                 <AlertTriangle aria-hidden className="mt-0.5 size-4 shrink-0 text-amber" />
-                <span><Badge tone="amber" className="mr-2">{t('ins.sample')}</Badge>{l(a.excerpt)}</span>
+                <span><Badge tone="amber" className="mr-2">{a.draft ? 'Draft' : t('ins.sample')}</Badge>{a.draft ? 'Visible only in npm run dev.' : c.excerpt}</span>
               </p>
             )}
-            {fallback && <p className="mt-6 rounded-xl bg-mist px-4 py-3 text-sm text-text" lang="bn">{t('ins.translation')}</p>}
+            {fallback && locale === 'bn' && <p className="mt-6 rounded-xl bg-mist px-4 py-3 text-sm text-text" lang="bn">{t('ins.translation')}</p>}
             <div className="mx-auto mt-12 max-w-3xl text-center">
               <LocalLink to={`/insights/category/${cat.slug}/`} className="text-sm font-semibold uppercase tracking-wider text-accent hover:underline">{l(cat.name)}</LocalLink>
-              <h1 className="t-h1 mt-4 text-ink">{l(a.title)}</h1>
-              <p className="t-lead mt-5 text-muted">{l(a.excerpt)}</p>
+              <h1 className="t-h1 mt-4 text-ink">{c.title}</h1>
+              {c.excerpt && <p className="t-lead mt-5 text-muted">{c.excerpt}</p>}
               <p className="mt-8 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-sm text-muted">
                 <span>{t('ins.by')} <LocalLink to="/about/biography/" rel="author" className="font-medium text-ink hover:text-accent">{l(person.name)}</LocalLink></span>
                 <span aria-hidden>·</span>
                 <span>{t('ins.published')} <time dateTime={a.published}>{fmt(a.published)}</time></span>
                 {a.updated && <><span aria-hidden>·</span><span>{t('ins.updated')} <time dateTime={a.updated}>{fmt(a.updated)}</time></span></>}
                 <span aria-hidden>·</span>
-                <span>{a.readingMinutes} {t('ins.min')}</span>
+                <span>{c.readingMinutes} {t('ins.min')}</span>
               </p>
             </div>
           </div>
         </header>
 
-        <div className="container-x py-12 md:py-16">
-          {a.cover ? <img src={a.cover} alt="" className="mx-auto aspect-[16/8] w-full max-w-5xl rounded-[24px] object-cover" /> : <ImageSlot label="[INSERT COVER IMAGE · 16:8]" className="mx-auto aspect-[16/8] max-w-5xl rounded-[24px]" />}
+        <div className="container-x pb-2 pt-3">
+          <div className="rounded-[var(--radius-card)] bg-surface px-6 py-10 md:px-12 md:py-14">
+            {a.cover && <img src={a.cover} alt="" className="mx-auto mb-12 aspect-[16/8] w-full max-w-5xl rounded-[20px] object-cover" />}
+            <div className="mx-auto grid max-w-5xl gap-12 lg:grid-cols-[14rem_1fr]">
+              <aside>
+                <div className="lg:sticky lg:top-28">
+                  {c.toc.length > 0 && (
+                    <nav aria-labelledby="toc-title">
+                      <h2 id="toc-title" className="t-eyebrow text-muted">{t('ins.toc')}</h2>
+                      <ol className="mt-4 grid gap-1 border-l border-line">
+                        {c.toc.map((h) => <li key={h.id}><a href={`#${h.id}`} className="-ml-px block border-l border-transparent py-1.5 pl-4 text-sm text-muted hover:border-accent hover:text-ink">{h.text}</a></li>)}
+                      </ol>
+                    </nav>
+                  )}
+                  <Share url={url} title={c.title} />
+                </div>
+              </aside>
 
-          <div className="mx-auto mt-14 grid max-w-5xl gap-12 lg:grid-cols-[14rem_1fr]">
-            <aside className="lg:order-none">
-              <div className="lg:sticky lg:top-28">
-                {toc.length > 0 && (
-                  <nav aria-labelledby="toc-title">
-                    <h2 id="toc-title" className="t-eyebrow text-muted">{t('ins.toc')}</h2>
-                    <ol className="mt-4 grid gap-1 border-l border-line">
-                      {toc.map((h) => <li key={h.id}><a href={`#${h.id}`} className="-ml-px block border-l border-transparent py-1.5 pl-4 text-sm text-muted hover:border-accent hover:text-ink">{l(h.text)}</a></li>)}
-                    </ol>
-                  </nav>
+              <div className="min-w-0 max-w-[68ch]">
+                {c.takeaways.length > 0 && (
+                  <section aria-labelledby="takeaways-title" className="mb-10 rounded-2xl bg-lime/60 p-6">
+                    <h2 id="takeaways-title" className="font-display text-base font-bold text-on-lime">{t('ins.takeaways')}</h2>
+                    <ul className="mt-3 grid gap-2 text-[0.9875rem] text-on-lime">
+                      {c.takeaways.map((k, i) => <li key={i} className="flex gap-2"><Check aria-hidden className="mt-1 size-4 shrink-0" />{k}</li>)}
+                    </ul>
+                  </section>
                 )}
-                <Share url={url} title={l(a.title)} />
-              </div>
-            </aside>
 
-            <div className="max-w-[68ch] text-[1.0625rem] leading-[1.85] text-text md:text-lg">
-              {a.body.map((b, i) => <BlockView key={i} b={b} />)}
-              {a.sources && a.sources.length > 0 && (
-                <section aria-labelledby="sources-title" className="mt-14 border-t border-line pt-8">
-                  <h2 id="sources-title" className="t-h3 text-ink">{t('ins.sources')}</h2>
-                  <ol className="mt-4 list-decimal space-y-2 pl-5 text-base">
-                    {a.sources.map((s) => <li key={s.url}><a href={s.url} target="_blank" rel="noopener noreferrer" className="text-accent underline underline-offset-4">{s.label}</a></li>)}
-                  </ol>
-                </section>
-              )}
-              <AuthorBox className="mt-14" />
+                <div className="prose-article" dangerouslySetInnerHTML={{ __html: c.html }} />
+
+                {c.faq.length > 0 && (
+                  <section aria-labelledby="faq-title" className="mt-14 border-t border-line pt-8">
+                    <h2 id="faq-title" className="t-h3 text-ink">{t('ins.faq')}</h2>
+                    <div className="mt-4 border-t border-line">
+                      {c.faq.map((f, i) => (
+                        <details key={i} className="group border-b border-line" open={i === 0}>
+                          <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-6 py-4 font-display font-semibold text-ink [&::-webkit-details-marker]:hidden">
+                            {f.q}<Plus aria-hidden className="size-5 shrink-0 transition-transform group-open:rotate-45" />
+                          </summary>
+                          <p className="pb-5 pr-8 text-muted">{f.a}</p>
+                        </details>
+                      ))}
+                    </div>
+                  </section>
+                )}
+
+                {a.sources && a.sources.length > 0 && (
+                  <section aria-labelledby="sources-title" className="mt-14 border-t border-line pt-8">
+                    <h2 id="sources-title" className="t-h3 text-ink">{t('ins.sources')}</h2>
+                    <ol className="mt-4 list-decimal space-y-2 pl-5 text-base">
+                      {a.sources.map((s) => <li key={s.url}><a href={s.url} target="_blank" rel="noopener noreferrer" className="text-accent underline underline-offset-4">{s.label}</a></li>)}
+                    </ol>
+                  </section>
+                )}
+
+                <div className="on-ink mt-14 flex flex-wrap items-center justify-between gap-4 rounded-2xl bg-ink p-6 text-white">
+                  <div>
+                    <p className="font-display text-lg font-bold">{t('ins.cta.title')}</p>
+                    <p className="mt-1 text-sm text-on-ink-muted">{t('ins.cta.body')}</p>
+                  </div>
+                  <ButtonLink to={ctaLinks.consulting} variant="light">{t('cta.book')} <ArrowRight aria-hidden /></ButtonLink>
+                </div>
+
+                <AuthorBox className="mt-6" />
+              </div>
             </div>
           </div>
         </div>
@@ -133,34 +190,18 @@ export default function ArticlePage({ loaderData }: Route.ComponentProps) {
 
       {related.length > 0 && (
         <section aria-labelledby="related-title" className="container-x pb-2 pt-3">
-          <div className="rounded-[var(--radius-card)] p-7 md:p-12 bg-mist">
+          <div className="rounded-[var(--radius-card)] bg-surface p-7 md:p-12">
             <h2 id="related-title" className="t-h2 text-ink">{t('ins.related')}</h2>
-            <ul className="mt-10 grid gap-6 md:grid-cols-3">{related.map((r) => <li key={r.slug}><ArticleCard a={r} /></li>)}</ul>
+            <ul className="mt-10 grid gap-4 md:grid-cols-3">{related.map((r) => <li key={r.slug}><ArticleCard a={r} /></li>)}</ul>
           </div>
         </section>
       )}
 
-      <div className="container-x pb-20 pt-4">
+      <div className="container-x pb-16 pt-6">
         <ButtonLink to="/insights/" variant="outline"><ArrowLeft aria-hidden /> {t('ins.back')}</ButtonLink>
       </div>
     </main>
   )
-}
-
-function BlockView({ b }: { b: Block }) {
-  const { l } = useLocale()
-  switch (b.type) {
-    case 'h2':
-      return <h2 id={b.id} className="t-h3 mb-4 mt-12 scroll-mt-28 text-ink md:text-[1.75rem]">{l(b.text)}</h2>
-    case 'p':
-      return <p className="mb-6">{l(b.text)}</p>
-    case 'ul':
-      return <ul className="mb-6 grid gap-2 pl-1">{b.items.map((it, i) => <li key={i} className="flex gap-3"><span aria-hidden className="mt-[0.85em] h-px w-4 shrink-0 bg-accent" />{l(it)}</li>)}</ul>
-    case 'quote':
-      return <blockquote className="t-serif my-10 border-l-2 border-accent pl-6 text-[1.6rem] leading-snug text-ink">{l(b.text)}</blockquote>
-    case 'note':
-      return <p className="mb-8 rounded-2xl bg-accent-soft p-5 text-base text-accent-strong">{l(b.text)}</p>
-  }
 }
 
 function Share({ url, title }: { url: string; title: string }) {

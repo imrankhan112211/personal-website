@@ -25,7 +25,7 @@ Deploy `build/client/` to any static host. See [`../docs/DEPLOYMENT.md`](../docs
 | Ventures (add one by appending an object) | `app/content/ventures.ts` |
 | Awards, nominations, speaking, training | `app/content/recognition.ts` |
 | Media coverage | `app/content/media.ts` |
-| Blog articles and categories | `app/content/articles.ts` |
+| Blog articles | Markdown files in `articles/` — see [`../docs/WRITING_ARTICLES.md`](../docs/WRITING_ARTICLES.md) (categories: `app/content/categories.ts`) |
 | Case studies / testimonials | `app/content/projects.ts`, `app/content/testimonials.ts` |
 | Training topics | `app/content/training.ts` |
 | Page titles and meta descriptions (EN/BN) | `app/content/pageMeta.ts` |
