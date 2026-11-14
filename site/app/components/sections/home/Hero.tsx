@@ -10,6 +10,7 @@ import { ventures } from '~/content/ventures'
 import { useLocale } from '~/i18n/useLocale'
 import { formatPartialDate } from '~/lib/dates'
 import { cn } from '~/lib/utils'
+import { Img } from '~/components/ui/Img'
 
 /** Design E — bento hero: each tile is one fact, linked to the page that proves it. */
 export function Hero() {
@@ -47,7 +48,7 @@ export function Hero() {
         {/* Portrait */}
         <figure className={cn(tile, 'on-ink min-h-[22rem] bg-ink p-0 sm:row-span-2 md:p-0')}>
           {person.portrait ? (
-            <img src={person.portrait} alt={l(person.name)} width={720} height={960} fetchPriority="high" className="absolute inset-0 size-full object-cover" />
+            <Img src={person.portrait} alt={l(person.name)} width={960} height={1280} loading="eager" fetchPriority="high" sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw" className="absolute inset-0 size-full object-cover" />
           ) : (
             <div data-placeholder role="img" aria-label="Portrait placeholder" className="absolute inset-0 flex flex-col justify-between p-6">
               <div aria-hidden className="bg-hairline-ink absolute inset-0" />

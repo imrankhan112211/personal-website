@@ -4,6 +4,7 @@ import { ImageSlot, Placeholder } from '~/components/ui/Placeholder'
 import type { Recognition, RecognitionType } from '~/content/recognition'
 import { useLocale } from '~/i18n/useLocale'
 import { formatPartialDate } from '~/lib/dates'
+import { Img } from '~/components/ui/Img'
 
 /** Distinct, honest labels: a nomination is never shown as an award. */
 export const recognitionTone: Record<RecognitionType, 'accent' | 'outline' | 'neutral' | 'success'> = {
@@ -21,7 +22,7 @@ export function RecognitionRow({ r, detailed = false }: { r: Recognition; detail
       {detailed && (
         <div className="md:col-span-3">
           {r.image ? (
-            <img src={r.image} alt={l(r.title)} loading="lazy" className="aspect-[4/3] w-full rounded-2xl object-cover" />
+            <Img src={r.image} alt={l(r.title)} loading="lazy" className="aspect-[4/3] w-full rounded-2xl object-cover" />
           ) : (
             <ImageSlot label="[INSERT PHOTO OR CERTIFICATE]" className="aspect-[4/3] rounded-2xl" />
           )}

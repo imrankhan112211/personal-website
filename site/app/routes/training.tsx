@@ -9,9 +9,10 @@ import { ImageSlot, Placeholder } from '~/components/ui/Placeholder'
 import { Eyebrow, SectionHeading } from '~/components/ui/SectionHeading'
 import { pageMeta } from '~/content/pageMeta'
 import { recognition } from '~/content/recognition'
-import { collaborations, trainingAudiences, trainingCategories, trainingFormats } from '~/content/training'
+import { collaborations, trainingAudiences, trainingCategories, trainingFormats, trainingGallery } from '~/content/training'
 import { useLocale } from '~/i18n/useLocale'
 import { metaFor } from '~/lib/page'
+import { Img } from '~/components/ui/Img'
 
 export function meta({ location }: Route.MetaArgs) {
   return metaFor('training', location.pathname)
@@ -33,9 +34,9 @@ export default function Training() {
         lead={t('train.intro')}
         aside={
           <div className="grid grid-cols-2 gap-3" style={{ aspectRatio: '1 / 1' }}>
-            <ImageSlot label={highlights[0].photo} className="row-span-2 rounded-[20px]" />
-            <ImageSlot label={highlights[1].photo} className="rounded-[20px]" />
-            <ImageSlot label="[INSERT WORKSHOP PHOTO]" className="rounded-[20px]" />
+            <Img src={highlights[0].r.image ?? ''} alt={l(highlights[0].r.title)} sizes="(min-width: 1024px) 20vw, 50vw" loading="eager" className="row-span-2 size-full rounded-[20px] object-cover" />
+            <Img src={highlights[1].r.image ?? ''} alt={l(highlights[1].r.title)} sizes="(min-width: 1024px) 20vw, 50vw" loading="eager" className="size-full rounded-[20px] object-cover" />
+            <Img src={trainingGallery[0].src} alt={l(trainingGallery[0].alt)} sizes="(min-width: 1024px) 20vw, 50vw" loading="eager" className="size-full rounded-[20px] object-cover" />
           </div>
         }
       >
@@ -69,7 +70,11 @@ export default function Training() {
             {highlights.map(({ r, icon: Icon, photo, detail }, i) => (
               <article key={r.id} className="reveal grid items-center gap-8 lg:grid-cols-12 lg:gap-14">
                 <div className={i % 2 ? 'lg:order-2 lg:col-span-7' : 'lg:col-span-7'}>
-                  {r.image ? <img src={r.image} alt={l(r.title)} loading="lazy" className="aspect-[16/10] w-full rounded-[24px] object-cover" /> : <ImageSlot label={photo} className="aspect-[16/10] rounded-[24px]" />}
+                  {r.video ? (
+                    <video controls playsInline preload="none" poster={r.image ?? undefined} aria-label={l(r.title)} className="aspect-[16/10] w-full rounded-[24px] bg-ink object-contain">
+                      <source src={r.video} type="video/mp4" />
+                    </video>
+                  ) : r.image ? <Img src={r.image} alt={l(r.title)} className="aspect-[16/10] w-full rounded-[24px] object-cover" /> : <ImageSlot label={photo} className="aspect-[16/10] rounded-[24px]" />}
                 </div>
                 <div className="lg:col-span-5">
                   <span className="grid size-12 place-items-center rounded-2xl bg-accent-soft text-accent"><Icon aria-hidden className="size-5" /></span>
@@ -89,8 +94,8 @@ export default function Training() {
         <div className="rounded-[var(--radius-card)] p-7 md:p-12 bg-surface">
           <SectionHeading id="gallery-title" eyebrow={t('train.gallery.eyebrow')} title={t('train.gallery.title')} />
           <div className="mt-12 grid auto-rows-[160px] grid-cols-2 gap-3 md:auto-rows-[200px] md:grid-cols-4">
-            {['col-span-2 row-span-2', '', '', 'col-span-2', '', ''].map((cls, i) => (
-              <ImageSlot key={i} label={`[INSERT APPROVED WORKSHOP PHOTO ${i + 1}]`} className={`rounded-[20px] ${cls}`} />
+            {trainingGallery.map((g, i) => (
+              <Img key={g.src} src={g.src} alt={l(g.alt)} sizes={i === 0 ? '(min-width: 768px) 50vw, 100vw' : '(min-width: 768px) 25vw, 50vw'} className={`size-full rounded-[20px] object-cover ${['col-span-2 row-span-2', '', '', 'col-span-2', 'col-span-2', 'col-span-2'][i] ?? ''}`} />
             ))}
           </div>
         </div>

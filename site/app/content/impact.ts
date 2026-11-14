@@ -11,7 +11,35 @@ export const communityThemes: { id: string; title: Localized; body: Localized }[
   { id: 'institutions', title: { en: 'Institutional collaborations', bn: 'প্রাতিষ্ঠানিক সহযোগিতা' }, body: { en: 'Work with organisations and institutions on digital safety.', bn: 'ডিজিটাল নিরাপত্তা নিয়ে বিভিন্ন সংগঠন ও প্রতিষ্ঠানের সঙ্গে কাজ।' } },
 ]
 
-export const communityActivities: CommunityActivity[] = []
+export const communityActivities: CommunityActivity[] = [
+  {
+    id: 'kaktaruaa-seminar-2024',
+    title: { en: 'Cyber Security Seminar: “First Aid of Social Media Problems”', bn: 'সাইবার সিকিউরিটি সেমিনার: “First Aid of Social Media Problems”' },
+    description: { en: 'Kaktaruaa seminar on safe social media practices for students.', bn: 'শিক্ষার্থীদের নিরাপদ সোশ্যাল মিডিয়া চর্চা নিয়ে কাকতাড়ুয়ার সেমিনার।' },
+    organization: { en: 'Kaktaruaa', bn: 'Kaktaruaa' },
+    date: '2024-11-24',
+    image: '/images/kaktaruaa-seminar-2024-1600.webp',
+    sourceUrl: 'https://www.dhakatribune.com/bangladesh/event/366157/kaktaruaa%E2%80%99s-cyber-awareness-seminar-fostering',
+  },
+  {
+    id: 'student-sessions',
+    title: { en: 'Digital safety sessions with students', bn: 'শিক্ষার্থীদের সঙ্গে ডিজিটাল নিরাপত্তা সেশন' },
+    description: null,
+    organization: null,
+    date: null,
+    image: '/images/school-session-group-1600.webp',
+    sourceUrl: null,
+  },
+  {
+    id: 'cybernetics-workshop',
+    title: { en: '“Cybernetics” — workshop on robotics and cyber security', bn: '“Cybernetics” — রোবটিক্স ও সাইবার সিকিউরিটি কর্মশালা' },
+    description: null,
+    organization: null,
+    date: null,
+    image: '/images/cybernetics-workshop-1600.webp',
+    sourceUrl: null,
+  },
+]
 
 export const clientSegments: { id: string; title: Localized }[] = [
   { id: 'public-figures', title: { en: 'Public figures & celebrities', bn: 'পাবলিক ফিগার ও সেলিব্রিটি' } },

@@ -39,8 +39,12 @@ export const aboutChapters: AboutChapter[] = [
     title: { en: 'Building ventures that protect.', bn: 'সুরক্ষার জন্য উদ্যোগ গড়া।' },
     body: [
       { en: 'He is involved in several technology ventures and initiatives — Probfly IT, Kaktaruaa, Erazee and Zurvis.io — covering social media solutions, digital brand protection, cyber safety awareness, online risk response and business automation.', bn: 'তিনি কয়েকটি প্রযুক্তি উদ্যোগ ও কার্যক্রমের সঙ্গে যুক্ত — Probfly IT, Kaktaruaa, Erazee ও Zurvis.io — যেগুলো সোশ্যাল মিডিয়া সলিউশন, ডিজিটাল ব্র্যান্ড সুরক্ষা, সাইবার সেফটি সচেতনতা, অনলাইন ঝুঁকি মোকাবিলা ও বিজনেস অটোমেশন নিয়ে কাজ করে।' },
+      {
+        en: 'He is the founder of Probfly IT, Kaktaruaa and Erazee, and co-founder of Zurvis.io.',
+        bn: 'তিনি Probfly IT, Kaktaruaa ও Erazee-এর প্রতিষ্ঠাতা এবং Zurvis.io-এর সহ-প্রতিষ্ঠাতা।',
+      },
     ],
-    placeholder: '[CONFIRM OFFICIAL ROLE IN EACH VENTURE]',
+
   },
   {
     id: 'advocacy',
@@ -77,8 +81,8 @@ export const mission: Localized = {
 
 /** Biography page */
 export const shortBio: Localized = {
-  en: 'Abdullah Al Imran is a technology entrepreneur, cyber safety advocate, trainer and consultant. He works on social media security, digital brand protection, online business safety and digital awareness, helping individuals, public figures, content creators and online businesses protect their accounts, brands and content. He is a recipient of The Diana Award (2026).',
-  bn: 'আব্দুল্লাহ আল ইমরান একজন প্রযুক্তি উদ্যোক্তা, সাইবার সেফটি অ্যাডভোকেট, প্রশিক্ষক ও পরামর্শক। তিনি সোশ্যাল মিডিয়া নিরাপত্তা, ডিজিটাল ব্র্যান্ড সুরক্ষা, অনলাইন ব্যবসার নিরাপত্তা ও ডিজিটাল সচেতনতা নিয়ে কাজ করেন এবং ব্যক্তি, পাবলিক ফিগার, কনটেন্ট ক্রিয়েটর ও অনলাইন ব্যবসাকে তাদের অ্যাকাউন্ট, ব্র্যান্ড ও কনটেন্ট সুরক্ষায় সহায়তা করেন। তিনি দ্য ডায়ানা অ্যাওয়ার্ড (২০২৬) প্রাপ্ত।',
+  en: 'Abdullah Al Imran is a technology entrepreneur, cyber safety advocate, trainer and consultant. He works on social media security, digital brand protection, online business safety and digital awareness, helping individuals, public figures, content creators and online businesses protect their accounts, brands and content. He is the founder of Probfly IT, Kaktaruaa and Erazee, co-founder of Zurvis.io, and a recipient of The Diana Award (2026).',
+  bn: 'আব্দুল্লাহ আল ইমরান একজন প্রযুক্তি উদ্যোক্তা, সাইবার সেফটি অ্যাডভোকেট, প্রশিক্ষক ও পরামর্শক। তিনি সোশ্যাল মিডিয়া নিরাপত্তা, ডিজিটাল ব্র্যান্ড সুরক্ষা, অনলাইন ব্যবসার নিরাপত্তা ও ডিজিটাল সচেতনতা নিয়ে কাজ করেন এবং ব্যক্তি, পাবলিক ফিগার, কনটেন্ট ক্রিয়েটর ও অনলাইন ব্যবসাকে তাদের অ্যাকাউন্ট, ব্র্যান্ড ও কনটেন্ট সুরক্ষায় সহায়তা করেন। তিনি Probfly IT, Kaktaruaa ও Erazee-এর প্রতিষ্ঠাতা, Zurvis.io-এর সহ-প্রতিষ্ঠাতা এবং দ্য ডায়ানা অ্যাওয়ার্ড (২০২৬) প্রাপ্ত।',
 }
 
 /** Long biography — must be supplied and verified. Leave `null` until then. */

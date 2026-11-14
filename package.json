@@ -8,6 +8,7 @@
     "build": "npm --prefix site run build",
     "preview": "npm --prefix site run preview",
     "typecheck": "npm --prefix site run typecheck",
-    "assets": "npm --prefix site run assets"
+    "assets": "npm --prefix site run assets",
+    "images": "npm --prefix site run images"
   }
 }

@@ -23,6 +23,8 @@ export type MediaItem = {
  * Metadata (headline, outlet, date) was read from each page on 14 Nov 2026.
  * Removed as unreachable (404): risingbd.com/positive-bangladesh/news/433708,
  * thebangladeshtoday.com/?p=43950, therisingcampus.com (EMK Center article).
+ * Removed at owner's request: two political-commentary items (Daily Janakantha, Feb 2025)
+ * and a duplicate Somoy TV upload (youtu.be/4zSuC1e54Fo).
  */
 export const media: MediaItem[] = [
   // ── Diana Award 2026 ──
@@ -39,8 +41,6 @@ export const media: MediaItem[] = [
   { id: 'bondhushava-ai-2025', outlet: 'Bondhushava', headline: 'ব্যক্তিগত সহকারী হয়ে উঠছে এআই, তবে ভুল ব্যবহারে বিপদ!', language: 'bn', date: '2025-06-19', url: 'https://www.bondhushava.com/activities/udsuioe3y2', category: 'news', topic: 'awareness' },
   { id: 'janakantha-honeytrap-2025', outlet: 'Daily Janakantha', headline: 'হানিট্রাপ ও নীরব আর্তনাদ বিষয়ে যা বললেন আবদুল্লাহ আল ইমরান', language: 'bn', date: '2025-03-05', url: 'https://www.dailyjanakantha.com/miscellaneous/news/779334', category: 'news', topic: 'commentary' },
   { id: 'janakantha-opinion-2025', outlet: 'Daily Janakantha', headline: 'অনলাইন ব্যবসায় সফল হতে যে ৮ টি বিষয় মাথায় রাখতে হবে', language: 'bn', date: '2025-02-24', url: 'https://www.dailyjanakantha.com/opinion/news/775956', category: 'opinion', topic: 'commentary' },
-  { id: 'janakantha-0221-2025', outlet: 'Daily Janakantha', headline: 'ক্রমবর্ধমান ধর্ষণ, ছিনতাই নিয়ে তরুণ উপদেষ্টারা মুখে কুলুপ এটেছেন: আবদুল্লাহ আল ইমরান', language: 'bn', date: '2025-02-21', url: 'https://www.dailyjanakantha.com/bangladesh/news/775005', category: 'news', topic: 'commentary' },
-  { id: 'janakantha-0212-2025', outlet: 'Daily Janakantha', headline: 'আয়নাঘর যাদের মনমতো হয়নি, তাদের ১০বছর আয়নাঘরে রাখার দাবি ইমরানের', language: 'bn', date: '2025-02-12', url: 'https://www.dailyjanakantha.com/national/news/772210', category: 'news', topic: 'commentary' },
   { id: 'kalbela-2024', outlet: 'Kalbela', headline: 'তাসরিফের পোস্ট নিয়ে যা বললেন আব্দুল্লাহ আল ইমরান', language: 'bn', date: '2024-08-16', url: 'https://www.kalbela.com/social-media/112400', category: 'news', topic: 'commentary' },
   { id: 'somoy-copyright-2023', outlet: 'Somoy TV', headline: 'কপিরাইট স্ট্রাইক দিয়ে ডিজিটাল চাঁদাবাজি!', language: 'bn', date: '2023-08-27', url: 'https://www.youtube.com/watch?v=HGM17lE7dIQ', category: 'video', topic: 'commentary' },
 

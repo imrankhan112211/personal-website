@@ -1,0 +1,174 @@
+{
+  "_note": "Maps files in ../content-inbox to optimised web images in public/. Run: npm run images",
+  "photos": [
+    {
+      "src": "01-portrait/IMG_6518.HEIC",
+      "out": "images/abdullah-al-imran-portrait",
+      "aspect": [
+        3,
+        4
+      ],
+      "widths": [
+        480,
+        960
+      ],
+      "quality": 70
+    },
+    {
+      "src": "01-portrait/7cdec290-e715-4748-b161-6af158154d8d.jpg",
+      "out": "images/abdullah-al-imran-casual",
+      "aspect": [
+        4,
+        5
+      ],
+      "widths": [
+        600,
+        1200
+      ]
+    },
+    {
+      "src": "02-tedx/DSC02151.JPEG",
+      "out": "images/tedx-drmc-youth-2025",
+      "aspect": [
+        16,
+        10
+      ],
+      "widths": [
+        800,
+        1600
+      ]
+    },
+    {
+      "src": "02-tedx/a7f336b7-0f88-4174-9e93-618b0761ca36.JPG",
+      "out": "images/tedx-drmc-youth-2025-stage",
+      "aspect": [
+        4,
+        3
+      ],
+      "widths": [
+        800,
+        1600
+      ]
+    },
+    {
+      "src": "03-cid-training/IMG_7528.jpg",
+      "out": "images/cid-training-2023",
+      "aspect": [
+        4,
+        3
+      ],
+      "widths": [
+        800,
+        1600
+      ]
+    },
+    {
+      "src": "04-diana-award/WhatsApp Image 2026-11-05 at 11.20.49 AM.jpeg",
+      "out": "images/diana-award-2026",
+      "aspect": [
+        4,
+        5
+      ],
+      "widths": [
+        600,
+        1200
+      ]
+    },
+    {
+      "src": "05-workshops-events/IMG_4325.JPG",
+      "out": "images/kaktaruaa-seminar-2024",
+      "aspect": [
+        16,
+        10
+      ],
+      "widths": [
+        800,
+        1600
+      ]
+    },
+    {
+      "src": "05-workshops-events/IMG_4294.JPG",
+      "out": "images/kaktaruaa-seminar-2024-panel",
+      "aspect": [
+        4,
+        3
+      ],
+      "widths": [
+        800,
+        1600
+      ]
+    },
+    {
+      "src": "05-workshops-events/BIP03710.JPEG",
+      "out": "images/school-session-speaking",
+      "aspect": [
+        4,
+        3
+      ],
+      "widths": [
+        800,
+        1600
+      ]
+    },
+    {
+      "src": "05-workshops-events/IMG-20250202-WA0011.JPEG",
+      "out": "images/cybernetics-workshop",
+      "aspect": [
+        4,
+        3
+      ],
+      "widths": [
+        800,
+        1600
+      ]
+    },
+    {
+      "src": "05-workshops-events/IMG_1533.jpg",
+      "out": "images/school-session-group",
+      "aspect": [
+        16,
+        10
+      ],
+      "widths": [
+        800,
+        1600
+      ]
+    },
+    {
+      "src": "05-workshops-events/BIP03655.JPEG",
+      "out": "images/school-session-audience",
+      "aspect": [
+        4,
+        3
+      ],
+      "widths": [
+        800,
+        1600
+      ]
+    }
+  ],
+  "logos": [
+    {
+      "src": "06-venture-logos/Probfly Logo V2-01.png",
+      "out": "logos/probfly-it"
+    },
+    {
+      "src": "06-venture-logos/kaktarua logo-04.png",
+      "out": "logos/kaktaruaa"
+    },
+    {
+      "src": "06-venture-logos/erazee logo-01.png",
+      "out": "logos/erazee"
+    },
+    {
+      "src": "06-venture-logos/zurvis new logo.png",
+      "out": "logos/zurvis"
+    }
+  ],
+  "videos": [
+    {
+      "src": "02-tedx/86669a2b-5546-4133-a79d-1f00d7521255.MP4",
+      "out": "videos/tedx-drmc-youth-2025.mp4"
+    }
+  ]
+}

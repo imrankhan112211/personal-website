@@ -15,6 +15,8 @@ import { testimonials } from '~/content/testimonials'
 import { useLocale } from '~/i18n/useLocale'
 import type { UiKey } from '~/i18n/ui'
 import { metaFor } from '~/lib/page'
+import { formatPartialDate } from '~/lib/dates'
+import { Img } from '~/components/ui/Img'
 
 export function meta({ location }: Route.MetaArgs) {
   return metaFor('impact', location.pathname)
@@ -30,7 +32,7 @@ const csFields: { key: keyof CaseStudy; label: UiKey }[] = [
 ]
 
 export default function Impact() {
-  const { t, l } = useLocale()
+  const { t, l, locale } = useLocale()
   const cases = caseStudies.filter((c) => c.permission === 'granted')
   const quotes = testimonials.filter((q) => q.permission === 'granted')
 
@@ -76,13 +78,24 @@ export default function Impact() {
           <li className="hidden bg-surface sm:block" />
         </ul>
         {communityActivities.length ? (
-          <ul className="mt-8 grid gap-4">{communityActivities.map((a) => <li key={a.id} className="rounded-2xl border border-line p-5"><p className="font-semibold text-ink">{l(a.title)}</p></li>)}</ul>
+          <ul className="mt-8 grid gap-4 sm:grid-cols-3">
+            {communityActivities.map((a) => (
+              <li key={a.id} className="reveal overflow-hidden rounded-2xl bg-mist">
+                {a.image && <Img src={a.image} alt={l(a.title)} sizes="(min-width: 640px) 30vw, 100vw" className="aspect-[4/3] w-full object-cover" />}
+                <div className="p-4">
+                  <p className="font-display font-semibold leading-snug text-ink">{l(a.title)}</p>
+                  {(a.organization || a.date) && <p className="mt-1 text-sm text-muted">{[a.organization && l(a.organization), a.date && formatPartialDate(a.date, locale)].filter(Boolean).join(' · ')}</p>}
+                  {a.sourceUrl && <a href={a.sourceUrl} target="_blank" rel="noopener noreferrer" className="mt-2 inline-flex text-sm font-medium text-accent hover:underline">{t('label.source')} ↗</a>}
+                </div>
+              </li>
+            ))}
+          </ul>
         ) : (
           <div className="reveal mt-8 grid gap-4 sm:grid-cols-3">
             {[1, 2, 3].map((n) => <ImageSlot key={n} label={`[INSERT DOCUMENTED ACTIVITY ${n} · PHOTO + SOURCE]`} className="aspect-[4/3] rounded-2xl" />)}
           </div>
         )}
-        <p className="mt-4 text-sm text-muted">{t('impact.community.empty')}</p>
+        {communityActivities.length === 0 && <p className="mt-4 text-sm text-muted">{t('impact.community.empty')}</p>}
       </SplitSection>
 
       {/* Reviews & testimonials */}

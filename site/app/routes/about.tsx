@@ -16,6 +16,7 @@ import { recognition } from '~/content/recognition'
 import { ventures } from '~/content/ventures'
 import { useLocale } from '~/i18n/useLocale'
 import { metaFor } from '~/lib/page'
+import { Img } from '~/components/ui/Img'
 
 export function meta({ location }: Route.MetaArgs) {
   return metaFor('about', location.pathname)
@@ -37,8 +38,8 @@ export default function About() {
         lead={<p className="t-serif text-[clamp(1.5rem,1.2rem+1vw,2rem)] leading-snug text-ink">“{l(person.statement)}”</p>}
         aside={
           <figure className="relative mx-auto max-w-sm lg:ml-auto">
-            {person.portrait ? (
-              <img src={person.portrait} alt={l(person.name)} width={640} height={800} className="aspect-[4/5] w-full rounded-[24px] object-cover" />
+            {person.portraitCasual ? (
+              <Img src={person.portraitCasual} alt={l(person.name)} width={1200} height={1500} className="aspect-[4/5] w-full rounded-[24px] object-cover" />
             ) : (
               <ImageSlot label="[INSERT APPROVED PORTRAIT]" className="aspect-[4/5] rounded-[24px] bg-mist" />
             )}

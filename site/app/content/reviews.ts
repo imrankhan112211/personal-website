@@ -1,7 +1,7 @@
 /**
  * Social proof from public Facebook posts and reels, supplied by Abdullah Al Imran (14 Nov 2026).
  * We link to each original public post instead of copying its text or screenshots.
- * To quote a review on the site, get the person's permission and add it to testimonials.ts.
+ * Owner confirmed (14 Nov 2026) that these people agreed to their posts being shown.
  * View/reaction counts are as shown on Facebook when supplied and will change over time.
  */
 

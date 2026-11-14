@@ -2,6 +2,7 @@ import { localizePath, tr, type Locale } from '~/i18n/locales'
 import { person, SITE_URL } from '~/content/person'
 import { recognition } from '~/content/recognition'
 import { media } from '~/content/media'
+import { ventures } from '~/content/ventures'
 
 const PERSON_ID = `${SITE_URL}/#person`
 const SITE_ID = `${SITE_URL}/#website`
@@ -34,7 +35,11 @@ export function personSchema(locale: Locale) {
       'Cyber safety awareness',
       'Technology entrepreneurship',
     ],
-    // affiliation / founder: add once roles in content/ventures.ts are verified
+    // Verified venture roles (Founder / Co-founder)
+    ...(() => {
+      const orgs = ventures.filter((v) => v.roleVerified).map((v) => ({ '@type': 'Organization', name: v.name, ...(v.url ? { url: v.url } : {}) }))
+      return orgs.length ? { worksFor: orgs } : {}
+    })(),
   }
 }
 
@@ -85,6 +90,13 @@ export function profilePageSchema(locale: Locale, path: string) {
   }
 }
 
-export function organizationSchema(o: { name: string; url: string; description: string }) {
-  return { '@context': 'https://schema.org', '@type': 'Organization', name: o.name, url: o.url, description: o.description }
+export function organizationSchema(o: { name: string; url: string; description: string; founder?: boolean }) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: o.name,
+    url: o.url,
+    description: o.description,
+    ...(o.founder ? { founder: { '@id': PERSON_ID } } : {}),
+  }
 }

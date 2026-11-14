@@ -7,6 +7,7 @@ import { recognition } from '~/content/recognition'
 import { trainingCategories } from '~/content/training'
 import { useLocale } from '~/i18n/useLocale'
 import { formatPartialDate } from '~/lib/dates'
+import { Img } from '~/components/ui/Img'
 
 export function Training() {
   const { t, l, locale } = useLocale()
@@ -34,7 +35,7 @@ export function Training() {
         </div>
         {items.map(({ r, icon: Icon, photo, detail }) => (
           <article key={r.id} className="reveal tile flex flex-col overflow-hidden">
-            {r.image ? <img src={r.image} alt={l(r.title)} loading="lazy" className="aspect-[4/3] w-full object-cover" /> : <ImageSlot label={photo} className="aspect-[4/3]" />}
+            {r.image ? <Img src={r.image} alt={l(r.title)} loading="lazy" className="aspect-[4/3] w-full object-cover" /> : <ImageSlot label={photo} className="aspect-[4/3]" />}
             <div className="flex flex-1 flex-col p-6">
               <span className="grid size-10 place-items-center rounded-xl bg-accent-soft text-accent"><Icon aria-hidden className="size-5" /></span>
               <h3 className="mt-5 font-display text-lg font-semibold text-ink">{l(r.title)}</h3>

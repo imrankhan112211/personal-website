@@ -37,8 +37,10 @@ export const person = {
     en: 'Abdullah Al Imran is a technology entrepreneur, cyber safety advocate, trainer and consultant focused on social media security, digital brand protection, online business safety and digital awareness.',
     bn: 'আব্দুল্লাহ আল ইমরান একজন প্রযুক্তি উদ্যোক্তা, সাইবার সেফটি অ্যাডভোকেট, প্রশিক্ষক ও পরামর্শক। তাঁর কাজের মূল ক্ষেত্র সোশ্যাল মিডিয়া নিরাপত্তা, ডিজিটাল ব্র্যান্ড সুরক্ষা, অনলাইন ব্যবসার নিরাপত্তা এবং ডিজিটাল সচেতনতা।',
   } satisfies Localized,
-  /** [INSERT APPROVED PORTRAIT] — e.g. '/images/abdullah-al-imran-portrait.jpg' (min 1200px tall, 4:5) */
-  portrait: null as string | null,
+  /** Main portrait (made by `npm run images`) */
+  portrait: '/images/abdullah-al-imran-portrait-960.webp' as string | null,
+  /** Relaxed photo used on the About page */
+  portraitCasual: '/images/abdullah-al-imran-casual-1200.webp' as string | null,
   /** [INSERT VERIFIED CONTACT EMAIL] */
   email: null as string | null,
   /**

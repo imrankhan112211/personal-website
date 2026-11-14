@@ -4,13 +4,14 @@ import { shortBio } from '~/content/about'
 import { person } from '~/content/person'
 import { useLocale } from '~/i18n/useLocale'
 import { cn } from '~/lib/utils'
+import { Img } from '~/components/ui/Img'
 
 export function AuthorBox({ className }: { className?: string }) {
   const { t, l } = useLocale()
   return (
     <aside aria-labelledby="author-title" className={cn('grid gap-6 rounded-[var(--radius-card)] border border-line bg-surface p-7 sm:grid-cols-[auto_1fr] md:p-9', className)}>
       {person.portrait ? (
-        <img src={person.portrait} alt="" width={80} height={80} className="size-20 rounded-2xl object-cover" />
+        <Img src={person.portrait} alt="" sizes="80px" width={80} height={80} className="size-20 rounded-2xl object-cover" />
       ) : (
         <span data-placeholder className="grid size-20 place-items-center rounded-2xl bg-ink font-display text-xl font-extrabold text-white">{person.monogram}</span>
       )}

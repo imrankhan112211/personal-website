@@ -60,5 +60,15 @@ export const trainingAudiences: Localized[] = [
   { en: 'Creators & communities', bn: 'ক্রিয়েটর ও কমিউনিটি' },
 ]
 
+/** Workshop & event gallery (images made by `npm run images`). First item is shown large. */
+export const trainingGallery: { src: string; alt: Localized }[] = [
+  { src: '/images/kaktaruaa-seminar-2024-1600.webp', alt: { en: 'Audience at the Kaktaruaa cyber security seminar “First Aid of Social Media Problems”', bn: 'কাকতাড়ুয়ার সাইবার সিকিউরিটি সেমিনার “First Aid of Social Media Problems”-এ উপস্থিত দর্শক' } },
+  { src: '/images/school-session-speaking-1600.webp', alt: { en: 'Abdullah Al Imran speaking at a student awareness session', bn: 'শিক্ষার্থীদের সচেতনতা সেশনে বক্তব্য রাখছেন আব্দুল্লাহ আল ইমরান' } },
+  { src: '/images/kaktaruaa-seminar-2024-panel-1600.webp', alt: { en: 'Panel discussion at the cyber security seminar', bn: 'সাইবার সিকিউরিটি সেমিনারে প্যানেল আলোচনা' } },
+  { src: '/images/cybernetics-workshop-1600.webp', alt: { en: '“Cybernetics” workshop on robotics and cyber security', bn: 'রোবটিক্স ও সাইবার সিকিউরিটি বিষয়ক “Cybernetics” কর্মশালা' } },
+  { src: '/images/school-session-group-1600.webp', alt: { en: 'Group photo with students after an awareness session', bn: 'সচেতনতা সেশন শেষে শিক্ষার্থীদের সঙ্গে গ্রুপ ছবি' } },
+  { src: '/images/school-session-audience-1600.webp', alt: { en: 'Students attending a digital safety session', bn: 'ডিজিটাল নিরাপত্তা সেশনে অংশ নেওয়া শিক্ষার্থীরা' } },
+]
+
 /** Institutional collaborations — add verified partners only. [INSERT VERIFIED INSTITUTIONAL COLLABORATIONS] */
 export const collaborations: { name: string; logo: string | null; url: string | null }[] = []

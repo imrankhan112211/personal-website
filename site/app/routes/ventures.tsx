@@ -10,7 +10,7 @@ import { metaFor } from '~/lib/page'
 import { organizationSchema } from '~/lib/schema'
 
 export function meta({ location }: Route.MetaArgs) {
-  const orgs = ventures.filter((v) => v.url).map((v) => organizationSchema({ name: v.name, url: v.url!, description: v.description.en }))
+  const orgs = ventures.filter((v) => v.url).map((v) => organizationSchema({ name: v.name, url: v.url!, description: v.description.en, founder: v.roleVerified }))
   return metaFor('ventures', location.pathname, orgs)
 }
 
