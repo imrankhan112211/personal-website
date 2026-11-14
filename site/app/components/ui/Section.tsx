@@ -24,9 +24,9 @@ export function SplitSection({
     <section
       id={id}
       aria-labelledby={id ? `${id}-title` : undefined}
-      className={cn('section-y border-t border-line', bg === 'surface' && 'bg-surface', bg === 'mist' && 'bg-mist', className)}
+      className={cn('container-x pb-2 pt-3', className)}
     >
-      <div className="container-x grid gap-10 lg:grid-cols-12 lg:gap-16">
+      <div className={cn('grid gap-10 rounded-[var(--radius-card)] p-7 md:p-12 lg:grid-cols-12 lg:gap-16', bg === 'mist' ? 'bg-mist' : 'bg-surface')}>
         <div className="lg:col-span-4">
           <div className="reveal lg:sticky lg:top-28">
             <Eyebrow>{eyebrow}</Eyebrow>

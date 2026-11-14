@@ -23,9 +23,10 @@ export function PageHero({
 }) {
   const ink = tone === 'ink'
   return (
-    <section className={cn('relative overflow-hidden border-b', ink ? 'on-ink border-transparent bg-ink text-on-ink' : 'border-line')}>
+    <section className="container-x pb-2 pt-4 md:pt-6">
+      <div className={cn('relative overflow-hidden rounded-[var(--radius-card)]', ink ? 'on-ink bg-ink text-on-ink' : 'bg-surface')}>
       <div aria-hidden className={cn('absolute inset-0 [mask-image:linear-gradient(to_bottom,black,transparent_90%)]', ink ? 'bg-hairline-ink' : 'bg-hairline')} />
-      <div className="container-x relative pb-16 pt-8 md:pb-24 md:pt-10">
+      <div className="relative px-6 pb-14 pt-7 md:px-12 md:pb-20 md:pt-9">
         <Breadcrumbs items={crumbs} tone={tone} />
         <div className={cn('mt-12 grid gap-12 md:mt-16', aside && 'lg:grid-cols-12 lg:items-end')}>
           <div className={cn(aside && 'lg:col-span-7')}>
@@ -36,6 +37,7 @@ export function PageHero({
           </div>
           {aside && <div className="lg:col-span-5">{aside}</div>}
         </div>
+      </div>
       </div>
     </section>
   )

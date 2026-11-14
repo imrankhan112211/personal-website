@@ -132,8 +132,8 @@ export default function ArticlePage({ loaderData }: Route.ComponentProps) {
       </article>
 
       {related.length > 0 && (
-        <section aria-labelledby="related-title" className="section-y border-t border-line bg-mist">
-          <div className="container-x">
+        <section aria-labelledby="related-title" className="container-x pb-2 pt-3">
+          <div className="rounded-[var(--radius-card)] p-7 md:p-12 bg-mist">
             <h2 id="related-title" className="t-h2 text-ink">{t('ins.related')}</h2>
             <ul className="mt-10 grid gap-6 md:grid-cols-3">{related.map((r) => <li key={r.slug}><ArticleCard a={r} /></li>)}</ul>
           </div>

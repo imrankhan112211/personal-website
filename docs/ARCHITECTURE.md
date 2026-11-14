@@ -57,6 +57,8 @@ English at the root, Bengali under `/bn/`. Every page exists in both languages.
 
 ## 4. Design system (Stage 2)
 
+> **Update — Design E "Modern founder bento" (chosen 14 Nov 2026).** The site now uses a bento-tile layout: cool light-gray page (`--paper #EEF0F4`), white tiles with 24px corners (`tile`, `tile-hover`, `bento` utilities in `app/app.css`), near-black ink (`#0B0D12`), indigo accent (`#4F46E5`) and a lime highlight (`--lime #C8F169` with `--on-lime` text) used for awards. The header is a floating pill, page heroes, sections and the footer are tiles, and homepage tiles animate in with a short staggered `pop`. Typography, content model, bilingual setup and SEO are unchanged. The colour table below describes the earlier Editorial direction (A).
+
 **Direction: "Editorial Authority."** A quiet, magazine-like layout with strong type, generous whitespace, deep navy and charcoal, and one restrained blue accent. Sections vary in composition (split editorial, indexed lists, dark statement bands, asymmetric mosaics, timelines), so the page never reads as a stack of card grids. No hacker imagery, neon, padlock icons or heavy glassmorphism.
 
 From the ui-ux-pro-max skill we kept the scroll-storytelling page flow, subtle 300–400ms reveal motion with an 8–16px offset, the rule that SEO content is never invisible by default, and the pre-delivery checklist. Its "liquid glass" style and gold accent were rejected because they conflict with the brief.

@@ -87,18 +87,20 @@ export default function About() {
       </SplitSection>
 
       {/* 11. Mission */}
-      <section aria-labelledby="mission-title" className="on-ink section-y relative overflow-hidden bg-ink text-on-ink">
+      <section aria-labelledby="mission-title" className="container-x pb-2 pt-3">
+        <div className="on-ink relative overflow-hidden rounded-[var(--radius-card)] bg-ink px-6 py-20 text-on-ink md:py-28">
         <div aria-hidden className="bg-hairline-ink absolute inset-0 [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]" />
         <div className="container-x relative text-center">
           <Eyebrow tone="ink" className="justify-center">{t('about.mission.eyebrow')}</Eyebrow>
           <h2 id="mission-title" className="sr-only">{t('about.mission.eyebrow')}</h2>
           <p className="t-serif reveal mx-auto mt-8 max-w-4xl text-[clamp(1.75rem,1.2rem+2.2vw,3.25rem)] leading-[1.15] text-white">{l(mission)}</p>
         </div>
+      </div>
       </section>
 
       {/* 12. Downloadable profile */}
-      <section aria-labelledby="profile-title" className="section-y">
-        <div className="container-x">
+      <section aria-labelledby="profile-title" className="container-x pb-2 pt-3">
+        <div className="rounded-[var(--radius-card)] p-7 md:p-12 bg-surface">
           <div className="reveal grid gap-8 rounded-[28px] border border-line bg-surface p-8 md:grid-cols-[auto_1fr_auto] md:items-center md:p-12">
             <span className="grid size-16 place-items-center rounded-2xl bg-accent-soft text-accent"><FileText aria-hidden className="size-7" /></span>
             <div>

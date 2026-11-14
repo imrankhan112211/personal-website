@@ -32,8 +32,9 @@ export function Footer() {
   const linkCls = 'inline-flex min-h-9 items-center text-on-ink-muted transition-colors hover:text-white'
 
   return (
-    <footer className="on-ink bg-ink text-on-ink">
-      <div className="container-x grid gap-12 pb-10 pt-20 lg:grid-cols-12">
+    <footer className="container-x pb-3 pt-3">
+      <div className="on-ink overflow-hidden rounded-[var(--radius-card)] bg-ink text-on-ink">
+      <div className="grid gap-12 px-6 pb-10 pt-14 md:px-10 lg:grid-cols-12">
         <div className="lg:col-span-4">
           <Wordmark tone="ink" />
           <p className="mt-6 max-w-sm text-on-ink-muted">{l(person.supporting)}</p>
@@ -87,12 +88,13 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="container-x flex flex-col gap-3 border-t border-on-ink-line py-6 text-sm text-on-ink-muted sm:flex-row sm:items-center sm:justify-between">
+      <div className="mx-6 flex flex-col gap-3 border-t border-on-ink-line py-6 md:mx-10 text-sm text-on-ink-muted sm:flex-row sm:items-center sm:justify-between">
         <p>© {new Date().getFullYear()} {l(person.name)}. {t('footer.rights')}</p>
         <ul className="flex gap-5">
           <li><LocalLink to="/privacy/" className="hover:text-white">{t('footer.privacy')}</LocalLink></li>
           <li><LocalLink to="/terms/" className="hover:text-white">{t('footer.terms')}</LocalLink></li>
         </ul>
+      </div>
       </div>
     </footer>
   )

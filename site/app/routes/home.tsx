@@ -30,7 +30,7 @@ export default function Home() {
       <Impact />
       <Recognition />
       <MediaInsights />
-      <div className="pt-16 md:pt-24" />
+      <div className="pt-14 md:pt-20" />
       <CtaBand />
     </main>
   )

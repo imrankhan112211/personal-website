@@ -19,3 +19,6 @@ site/.react-router/
 
 # Earlier placeholder site — kept locally only, safe to delete
 archive/
+
+# Private content drop folder (raw photos, screenshots, notes)
+content-inbox/

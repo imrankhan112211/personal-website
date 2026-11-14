@@ -44,8 +44,8 @@ export default function Training() {
       </PageHero>
 
       {/* Topics */}
-      <section id="topics" aria-labelledby="topics-title" className="section-y scroll-mt-20">
-        <div className="container-x">
+      <section id="topics" aria-labelledby="topics-title" className="container-x pb-2 pt-3 scroll-mt-20">
+        <div className="rounded-[var(--radius-card)] p-7 md:p-12 bg-surface">
           <SectionHeading id="topics-title" eyebrow={t('train.topics.eyebrow')} title={t('train.topics.title')} />
           <div className="mt-14 grid gap-px overflow-hidden rounded-[28px] border border-line bg-line md:grid-cols-2">
             {trainingCategories.map((c, i) => (
@@ -62,8 +62,8 @@ export default function Training() {
       </section>
 
       {/* Highlights */}
-      <section aria-labelledby="highlights-title" className="section-y border-t border-line bg-surface">
-        <div className="container-x">
+      <section aria-labelledby="highlights-title" className="container-x pb-2 pt-3">
+        <div className="rounded-[var(--radius-card)] p-7 md:p-12 bg-surface">
           <SectionHeading id="highlights-title" eyebrow={t('train.highlights.eyebrow')} title={t('train.highlights.title')} />
           <div className="mt-14 grid gap-14">
             {highlights.map(({ r, icon: Icon, photo, detail }, i) => (
@@ -85,8 +85,8 @@ export default function Training() {
       </section>
 
       {/* Workshop gallery */}
-      <section aria-labelledby="gallery-title" className="section-y border-t border-line">
-        <div className="container-x">
+      <section aria-labelledby="gallery-title" className="container-x pb-2 pt-3">
+        <div className="rounded-[var(--radius-card)] p-7 md:p-12 bg-surface">
           <SectionHeading id="gallery-title" eyebrow={t('train.gallery.eyebrow')} title={t('train.gallery.title')} />
           <div className="mt-12 grid auto-rows-[160px] grid-cols-2 gap-3 md:auto-rows-[200px] md:grid-cols-4">
             {['col-span-2 row-span-2', '', '', 'col-span-2', '', ''].map((cls, i) => (
@@ -97,8 +97,8 @@ export default function Training() {
       </section>
 
       {/* Formats, audiences, collaborations */}
-      <section aria-labelledby="formats-title" className="section-y border-t border-line bg-mist">
-        <div className="container-x grid gap-14 lg:grid-cols-12">
+      <section aria-labelledby="formats-title" className="container-x pb-2 pt-3">
+        <div className="rounded-[var(--radius-card)] p-7 md:p-12 bg-mist grid gap-14 lg:grid-cols-12">
           <div className="lg:col-span-7">
             <div className="reveal">
               <Eyebrow>{t('train.formats.eyebrow')}</Eyebrow>
@@ -131,8 +131,8 @@ export default function Training() {
       </section>
 
       {/* Invitation */}
-      <section id="invite" aria-labelledby="invite-title" className="on-ink section-y scroll-mt-20 bg-ink text-on-ink">
-        <div className="container-x grid gap-12 lg:grid-cols-12">
+      <section id="invite" aria-labelledby="invite-title" className="container-x pb-2 pt-3 scroll-mt-20">
+        <div className="rounded-[var(--radius-card)] p-7 md:p-12 on-ink bg-ink text-on-ink grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-4">
             <div className="reveal lg:sticky lg:top-28">
               <Eyebrow tone="ink">{t('train.form.eyebrow')}</Eyebrow>

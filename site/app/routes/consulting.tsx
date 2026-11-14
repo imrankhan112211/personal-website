@@ -42,8 +42,8 @@ export default function Consulting() {
       </PageHero>
 
       {/* Service categories */}
-      <section id="services" aria-labelledby="services-title" className="section-y">
-        <div className="container-x">
+      <section id="services" aria-labelledby="services-title" className="container-x pb-2 pt-3">
+        <div className="rounded-[var(--radius-card)] p-7 md:p-12 bg-surface">
           <h2 id="services-title" className="sr-only">{t('consult.services')}</h2>
           <nav aria-label={t('consult.jump')} className="reveal -mt-4 mb-16 flex flex-wrap gap-2">
             {serviceCategories.map((c) => (
@@ -86,8 +86,8 @@ export default function Consulting() {
       </section>
 
       {/* Process */}
-      <section aria-labelledby="process-title" className="section-y border-t border-line bg-surface">
-        <div className="container-x">
+      <section aria-labelledby="process-title" className="container-x pb-2 pt-3">
+        <div className="rounded-[var(--radius-card)] p-7 md:p-12 bg-surface">
           <SectionHeading id="process-title" eyebrow={t('consult.process.eyebrow')} title={t('consult.process.title')} />
           <ol className="mt-14 grid gap-8 md:grid-cols-4 md:gap-6">
             {process.map((s, i) => (
@@ -105,8 +105,8 @@ export default function Consulting() {
       </section>
 
       {/* Formats + boundaries */}
-      <section aria-labelledby="formats-title" className="section-y border-t border-line">
-        <div className="container-x grid gap-16 lg:grid-cols-12">
+      <section aria-labelledby="formats-title" className="container-x pb-2 pt-3">
+        <div className="rounded-[var(--radius-card)] p-7 md:p-12 bg-surface grid gap-16 lg:grid-cols-12">
           <div className="lg:col-span-5">
             <div className="reveal">
               <Eyebrow>{t('consult.formats.eyebrow')}</Eyebrow>
@@ -145,16 +145,16 @@ export default function Consulting() {
       </section>
 
       {/* FAQ */}
-      <section aria-labelledby="faq-title" className="section-y border-t border-line bg-surface">
-        <div className="container-x grid gap-12 lg:grid-cols-12">
+      <section aria-labelledby="faq-title" className="container-x pb-2 pt-3">
+        <div className="rounded-[var(--radius-card)] p-7 md:p-12 bg-surface grid gap-12 lg:grid-cols-12">
           <SectionHeading id="faq-title" className="lg:col-span-4" eyebrow={t('consult.faq.eyebrow')} title={t('consult.faq.title')} />
           <div className="reveal lg:col-span-7 lg:col-start-6"><Faq items={consultingFaqs} /></div>
         </div>
       </section>
 
       {/* Inquiry */}
-      <section id="book" aria-labelledby="book-title" className="section-y scroll-mt-20 border-t border-line bg-mist">
-        <div className="container-x grid gap-12 lg:grid-cols-12">
+      <section id="book" aria-labelledby="book-title" className="container-x pb-2 pt-3 scroll-mt-20">
+        <div className="rounded-[var(--radius-card)] p-7 md:p-12 bg-mist grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-4">
             <div className="reveal lg:sticky lg:top-28">
               <Eyebrow>{t('consult.form.eyebrow')}</Eyebrow>

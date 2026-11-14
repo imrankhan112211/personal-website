@@ -9,7 +9,7 @@ const statusTone = { active: 'success', developing: 'amber', confirm: 'neutral' 
 export function VentureCard({ v }: { v: Venture }) {
   const { t, l } = useLocale()
   return (
-    <article className="reveal group flex h-full flex-col rounded-[var(--radius-card)] border border-line bg-surface p-7 transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-0.5 hover:border-line-strong hover:shadow-[0_24px_60px_-30px_rgb(14_23_38/0.35)] md:p-8">
+    <article className="reveal tile tile-hover group flex h-full flex-col p-7 md:p-8">
       <div className="flex items-start justify-between gap-4">
         {v.logo ? (
           <img src={v.logo} alt={`${v.name} logo`} width={56} height={56} loading="lazy" className="size-14 rounded-2xl object-contain" />

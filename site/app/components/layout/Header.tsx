@@ -77,13 +77,14 @@ export function Header() {
     )
 
   return (
-    <header
-      className={cn(
-        'sticky top-0 z-50 border-b transition-[background-color,border-color,backdrop-filter] duration-300',
-        scrolled || mobileOpen ? 'border-line bg-paper/90 backdrop-blur-md' : 'border-transparent bg-paper',
-      )}
-    >
-      <div className="container-x flex h-[4.5rem] items-center justify-between gap-6">
+    <header className="sticky top-0 z-50 pt-3">
+      <div className="container-x">
+      <div
+        className={cn(
+          'flex h-16 items-center justify-between gap-6 rounded-full pl-4 pr-2.5 transition-[background-color,box-shadow] duration-300',
+          scrolled || mobileOpen ? 'bg-surface/90 shadow-[0_12px_40px_-20px_rgb(11_13_18/0.35)] backdrop-blur-md' : 'bg-surface',
+        )}
+      >
         <Wordmark />
 
         <nav aria-label={t('nav.main')} className="hidden items-center lg:flex">
@@ -142,8 +143,10 @@ export function Header() {
         </div>
       </div>
 
+      </div>
+
       {/* Mobile sheet */}
-      <div id={menuId} hidden={!mobileOpen} className="h-[calc(100dvh-4.5rem)] overflow-y-auto border-t border-line bg-paper lg:hidden">
+      <div id={menuId} hidden={!mobileOpen} className="mx-5 mt-2 max-h-[calc(100dvh-6.5rem)] overflow-y-auto rounded-[var(--radius-card)] bg-surface shadow-[0_24px_60px_-24px_rgb(11_13_18/0.45)] md:mx-8 lg:hidden">
         <nav aria-label={t('nav.main')} className="container-x flex min-h-full flex-col py-6">
           <ul className="grid gap-0.5">
             {[{ key: 'nav.home' as const, href: '/' }, ...primaryNav, ...moreNav].map((n) => (

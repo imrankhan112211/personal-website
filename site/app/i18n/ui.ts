@@ -299,6 +299,16 @@ export const ui = s({
   // Legal
   'legal.updated': { en: 'Last updated', bn: 'সর্বশেষ হালনাগাদ' },
 
+  // Bento hero
+  'bento.award': { en: 'Award', bn: 'পুরস্কার' },
+  'bento.ventures': { en: 'Ventures & initiatives', bn: 'উদ্যোগ ও কার্যক্রম' },
+  'bento.speaking': { en: 'Speaking & training', bn: 'বক্তৃতা ও প্রশিক্ষণ' },
+  'bento.tedx': { en: 'Speaker at TEDx DRMC Youth', bn: 'TEDx DRMC Youth-এ বক্তা' },
+  'bento.cid': { en: 'Trained CID, Bangladesh Police (2023)', bn: 'সিআইডি, বাংলাদেশ পুলিশকে প্রশিক্ষণ (২০২৩)' },
+  'bento.focus': { en: 'Focus areas', bn: 'কাজের ক্ষেত্র' },
+  'bento.book.title': { en: 'Need help protecting an account or brand?', bn: 'অ্যাকাউন্ট বা ব্র্যান্ড সুরক্ষায় সাহায্য দরকার?' },
+  'bento.languages': { en: 'Works in English and Bengali', bn: 'ইংরেজি ও বাংলায় কাজ করি' },
+
   // Footer
   'footer.explore': { en: 'Explore', bn: 'ঘুরে দেখুন' },
   'footer.work': { en: 'Work with me', bn: 'একসঙ্গে কাজ' },

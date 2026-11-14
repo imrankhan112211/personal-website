@@ -15,10 +15,10 @@ export function MediaInsights() {
   const fmt = (d: string) => new Date(d).toLocaleDateString(locale === 'bn' ? 'bn-BD' : 'en-GB', { year: 'numeric', month: 'short', day: 'numeric' })
 
   return (
-    <div className="section-y border-t border-line bg-mist">
-      <div className="container-x grid gap-16 lg:grid-cols-12">
+    <div className="container-x pb-2 pt-16 md:pt-24">
+      <div className="bento lg:grid-cols-12">
         {/* Media coverage */}
-        <section aria-labelledby="media-title" className="lg:col-span-5">
+        <section aria-labelledby="media-title" className="tile p-7 md:p-10 lg:col-span-5">
           <div className="reveal">
             <Eyebrow>{t('home.media.eyebrow')}</Eyebrow>
             <h2 id="media-title" className="t-h2 mt-5">{t('home.media.title')}</h2>
@@ -43,7 +43,7 @@ export function MediaInsights() {
               <p className="text-muted">{t('home.media.empty')}</p>
               <ul className="mt-6 grid gap-3" aria-hidden>
                 {[0, 1, 2].map((i) => (
-                  <li key={i} data-placeholder className="flex items-center gap-4 rounded-2xl border border-dashed border-line-strong bg-surface/60 p-4">
+                  <li key={i} data-placeholder className="flex items-center gap-4 rounded-2xl border border-dashed border-line-strong bg-mist/60 p-4">
                     <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-mist text-muted"><Newspaper className="size-4" /></span>
                     <span className="font-mono text-[0.72rem] text-muted">[INSERT VERIFIED MEDIA ARTICLE URL]</span>
                   </li>
@@ -55,7 +55,7 @@ export function MediaInsights() {
         </section>
 
         {/* Latest insights */}
-        <section aria-labelledby="insights-title" className="lg:col-span-6 lg:col-start-7">
+        <section aria-labelledby="insights-title" className="tile p-7 md:p-10 lg:col-span-7">
           <div className="reveal">
             <Eyebrow>{t('home.insights.eyebrow')}</Eyebrow>
             <h2 id="insights-title" className="t-h2 mt-5">{t('home.insights.title')}</h2>
@@ -73,12 +73,12 @@ export function MediaInsights() {
               ))}
             </ul>
           ) : (
-            <div className="reveal mt-10 rounded-[var(--radius-card)] bg-surface p-7 ring-1 ring-inset ring-line md:p-9">
+            <div className="reveal mt-10 rounded-2xl bg-mist p-6 md:p-7">
               <p className="text-text">{t('home.insights.empty')}</p>
               <ul className="mt-6 flex flex-wrap gap-2">
                 {articleCategories.map((c) => (
                   <li key={c.slug}>
-                    <LocalLink to="/insights/" className="inline-flex min-h-10 items-center rounded-full border border-line px-4 text-sm text-ink transition-colors hover:border-accent hover:text-accent">
+                    <LocalLink to="/insights/" className="inline-flex min-h-10 items-center rounded-full bg-surface px-4 text-sm text-ink transition-colors hover:bg-accent hover:text-white">
                       {l(c.name)}
                     </LocalLink>
                   </li>
