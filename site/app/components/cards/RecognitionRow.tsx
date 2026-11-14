@@ -3,6 +3,7 @@ import { Badge } from '~/components/ui/Badge'
 import { ImageSlot, Placeholder } from '~/components/ui/Placeholder'
 import type { Recognition, RecognitionType } from '~/content/recognition'
 import { useLocale } from '~/i18n/useLocale'
+import { formatPartialDate } from '~/lib/dates'
 
 /** Distinct, honest labels: a nomination is never shown as an award. */
 export const recognitionTone: Record<RecognitionType, 'accent' | 'outline' | 'neutral' | 'success'> = {
@@ -14,7 +15,7 @@ export const recognitionTone: Record<RecognitionType, 'accent' | 'outline' | 'ne
 }
 
 export function RecognitionRow({ r, detailed = false }: { r: Recognition; detailed?: boolean }) {
-  const { t, l } = useLocale()
+  const { t, l, locale } = useLocale()
   return (
     <li className="reveal grid gap-x-8 gap-y-4 border-t border-line py-8 md:grid-cols-12">
       {detailed && (
@@ -39,7 +40,7 @@ export function RecognitionRow({ r, detailed = false }: { r: Recognition; detail
       <dl className={detailed ? 'grid content-start gap-3 text-sm md:col-span-3' : 'grid content-start gap-3 text-sm md:col-span-4 md:justify-items-end'}>
         <div>
           <dt className="sr-only">{t('rec.date')}</dt>
-          <dd>{r.date ? <span className="tabular-nums text-muted">{r.date}</span> : <Placeholder label="[INSERT VERIFIED DATE]" />}</dd>
+          <dd>{r.date ? <time dateTime={r.date} className="tabular-nums text-muted">{formatPartialDate(r.date, locale)}</time> : <Placeholder label="[INSERT VERIFIED DATE]" />}</dd>
         </div>
         <div>
           <dt className="sr-only">{t('label.source')}</dt>

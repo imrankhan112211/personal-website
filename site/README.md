@@ -45,7 +45,15 @@ Rules: never invent dates, awards, clients, testimonials, statistics or media co
 
 ## Add images
 
-Put files in `public/images/` and reference them as `/images/file.jpg`:
-- Portrait: `person.portrait` (4:5 ratio, at least 1200px tall).
-- Venture logos: `logo` in `ventures.ts`.
-- Recognition photos: `image` in `recognition.ts`.
+Put approved photos in `public/images/`, then set the path in the content file (e.g. `image: '/images/tedx-drmc-youth.jpg'`).
+
+| Photo | Suggested file name | Set it in |
+|---|---|---|
+| Professional portrait (4:5, ≥1200px tall) | `abdullah-al-imran-portrait.jpg` | `app/content/person.ts` → `portrait` |
+| TEDx DRMC Youth | `tedx-drmc-youth.jpg` | `app/content/recognition.ts` → `image` |
+| CID Police training | `cid-training-2023.jpg` | `app/content/recognition.ts` → `image` |
+| Diana Award certificate / announcement | `diana-award-2026.jpg` | `app/content/recognition.ts` → `image` |
+| Workshop photos | `workshop-1.jpg`, `workshop-2.jpg`, … | Training page gallery |
+| Venture logos (SVG or PNG) | `/logos/probfly.svg`, … | `app/content/ventures.ts` → `logo` |
+
+Tips: JPG or WebP, longest side about 2000px, under ~500 KB each. Use only photos you have permission to publish.

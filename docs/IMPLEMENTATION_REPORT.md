@@ -86,9 +86,9 @@ Edit only the **content file**. The matching placeholders on every page update o
 | Role in each venture | `role` + `roleVerified: true` in `content/ventures.ts` | Home, About, Biography, Ventures |
 | Venture logos, purpose, key activities | `logo`, `purpose`, `activities` in `content/ventures.ts` | Ventures, Home |
 | Erazee / Zurvis.io websites; Probfly IT / Kaktaruaa status | `url`, `status` in `content/ventures.ts` | Ventures, Footer |
-| Diana Award nomination details, date, source | `content/recognition.ts` | Home, About, Biography, Recognition |
+| Diana Award (received 2026) — photo/certificate and source link | `content/recognition.ts` | Home, About, Biography, Recognition |
 | TEDx DRMC Youth talk title, date, photo, source | `content/recognition.ts` | Home, Training, Recognition |
-| CID Police training scope, topic, audience, date, photo | `content/recognition.ts` | Home, Training, Recognition |
+| CID Police training (2023) scope, topic, audience, photo | `content/recognition.ts` | Home, Training, Recognition |
 | Verified long biography, background, career milestones | `longBio`, `aboutChapters` in `content/about.ts` | About, Biography |
 | Downloadable PDF profile | `profilePdf` in `content/about.ts` | About |
 | Media coverage (outlet, headline, date, URL) | `content/media.ts` | Home, Media |

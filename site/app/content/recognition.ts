@@ -8,7 +8,7 @@ export type Recognition = {
   type: RecognitionType
   title: Localized
   organization: Localized
-  /** ISO date or year. null = [INSERT VERIFIED DATE] */
+  /** ISO date (YYYY-MM-DD), month (YYYY-MM) or year (YYYY). null = [INSERT VERIFIED DATE] */
   date: string | null
   description: Localized | null
   /** Photo or certificate path. null = placeholder */
@@ -20,12 +20,15 @@ export type Recognition = {
 
 export const recognition: Recognition[] = [
   {
-    id: 'diana-award-nomination',
-    type: 'nomination',
-    title: { en: 'Diana Award — Nomination', bn: 'ডায়ানা অ্যাওয়ার্ড — মনোনয়ন' },
+    id: 'diana-award-2026',
+    type: 'award', // Confirmed recipient
+    title: { en: 'The Diana Award 2026', bn: 'দ্য ডায়ানা অ্যাওয়ার্ড ২০২৬' },
     organization: { en: 'The Diana Award', bn: 'দ্য ডায়ানা অ্যাওয়ার্ড' },
-    date: null,
-    description: null, // [INSERT VERIFIED NOMINATION DETAILS]
+    date: '2026-11-04',
+    description: {
+      en: 'Recipient of The Diana Award, named in its Roll of Honour 2026, announced on 4 November 2026.',
+      bn: 'দ্য ডায়ানা অ্যাওয়ার্ড প্রাপ্ত; ২০২৬ সালের ৪ নভেম্বর ঘোষিত রোল অব অনার ২০২৬-এ নাম অন্তর্ভুক্ত।',
+    },
     image: null,
     sourceUrl: null,
     featured: true,
@@ -46,7 +49,7 @@ export const recognition: Recognition[] = [
     type: 'training',
     title: { en: 'Training session with CID Police', bn: 'সিআইডি পুলিশের সঙ্গে প্রশিক্ষণ সেশন' },
     organization: { en: 'CID, Bangladesh Police', bn: 'সিআইডি, বাংলাদেশ পুলিশ' },
-    date: null,
+    date: '2023', // exact date not recorded
     description: null, // [CONFIRM SCOPE, TOPIC AND AUDIENCE OF THE CID TRAINING]
     image: null, // [INSERT APPROVED CID TRAINING PHOTOGRAPH]
     sourceUrl: null,

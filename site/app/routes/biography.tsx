@@ -16,13 +16,14 @@ import { useLocale } from '~/i18n/useLocale'
 import { metaFor } from '~/lib/page'
 import { profilePageSchema } from '~/lib/schema'
 import { cn } from '~/lib/utils'
+import { formatPartialDate } from '~/lib/dates'
 
 export function meta({ location }: Route.MetaArgs) {
   return metaFor('biography', location.pathname, [profilePageSchema(localeFromPath(location.pathname), '/about/biography/')])
 }
 
 export default function Biography() {
-  const { t, l } = useLocale()
+  const { t, l, locale } = useLocale()
   const socials = person.socials.filter((s) => s.url)
   const chapter = (id: string) => aboutChapters.find((c) => c.id === id)!
 
@@ -102,7 +103,7 @@ export default function Biography() {
                 <li key={r.id} className="flex flex-wrap items-center gap-3">
                   <Badge tone={r.type === 'nomination' ? 'outline' : r.type === 'award' ? 'success' : 'neutral'}>{t(`rtype.${r.type}`)}</Badge>
                   <span className="font-medium text-ink">{l(r.title)}</span>
-                  {!r.date && <Placeholder label="[INSERT VERIFIED DATE]" />}
+                  {r.date ? <time dateTime={r.date} className="text-sm text-muted">{formatPartialDate(r.date, locale)}</time> : <Placeholder label="[INSERT VERIFIED DATE]" />}
                 </li>
               ))}
             </ul>

@@ -1,5 +1,6 @@
 import { localizePath, tr, type Locale } from '~/i18n/locales'
 import { person, SITE_URL } from '~/content/person'
+import { recognition } from '~/content/recognition'
 
 const PERSON_ID = `${SITE_URL}/#person`
 const SITE_ID = `${SITE_URL}/#website`
@@ -18,6 +19,11 @@ export function personSchema(locale: Locale) {
     description: tr(person.description, locale),
     ...(person.portrait ? { image: SITE_URL + person.portrait } : {}),
     ...(sameAs.length ? { sameAs } : {}),
+    // Only awards actually received (never nominations)
+    ...(() => {
+      const award = recognition.filter((r) => r.type === 'award').map((r) => r.title.en)
+      return award.length ? { award } : {}
+    })(),
     knowsAbout: [
       'Social media security',
       'Digital brand protection',
