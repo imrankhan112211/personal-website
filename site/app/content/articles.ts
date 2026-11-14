@@ -71,6 +71,6 @@ const layoutPreview: Article = {
 
 export const articles: Article[] = published
 /** What listings show: real articles, or the layout preview while there are none. */
-export const listedArticles: Article[] = published.length ? published : [layoutPreview]
+export const listedArticles: Article[] = published.length ? published : import.meta.env?.DEV ? [layoutPreview] : []
 /** Every article page that gets built. */
 export const allArticles: Article[] = published.length ? published : [layoutPreview]

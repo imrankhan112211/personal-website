@@ -68,9 +68,8 @@ export const aboutChapters: AboutChapter[] = [
     eyebrow: { en: 'Training & awareness', bn: 'প্রশিক্ষণ ও সচেতনতা' },
     title: { en: 'Teaching people to protect themselves.', bn: 'মানুষকে নিজেকে সুরক্ষিত রাখতে শেখানো।' },
     body: [
-      { en: 'He delivers training and awareness sessions on cyber safety, social media safety and online business safety. His activities include a speaker appearance at TEDx DRMC Youth and a training activity with CID Police.', bn: 'তিনি সাইবার সেফটি, সোশ্যাল মিডিয়া নিরাপত্তা ও অনলাইন ব্যবসার নিরাপত্তা বিষয়ে প্রশিক্ষণ ও সচেতনতামূলক সেশন পরিচালনা করেন। তাঁর কার্যক্রমের মধ্যে রয়েছে TEDx DRMC Youth-এ বক্তা হিসেবে অংশগ্রহণ এবং সিআইডি পুলিশের সঙ্গে একটি প্রশিক্ষণ কার্যক্রম।' },
+      { en: 'He delivers training and awareness sessions on cyber safety, social media safety and online business safety. His activities include speaking at TEDx DRMC Youth (2025) and training 45 CID officers of Bangladesh Police on social media security (2023).', bn: 'তিনি সাইবার সেফটি, সোশ্যাল মিডিয়া নিরাপত্তা ও অনলাইন ব্যবসার নিরাপত্তা বিষয়ে প্রশিক্ষণ ও সচেতনতামূলক সেশন পরিচালনা করেন। তাঁর কার্যক্রমের মধ্যে রয়েছে TEDx DRMC Youth-এ (২০২৫) বক্তা হিসেবে অংশগ্রহণ এবং বাংলাদেশ পুলিশের সিআইডির ৪৫ জন কর্মকর্তাকে সোশ্যাল মিডিয়া নিরাপত্তা বিষয়ে প্রশিক্ষণ (২০২৩)।' },
     ],
-    placeholder: '[INSERT VERIFIED LIST OF TRAINING ACTIVITIES]',
   },
 ]
 

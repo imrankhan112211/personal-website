@@ -3,7 +3,7 @@ import { Link, useSearchParams } from 'react-router'
 import type { Route } from './+types/contact'
 import { InquiryForm } from '~/components/forms/InquiryForm'
 import { PageHero } from '~/components/sections/shared/PageHero'
-import { Placeholder } from '~/components/ui/Placeholder'
+import { Placeholder, SHOW_PLACEHOLDERS } from '~/components/ui/Placeholder'
 import { inquiryTypes, type InquiryType } from '~/content/inquiry'
 import { person } from '~/content/person'
 import { useLocale } from '~/i18n/useLocale'
@@ -64,10 +64,10 @@ export default function Contact() {
             <div className="grid gap-5 lg:sticky lg:top-28">
               <div className="rounded-[var(--radius-card)] border border-line bg-surface p-7">
                 <h2 className="t-eyebrow text-accent">{t('contact.direct')}</h2>
-                <div className="mt-5 flex items-center gap-3">
+                {(person.email || SHOW_PLACEHOLDERS) && <div className="mt-5 flex items-center gap-3">
                   <Mail aria-hidden className="size-5 text-muted" />
                   {person.email ? <a href={`mailto:${person.email}`} className="font-medium text-ink hover:text-accent">{person.email}</a> : <Placeholder label="[INSERT VERIFIED CONTACT EMAIL]" />}
-                </div>
+                </div>}
                 <div className="mt-5 border-t border-line pt-5">
                   {socials.length ? (
                     <ul className="flex flex-wrap gap-2">{socials.map((s) => <li key={s.id}><a href={s.url!} target="_blank" rel="noopener noreferrer me" className="inline-flex min-h-10 items-center rounded-full border border-line px-4 text-sm hover:border-ink">{s.label}</a></li>)}</ul>

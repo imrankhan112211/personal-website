@@ -3,7 +3,7 @@ import type { Route } from './+types/ventures'
 import { PageHero } from '~/components/sections/shared/PageHero'
 import { CtaBand } from '~/components/sections/shared/CtaBand'
 import { Badge, StatusDot } from '~/components/ui/Badge'
-import { Placeholder } from '~/components/ui/Placeholder'
+import { Placeholder, SHOW_PLACEHOLDERS } from '~/components/ui/Placeholder'
 import { ventures } from '~/content/ventures'
 import { useLocale } from '~/i18n/useLocale'
 import { metaFor } from '~/lib/page'
@@ -62,13 +62,13 @@ export default function Ventures() {
                 <div className="grid content-start gap-8 p-8 md:p-10 lg:col-span-7">
                   <p className="t-lead text-ink">{l(v.description)}</p>
                   <dl className="grid gap-8">
-                  <Detail label={t('ventures.purpose')}>{v.purpose ? l(v.purpose) : <Placeholder label="[INSERT VERIFIED PURPOSE]" />}</Detail>
+                  {(v.purpose || SHOW_PLACEHOLDERS) && <Detail label={t('ventures.purpose')}>{v.purpose ? l(v.purpose) : <Placeholder label="[INSERT VERIFIED PURPOSE]" />}</Detail>}
                   <Detail label={t('label.role')}>{v.role && v.roleVerified ? <span className="font-medium text-ink">{l(v.role)}</span> : <Placeholder label="[CONFIRM OFFICIAL ROLE]" />}</Detail>
-                  <Detail label={t('ventures.activities')}>
+                  {(v.activities?.length || SHOW_PLACEHOLDERS) && <Detail label={t('ventures.activities')}>
                     {v.activities?.length ? (
                       <ul className="grid gap-2">{v.activities.map((a) => <li key={a.en} className="flex gap-3"><span aria-hidden className="mt-3 h-px w-3 shrink-0 bg-accent" />{l(a)}</li>)}</ul>
                     ) : <Placeholder label="[INSERT KEY ACTIVITIES]" />}
-                  </Detail>
+                  </Detail>}
                   <Detail label={t('label.status')}>{t(`status.${v.status}`)}</Detail>
                   </dl>
                 </div>

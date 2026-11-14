@@ -145,6 +145,66 @@
         800,
         1600
       ]
+    },
+    {
+      "src": "01-portrait/IMG_8886.JPG",
+      "out": "images/speaking-event",
+      "aspect": [
+        3,
+        4
+      ],
+      "widths": [
+        600,
+        1200
+      ]
+    },
+    {
+      "src": "01-portrait/IMG_7524.jpg",
+      "out": "images/tv-studio",
+      "aspect": [
+        4,
+        3
+      ],
+      "widths": [
+        800,
+        1600
+      ]
+    },
+    {
+      "src": "05-workshops-events/IMG_4291.JPG",
+      "out": "images/kaktaruaa-seminar-2024-talk",
+      "aspect": [
+        4,
+        3
+      ],
+      "widths": [
+        800,
+        1600
+      ]
+    },
+    {
+      "src": "05-workshops-events/BIP03649.JPEG",
+      "out": "images/school-session-panel",
+      "aspect": [
+        4,
+        3
+      ],
+      "widths": [
+        800,
+        1600
+      ]
+    },
+    {
+      "src": "05-workshops-events/IMG_1535.JPG",
+      "out": "images/school-session-discussion",
+      "aspect": [
+        4,
+        3
+      ],
+      "widths": [
+        800,
+        1600
+      ]
     }
   ],
   "logos": [

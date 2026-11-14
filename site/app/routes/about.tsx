@@ -6,7 +6,7 @@ import { CtaBand } from '~/components/sections/shared/CtaBand'
 import { Badge } from '~/components/ui/Badge'
 import { ButtonLink } from '~/components/ui/Button'
 import { LocalLink } from '~/components/ui/LocalLink'
-import { ImageSlot, Placeholder } from '~/components/ui/Placeholder'
+import { ImageSlot, Placeholder, SHOW_PLACEHOLDERS } from '~/components/ui/Placeholder'
 import { Prose, SplitSection } from '~/components/ui/Section'
 import { Eyebrow } from '~/components/ui/SectionHeading'
 import { aboutChapters, mission, profilePdf } from '~/content/about'
@@ -128,11 +128,12 @@ export default function About() {
 
 function Chapter({ c, bg }: { c: (typeof aboutChapters)[number]; bg: 'paper' | 'surface' }) {
   const { l, t } = useLocale()
+  if (!c.body.length && !SHOW_PLACEHOLDERS) return null
   return (
     <SplitSection id={c.id} eyebrow={l(c.eyebrow)} title={l(c.title)} bg={bg}>
       <Prose>
         {c.body.map((p, i) => <p key={i} className={i === 0 ? 't-lead text-ink' : undefined}>{l(p)}</p>)}
-        {c.placeholder && <p><Placeholder label={c.placeholder} /></p>}
+        {c.placeholder && SHOW_PLACEHOLDERS && <p><Placeholder label={c.placeholder} /></p>}
       </Prose>
       {c.id === 'training' && (
         <LocalLink to="/training/" className="mt-8 inline-flex min-h-11 items-center gap-2 font-medium text-ink underline decoration-line-strong underline-offset-[6px] hover:text-accent hover:decoration-accent">

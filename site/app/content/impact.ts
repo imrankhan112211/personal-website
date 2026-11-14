@@ -18,7 +18,7 @@ export const communityActivities: CommunityActivity[] = [
     description: { en: 'Kaktaruaa seminar on safe social media practices for students.', bn: 'শিক্ষার্থীদের নিরাপদ সোশ্যাল মিডিয়া চর্চা নিয়ে কাকতাড়ুয়ার সেমিনার।' },
     organization: { en: 'Kaktaruaa', bn: 'Kaktaruaa' },
     date: '2024-11-24',
-    image: '/images/kaktaruaa-seminar-2024-1600.webp',
+    image: '/images/kaktaruaa-seminar-2024-talk-1600.webp',
     sourceUrl: 'https://www.dhakatribune.com/bangladesh/event/366157/kaktaruaa%E2%80%99s-cyber-awareness-seminar-fostering',
   },
   {
@@ -27,7 +27,7 @@ export const communityActivities: CommunityActivity[] = [
     description: null,
     organization: null,
     date: null,
-    image: '/images/school-session-group-1600.webp',
+    image: '/images/school-session-panel-1600.webp',
     sourceUrl: null,
   },
   {

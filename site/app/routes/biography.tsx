@@ -4,7 +4,7 @@ import type { Route } from './+types/biography'
 import { PageHero } from '~/components/sections/shared/PageHero'
 import { Badge } from '~/components/ui/Badge'
 import { ButtonLink } from '~/components/ui/Button'
-import { Placeholder } from '~/components/ui/Placeholder'
+import { Placeholder, SHOW_PLACEHOLDERS } from '~/components/ui/Placeholder'
 import { longBio, shortBio, aboutChapters } from '~/content/about'
 import { expertise } from '~/content/home'
 import { ctaLinks } from '~/content/navigation'
@@ -64,7 +64,7 @@ export default function Biography() {
             {longBio ? longBio.map((p, i) => <p key={i}>{l(p)}</p>) : (
               <>
                 {chapter('biography').body.map((p, i) => <p key={i}>{l(p)}</p>)}
-                <p><Placeholder label="[INSERT VERIFIED LONG BIOGRAPHY]" /></p>
+                {SHOW_PLACEHOLDERS && <p><Placeholder label="[INSERT VERIFIED LONG BIOGRAPHY]" /></p>}
               </>
             )}
           </BioSection>
@@ -96,7 +96,7 @@ export default function Biography() {
 
           <BioSection id="training" title={t('bio.training')}>
             {chapter('training').body.map((p, i) => <p key={i}>{l(p)}</p>)}
-            <p><Placeholder label="[INSERT VERIFIED LIST OF TRAINING ACTIVITIES]" /></p>
+            {SHOW_PLACEHOLDERS && <p><Placeholder label="[INSERT VERIFIED LIST OF TRAINING ACTIVITIES]" /></p>}
           </BioSection>
 
           <BioSection id="recognition" title={t('bio.recognition')}>

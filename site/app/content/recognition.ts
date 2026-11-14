@@ -56,7 +56,10 @@ export const recognition: Recognition[] = [
     title: { en: 'Training session with CID Police', bn: 'সিআইডি পুলিশের সঙ্গে প্রশিক্ষণ সেশন' },
     organization: { en: 'CID, Bangladesh Police', bn: 'সিআইডি, বাংলাদেশ পুলিশ' },
     date: '2023', // exact date not recorded
-    description: null, // [CONFIRM SCOPE, TOPIC AND AUDIENCE OF THE CID TRAINING]
+    description: {
+      en: 'Trained 45 CID officers on social media security — how to fix common account problems, account recovery and related issues.',
+      bn: 'সোশ্যাল মিডিয়া নিরাপত্তা বিষয়ে সিআইডির ৪৫ জন কর্মকর্তাকে প্রশিক্ষণ — অ্যাকাউন্টের সাধারণ সমস্যার সমাধান, অ্যাকাউন্ট রিকভারি ও সংশ্লিষ্ট বিষয়।',
+    },
     image: '/images/cid-training-2023-1600.webp',
     sourceUrl: null,
     featured: true,

@@ -5,11 +5,11 @@ import { EmptyState } from '~/components/sections/shared/EmptyState'
 import { PageHero } from '~/components/sections/shared/PageHero'
 import { Badge } from '~/components/ui/Badge'
 import { buttonStyles } from '~/components/ui/Button'
-import { ImageSlot, Placeholder } from '~/components/ui/Placeholder'
+import { ImageSlot, Placeholder, SHOW_PLACEHOLDERS } from '~/components/ui/Placeholder'
 import { Eyebrow, SectionHeading } from '~/components/ui/SectionHeading'
 import { pageMeta } from '~/content/pageMeta'
 import { recognition } from '~/content/recognition'
-import { collaborations, trainingAudiences, trainingCategories, trainingFormats, trainingGallery } from '~/content/training'
+import { collaborations, trainingAudiences, trainingCategories, trainingFormats, trainingGallery, trainingHeroPhotos } from '~/content/training'
 import { useLocale } from '~/i18n/useLocale'
 import { metaFor } from '~/lib/page'
 import { Img } from '~/components/ui/Img'
@@ -34,9 +34,9 @@ export default function Training() {
         lead={t('train.intro')}
         aside={
           <div className="grid grid-cols-2 gap-3" style={{ aspectRatio: '1 / 1' }}>
-            <Img src={highlights[0].r.image ?? ''} alt={l(highlights[0].r.title)} sizes="(min-width: 1024px) 20vw, 50vw" loading="eager" className="row-span-2 size-full rounded-[20px] object-cover" />
-            <Img src={highlights[1].r.image ?? ''} alt={l(highlights[1].r.title)} sizes="(min-width: 1024px) 20vw, 50vw" loading="eager" className="size-full rounded-[20px] object-cover" />
-            <Img src={trainingGallery[0].src} alt={l(trainingGallery[0].alt)} sizes="(min-width: 1024px) 20vw, 50vw" loading="eager" className="size-full rounded-[20px] object-cover" />
+            {trainingHeroPhotos.map((p, i) => (
+              <Img key={p.src} src={p.src} alt={l(p.alt)} sizes="(min-width: 1024px) 20vw, 50vw" loading="eager" className={`size-full rounded-[20px] object-cover ${i === 0 ? 'row-span-2' : ''}`} />
+            ))}
           </div>
         }
       >
@@ -123,10 +123,10 @@ export default function Training() {
             <ul className="mt-5 flex flex-wrap gap-2">
               {trainingAudiences.map((a) => <li key={a.en} className="rounded-full bg-surface px-4 py-2 text-sm text-ink ring-1 ring-inset ring-line">{l(a)}</li>)}
             </ul>
-            <h2 className="t-eyebrow mt-12 text-muted">{t('train.collab.eyebrow')}</h2>
+            {(collaborations.length > 0 || SHOW_PLACEHOLDERS) && <h2 className="t-eyebrow mt-12 text-muted">{t('train.collab.eyebrow')}</h2>}
             {collaborations.length ? (
               <ul className="mt-5 grid grid-cols-2 gap-3">{collaborations.map((c) => <li key={c.name} className="rounded-xl bg-surface p-4 text-sm ring-1 ring-inset ring-line">{c.name}</li>)}</ul>
-            ) : (
+            ) : SHOW_PLACEHOLDERS && (
               <EmptyState icon={Building2} title={t('train.collab.empty')} className="mt-5 py-10">
                 <Placeholder label="[INSERT VERIFIED INSTITUTIONAL COLLABORATIONS]" />
               </EmptyState>

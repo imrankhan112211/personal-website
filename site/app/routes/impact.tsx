@@ -4,7 +4,7 @@ import { EmptyState } from '~/components/sections/shared/EmptyState'
 import { PageHero } from '~/components/sections/shared/PageHero'
 import { CtaBand } from '~/components/sections/shared/CtaBand'
 import { ButtonLink } from '~/components/ui/Button'
-import { ImageSlot, Placeholder } from '~/components/ui/Placeholder'
+import { ImageSlot, Placeholder, SHOW_PLACEHOLDERS } from '~/components/ui/Placeholder'
 import { SplitSection } from '~/components/ui/Section'
 import { Eyebrow } from '~/components/ui/SectionHeading'
 import { Reviews } from '~/components/sections/shared/Reviews'
@@ -48,10 +48,10 @@ export default function Impact() {
           {clientSegments.map((s) => <li key={s.id} className="rounded-full border border-line bg-surface px-4 py-2 text-sm text-ink">{l(s.title)}</li>)}
         </ul>
 
-        <h3 className="t-h3 mt-14 text-ink">{t('impact.cases.title')}</h3>
+        {(cases.length > 0 || SHOW_PLACEHOLDERS) && <h3 className="t-h3 mt-14 text-ink">{t('impact.cases.title')}</h3>}
         {cases.length ? (
           <div className="mt-6 grid gap-6">{cases.map((c) => <CaseStudyCard key={c.slug} c={c} />)}</div>
-        ) : (
+        ) : SHOW_PLACEHOLDERS && (
           <div className="reveal mt-6 rounded-[var(--radius-card)] border border-dashed border-line-strong bg-surface/60 p-7 md:p-9">
             <p className="text-muted">{t('impact.cases.empty')}</p>
             <ol className="mt-6 grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2">
