@@ -1,0 +1,6 @@
+# abdullahalimran.com
+User-agent: *
+Allow: /
+Disallow: /__spa-fallback.html
+
+Sitemap: https://abdullahalimran.com/sitemap.xml

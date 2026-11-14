@@ -1,0 +1,26 @@
+import type { Localized } from '~/i18n/locales'
+import type { PageId } from '~/pages'
+
+/** Per-page title + meta description (EN/BN). Also used as the H1 on stub pages. */
+export const pageMeta: Record<PageId, { title: Localized; description: Localized; lead?: Localized }> = {
+  home: {
+    title: { en: 'Abdullah Al Imran — Technology Entrepreneur & Cyber Safety Advocate', bn: 'আব্দুল্লাহ আল ইমরান — প্রযুক্তি উদ্যোক্তা ও সাইবার সেফটি অ্যাডভোকেট' },
+    description: {
+      en: 'Official website of Abdullah Al Imran: social media security, digital brand protection, online business safety, cyber safety training and technology ventures.',
+      bn: 'আব্দুল্লাহ আল ইমরানের অফিসিয়াল ওয়েবসাইট: সোশ্যাল মিডিয়া নিরাপত্তা, ডিজিটাল ব্র্যান্ড সুরক্ষা, অনলাইন ব্যবসার নিরাপত্তা, সাইবার সেফটি প্রশিক্ষণ ও প্রযুক্তি উদ্যোগ।',
+    },
+  },
+  about: { title: { en: 'About', bn: 'পরিচিতি' }, description: { en: 'About Abdullah Al Imran — his work in technology entrepreneurship, cyber safety advocacy, social media security and digital brand protection.', bn: 'আব্দুল্লাহ আল ইমরানের পরিচিতি — প্রযুক্তি উদ্যোক্তা, সাইবার সেফটি অ্যাডভোকেসি, সোশ্যাল মিডিয়া নিরাপত্তা ও ডিজিটাল ব্র্যান্ড সুরক্ষায় তাঁর কাজ।' } },
+  biography: { title: { en: 'Biography', bn: 'জীবনী' }, description: { en: 'Official biography of Abdullah Al Imran, technology entrepreneur, cyber safety advocate, trainer and consultant.', bn: 'প্রযুক্তি উদ্যোক্তা, সাইবার সেফটি অ্যাডভোকেট, প্রশিক্ষক ও পরামর্শক আব্দুল্লাহ আল ইমরানের অফিসিয়াল জীবনী।' } },
+  consulting: { title: { en: 'Consulting & Advisory', bn: 'পরামর্শ ও অ্যাডভাইজরি' }, lead: { en: 'Social Media Security, Digital Brand Protection & Online Business Advisory.', bn: 'সোশ্যাল মিডিয়া নিরাপত্তা, ডিজিটাল ব্র্যান্ড সুরক্ষা ও অনলাইন ব্যবসা বিষয়ক পরামর্শ।' }, description: { en: 'Consulting on social media security, account protection, digital brand protection and online business safety for public figures, creators and businesses.', bn: 'ব্যক্তি, পাবলিক ফিগার, ক্রিয়েটর ও অনলাইন ব্যবসার জন্য সোশ্যাল মিডিয়া নিরাপত্তা, অ্যাকাউন্ট সুরক্ষা, ডিজিটাল ব্র্যান্ড সুরক্ষা ও অনলাইন ব্যবসার নিরাপত্তা বিষয়ক পরামর্শ।' } },
+  training: { title: { en: 'Training & Awareness', bn: 'প্রশিক্ষণ ও সচেতনতা' }, lead: { en: 'Building Digital Awareness. Creating Safer Online Communities.', bn: 'ডিজিটাল সচেতনতা গড়ি, নিরাপদ অনলাইন কমিউনিটি তৈরি করি।' }, description: { en: 'Cyber safety, social media safety and digital brand safety training and awareness programmes by Abdullah Al Imran.', bn: 'আব্দুল্লাহ আল ইমরানের সাইবার সেফটি, সোশ্যাল মিডিয়া নিরাপত্তা ও ডিজিটাল ব্র্যান্ড নিরাপত্তা বিষয়ক প্রশিক্ষণ ও সচেতনতা কার্যক্রম।' } },
+  ventures: { title: { en: 'Ventures & Initiatives', bn: 'উদ্যোগ ও কার্যক্রম' }, description: { en: 'Technology ventures and initiatives Abdullah Al Imran is involved in: Probfly IT, Kaktaruaa, Erazee and Zurvis.io.', bn: 'আব্দুল্লাহ আল ইমরান যেসব প্রযুক্তি উদ্যোগের সঙ্গে যুক্ত: Probfly IT, Kaktaruaa, Erazee ও Zurvis.io।' } },
+  impact: { title: { en: 'Selected Work & Impact', bn: 'নির্বাচিত কাজ ও প্রভাব' }, description: { en: 'Selected client work and community impact in social media security, digital brand protection and cyber safety awareness.', bn: 'সোশ্যাল মিডিয়া নিরাপত্তা, ডিজিটাল ব্র্যান্ড সুরক্ষা ও সাইবার সেফটি সচেতনতায় নির্বাচিত কাজ ও কমিউনিটি প্রভাব।' } },
+  recognition: { title: { en: 'Awards & Recognition', bn: 'পুরস্কার ও স্বীকৃতি' }, description: { en: 'Awards, nominations, speaking and institutional recognition of Abdullah Al Imran.', bn: 'আব্দুল্লাহ আল ইমরানের পুরস্কার, মনোনয়ন, বক্তৃতা ও প্রাতিষ্ঠানিক স্বীকৃতি।' } },
+  media: { title: { en: 'Media Coverage', bn: 'গণমাধ্যমে' }, description: { en: 'News articles, interviews and publications about Abdullah Al Imran, linked to their original sources.', bn: 'আব্দুল্লাহ আল ইমরানকে নিয়ে প্রকাশিত সংবাদ, সাক্ষাৎকার ও প্রতিবেদন — মূল উৎসের লিংকসহ।' } },
+  insights: { title: { en: 'Insights', bn: 'লেখা ও ভাবনা' }, description: { en: 'Articles by Abdullah Al Imran on social media security, digital brand protection, online business safety and cyber safety awareness.', bn: 'সোশ্যাল মিডিয়া নিরাপত্তা, ডিজিটাল ব্র্যান্ড সুরক্ষা, অনলাইন ব্যবসার নিরাপত্তা ও সাইবার সেফটি সচেতনতা নিয়ে আব্দুল্লাহ আল ইমরানের লেখা।' } },
+  resources: { title: { en: 'Books & Resources', bn: 'বই ও রিসোর্স' }, description: { en: 'Books, guides, courses and training resources by Abdullah Al Imran.', bn: 'আব্দুল্লাহ আল ইমরানের বই, গাইড, কোর্স ও প্রশিক্ষণ রিসোর্স।' } },
+  contact: { title: { en: 'Contact', bn: 'যোগাযোগ' }, description: { en: 'Contact Abdullah Al Imran for consulting, training, speaking, media or collaboration.', bn: 'পরামর্শ, প্রশিক্ষণ, বক্তৃতা, গণমাধ্যম বা যৌথ কাজের জন্য আব্দুল্লাহ আল ইমরানের সঙ্গে যোগাযোগ করুন।' } },
+  privacy: { title: { en: 'Privacy Policy', bn: 'গোপনীয়তা নীতি' }, description: { en: 'How abdullahalimran.com handles the information you share through its contact and inquiry forms.', bn: 'যোগাযোগ ও জিজ্ঞাসা ফর্মের মাধ্যমে দেওয়া তথ্য abdullahalimran.com কীভাবে ব্যবহার করে, তার বিবরণ।' } },
+  terms: { title: { en: 'Terms of Use', bn: 'ব্যবহারের শর্তাবলি' }, description: { en: 'Terms for using abdullahalimran.com, including content use, external links and the limits of general guidance.', bn: 'abdullahalimran.com ব্যবহারের শর্তাবলি — কনটেন্ট ব্যবহার, বাহ্যিক লিংক ও সাধারণ নির্দেশনার সীমা।' } },
+}

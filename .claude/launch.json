@@ -1,0 +1,6 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    { "name": "site", "runtimeExecutable": "node", "runtimeArgs": ["site/node_modules/@react-router/dev/bin.cjs", "dev", "site", "--port", "5173", "--strictPort"], "port": 5173 }
+  ]
+}

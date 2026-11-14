@@ -1,0 +1,21 @@
+# Dependencies & build output
+node_modules/
+site/build/
+site/.react-router/
+
+# Environment & secrets
+.env
+.env.*
+!.env.example
+
+# OS / editor
+.DS_Store
+*.log
+.vscode/
+.idea/
+
+# Claude Code personal settings (project skills and launch.json are tracked)
+.claude/settings.local.json
+
+# Earlier placeholder site — kept locally only, safe to delete
+archive/

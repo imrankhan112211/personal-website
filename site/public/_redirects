@@ -1,0 +1,2 @@
+# Netlify / Cloudflare Pages: unknown paths get the branded 404 via the SPA fallback.
+/*  /__spa-fallback.html  404
