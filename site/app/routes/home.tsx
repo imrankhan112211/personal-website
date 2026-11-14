@@ -3,6 +3,7 @@ import { About } from '~/components/sections/home/About'
 import { Expertise } from '~/components/sections/home/Expertise'
 import { Hero } from '~/components/sections/home/Hero'
 import { Impact } from '~/components/sections/home/Impact'
+import { HomeReviews } from '~/components/sections/home/HomeReviews'
 import { MediaInsights } from '~/components/sections/home/MediaInsights'
 import { Recognition } from '~/components/sections/home/Recognition'
 import { Training } from '~/components/sections/home/Training'
@@ -27,6 +28,7 @@ export default function Home() {
       <Expertise />
       <Training />
       <Ventures />
+      <HomeReviews />
       <Impact />
       <Recognition />
       <MediaInsights />

@@ -1,6 +1,7 @@
 import { localizePath, tr, type Locale } from '~/i18n/locales'
 import { person, SITE_URL } from '~/content/person'
 import { recognition } from '~/content/recognition'
+import { media } from '~/content/media'
 
 const PERSON_ID = `${SITE_URL}/#person`
 const SITE_ID = `${SITE_URL}/#website`
@@ -70,7 +71,17 @@ export function profilePageSchema(locale: Locale, path: string) {
     '@type': 'ProfilePage',
     url: SITE_URL + localizePath(path, locale),
     inLanguage: locale,
-    mainEntity: personSchema(locale),
+    mainEntity: {
+      ...personSchema(locale),
+      // Published coverage about this person, each pointing to the original source
+      subjectOf: media.map((m) => ({
+        '@type': m.category === 'video' ? 'VideoObject' : 'NewsArticle',
+        ...(m.category === 'video' ? { name: m.headline, uploadDate: m.date } : { headline: m.headline, datePublished: m.date }),
+        url: m.url,
+        inLanguage: m.language,
+        publisher: { '@type': 'Organization', name: m.outlet },
+      })),
+    },
   }
 }
 

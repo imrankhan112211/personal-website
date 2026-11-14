@@ -10,6 +10,8 @@ import { expertise } from '~/content/home'
 import { ctaLinks } from '~/content/navigation'
 import { person, SITE_URL } from '~/content/person'
 import { recognition } from '~/content/recognition'
+import { media } from '~/content/media'
+import { LocalLink } from '~/components/ui/LocalLink'
 import { ventures } from '~/content/ventures'
 import { localeFromPath } from '~/i18n/locales'
 import { useLocale } from '~/i18n/useLocale'
@@ -107,6 +109,19 @@ export default function Biography() {
                 </li>
               ))}
             </ul>
+          </BioSection>
+
+          <BioSection id="media" title={t('bio.media')}>
+            <ul className="grid gap-2 text-base">
+              {[...media].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 8).map((m) => (
+                <li key={m.id} className="flex flex-wrap gap-x-2">
+                  <span className="font-semibold text-ink">{m.outlet}:</span>
+                  <a href={m.url} target="_blank" rel="noopener noreferrer" lang={m.language} className="text-accent underline-offset-4 hover:underline">{m.headline}</a>
+                  <span className="text-muted">({formatPartialDate(m.date, locale)})</span>
+                </li>
+              ))}
+            </ul>
+            <p><LocalLink to="/media/" className="font-medium text-ink underline decoration-line-strong underline-offset-[6px] hover:text-accent">{t('bio.media.all')} ({media.length})</LocalLink></p>
           </BioSection>
 
           <div className="mt-14 flex flex-wrap gap-3">

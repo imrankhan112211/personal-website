@@ -86,6 +86,8 @@ html[lang="bn"] :is(h1, h2, h3, h4, .t-display, .t-h1, .t-h2, .t-h3) { font-fami
 html[lang="bn"] .t-serif { font-family: var(--font-bangla); font-style: normal; }
 html[lang="bn"] .t-eyebrow { letter-spacing: 0.04em; text-transform: none; font-size: 0.875rem; }
 [lang="en"] { font-family: inherit; }
+/* Bengali text inside English pages (headlines, captions) */
+:where([lang="bn"]) { font-family: var(--font-bangla); }
 
 /* ───────────── Type scale (fluid) ───────────── */
 @utility t-display { font-family: var(--font-display); font-weight: 750; font-size: clamp(2.75rem, 1.6rem + 5.2vw, 5.5rem); line-height: 0.98; letter-spacing: -0.035em; }

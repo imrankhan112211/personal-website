@@ -43,13 +43,13 @@ export const person = {
   email: null as string | null,
   /**
    * Official profiles — these become Person.sameAs. Add only accounts you control.
-   * [INSERT OFFICIAL SOCIAL PROFILE URLS]
    */
   socials: [
-    { id: 'facebook', label: 'Facebook', url: null },
-    { id: 'linkedin', label: 'LinkedIn', url: null },
-    { id: 'instagram', label: 'Instagram', url: null },
-    { id: 'x', label: 'X', url: null },
-    { id: 'youtube', label: 'YouTube', url: null },
+    { id: 'facebook', label: 'Facebook', url: 'https://www.facebook.com/abdullahalimran001' },
+    { id: 'linkedin', label: 'LinkedIn', url: 'https://www.linkedin.com/in/abdullahalimran001' },
+    { id: 'instagram', label: 'Instagram', url: 'https://www.instagram.com/abdullah_al_imran01' },
+    { id: 'youtube', label: 'YouTube', url: 'https://www.youtube.com/@abdullahalimran001' },
+    { id: 'telegram', label: 'Telegram', url: 'https://t.me/abdullahalimrangroup' },
+    { id: 'whatsapp', label: 'WhatsApp Channel', url: 'https://whatsapp.com/channel/0029VbCuEENAjPXVlAjBSO1b' },
   ] as { id: string; label: string; url: string | null }[],
 }

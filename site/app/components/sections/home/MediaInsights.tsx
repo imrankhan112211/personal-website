@@ -1,4 +1,5 @@
 import { ArrowRight, ArrowUpRight, Newspaper } from 'lucide-react'
+import { MediaCard } from '~/components/cards/MediaCard'
 import { ButtonLink } from '~/components/ui/Button'
 import { LocalLink } from '~/components/ui/LocalLink'
 import { Placeholder } from '~/components/ui/Placeholder'
@@ -10,7 +11,7 @@ import { useLocale } from '~/i18n/useLocale'
 /** Sections 9 + 10 share one editorial band so empty states never feel like dead space. */
 export function MediaInsights() {
   const { t, l, locale } = useLocale()
-  const latestMedia = [...media].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 3)
+  const latestMedia = [...media].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 4)
   const latestArticles = [...articles].sort((a, b) => b.published.localeCompare(a.published)).slice(0, 4)
   const fmt = (d: string) => new Date(d).toLocaleDateString(locale === 'bn' ? 'bn-BD' : 'en-GB', { year: 'numeric', month: 'short', day: 'numeric' })
 
@@ -24,19 +25,8 @@ export function MediaInsights() {
             <h2 id="media-title" className="t-h2 mt-5">{t('home.media.title')}</h2>
           </div>
           {latestMedia.length ? (
-            <ul className="mt-10 grid gap-3">
-              {latestMedia.map((m) => (
-                <li key={m.id}>
-                  <a href={m.url} target="_blank" rel="noopener noreferrer" className="group flex items-start justify-between gap-4 rounded-2xl bg-surface p-5 ring-1 ring-inset ring-line hover:ring-line-strong">
-                    <span>
-                      <span className="text-xs font-semibold uppercase tracking-wider text-accent">{m.outlet}</span>
-                      <span className="mt-1 block font-display font-semibold text-ink">{l(m.headline)}</span>
-                      <span className="mt-1 block text-sm text-muted">{fmt(m.date)}</span>
-                    </span>
-                    <ArrowUpRight aria-hidden className="size-5 shrink-0 text-muted group-hover:text-accent" />
-                  </a>
-                </li>
-              ))}
+            <ul className="mt-8 grid gap-3">
+              {latestMedia.map((m) => <li key={m.id}><MediaCard m={m} compact /></li>)}
             </ul>
           ) : (
             <div className="reveal mt-10">

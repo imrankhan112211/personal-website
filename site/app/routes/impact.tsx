@@ -6,6 +6,8 @@ import { CtaBand } from '~/components/sections/shared/CtaBand'
 import { ButtonLink } from '~/components/ui/Button'
 import { ImageSlot, Placeholder } from '~/components/ui/Placeholder'
 import { SplitSection } from '~/components/ui/Section'
+import { Eyebrow } from '~/components/ui/SectionHeading'
+import { Reviews } from '~/components/sections/shared/Reviews'
 import { caseStudies, type CaseStudy } from '~/content/projects'
 import { clientSegments, communityActivities, communityThemes } from '~/content/impact'
 import { ctaLinks } from '~/content/navigation'
@@ -83,31 +85,27 @@ export default function Impact() {
         <p className="mt-4 text-sm text-muted">{t('impact.community.empty')}</p>
       </SplitSection>
 
-      {/* Testimonials */}
-      <SplitSection id="testimonials" eyebrow={t('impact.testimonials.eyebrow')} title={t('impact.testimonials.title')} bg="mist">
-        {quotes.length ? (
-          <ul className="grid gap-5 md:grid-cols-2">
+      {/* Reviews & testimonials */}
+      <section id="testimonials" aria-labelledby="testimonials-title" className="container-x pb-2 pt-3">
+        <div className="mb-4 rounded-[var(--radius-card)] bg-surface p-7 md:p-10">
+          <Eyebrow>{t('impact.testimonials.eyebrow')}</Eyebrow>
+          <h2 id="testimonials-title" className="t-h2 mt-5">{t('impact.testimonials.title')}</h2>
+        </div>
+        {quotes.length > 0 && (
+          <ul className="mb-4 grid gap-4 md:grid-cols-2">
             {quotes.map((q) => (
               <li key={q.id}>
-                <figure className="h-full rounded-[var(--radius-card)] bg-surface p-7 ring-1 ring-inset ring-line">
+                <figure className="h-full rounded-[var(--radius-card)] bg-surface p-7">
                   <Quote aria-hidden className="size-6 text-accent" />
-                  <blockquote className="t-serif mt-4 text-xl leading-snug text-ink">“{l(q.quote)}”</blockquote>
-                  <figcaption className="mt-6 flex items-center gap-3">
-                    {q.image ? <img src={q.image} alt="" width={44} height={44} className="size-11 rounded-full object-cover" /> : <span className="grid size-11 place-items-center rounded-full bg-mist font-semibold text-ink">{q.name.slice(0, 1)}</span>}
-                    <span><span className="block font-semibold text-ink">{q.name}</span><span className="text-sm text-muted">{l(q.role)}</span></span>
-                    {q.sourceUrl && <a href={q.sourceUrl} target="_blank" rel="noopener noreferrer" className="ml-auto text-sm text-accent hover:underline">{t('label.source')}</a>}
-                  </figcaption>
+                  <blockquote className="mt-4 font-display text-xl font-semibold leading-snug text-ink">“{l(q.quote)}”</blockquote>
+                  <figcaption className="mt-6 text-sm"><span className="font-semibold text-ink">{q.name}</span> · <span className="text-muted">{l(q.role)}</span></figcaption>
                 </figure>
               </li>
             ))}
           </ul>
-        ) : (
-          <EmptyState icon={Quote} title={t('impact.testimonials.title')}>
-            <p>{t('impact.testimonials.empty')}</p>
-            <Placeholder className="mt-4" label="[INSERT CLIENT TESTIMONIAL WITH PERMISSION]" />
-          </EmptyState>
         )}
-      </SplitSection>
+        <Reviews />
+      </section>
 
       <div className="pt-16" />
       <CtaBand />

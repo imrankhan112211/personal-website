@@ -30,7 +30,7 @@ export const recognition: Recognition[] = [
       bn: 'দ্য ডায়ানা অ্যাওয়ার্ড প্রাপ্ত; ২০২৬ সালের ৪ নভেম্বর ঘোষিত রোল অব অনার ২০২৬-এ নাম অন্তর্ভুক্ত।',
     },
     image: null,
-    sourceUrl: null,
+    sourceUrl: 'https://diana-award.org.uk/our-programmes-and-initiatives/award-and-development/roll-of-honour/roll-of-honour-2026',
     featured: true,
   },
   {
