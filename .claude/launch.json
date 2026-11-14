@@ -1,6 +1,26 @@
 {
   "version": "0.0.1",
   "configurations": [
-    { "name": "site", "runtimeExecutable": "node", "runtimeArgs": ["site/node_modules/@react-router/dev/bin.cjs", "dev", "site", "--port", "5173", "--strictPort"], "port": 5173 }
+    {
+      "name": "site",
+      "runtimeExecutable": "node",
+      "runtimeArgs": [
+        "site/node_modules/@react-router/dev/bin.cjs",
+        "dev",
+        "site",
+        "--port",
+        "5173",
+        "--strictPort"
+      ],
+      "port": 5173
+    },
+    {
+      "name": "site-build",
+      "runtimeExecutable": "node",
+      "runtimeArgs": [
+        "site/scripts/serve-build.mjs"
+      ],
+      "port": 4173
+    }
   ]
 }
