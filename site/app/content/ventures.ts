@@ -64,13 +64,13 @@ export const ventures: Venture[] = [
     slug: 'zurvis',
     name: 'Zurvis.io',
     logo: '/logos/zurvis.webp',
-    url: null,
+    url: 'https://zurvis.io',
     description: {
-      en: 'Business communication and automation software initiative.',
-      bn: 'ব্যবসায়িক যোগাযোগ ও অটোমেশন সফটওয়্যার নিয়ে একটি উদ্যোগ।',
+      en: 'AI customer service and WhatsApp automation platform for businesses.',
+      bn: 'ব্যবসার জন্য এআই কাস্টমার সার্ভিস ও হোয়াটসঅ্যাপ অটোমেশন প্ল্যাটফর্ম।',
     },
     role: { en: 'Co-founder', bn: 'সহ-প্রতিষ্ঠাতা' },
     roleVerified: true,
-    status: 'developing',
+    status: 'active',
   },
 ]

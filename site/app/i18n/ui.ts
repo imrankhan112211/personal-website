@@ -329,6 +329,8 @@ export const ui = s({
   'rev.count.people': { en: 'people and organisations', bn: 'জন ব্যক্তি ও প্রতিষ্ঠান' },
   'rev.count.posts': { en: 'public posts', bn: 'টি প্রকাশ্য পোস্ট' },
   'rev.asof': { en: 'Counts as shown on Facebook when added; they change over time.', bn: 'ভিউ ও রিঅ্যাকশনের সংখ্যা যোগ করার সময় Facebook-এ যেমন ছিল; সময়ের সঙ্গে বদলায়।' },
+  'rev.view': { en: 'View post', bn: 'পোস্ট দেখুন' },
+  'rev.showall': { en: 'Show all', bn: 'সব দেখুন' },
   'rev.home.title': { en: 'What people say', bn: 'মানুষ যা বলছেন' },
   'rev.home.cta': { en: 'See reviews', bn: 'রিভিউ দেখুন' },
 

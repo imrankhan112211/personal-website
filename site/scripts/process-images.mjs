@@ -6,7 +6,7 @@
  */
 import sharp from 'sharp'
 import { execFileSync } from 'node:child_process'
-import { copyFileSync, mkdirSync, mkdtempSync, readFileSync, statSync } from 'node:fs'
+import { copyFileSync, existsSync, mkdirSync, mkdtempSync, readFileSync, readdirSync, statSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { dirname, extname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -50,3 +50,39 @@ for (const v of m.videos) {
   copyFileSync(join(inbox, v.src), out)
   console.log('video', v.out, kb(out), extname(out))
 }
+
+// ── Review screenshots / video thumbnails ──────────────────────────────
+// content-inbox/07-testimonials-screenshots/<Person name>.jpg  → matched to a name in reviews.ts
+// content-inbox/08-video-reviews/<number>.jpg                  → video review number (see LIST.txt there)
+const key = (t) => t.normalize('NFKD').toLowerCase().replace(/^\d+\s*[-–.)]\s*/, '').replace(/[^\p{L}\p{N}]+/gu, '')
+const reviewsSrc = readFileSync(join(here, '../app/content/reviews.ts'), 'utf8')
+const postNames = [...reviewsSrc.matchAll(/name: '((?:[^'\\]|\\.)+)'/g)].map((m) => m[1].replace(/\\'/g, "'"))
+const videoCount = (reviewsSrc.match(/caption: '/g) ?? []).length
+const imgExt = /\.(jpe?g|png|webp|heic)$/i
+const index = { posts: {}, videos: {} }
+const revOut = join(pub, 'images/reviews')
+mkdirSync(revOut, { recursive: true })
+
+const postDir = join(inbox, '07-testimonials-screenshots')
+if (existsSync(postDir)) {
+  for (const f of readdirSync(postDir).filter((f) => imgExt.test(f))) {
+    const k = key(f.replace(imgExt, ''))
+    const name = postNames.find((n) => key(n) === k)
+    if (!name) { console.log('review  (no matching name, skipped):', f); continue }
+    const out = join(revOut, `post-${k}.webp`)
+    await sharp(readable(join('07-testimonials-screenshots', f))).rotate().resize(480, 480, { fit: 'cover', position: 'top' }).webp({ quality: 72 }).toFile(out)
+    index.posts[name] = `/images/reviews/post-${k}.webp`
+  }
+}
+const vidDir = join(inbox, '08-video-reviews')
+if (existsSync(vidDir)) {
+  for (const f of readdirSync(vidDir).filter((f) => imgExt.test(f))) {
+    const n = parseInt(f, 10)
+    if (!(n >= 1 && n <= videoCount)) { console.log('video   (name must start with 1–' + videoCount + ', skipped):', f); continue }
+    const out = join(revOut, `video-${n}.webp`)
+    await sharp(readable(join('08-video-reviews', f))).rotate().resize(360, 640, { fit: 'cover', position: sharp.strategy.attention }).webp({ quality: 72 }).toFile(out)
+    index.videos[n] = `/images/reviews/video-${n}.webp`
+  }
+}
+writeFileSync(join(here, '../app/content/reviewImages.json'), JSON.stringify(index, null, 1) + '\n')
+console.log(`reviews: ${Object.keys(index.posts).length} post images, ${Object.keys(index.videos).length} video thumbnails`)
