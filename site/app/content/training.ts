@@ -62,19 +62,19 @@ export const trainingAudiences: Localized[] = [
 
 /** Workshop & event gallery (images made by `npm run images`). First item is shown large. */
 export const trainingGallery: { src: string; alt: Localized }[] = [
-  { src: '/images/kaktaruaa-seminar-2024-1600.webp', alt: { en: 'Audience at the Kaktaruaa cyber security seminar “First Aid of Social Media Problems”', bn: 'কাকতাড়ুয়ার সাইবার সিকিউরিটি সেমিনার “First Aid of Social Media Problems”-এ উপস্থিত দর্শক' } },
+  { src: '/images/kaktaruaa-seminar-2024-panel-1600.webp', alt: { en: 'Panel at the Kaktaruaa seminar “First Aid of Social Media Problems”, EMK Center, Dhaka', bn: 'ইএমকে সেন্টারে কাকতাড়ুয়ার সেমিনার “First Aid of Social Media Problems”-এর প্যানেল' } },
+  { src: '/images/kaktaruaa-seminar-2024-award-1600.webp', alt: { en: 'Receiving a memento at the cyber security seminar, EMK Center', bn: 'ইএমকে সেন্টারে সাইবার সিকিউরিটি সেমিনারে সম্মাননা গ্রহণ' } },
   { src: '/images/school-session-speaking-1600.webp', alt: { en: 'Abdullah Al Imran speaking at a student awareness session', bn: 'শিক্ষার্থীদের সচেতনতা সেশনে বক্তব্য রাখছেন আব্দুল্লাহ আল ইমরান' } },
-  { src: '/images/kaktaruaa-seminar-2024-panel-1600.webp', alt: { en: 'Panel discussion at the cyber security seminar', bn: 'সাইবার সিকিউরিটি সেমিনারে প্যানেল আলোচনা' } },
   { src: '/images/school-session-discussion-1600.webp', alt: { en: 'Open discussion with students during an awareness session', bn: 'সচেতনতা সেশনে শিক্ষার্থীদের সঙ্গে উন্মুক্ত আলোচনা' } },
-  { src: '/images/school-session-group-1600.webp', alt: { en: 'Group photo with students after an awareness session', bn: 'সচেতনতা সেশন শেষে শিক্ষার্থীদের সঙ্গে গ্রুপ ছবি' } },
   { src: '/images/school-session-audience-1600.webp', alt: { en: 'Students attending a digital safety session', bn: 'ডিজিটাল নিরাপত্তা সেশনে অংশ নেওয়া শিক্ষার্থীরা' } },
+  { src: '/images/school-session-group-1600.webp', alt: { en: 'Group photo with students after an awareness session', bn: 'সচেতনতা সেশন শেষে শিক্ষার্থীদের সঙ্গে গ্রুপ ছবি' } },
 ]
 
-/** Top-of-page mosaic on the Training page (kept different from the gallery and highlights). */
+/** Top-of-page mosaic on the Training page: speaking to audiences (kept different from the gallery). */
 export const trainingHeroPhotos: { src: string; alt: Localized }[] = [
-  { src: '/images/speaking-event-1200.webp', alt: { en: 'Abdullah Al Imran speaking at an event', bn: 'একটি অনুষ্ঠানে বক্তব্য রাখছেন আব্দুল্লাহ আল ইমরান' } },
-  { src: '/images/tv-studio-1600.webp', alt: { en: 'Abdullah Al Imran in a TV studio discussion', bn: 'টিভি স্টুডিওতে আলোচনায় আব্দুল্লাহ আল ইমরান' } },
-  { src: '/images/tedx-drmc-youth-2025-stage-1600.webp', alt: { en: 'On stage at TEDx DRMC Youth 2025', bn: 'TEDx DRMC Youth ২০২৫-এর মঞ্চে' } },
+  { src: '/images/training-tedx-stage-1000.webp', alt: { en: 'Abdullah Al Imran speaking at TEDx DRMC Youth 2025', bn: 'TEDx DRMC Youth ২০২৫-এ বক্তব্য রাখছেন আব্দুল্লাহ আল ইমরান' } },
+  { src: '/images/training-emk-hall-1000.webp', alt: { en: 'A full hall at the Kaktaruaa cyber security seminar, EMK Center, Dhaka', bn: 'ইএমকে সেন্টারে কাকতাড়ুয়ার সাইবার সিকিউরিটি সেমিনারে পূর্ণ হলরুম' } },
+  { src: '/images/training-cybernetics-podium-1000.webp', alt: { en: 'Speaking at the “Cybernetics” workshop on robotics and cyber security', bn: 'রোবোটিক্স ও সাইবার সিকিউরিটি বিষয়ক “Cybernetics” কর্মশালায় বক্তব্য' } },
 ]
 
 /** Institutional collaborations — add verified partners only. [INSERT VERIFIED INSTITUTIONAL COLLABORATIONS] */

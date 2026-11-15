@@ -205,6 +205,54 @@
         800,
         1600
       ]
+    },
+    {
+      "src": "02-tedx/DSC02151.JPEG",
+      "out": "images/training-tedx-stage",
+      "aspect": [
+        3,
+        5
+      ],
+      "widths": [
+        500,
+        1000
+      ]
+    },
+    {
+      "src": "05-workshops-events/IMG_4325.JPG",
+      "out": "images/training-emk-hall",
+      "aspect": [
+        1,
+        1
+      ],
+      "widths": [
+        500,
+        1000
+      ]
+    },
+    {
+      "src": "05-workshops-events/IMG-20250202-WA0011.JPEG",
+      "out": "images/training-cybernetics-podium",
+      "aspect": [
+        1,
+        1
+      ],
+      "widths": [
+        500,
+        1000
+      ]
+    },
+    {
+      "src": "05-workshops-events/IMG_4312.jpg",
+      "out": "images/kaktaruaa-seminar-2024-award",
+      "aspect": [
+        4,
+        3
+      ],
+      "widths": [
+        800,
+        1600
+      ]
     }
   ],
   "logos": [
@@ -225,10 +273,5 @@
       "out": "logos/zurvis"
     }
   ],
-  "videos": [
-    {
-      "src": "02-tedx/86669a2b-5546-4133-a79d-1f00d7521255.MP4",
-      "out": "videos/tedx-drmc-youth-2025.mp4"
-    }
-  ]
+  "videos": []
 }

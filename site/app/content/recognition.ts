@@ -46,7 +46,6 @@ export const recognition: Recognition[] = [
       bn: '১ নভেম্বর ২০২৫ ডিআরএমসি অডিটোরিয়ামে অনুষ্ঠিত “The Human Algorithm” প্রতিপাদ্যের TEDx DRMC Youth-এ আমন্ত্রিত বক্তা।',
     },
     image: '/images/tedx-drmc-youth-2025-1600.webp',
-    video: '/videos/tedx-drmc-youth-2025.mp4',
     sourceUrl: null,
     featured: true,
   },

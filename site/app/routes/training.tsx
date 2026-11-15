@@ -70,11 +70,7 @@ export default function Training() {
             {highlights.map(({ r, icon: Icon, photo, detail }, i) => (
               <article key={r.id} className="reveal grid items-center gap-8 lg:grid-cols-12 lg:gap-14">
                 <div className={i % 2 ? 'lg:order-2 lg:col-span-7' : 'lg:col-span-7'}>
-                  {r.video ? (
-                    <video controls playsInline preload="none" poster={r.image ?? undefined} aria-label={l(r.title)} className="aspect-[16/10] w-full rounded-[24px] bg-ink object-contain">
-                      <source src={r.video} type="video/mp4" />
-                    </video>
-                  ) : r.image ? <Img src={r.image} alt={l(r.title)} className="aspect-[16/10] w-full rounded-[24px] object-cover" /> : <ImageSlot label={photo} className="aspect-[16/10] rounded-[24px]" />}
+{r.image ? <Img src={r.image} alt={l(r.title)} className="aspect-[16/10] w-full rounded-[24px] object-cover" /> : <ImageSlot label={photo} className="aspect-[16/10] rounded-[24px]" />}
                 </div>
                 <div className="lg:col-span-5">
                   <span className="grid size-12 place-items-center rounded-2xl bg-accent-soft text-accent"><Icon aria-hidden className="size-5" /></span>
@@ -93,11 +89,13 @@ export default function Training() {
       <section aria-labelledby="gallery-title" className="container-x pb-2 pt-3">
         <div className="rounded-[var(--radius-card)] p-7 md:p-12 bg-surface">
           <SectionHeading id="gallery-title" eyebrow={t('train.gallery.eyebrow')} title={t('train.gallery.title')} />
-          <div className="mt-12 grid auto-rows-[160px] grid-cols-2 gap-3 md:auto-rows-[200px] md:grid-cols-4">
-            {trainingGallery.map((g, i) => (
-              <Img key={g.src} src={g.src} alt={l(g.alt)} sizes={i === 0 ? '(min-width: 768px) 50vw, 100vw' : '(min-width: 768px) 25vw, 50vw'} className={`size-full rounded-[20px] object-cover ${['col-span-2 row-span-2', '', '', 'col-span-2', 'col-span-2', 'col-span-2'][i] ?? ''}`} />
+          <ul className="mt-12 grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4">
+            {trainingGallery.map((g) => (
+              <li key={g.src}>
+                <Img src={g.src} alt={l(g.alt)} sizes="(min-width: 768px) 33vw, 50vw" className="aspect-[4/3] w-full rounded-[20px] object-cover" />
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </section>
 
