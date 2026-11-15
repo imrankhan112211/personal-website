@@ -11,8 +11,10 @@ import '@fontsource/hind-siliguri/bengali-500.css'
 import '@fontsource/hind-siliguri/bengali-600.css'
 import '@fontsource/hind-siliguri/bengali-700.css'
 import '@fontsource/instrument-serif/latin-400-italic.css'
+import '@fontsource/anton/latin-400.css'
 import interLatin from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url'
 import manropeLatin from '@fontsource-variable/manrope/files/manrope-latin-wght-normal.woff2?url'
+import antonLatin from '@fontsource/anton/files/anton-latin-400-normal.woff2?url'
 import banglaRegular from '@fontsource/hind-siliguri/files/hind-siliguri-bengali-400-normal.woff2?url'
 import './app.css'
 
@@ -20,6 +22,7 @@ import './app.css'
 export const links: Route.LinksFunction = () => [
   { rel: 'preload', href: interLatin, as: 'font', type: 'font/woff2', crossOrigin: 'anonymous' },
   { rel: 'preload', href: manropeLatin, as: 'font', type: 'font/woff2', crossOrigin: 'anonymous' },
+  { rel: 'preload', href: antonLatin, as: 'font', type: 'font/woff2', crossOrigin: 'anonymous' },
   { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' },
   { rel: 'icon', href: '/favicon-32.png', sizes: '32x32', type: 'image/png' },
   { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },

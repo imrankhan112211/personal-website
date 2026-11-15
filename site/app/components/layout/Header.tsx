@@ -72,7 +72,7 @@ export function Header() {
 
   const navCls = ({ isActive }: { isActive: boolean }) =>
     cn(
-      'relative rounded-full px-3.5 py-2 text-[0.9375rem] transition-colors duration-200 hover:text-ink',
+      'relative whitespace-nowrap rounded-full px-3 py-2 text-[0.9375rem] xl:px-3.5 transition-colors duration-200 hover:text-ink',
       isActive ? 'text-ink after:absolute after:inset-x-3.5 after:-bottom-0.5 after:h-px after:bg-ink' : 'text-muted',
     )
 

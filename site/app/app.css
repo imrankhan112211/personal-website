@@ -55,6 +55,7 @@
   --font-sans: "Inter Variable", "Hind Siliguri", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "Instrument Serif", "Hind Siliguri", ui-serif, Georgia, serif;
   --font-bangla: "Hind Siliguri", "Inter Variable", sans-serif;
+  --font-poster: "Anton", "Impact", "Arial Narrow Bold", sans-serif;
 
   --radius-card: 24px;
   --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
@@ -159,3 +160,13 @@ html[lang="bn"] .t-eyebrow { letter-spacing: 0.04em; text-transform: none; font-
 .prose-article table { width: 100%; border-collapse: collapse; font-size: 0.95em; display: block; overflow-x: auto; }
 .prose-article th, .prose-article td { border-bottom: 1px solid var(--line); padding: 0.6em 0.8em; text-align: left; }
 .prose-article hr { border: 0; border-top: 1px solid var(--line); margin: 2.5em 0; }
+
+/* Home hero: giant poster-style surname behind the portrait */
+.hero-word {
+  font-family: var(--font-poster);
+  font-weight: 400;
+  font-size: clamp(7.5rem, 30vw, 27rem);
+  line-height: 0.8;
+  letter-spacing: 0.01em;
+  text-shadow: 0 0 40px rgb(255 255 255 / 0.18);
+}

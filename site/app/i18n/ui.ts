@@ -42,6 +42,10 @@ export const ui = s({
   'cta.consulting': { en: 'View consulting services', bn: 'পরামর্শ সেবাগুলো দেখুন' },
 
   // Home sections
+  'hero.title': { en: 'Technology Entrepreneur & Cyber Safety Advocate', bn: 'প্রযুক্তি উদ্যোক্তা ও সাইবার সেফটি অ্যাডভোকেট' },
+  'hero.founder': { en: 'Founder, Probfly IT & Kaktaruaa', bn: 'প্রতিষ্ঠাতা, Probfly IT ও কাকতাড়ুয়া' },
+  'hero.cofounder': { en: 'Co-founder, Zurvis.io', bn: 'সহ-প্রতিষ্ঠাতা, Zurvis.io' },
+  'hero.award': { en: 'The Diana Award 2026', bn: 'দ্য ডায়ানা অ্যাওয়ার্ড ২০২৬' },
   'home.hero.eyebrow': { en: 'Official website', bn: 'অফিসিয়াল ওয়েবসাইট' },
   'home.about.eyebrow': { en: 'About', bn: 'পরিচিতি' },
   'home.about.title': { en: 'A little about me', bn: 'আমার সম্পর্কে সংক্ষেপে' },
