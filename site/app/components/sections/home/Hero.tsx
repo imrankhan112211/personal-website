@@ -7,72 +7,64 @@ import { useLocale } from '~/i18n/useLocale'
 const HERO_IMG = '/images/abdullah-al-imran-hero-840.webp'
 
 /**
- * Hero, modelled on the owner's own banner: light blue stage, colour portrait (speaking at an event),
- * "Abdullah" set bold and condensed to the left of the head, "al Imran" to the right, topic chips beneath.
- * On wide screens the name, chips and portrait share one scalable composition (sized in container units);
- * on small screens they stack. The name is the page <h1>.
+ * Hero: light blue frame (from the owner's banner), the speaking photo on the right,
+ * name, title, roles, award, actions and profiles on the left. Stacks on small screens.
  */
 export function Hero() {
-  const { t, l, locale } = useLocale()
+  const { t, l } = useLocale()
   const socials = person.socials.filter((s) => s.url && s.id in icons)
-  const chips = ['hero.chip.social', 'hero.chip.safety', 'hero.chip.brand', 'hero.chip.cyber'] as const
 
   return (
     <section aria-labelledby="hero-title" className="container-x pb-2 pt-4 md:pt-6">
-      <div className="hero-stage relative isolate overflow-hidden rounded-[var(--radius-card)] text-ink">
-        {/* composition: name + chips + portrait */}
-        <div className="hero-comp relative mx-auto max-w-[1400px]">
-          <h1 id="hero-title" lang="en" className="hero-name relative z-0 px-6 pt-8 text-center lg:static lg:p-0">
-            <span className="hero-first block lg:absolute">Abdullah</span>
-            <span className="hero-last block lg:absolute">
-              <span className="hero-al">al</span> Imran
-            </span>
-            {locale === 'bn' && <span className="sr-only" lang="bn">{l(person.name)}</span>}
-          </h1>
-
-          <ul className="hero-chips relative z-20 mx-auto mt-5 grid w-fit grid-cols-2 gap-1.5 px-6 lg:absolute lg:mt-0 lg:px-0" aria-label={t('hero.chips')}>
-            {chips.map((c) => <li key={c} className="hero-chip">{t(c)}</li>)}
-          </ul>
-
-          <div className="relative z-10 mt-4 flex justify-center lg:absolute lg:mt-0 lg:block hero-photo">
-            <img
-              src={HERO_IMG}
-              srcSet={`/images/abdullah-al-imran-hero-420.webp 420w, ${HERO_IMG} 840w`}
-              sizes="(min-width: 1024px) 42vw, 92vw"
-              alt={l(person.name)}
-              width={840}
-              height={640}
-              fetchPriority="high"
-              decoding="async"
-              className="w-[min(92vw,30rem)] lg:w-full"
-            />
-          </div>
-        </div>
-
-        {/* title, ventures, award + actions */}
-        <div className="relative z-20 mx-auto grid max-w-[1400px] gap-6 border-t border-[#1b6fc1]/15 bg-white/55 px-6 py-6 backdrop-blur sm:px-10 lg:grid-cols-[1fr_auto] lg:items-center lg:px-12 lg:py-7">
-          <div>
-            <p className="font-display text-lg font-semibold leading-snug text-ink md:text-xl">{t('hero.title')}</p>
-            <p className="mt-1 text-[0.9375rem] text-text">
-              {t('hero.founder')} · {t('hero.cofounder')}
-              <span className="ml-2 inline-flex translate-y-[-1px] items-center gap-1.5 rounded-full bg-lime px-2.5 py-0.5 align-middle text-xs font-semibold text-on-lime">{t('hero.award')}</span>
+      <div className="hero-stage relative isolate overflow-hidden rounded-[var(--radius-card)]">
+        <div className="mx-auto grid max-w-[1400px] items-end gap-2 lg:grid-cols-[1.05fr_1fr] lg:gap-6">
+          {/* text */}
+          <div className="relative z-10 self-center px-6 pb-2 pt-10 sm:px-10 lg:py-16 lg:pl-14 lg:pr-0">
+            <p className="inline-flex items-center gap-2 rounded-full bg-white/80 px-3 py-1.5 text-xs font-semibold text-ink ring-1 ring-[#1b6fc1]/15">
+              <span className="size-1.5 rounded-full bg-lime ring-2 ring-lime/40" /> {t('hero.award')}
             </p>
-          </div>
-          <div className="flex flex-wrap items-center gap-3">
-            <ul className="mr-2 flex items-center gap-2" aria-label={t('bio.socials')}>
+            <h1 id="hero-title" className="mt-5 font-display text-[clamp(2.4rem,5.4vw,4.4rem)] font-extrabold leading-[1.02] tracking-[-0.03em] text-ink">
+              {l(person.name)}
+            </h1>
+            <p className="mt-4 max-w-xl text-lg font-medium text-[#1b6fc1] md:text-xl">{t('hero.title')}</p>
+            <p className="mt-3 max-w-xl text-[0.9375rem] leading-relaxed text-text">
+              <span className="block sm:inline">{t('hero.founder')}</span>
+              <span aria-hidden className="hidden sm:inline"> · </span>
+              <span className="block whitespace-nowrap sm:inline">{t('hero.cofounder')}</span>
+            </p>
+
+            <div className="mt-8 flex flex-wrap items-center gap-3">
+              <ButtonLink to={ctaLinks.consulting} size="lg">{t('cta.book')} <ArrowRight aria-hidden /></ButtonLink>
+              <ButtonLink to={ctaLinks.training} variant="outline" size="lg" className="bg-white/80">{t('cta.invite')}</ButtonLink>
+            </div>
+
+            <ul className="mt-8 flex items-center gap-2" aria-label={t('bio.socials')}>
               {socials.map((s) => {
                 const Icon = icons[s.id as keyof typeof icons]
                 return (
                   <li key={s.id}>
-                    <a href={s.url!} target="_blank" rel="me noopener noreferrer" aria-label={s.label} className="grid size-10 place-items-center rounded-full bg-white text-ink ring-1 ring-line transition-colors hover:bg-ink hover:text-white">
+                    <a href={s.url!} target="_blank" rel="me noopener noreferrer" aria-label={s.label} className="grid size-10 place-items-center rounded-full bg-white/80 text-ink ring-1 ring-[#1b6fc1]/15 transition-colors hover:bg-ink hover:text-white">
                       <Icon />
                     </a>
                   </li>
                 )
               })}
             </ul>
-            <ButtonLink to={ctaLinks.consulting}>{t('cta.book')} <ArrowRight aria-hidden /></ButtonLink>
-            <ButtonLink to={ctaLinks.training} variant="outline" className="bg-white">{t('cta.invite')}</ButtonLink>
+          </div>
+
+          {/* photo */}
+          <div className="relative flex justify-center lg:justify-end">
+            <img
+              src={HERO_IMG}
+              srcSet={`/images/abdullah-al-imran-hero-420.webp 420w, ${HERO_IMG} 840w`}
+              sizes="(min-width: 1024px) 46vw, 92vw"
+              alt={l(person.name)}
+              width={840}
+              height={640}
+              fetchPriority="high"
+              decoding="async"
+              className="w-[min(100%,34rem)] lg:w-full lg:max-w-[42rem]"
+            />
           </div>
         </div>
       </div>
