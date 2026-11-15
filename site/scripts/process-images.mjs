@@ -96,5 +96,38 @@ if (existsSync(vidDir)) {
     index.videos[n] = `/images/reviews/video-${n}.webp`
   }
 }
+// ── Media coverage thumbnails ──────────────────────────────────────────
+// content-inbox/11-media-thumbnails/<media id>.(img|jpg|png|webp) → 16:9 card image, 800 + 400 wide.
+// Pictures far from 16:9 (portraits, panoramas) are placed whole on a blurred copy of themselves.
+const mediaSrc = readFileSync(join(here, '../app/content/media.ts'), 'utf8')
+const mediaIds = new Set([...mediaSrc.matchAll(/id: '([^']+)'/g)].map((x) => x[1]))
+const mediaDir = join(inbox, '11-media-thumbnails')
+const mediaIndex = {}
+if (existsSync(mediaDir)) {
+  mkdirSync(join(pub, 'images/media'), { recursive: true })
+  for (const f of readdirSync(mediaDir).filter((f) => /\.(img|jpe?g|png|webp)$/i.test(f)).sort()) {
+    const id = f.replace(/\.[^.]+$/, '')
+    if (!mediaIds.has(id)) { console.log('media   (no matching id, skipped):', f); continue }
+    const input = await sharp(join(mediaDir, f)).rotate().toBuffer()
+    const { width, height } = await sharp(input).metadata()
+    const ratio = width / height
+    for (const w of [800, 400]) {
+      const h = Math.round((w * 9) / 16)
+      let img
+      if (ratio > 1.45 && ratio < 2.05) {
+        img = sharp(input).resize(w, h, { fit: 'cover', position: sharp.strategy.attention })
+      } else {
+        const bg = await sharp(input).resize(w, h, { fit: 'cover' }).blur(18).modulate({ brightness: 0.82 }).toBuffer()
+        const fg = await sharp(input).resize(w, h, { fit: 'inside' }).toBuffer()
+        img = sharp(bg).composite([{ input: fg, gravity: 'center' }])
+      }
+      await img.webp({ quality: 76 }).toFile(join(pub, `images/media/${id}-${w}.webp`))
+    }
+    mediaIndex[id] = `/images/media/${id}-800.webp`
+  }
+}
+writeFileSync(join(here, '../app/content/mediaImages.json'), JSON.stringify(mediaIndex, null, 1) + '\n')
+console.log(`media: ${Object.keys(mediaIndex).length} thumbnails`)
+
 writeFileSync(join(here, '../app/content/reviewImages.json'), JSON.stringify(index, null, 1) + '\n')
 console.log(`reviews: ${Object.keys(index.posts).length} post images, ${Object.keys(index.avatars).length} avatars, ${Object.keys(index.videos).length} video thumbnails`)
