@@ -21,7 +21,7 @@ export function HomeReviews() {
       <div className="bento lg:grid-cols-4">
         <div className="reveal tile flex flex-col justify-between gap-8 p-7 md:p-9 lg:col-span-2">
           <div>
-            <Eyebrow>{t('impact.testimonials.eyebrow')}</Eyebrow>
+            <Eyebrow>{t('home.clients.eyebrow')}</Eyebrow>
             <h2 id="reviews-title" className="t-h2 mt-5">{t('rev.home.title')}</h2>
           </div>
           <ul className="flex flex-wrap gap-2">

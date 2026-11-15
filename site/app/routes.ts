@@ -9,8 +9,8 @@ function tree(locale: 'en' | 'bn') {
         ? index(p.file, { id: `${locale}-${p.id}` })
         : route(p.path.slice(1, -1), p.file, { id: `${locale}-${p.id}` }),
     ),
-    route('insights/category/:category', 'routes/insights-category.tsx', { id: `${locale}-insights-category` }),
-    route('insights/:slug', 'routes/article.tsx', { id: `${locale}-article` }),
+    route('blog/category/:category', 'routes/insights-category.tsx', { id: `${locale}-insights-category` }),
+    route('blog/:slug', 'routes/article.tsx', { id: `${locale}-article` }),
   ]
 }
 

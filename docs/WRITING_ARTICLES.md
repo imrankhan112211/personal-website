@@ -1,4 +1,4 @@
-# ব্লগে লেখা প্রকাশের নিয়ম (Insights)
+# ব্লগে লেখা প্রকাশের নিয়ম (Blog)
 
 প্রতিটা লেখা একটা সাধারণ টেক্সট ফাইল (Markdown, `.md`)। কোড জানার দরকার নেই।
 
@@ -6,7 +6,7 @@
 
 1. `site/articles/` ফোল্ডারে যান।
 2. `_TEMPLATE.md` ফাইলটা কপি করে নতুন নাম দিন। নামটাই হবে লেখার লিংক:
-   - `facebook-page-hacked-what-to-do.md` → `abdullahalimran.com/insights/facebook-page-hacked-what-to-do/`
+   - `facebook-page-hacked-what-to-do.md` → `abdullahalimran.com/blog/facebook-page-hacked-what-to-do/`
    - নামে শুধু ইংরেজি ছোট হাতের অক্ষর, সংখ্যা আর `-` ব্যবহার করুন।
 3. বাংলা সংস্করণ চাইলে একই নামে শেষে `.bn.md` দিন: `facebook-page-hacked-what-to-do.bn.md`। শুধু বাংলায় লিখলে শুধু `.bn.md` ফাইলটা রাখলেই হবে।
 4. শুরুর দিকে দুটো `---` দাগের মাঝের অংশ (title, description, date ইত্যাদি) পূরণ করুন, আর নিচে লেখাটা লিখুন।
@@ -25,7 +25,7 @@
 
 ## ৩. প্রকাশের আগে দেখা
 
-- `npm run dev` চালিয়ে http://localhost:5173/insights/ এ খসড়া দেখুন।
+- `npm run dev` চালিয়ে http://localhost:5173/blog/ এ খসড়া দেখুন।
 - নাম `_` দিয়ে শুরু হলে, অথবা `draft: true` লিখলে, লেখাটা খসড়া থাকবে: শুধু আপনার কম্পিউটারে দেখা যাবে, সাইটে প্রকাশ হবে না।
 - প্রকাশ করতে খসড়ার চিহ্ন সরিয়ে `npm run build` চালান, অথবা আমাকে বলুন "লেখাটা publish করো"।
 
@@ -49,7 +49,7 @@
 ## ৬. যা স্বয়ংক্রিয়ভাবে হয়
 
 নতুন লেখা প্রকাশ হলে:
-- লেখাটা Insights পেজ, তার বিভাগের পেজ আর হোমপেজের "Latest insights"-এ আসে;
+- লেখাটা Blog পেজ আর তার বিভাগের পেজে আসে;
 - sitemap.xml আর llms.txt-এ যোগ হয়;
 - Article, FAQ আর Breadcrumb structured data তৈরি হয়;
 - লেখক হিসেবে আপনার জীবনী পেজের সাথে যুক্ত হয়।

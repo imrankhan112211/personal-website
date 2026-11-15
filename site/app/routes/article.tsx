@@ -42,7 +42,7 @@ function articleSchema(a: Article, locale: Locale) {
     inLanguage: lang,
     author: { '@type': 'Person', '@id': `${SITE_URL}/#person`, name: person.name.en, url: `${SITE_URL}/about/biography/` },
     publisher: { '@id': `${SITE_URL}/#person` },
-    mainEntityOfPage: SITE_URL + localizePath(`/insights/${a.slug}/`, locale),
+    mainEntityOfPage: SITE_URL + localizePath(`/blog/${a.slug}/`, locale),
     ...(a.cover ? { image: SITE_URL + a.cover } : {}),
     articleSection: articleCategories.find((x) => x.slug === a.category)!.name.en,
   }
@@ -60,7 +60,7 @@ export function meta({ location, params }: Route.MetaArgs) {
   const locale = localeFromPath(location.pathname)
   const a = allArticles.find((x) => x.slug === params.slug)
   if (!a) return [{ title: 'Not found' }]
-  const path = `/insights/${a.slug}/`
+  const path = `/blog/${a.slug}/`
   const { c } = pick(a, locale)
   return buildMeta({
     locale,
@@ -75,7 +75,7 @@ export function meta({ location, params }: Route.MetaArgs) {
       : [
           articleSchema(a, locale),
           ...(c.faq.length ? [faqSchema(c)] : []),
-          breadcrumbSchema(locale, [{ name: ui['nav.home'][locale], path: '/' }, { name: ui['nav.insights'][locale], path: '/insights/' }, { name: tr(a.title, locale), path }]),
+          breadcrumbSchema(locale, [{ name: ui['nav.home'][locale], path: '/' }, { name: ui['nav.insights'][locale], path: '/blog/' }, { name: tr(a.title, locale), path }]),
         ],
   })
 }
@@ -87,14 +87,14 @@ export default function ArticlePage({ loaderData }: Route.ComponentProps) {
   const cat = articleCategories.find((x) => x.slug === a.category)!
   const { c, lang, fallback } = pick(a, locale)
   const related = listedArticles.filter((x) => x.slug !== a.slug && x.category === a.category).slice(0, 3)
-  const url = SITE_URL + localizePath(`/insights/${a.slug}/`, locale)
+  const url = SITE_URL + localizePath(`/blog/${a.slug}/`, locale)
 
   return (
     <main id="main">
       <article lang={fallback ? lang : undefined}>
         <header className="container-x pb-2 pt-4 md:pt-6">
           <div className="rounded-[var(--radius-card)] bg-surface px-6 pb-12 pt-7 md:px-12 md:pb-16 md:pt-9">
-            <Breadcrumbs items={[{ label: t('nav.insights'), to: '/insights/' }, { label: l(cat.name), to: `/insights/category/${cat.slug}/` }]} />
+            <Breadcrumbs items={[{ label: t('nav.insights'), to: '/blog/' }, { label: l(cat.name), to: `/blog/category/${cat.slug}/` }]} />
             {(a.sample || a.draft) && (
               <p className="mt-8 flex gap-3 rounded-2xl border border-amber/40 bg-amber-soft p-4 text-sm text-text">
                 <AlertTriangle aria-hidden className="mt-0.5 size-4 shrink-0 text-amber" />
@@ -103,7 +103,7 @@ export default function ArticlePage({ loaderData }: Route.ComponentProps) {
             )}
             {fallback && locale === 'bn' && <p className="mt-6 rounded-xl bg-mist px-4 py-3 text-sm text-text" lang="bn">{t('ins.translation')}</p>}
             <div className="mx-auto mt-12 max-w-3xl text-center">
-              <LocalLink to={`/insights/category/${cat.slug}/`} className="text-sm font-semibold uppercase tracking-wider text-accent hover:underline">{l(cat.name)}</LocalLink>
+              <LocalLink to={`/blog/category/${cat.slug}/`} className="text-sm font-semibold uppercase tracking-wider text-accent hover:underline">{l(cat.name)}</LocalLink>
               <h1 className="t-h1 mt-4 text-ink">{c.title}</h1>
               {c.excerpt && <p className="t-lead mt-5 text-muted">{c.excerpt}</p>}
               <p className="mt-8 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-sm text-muted">
@@ -198,7 +198,7 @@ export default function ArticlePage({ loaderData }: Route.ComponentProps) {
       )}
 
       <div className="container-x pb-16 pt-6">
-        <ButtonLink to="/insights/" variant="outline"><ArrowLeft aria-hidden /> {t('ins.back')}</ButtonLink>
+        <ButtonLink to="/blog/" variant="outline"><ArrowLeft aria-hidden /> {t('ins.back')}</ButtonLink>
       </div>
     </main>
   )

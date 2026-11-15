@@ -12,7 +12,7 @@ export const ui = s({
   'nav.impact': { en: 'Impact', bn: 'কাজ ও প্রভাব' },
   'nav.recognition': { en: 'Recognition', bn: 'স্বীকৃতি' },
   'nav.media': { en: 'Media', bn: 'গণমাধ্যম' },
-  'nav.insights': { en: 'Insights', bn: 'লেখা ও ভাবনা' },
+  'nav.insights': { en: 'Blog', bn: 'ব্লগ' },
   'nav.resources': { en: 'Resources', bn: 'রিসোর্স' },
   'nav.contact': { en: 'Contact', bn: 'যোগাযোগ' },
   'nav.more': { en: 'More', bn: 'আরও' },
@@ -28,6 +28,7 @@ export const ui = s({
   'cta.invite': { en: 'Invite for Training', bn: 'প্রশিক্ষণে আমন্ত্রণ জানান' },
   'cta.contact': { en: 'Contact Me', bn: 'যোগাযোগ করুন' },
   'cta.more_about': { en: 'More about me', bn: 'আমার সম্পর্কে আরও' },
+  'cta.speak': { en: 'Invite to Speak', bn: 'বক্তৃতায় আমন্ত্রণ জানান' },
   'cta.learn_more': { en: 'Learn more', bn: 'বিস্তারিত' },
   'cta.training': { en: 'Explore Training & Invite Me', bn: 'প্রশিক্ষণ দেখুন ও আমন্ত্রণ জানান' },
   'cta.all_ventures': { en: 'All ventures', bn: 'সব উদ্যোগ' },
@@ -35,7 +36,7 @@ export const ui = s({
   'cta.impact': { en: 'See selected work & impact', bn: 'নির্বাচিত কাজ ও প্রভাব দেখুন' },
   'cta.recognition': { en: 'Full recognition archive', bn: 'সম্পূর্ণ স্বীকৃতি তালিকা' },
   'cta.media': { en: 'Media archive', bn: 'গণমাধ্যম আর্কাইভ' },
-  'cta.insights': { en: 'Visit Insights', bn: 'লেখা ও ভাবনা দেখুন' },
+  'cta.insights': { en: 'Visit the blog', bn: 'ব্লগ দেখুন' },
   'cta.consulting': { en: 'View consulting services', bn: 'পরামর্শ সেবাগুলো দেখুন' },
 
   // Home sections
@@ -43,8 +44,8 @@ export const ui = s({
   'home.about.eyebrow': { en: 'About', bn: 'পরিচিতি' },
   'home.about.title': { en: 'A little about me', bn: 'আমার সম্পর্কে সংক্ষেপে' },
   'home.focus.label': { en: 'Where my work sits', bn: 'আমার কাজের ক্ষেত্র' },
-  'home.do.eyebrow': { en: 'What I do', bn: 'আমি যা করি' },
-  'home.do.title': { en: 'Three ways I help people and businesses stay safer online.', bn: 'তিনভাবে আমি মানুষ ও ব্যবসাকে অনলাইনে আরও নিরাপদ থাকতে সাহায্য করি।' },
+  'home.do.eyebrow': { en: 'Services', bn: 'সেবাসমূহ' },
+  'home.do.title': { en: 'How I can help you.', bn: 'আমি যেভাবে আপনাকে সাহায্য করতে পারি।' },
   'home.expertise.eyebrow': { en: 'Areas of expertise', bn: 'দক্ষতার ক্ষেত্র' },
   'home.expertise.title': { en: 'Focused on what people and brands actually lose online.', bn: 'মানুষ ও ব্র্যান্ড অনলাইনে আসলে যা হারায়, আমার কাজ সেটি রক্ষায়।' },
   'home.expertise.note': { en: 'My work is specifically about social media, brands and online content — not network, device or infrastructure security.', bn: 'আমার কাজ নির্দিষ্টভাবে সোশ্যাল মিডিয়া, ব্র্যান্ড ও অনলাইন কনটেন্ট নিয়ে — নেটওয়ার্ক, ডিভাইস বা অবকাঠামো নিরাপত্তা নিয়ে নয়।' },
@@ -62,7 +63,7 @@ export const ui = s({
   'home.media.eyebrow': { en: 'Media coverage', bn: 'গণমাধ্যমে' },
   'home.media.title': { en: 'In the press.', bn: 'সংবাদমাধ্যমে।' },
   'home.media.empty': { en: 'Published articles and interviews will appear here, each linked to its original source.', bn: 'প্রকাশিত প্রতিবেদন ও সাক্ষাৎকার এখানে দেখা যাবে — প্রতিটির সঙ্গে মূল উৎসের লিংকসহ।' },
-  'home.insights.eyebrow': { en: 'Latest insights', bn: 'সাম্প্রতিক লেখা' },
+  'home.insights.eyebrow': { en: 'From the blog', bn: 'ব্লগ থেকে' },
   'home.insights.title': { en: 'Notes on staying safe and building online.', bn: 'অনলাইনে নিরাপদ থাকা ও এগিয়ে যাওয়া নিয়ে ভাবনা।' },
   'home.insights.empty': { en: 'The first articles are being written. They will cover these topics:', bn: 'প্রথম লেখাগুলো তৈরি হচ্ছে। যেসব বিষয়ে লেখা থাকবে:' },
   'home.cta.title': { en: 'Let’s Build a Safer Digital Future.', bn: 'চলুন, একসঙ্গে গড়ি নিরাপদ ডিজিটাল ভবিষ্যৎ।' },
@@ -252,7 +253,7 @@ export const ui = s({
   'media.read': { en: 'Read on', bn: 'পড়ুন' },
 
   // Insights
-  'ins.eyebrow': { en: 'Insights', bn: 'লেখা ও ভাবনা' },
+  'ins.eyebrow': { en: 'Blog', bn: 'ব্লগ' },
   'ins.lead': { en: 'Writing on social media security, digital brand protection, online business safety and staying safe online.', bn: 'সোশ্যাল মিডিয়া নিরাপত্তা, ডিজিটাল ব্র্যান্ড সুরক্ষা, অনলাইন ব্যবসার নিরাপত্তা ও অনলাইনে নিরাপদ থাকা নিয়ে লেখা।' },
   'ins.search': { en: 'Search articles', bn: 'লেখা খুঁজুন' },
   'ins.search.ph': { en: 'Search by title or topic…', bn: 'শিরোনাম বা বিষয় লিখে খুঁজুন…' },
@@ -279,7 +280,7 @@ export const ui = s({
   'ins.translation': { en: '', bn: 'এই লেখার বাংলা সংস্করণ এখনও প্রস্তুত হয়নি। ইংরেজি সংস্করণ দেখানো হচ্ছে।' },
   'ins.category.eyebrow': { en: 'Category', bn: 'বিভাগ' },
   'ins.empty.cat': { en: 'No articles in this category yet.', bn: 'এই বিভাগে এখনও কোনো লেখা নেই।' },
-  'ins.back': { en: 'All insights', bn: 'সব লেখা' },
+  'ins.back': { en: 'All articles', bn: 'সব লেখা' },
 
   // Resources
   'res.eyebrow': { en: 'Books & resources', bn: 'বই ও রিসোর্স' },
@@ -331,7 +332,8 @@ export const ui = s({
   'rev.asof': { en: 'Counts as shown on Facebook when added; they change over time.', bn: 'ভিউ ও রিঅ্যাকশনের সংখ্যা যোগ করার সময় Facebook-এ যেমন ছিল; সময়ের সঙ্গে বদলায়।' },
   'rev.view': { en: 'View post', bn: 'পোস্ট দেখুন' },
   'rev.showall': { en: 'Show all', bn: 'সব দেখুন' },
-  'rev.home.title': { en: 'What people say', bn: 'মানুষ যা বলছেন' },
+  'rev.home.title': { en: 'Who I’ve worked with', bn: 'যাঁদের সঙ্গে কাজ করেছি' },
+  'home.clients.eyebrow': { en: 'Clients', bn: 'ক্লায়েন্ট' },
   'rev.home.cta': { en: 'See reviews', bn: 'রিভিউ দেখুন' },
 
   // Footer

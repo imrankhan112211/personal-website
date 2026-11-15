@@ -9,7 +9,7 @@ import { useLocale } from '~/i18n/useLocale'
 import { cn } from '~/lib/utils'
 import { AuthorBox } from './AuthorBox'
 
-/** Blog listing used by /insights/ and /insights/category/:category/ */
+/** Blog listing used by /blog/ and /blog/category/:category/ */
 export function InsightsListing({ category }: { category?: ArticleCategory }) {
   const { t, l, href, locale } = useLocale()
   const [q, setQ] = useState('')
@@ -31,9 +31,9 @@ export function InsightsListing({ category }: { category?: ArticleCategory }) {
       <div className="grid gap-6 lg:grid-cols-12 lg:items-center">
         <nav aria-label={t('ins.categories')} className="-mx-5 overflow-x-auto px-5 lg:col-span-8 lg:mx-0 lg:px-0">
           <ul className="flex gap-2 pb-1 lg:flex-wrap">
-            <li><NavLink to={href('/insights/')} end className={chip}>{t('ins.all')}</NavLink></li>
+            <li><NavLink to={href('/blog/')} end className={chip}>{t('ins.all')}</NavLink></li>
             {articleCategories.map((c) => (
-              <li key={c.slug}><NavLink to={href(`/insights/category/${c.slug}/`)} className={chip}>{l(c.name)}</NavLink></li>
+              <li key={c.slug}><NavLink to={href(`/blog/category/${c.slug}/`)} className={chip}>{l(c.name)}</NavLink></li>
             ))}
           </ul>
         </nav>

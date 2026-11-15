@@ -14,8 +14,8 @@ export function loader() {
       path: p.path,
       priority: p.path === '/' ? '1.0' : ['/about/biography/', '/consulting/', '/training/'].includes(p.path) ? '0.9' : '0.7',
     })),
-    ...articleCategories.map((c) => ({ path: `/insights/category/${c.slug}/`, priority: '0.5' })),
-    ...allArticles.filter((a) => !a.sample).map((a) => ({ path: `/insights/${a.slug}/`, lastmod: a.updated ?? a.published, priority: '0.6' })),
+    ...articleCategories.map((c) => ({ path: `/blog/category/${c.slug}/`, priority: '0.5' })),
+    ...allArticles.filter((a) => !a.sample).map((a) => ({ path: `/blog/${a.slug}/`, lastmod: a.updated ?? a.published, priority: '0.6' })),
   ]
 
   const alt = (path: string) =>

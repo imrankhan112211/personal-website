@@ -20,6 +20,6 @@ function articleSlugs(): string[] {
 
 /** Dynamic paths to prerender (base/English form, trailing slash). */
 export const dynamicPaths = [
-  ...articleCategories.map((c) => `/insights/category/${c.slug}/`),
-  ...articleSlugs().map((s) => `/insights/${s}/`),
+  ...articleCategories.map((c) => `/blog/category/${c.slug}/`),
+  ...articleSlugs().map((s) => `/blog/${s}/`),
 ]

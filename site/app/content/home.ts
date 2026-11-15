@@ -86,3 +86,59 @@ export const impactAreas = [
   { id: 'businesses', title: { en: 'Entrepreneurs & online businesses', bn: 'উদ্যোক্তা ও অনলাইন ব্যবসা' }, body: { en: 'Social media solutions and brand protection for businesses that sell and grow online.', bn: 'অনলাইনে বিক্রি ও প্রবৃদ্ধিনির্ভর ব্যবসার জন্য সোশ্যাল মিডিয়া সলিউশন ও ব্র্যান্ড সুরক্ষা।' } },
   { id: 'community', title: { en: 'Community & awareness', bn: 'কমিউনিটি ও সচেতনতা' }, body: { en: 'Cyber safety education and anti-harassment awareness with institutions and communities.', bn: 'প্রতিষ্ঠান ও কমিউনিটির সঙ্গে সাইবার সেফটি শিক্ষা ও হয়রানি প্রতিরোধে সচেতনতা।' } },
 ] satisfies { id: string; title: Localized; body: Localized }[]
+
+/** Homepage services: what a visitor can ask for, each with its own call to action. */
+export const services: {
+  id: 'consulting' | 'training' | 'speaking'
+  href: string
+  title: Localized
+  body: Localized
+  points: Localized[]
+  cta: { key: 'cta.book' | 'cta.invite' | 'cta.speak'; href: string }
+}[] = [
+  {
+    id: 'consulting',
+    href: '/consulting/',
+    title: { en: 'Consulting & Advisory', bn: 'পরামর্শ ও অ্যাডভাইজরি' },
+    body: {
+      en: 'For individuals, public figures, creators and online businesses who need to secure, recover or protect their accounts and brand.',
+      bn: 'ব্যক্তি, পাবলিক ফিগার, ক্রিয়েটর ও অনলাইন ব্যবসার জন্য — যাঁদের অ্যাকাউন্ট ও ব্র্যান্ড সুরক্ষিত রাখা, ফিরিয়ে আনা বা রক্ষা করা দরকার।',
+    },
+    points: [
+      { en: 'Account security & recovery guidance', bn: 'অ্যাকাউন্ট নিরাপত্তা ও পুনরুদ্ধারে দিকনির্দেশনা' },
+      { en: 'Page verification & brand protection', bn: 'পেজ ভেরিফিকেশন ও ব্র্যান্ড সুরক্ষা' },
+      { en: 'Impersonation & content protection', bn: 'ছদ্মবেশ ও কনটেন্ট সুরক্ষা' },
+    ],
+    cta: { key: 'cta.book', href: '/contact/?type=consulting' },
+  },
+  {
+    id: 'training',
+    href: '/training/',
+    title: { en: 'Training & Workshops', bn: 'প্রশিক্ষণ ও কর্মশালা' },
+    body: {
+      en: 'Practical sessions on social media safety and online business security for institutions, organisations and teams.',
+      bn: 'শিক্ষাপ্রতিষ্ঠান, সংগঠন ও টিমের জন্য সোশ্যাল মিডিয়া নিরাপত্তা ও অনলাইন ব্যবসার সুরক্ষা নিয়ে হাতে-কলমে সেশন।',
+    },
+    points: [
+      { en: 'Workshops for teams and staff', bn: 'টিম ও কর্মীদের জন্য কর্মশালা' },
+      { en: 'Awareness programmes for students', bn: 'শিক্ষার্থীদের জন্য সচেতনতা কার্যক্রম' },
+      { en: 'Sessions for law-enforcement & institutions', bn: 'আইনশৃঙ্খলা বাহিনী ও প্রতিষ্ঠানের জন্য সেশন' },
+    ],
+    cta: { key: 'cta.invite', href: '/contact/?type=training' },
+  },
+  {
+    id: 'speaking',
+    href: '/training/',
+    title: { en: 'Speaking & Media', bn: 'বক্তৃতা ও গণমাধ্যম' },
+    body: {
+      en: 'Talks, panels and media commentary on cyber safety, social media and technology — in English or Bengali.',
+      bn: 'সাইবার নিরাপত্তা, সোশ্যাল মিডিয়া ও প্রযুক্তি নিয়ে বক্তৃতা, প্যানেল আলোচনা ও গণমাধ্যমে মতামত — বাংলা বা ইংরেজিতে।',
+    },
+    points: [
+      { en: 'Conference & event talks', bn: 'সম্মেলন ও অনুষ্ঠানে বক্তৃতা' },
+      { en: 'Panel discussions', bn: 'প্যানেল আলোচনা' },
+      { en: 'TV, print & online interviews', bn: 'টিভি, পত্রিকা ও অনলাইন সাক্ষাৎকার' },
+    ],
+    cta: { key: 'cta.speak', href: '/contact/?type=speaking' },
+  },
+]

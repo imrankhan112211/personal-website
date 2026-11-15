@@ -1,7 +1,7 @@
 /**
  * Blog articles are Markdown files in `site/articles/`:
- *   my-article.md      → English version   → /insights/my-article/
- *   my-article.bn.md   → Bengali version   → /bn/insights/my-article/
+ *   my-article.md      → English version   → /blog/my-article/
+ *   my-article.bn.md   → Bengali version   → /bn/blog/my-article/
  * Either file alone is fine. Files starting with "_" or marked `draft: true` are only visible in `npm run dev`.
  * See docs/WRITING_ARTICLES.md for the format.
  */

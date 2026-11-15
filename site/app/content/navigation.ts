@@ -8,7 +8,7 @@ export const primaryNav: NavItem[] = [
   { key: 'nav.consulting', href: '/consulting/' },
   { key: 'nav.training', href: '/training/' },
   { key: 'nav.ventures', href: '/ventures/' },
-  { key: 'nav.insights', href: '/insights/' },
+  { key: 'nav.insights', href: '/blog/' },
 ]
 
 /** Under "More" on desktop; listed in full on mobile. */

@@ -1,13 +1,9 @@
 import type { Route } from './+types/home'
 import { About } from '~/components/sections/home/About'
-import { Expertise } from '~/components/sections/home/Expertise'
 import { Hero } from '~/components/sections/home/Hero'
-import { Impact } from '~/components/sections/home/Impact'
+import { HomeMedia } from '~/components/sections/home/HomeMedia'
 import { HomeReviews } from '~/components/sections/home/HomeReviews'
-import { MediaInsights } from '~/components/sections/home/MediaInsights'
 import { Recognition } from '~/components/sections/home/Recognition'
-import { Training } from '~/components/sections/home/Training'
-import { Ventures } from '~/components/sections/home/Ventures'
 import { WhatIDo } from '~/components/sections/home/WhatIDo'
 import { CtaBand } from '~/components/sections/shared/CtaBand'
 import { localeFromPath } from '~/i18n/locales'
@@ -22,16 +18,13 @@ export function meta({ location }: Route.MetaArgs) {
 export default function Home() {
   return (
     <main id="main">
+      {/* 1 Who I am → 2 What I offer → 3 Who I've worked with → 4 Awards → 5 Press → CTA */}
       <Hero />
       <About />
       <WhatIDo />
-      <Expertise />
-      <Training />
-      <Ventures />
       <HomeReviews />
-      <Impact />
       <Recognition />
-      <MediaInsights />
+      <HomeMedia />
       <div className="pt-14 md:pt-20" />
       <CtaBand />
     </main>

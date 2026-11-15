@@ -40,7 +40,7 @@ export function loader() {
     `- [Training](${u('/training/')}): cyber safety and social media safety training`,
     `- [Ventures](${u('/ventures/')})`,
     `- [Media coverage](${u('/media/')})`,
-    `- [Insights](${u('/insights/')}): articles`,
+    `- [Blog](${u('/blog/')}): articles`,
     `- [Contact](${u('/contact/')})`,
     `- Bengali version: ${u('/bn/')}`,
     '',
@@ -49,7 +49,7 @@ export function loader() {
     '',
     '## Selected media coverage',
     ...[...media].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 15).map((m) => `- ${m.outlet} (${m.date}): ${m.headline} — ${m.url}`),
-    ...(articles.length ? ['', '## Articles', ...articles.map((a) => `- [${a.title.en}](${u(`/insights/${a.slug}/`)}): ${a.excerpt.en}`)] : []),
+    ...(articles.length ? ['', '## Articles', ...articles.map((a) => `- [${a.title.en}](${u(`/blog/${a.slug}/`)}): ${a.excerpt.en}`)] : []),
     '',
   ]
   return new Response(lines.join('\n'), { headers: { 'Content-Type': 'text/plain; charset=utf-8' } })

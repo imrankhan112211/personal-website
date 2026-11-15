@@ -15,7 +15,7 @@ const explore: { key: UiKey; href: string }[] = [
   { key: 'nav.impact', href: '/impact/' },
   { key: 'nav.recognition', href: '/recognition/' },
   { key: 'nav.media', href: '/media/' },
-  { key: 'nav.insights', href: '/insights/' },
+  { key: 'nav.insights', href: '/blog/' },
   { key: 'nav.resources', href: '/resources/' },
 ]
 const work: { key: UiKey; href: string }[] = [

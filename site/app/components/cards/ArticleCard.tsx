@@ -28,7 +28,7 @@ export function ArticleCard({ a, featured = false, as: H = 'h3' }: { a: Article;
           {a.sample && <Badge tone="amber">{t('ins.sample')}</Badge>}
         </div>
         <H className={cn('mt-3 font-display font-semibold tracking-tight text-ink', featured ? 'text-2xl md:text-3xl' : 'text-xl')}>
-          <LocalLink to={`/insights/${a.slug}/`} className="after:absolute after:inset-0 group-hover:text-accent">{l(a.title)}</LocalLink>
+          <LocalLink to={`/blog/${a.slug}/`} className="after:absolute after:inset-0 group-hover:text-accent">{l(a.title)}</LocalLink>
         </H>
         <p className="mt-3 text-muted">{l(a.excerpt)}</p>
         <p className="mt-auto flex items-center justify-between pt-6 text-sm text-muted">
