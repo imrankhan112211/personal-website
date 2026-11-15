@@ -4,7 +4,7 @@ import reviewImages from '~/content/reviewImages.json'
 import { publicPosts, videoReviews, type PublicPost } from '~/content/reviews'
 import { useLocale } from '~/i18n/useLocale'
 
-const images = reviewImages as { posts: Record<string, string>; videos: Record<string, string> }
+const images = reviewImages as { posts: Record<string, string>; avatars?: Record<string, string>; videos: Record<string, string> }
 const FIRST = 24
 
 /** Video reviews + public posts as clickable image cards. Each opens the original Facebook post. */
@@ -83,7 +83,7 @@ function PostGrid({ posts }: { posts: PublicPost[] }) {
             <a href={p.urls[0]} target="_blank" rel="noopener noreferrer" className="group flex h-full flex-col overflow-hidden rounded-2xl bg-mist transition-[transform,box-shadow] duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_40px_-24px_rgb(11_13_18/0.4)]">
               {img && <img src={img} alt="" loading="lazy" decoding="async" className="aspect-square w-full object-cover" />}
               <span className={img ? 'flex flex-1 flex-col p-3' : 'flex flex-1 items-center gap-3 p-3'}>
-                {!img && <Avatar name={p.name} className="size-11 shrink-0 rounded-full text-sm" />}
+                {!img && <Avatar name={p.name} src={images.avatars?.[p.name]} className="size-11 shrink-0 rounded-full text-sm" />}
                 <span className="min-w-0">
                   <span className="line-clamp-2 text-sm font-semibold leading-snug text-ink">{p.name}</span>
                   <span className="mt-0.5 flex items-center gap-1 text-xs text-muted group-hover:text-accent">

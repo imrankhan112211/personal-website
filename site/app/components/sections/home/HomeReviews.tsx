@@ -4,9 +4,9 @@ import { Eyebrow } from '~/components/ui/SectionHeading'
 import { Avatar } from '~/components/ui/Avatar'
 import reviewImages from '~/content/reviewImages.json'
 import { publicPosts, videoReviews } from '~/content/reviews'
-
-const images = reviewImages as { posts: Record<string, string>; videos: Record<string, string> }
 import { useLocale } from '~/i18n/useLocale'
+
+const images = reviewImages as { posts: Record<string, string>; avatars?: Record<string, string>; videos: Record<string, string> }
 
 const parseCount = (v: string) => parseFloat(v) * (v.endsWith('M') ? 1e6 : v.endsWith('K') ? 1e3 : 1)
 
@@ -28,7 +28,7 @@ export function HomeReviews() {
             {publicPosts.slice(0, 12).map((p) => (
               <li key={p.name}>
                 <a href={p.urls[0]} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-10 items-center gap-2 rounded-full bg-mist py-1 pl-1 pr-3 text-[0.8125rem] text-ink transition-colors hover:bg-accent hover:text-white">
-                  <Avatar name={p.name} src={images.posts[p.name]} className="size-8 rounded-full text-[0.7rem]" />
+                  <Avatar name={p.name} src={images.avatars?.[p.name]} className="size-8 rounded-full text-[0.7rem]" />
                   {p.name}
                 </a>
               </li>

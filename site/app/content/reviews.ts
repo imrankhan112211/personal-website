@@ -1,6 +1,7 @@
 /**
  * Social proof from public Facebook posts and reels, supplied by Abdullah Al Imran (14 Nov 2026).
- * We link to each original public post instead of copying its text or screenshots.
+ * Cards link to each original public post. Images are the owner-supplied screenshots, frames of the reels and the
+ * public profile pictures shown on those posts (content-inbox → npm run images); post text is not copied.
  * Owner confirmed (14 Nov 2026) that these people agreed to their posts being shown.
  * View/reaction counts are as shown on Facebook when supplied and will change over time.
  */
@@ -9,15 +10,15 @@ export type VideoReview = { url: string; caption: string; language: 'en' | 'bn';
 export type PublicPost = { name: string; urls: string[] }
 
 export const videoReviews: VideoReview[] = [
-  { url: 'https://www.facebook.com/reel/3603688096429530', caption: 'আলহামদুলিল্লাহ আল্লাহর রহমতে অব…', language: 'bn', author: null, views: '98K', reactions: '4.2K' },
-  { url: 'https://www.facebook.com/reel/850267139900931', caption: 'I almost lost my page and profil…', language: 'en', author: null, views: '210K', reactions: '5K' },
+  { url: 'https://www.facebook.com/reel/3603688096429530', caption: 'আলহামদুলিল্লাহ আল্লাহর রহমতে অব…', language: 'bn', author: 'Nahid official', views: '98K', reactions: '4.2K' },
+  { url: 'https://www.facebook.com/reel/850267139900931', caption: 'I almost lost my page and profil…', language: 'en', author: 'Dana Bhai Joss', views: '210K', reactions: '5K' },
   { url: 'https://www.facebook.com/reel/7784524201638913', caption: 'Sharmin Rana Vlog পেজটি হ্যা*ক হও…', language: 'bn', author: 'Sharmin Rana Vlog', views: '21K', reactions: '1K' },
   { url: 'https://www.facebook.com/Emaanshoppingzone/videos/1055399792046858', caption: 'Thank You Probfly IT and Abdull…', language: 'en', author: 'Emaan Shopping Zone', views: '4.6K', reactions: '129' },
   { url: 'https://www.facebook.com/reel/613850491584960', caption: 'Page suspend hoye giyechilo…', language: 'en', author: null, views: '8.4K', reactions: '86' },
-  { url: 'https://www.facebook.com/reel/968258918662690', caption: 'My page got suspended back in 3…', language: 'en', author: null, views: '32K', reactions: '1.4K' },
+  { url: 'https://www.facebook.com/reel/968258918662690', caption: 'My page got suspended back in 3…', language: 'en', author: 'Anirban Kaisar', views: '32K', reactions: '1.4K' },
   { url: 'https://www.facebook.com/reel/348748674779647', caption: 'সাত মাস আগে আমার অফিসিয়াল ফেসবু…', language: 'bn', author: null, views: '26K', reactions: '1.2K' },
-  { url: 'https://www.facebook.com/reel/1478467549369174', caption: 'My page is back ❤️ Special Than…', language: 'en', author: null, views: '26K', reactions: '1.3K' },
-  { url: 'https://www.facebook.com/share/r/1Uo1iYR7x8/', caption: 'Happy Valentine\'s Day 😘 Thanks …', language: 'en', author: null, views: '96K', reactions: '48K' },
+  { url: 'https://www.facebook.com/reel/1478467549369174', caption: 'My page is back ❤️ Special Than…', language: 'en', author: 'Pinky Mama', views: '26K', reactions: '1.3K' },
+  { url: 'https://www.facebook.com/share/r/1Uo1iYR7x8/', caption: 'Happy Valentine\'s Day 😘 Thanks …', language: 'en', author: 'Liliput Farhan', views: '96K', reactions: '48K' },
   { url: 'https://www.facebook.com/share/v/17m8x7PoDe/', caption: 'Reel by Umma Kulsum Popi', language: 'en', author: 'Umma Kulsum Popi', views: '3.1M', reactions: '252K' },
 ]
 

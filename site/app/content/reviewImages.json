@@ -1,4 +1,52 @@
 {
- "posts": {},
- "videos": {}
+ "posts": {
+  "Anica Khan": "/images/reviews/post-anicakhan.webp",
+  "Cablgram": "/images/reviews/post-cablgram.webp",
+  "Hatman Cooking": "/images/reviews/post-hatmancooking.webp",
+  "Odd Signature": "/images/reviews/post-oddsignature.webp",
+  "Piran Khan": "/images/reviews/post-pirankhan.webp",
+  "Pori Moni": "/images/reviews/post-porimoni.webp",
+  "Quazi Sabir": "/images/reviews/post-quazisabir.webp",
+  "Ratul Sinha": "/images/reviews/post-ratulsinha.webp",
+  "Rumor Scanner": "/images/reviews/post-rumorscanner.webp",
+  "Science Bee": "/images/reviews/post-sciencebee.webp",
+  "Tanjim Saiara Totini": "/images/reviews/post-tanjimsaiaratotini.webp"
+ },
+ "avatars": {
+  "Amreen'sparkle": "/images/reviews/avatar-amreensparkle.webp",
+  "Anica Khan": "/images/reviews/avatar-anicakhan.webp",
+  "Bibi Russell": "/images/reviews/avatar-bibirussell.webp",
+  "Bishwanath Ghosh": "/images/reviews/avatar-bishwanathghosh.webp",
+  "Cablgram": "/images/reviews/avatar-cablgram.webp",
+  "Dipankar Halder": "/images/reviews/avatar-dipankarhalder.webp",
+  "Himu Akter": "/images/reviews/avatar-himuakter.webp",
+  "Jahan Asif": "/images/reviews/avatar-jahanasif.webp",
+  "Kazi Romana Islam Nirr": "/images/reviews/avatar-kaziromanaislamnirr.webp",
+  "Mahmudul Hasan Faisal": "/images/reviews/avatar-mahmudulhasanfaisal.webp",
+  "Odd Signature": "/images/reviews/avatar-oddsignature.webp",
+  "Piran Khan": "/images/reviews/avatar-pirankhan.webp",
+  "Pori Moni": "/images/reviews/avatar-porimoni.webp",
+  "Puja Chery": "/images/reviews/avatar-pujachery.webp",
+  "Quazi Sabir": "/images/reviews/avatar-quazisabir.webp",
+  "Ramkrishna Saha": "/images/reviews/avatar-ramkrishnasaha.webp",
+  "Rumor Scanner": "/images/reviews/avatar-rumorscanner.webp",
+  "Sahil Rony": "/images/reviews/avatar-sahilrony.webp",
+  "Saibur Rahman Morsalin": "/images/reviews/avatar-saiburrahmanmorsalin.webp",
+  "Shirin Akter": "/images/reviews/avatar-shirinakter.webp",
+  "Tanjim Saiara Totini": "/images/reviews/avatar-tanjimsaiaratotini.webp",
+  "Thanzil Jony": "/images/reviews/avatar-thanziljony.webp",
+  "Tohura Khatun": "/images/reviews/avatar-tohurakhatun.webp",
+  "Twinkk Carol": "/images/reviews/avatar-twinkkcarol.webp"
+ },
+ "videos": {
+  "1": "/images/reviews/video-1.webp",
+  "2": "/images/reviews/video-2.webp",
+  "3": "/images/reviews/video-3.webp",
+  "4": "/images/reviews/video-4.webp",
+  "6": "/images/reviews/video-6.webp",
+  "7": "/images/reviews/video-7.webp",
+  "8": "/images/reviews/video-8.webp",
+  "9": "/images/reviews/video-9.webp",
+  "10": "/images/reviews/video-10.webp"
+ }
 }

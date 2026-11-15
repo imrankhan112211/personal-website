@@ -53,13 +53,14 @@ for (const v of m.videos) {
 
 // ── Review screenshots / video thumbnails ──────────────────────────────
 // content-inbox/07-testimonials-screenshots/<Person name>.jpg  → matched to a name in reviews.ts
+// content-inbox/09-review-avatars/<Person name>.jpg          → small round profile picture (used when there is no screenshot)
 // content-inbox/08-video-reviews/<number>.jpg                  → video review number (see LIST.txt there)
 const key = (t) => t.normalize('NFKD').toLowerCase().replace(/^\d+\s*[-–.)]\s*/, '').replace(/[^\p{L}\p{N}]+/gu, '')
 const reviewsSrc = readFileSync(join(here, '../app/content/reviews.ts'), 'utf8')
 const postNames = [...reviewsSrc.matchAll(/name: '((?:[^'\\]|\\.)+)'/g)].map((m) => m[1].replace(/\\'/g, "'"))
 const videoCount = (reviewsSrc.match(/caption: '/g) ?? []).length
 const imgExt = /\.(jpe?g|png|webp|heic)$/i
-const index = { posts: {}, videos: {} }
+const index = { posts: {}, avatars: {}, videos: {} }
 const revOut = join(pub, 'images/reviews')
 mkdirSync(revOut, { recursive: true })
 
@@ -74,6 +75,17 @@ if (existsSync(postDir)) {
     index.posts[name] = `/images/reviews/post-${k}.webp`
   }
 }
+const avDir = join(inbox, '09-review-avatars')
+if (existsSync(avDir)) {
+  for (const f of readdirSync(avDir).filter((f) => imgExt.test(f))) {
+    const k = key(f.replace(imgExt, ''))
+    const name = postNames.find((n) => key(n) === k)
+    if (!name) { console.log('avatar  (no matching name, skipped):', f); continue }
+    const out = join(revOut, `avatar-${k}.webp`)
+    await sharp(readable(join('09-review-avatars', f))).rotate().resize(96, 96, { fit: 'cover' }).webp({ quality: 78 }).toFile(out)
+    index.avatars[name] = `/images/reviews/avatar-${k}.webp`
+  }
+}
 const vidDir = join(inbox, '08-video-reviews')
 if (existsSync(vidDir)) {
   for (const f of readdirSync(vidDir).filter((f) => imgExt.test(f))) {
@@ -85,4 +97,4 @@ if (existsSync(vidDir)) {
   }
 }
 writeFileSync(join(here, '../app/content/reviewImages.json'), JSON.stringify(index, null, 1) + '\n')
-console.log(`reviews: ${Object.keys(index.posts).length} post images, ${Object.keys(index.videos).length} video thumbnails`)
+console.log(`reviews: ${Object.keys(index.posts).length} post images, ${Object.keys(index.avatars).length} avatars, ${Object.keys(index.videos).length} video thumbnails`)
