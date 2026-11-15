@@ -34,11 +34,19 @@ export const person = {
     en: 'I work where technology entrepreneurship meets social media security and digital brand protection — helping people and online businesses protect their accounts, their brands and the content they create.',
     bn: 'প্রযুক্তি উদ্যোক্তা হিসেবে আমি কাজ করি সোশ্যাল মিডিয়া নিরাপত্তা ও ডিজিটাল ব্র্যান্ড সুরক্ষা নিয়ে — যাতে মানুষ ও অনলাইন ব্যবসা তাদের অ্যাকাউন্ট, ব্র্যান্ড এবং নিজেদের তৈরি কনটেন্ট সুরক্ষিত রাখতে পারে।',
   } satisfies Localized,
-  /** Used for meta descriptions and Person.description */
+  /** One sentence, third person — the canonical description used for Person.description, llms.txt and meta tags. */
   description: {
-    en: 'Abdullah Al Imran is a technology entrepreneur, cyber safety advocate, trainer and consultant focused on social media security, digital brand protection, online business safety and digital awareness.',
-    bn: 'আব্দুল্লাহ আল ইমরান একজন প্রযুক্তি উদ্যোক্তা, সাইবার সেফটি অ্যাডভোকেট, প্রশিক্ষক ও পরামর্শক। তাঁর কাজের মূল ক্ষেত্র সোশ্যাল মিডিয়া নিরাপত্তা, ডিজিটাল ব্র্যান্ড সুরক্ষা, অনলাইন ব্যবসার নিরাপত্তা এবং ডিজিটাল সচেতনতা।',
+    en: 'Abdullah Al Imran is a Bangladeshi technology entrepreneur and cyber safety advocate, the founder of Probfly IT and Kaktaruaa, and a recipient of The Diana Award (2026).',
+    bn: 'আব্দুল্লাহ আল ইমরান বাংলাদেশি প্রযুক্তি উদ্যোক্তা ও সাইবার সেফটি অ্যাডভোকেট, Probfly IT ও কাকতাড়ুয়ার প্রতিষ্ঠাতা এবং দ্য ডায়ানা অ্যাওয়ার্ড (২০২৬) প্রাপ্ত।',
   } satisfies Localized,
+  /** Verified personal facts (published in national media, Nov 2026). Used in the Biography quick facts and Person schema. */
+  nationality: { en: 'Bangladeshi', bn: 'বাংলাদেশি' } satisfies Localized,
+  birthPlace: { en: 'Patuakhali, Bangladesh', bn: 'পটুয়াখালী, বাংলাদেশ' } satisfies Localized,
+  education: {
+    en: 'BA in Bengali literature, Netrokona University',
+    bn: 'বাংলা সাহিত্যে স্নাতক, নেত্রকোনা বিশ্ববিদ্যালয়',
+  } satisfies Localized,
+  alumniOf: 'Netrokona University',
   /** Main portrait (made by `npm run images`) */
   portrait: '/images/abdullah-al-imran-portrait-960.webp' as string | null,
   /** Relaxed photo used on the About page */

@@ -5,7 +5,8 @@ import { PageHero } from '~/components/sections/shared/PageHero'
 import { Badge } from '~/components/ui/Badge'
 import { ButtonLink } from '~/components/ui/Button'
 import { Placeholder, SHOW_PLACEHOLDERS } from '~/components/ui/Placeholder'
-import { longBio, shortBio, aboutChapters } from '~/content/about'
+import { longBio, shortBio, aboutChapters, profileFaqs } from '~/content/about'
+import { Faq, faqSchema } from '~/components/sections/shared/Faq'
 import { expertise } from '~/content/home'
 import { ctaLinks } from '~/content/navigation'
 import { person, SITE_URL } from '~/content/person'
@@ -21,7 +22,7 @@ import { cn } from '~/lib/utils'
 import { formatPartialDate } from '~/lib/dates'
 
 export function meta({ location }: Route.MetaArgs) {
-  return metaFor('biography', location.pathname, [profilePageSchema(localeFromPath(location.pathname), '/about/biography/')])
+  return metaFor('biography', location.pathname, [profilePageSchema(localeFromPath(location.pathname), '/about/biography/'), faqSchema(profileFaqs, localeFromPath(location.pathname))])
 }
 
 export default function Biography() {
@@ -40,6 +41,9 @@ export default function Biography() {
             <h2 id="facts-title" className="t-eyebrow text-accent">{t('bio.facts')}</h2>
             <dl className="mt-6 grid gap-5 text-[0.9375rem]">
               <Fact label={t('bio.fullname')}><span className="font-semibold text-ink">{person.name.en}</span><span className="block text-muted" lang="bn">{person.name.bn}</span></Fact>
+              <Fact label={t('bio.nationality')}>{l(person.nationality)}</Fact>
+              <Fact label={t('bio.born')}>{l(person.birthPlace)}</Fact>
+              <Fact label={t('bio.education')}>{l(person.education)}</Fact>
               <Fact label={t('bio.protitle')}>{person.titleParts.map((p) => l(p)).join(' · ')}</Fact>
               <Fact label={t('bio.website')}><a href={SITE_URL} className="text-accent hover:underline">abdullahalimran.com</a></Fact>
               <Fact label={t('bio.ventures')}>{ventures.map((v) => v.name).join(', ')}</Fact>
@@ -122,6 +126,10 @@ export default function Biography() {
               ))}
             </ul>
             <p><LocalLink to="/media/" className="font-medium text-ink underline decoration-line-strong underline-offset-[6px] hover:text-accent">{t('bio.media.all')} ({media.length})</LocalLink></p>
+          </BioSection>
+
+          <BioSection id="faq" title={t('bio.faq')}>
+            <Faq items={profileFaqs} />
           </BioSection>
 
           <div className="mt-14 flex flex-wrap gap-3">

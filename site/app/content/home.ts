@@ -3,16 +3,16 @@ import type { Localized } from '~/i18n/locales'
 /** Homepage-specific copy. Facts here must match the About and Biography pages. */
 export const aboutIntro: Localized[] = [
   {
-    en: 'I’m a technology entrepreneur and cyber safety advocate. My work brings together two things: building technology ventures, and helping people stay safe and in control of their digital lives.',
-    bn: 'আমি একজন প্রযুক্তি উদ্যোক্তা ও সাইবার সেফটি অ্যাডভোকেট। আমার কাজে দুটি বিষয় একসঙ্গে চলে — প্রযুক্তিভিত্তিক উদ্যোগ গড়ে তোলা, আর মানুষকে তাদের ডিজিটাল জীবনে নিরাপদ ও নিয়ন্ত্রণে থাকতে সাহায্য করা।',
+    en: 'Abdullah Al Imran is a Bangladeshi technology entrepreneur and cyber safety advocate, the founder of Probfly IT and the non-profit Kaktaruaa, and a recipient of The Diana Award (2026).',
+    bn: 'আব্দুল্লাহ আল ইমরান বাংলাদেশি প্রযুক্তি উদ্যোক্তা ও সাইবার সেফটি অ্যাডভোকেট, Probfly IT ও অলাভজনক উদ্যোগ কাকতাড়ুয়ার প্রতিষ্ঠাতা এবং দ্য ডায়ানা অ্যাওয়ার্ড (২০২৬) প্রাপ্ত।',
   },
   {
-    en: 'Most of my professional work centres on social media security and digital brand protection: advising individuals, public figures, content creators and online businesses on protecting their accounts, their brands and their content.',
-    bn: 'আমার পেশাগত কাজের বড় অংশ সোশ্যাল মিডিয়া নিরাপত্তা ও ডিজিটাল ব্র্যান্ড সুরক্ষা ঘিরে — ব্যক্তি, পাবলিক ফিগার, কনটেন্ট ক্রিয়েটর ও অনলাইন ব্যবসাকে তাদের অ্যাকাউন্ট, ব্র্যান্ড ও কনটেন্ট সুরক্ষায় পরামর্শ দেওয়া।',
+    en: 'Since founding Probfly IT in 2021, he has worked with businesses, brands, media organisations and public figures on social media security and brand protection, and today builds software and automation products with his teams at Probfly IT and Zurvis.io.',
+    bn: '২০২১ সালে Probfly IT প্রতিষ্ঠার পর থেকে তিনি ব্যবসা, ব্র্যান্ড, মিডিয়া প্রতিষ্ঠান ও পাবলিক ফিগারদের সঙ্গে সোশ্যাল মিডিয়া নিরাপত্তা ও ব্র্যান্ড সুরক্ষা নিয়ে কাজ করছেন; বর্তমানে Probfly IT ও Zurvis.io-এর টিমের সঙ্গে সফটওয়্যার ও অটোমেশন পণ্য তৈরি করছেন।',
   },
   {
-    en: 'Alongside consulting, I deliver training and awareness sessions on cyber safety and online business safety, and I’m involved in ventures working on digital protection, online safety and business technology.',
-    bn: 'পরামর্শের পাশাপাশি আমি সাইবার নিরাপত্তা ও অনলাইন ব্যবসার নিরাপত্তা বিষয়ে প্রশিক্ষণ ও সচেতনতামূলক সেশন পরিচালনা করি, এবং ডিজিটাল সুরক্ষা, অনলাইন নিরাপত্তা ও বিজনেস টেকনোলজি নিয়ে কাজ করা কয়েকটি উদ্যোগের সঙ্গে যুক্ত আছি।',
+    en: 'Through Kaktaruaa he works to prevent cyberbullying and online harassment, and he has delivered cyber safety training for students, institutions and 45 officers of Bangladesh Police’s CID.',
+    bn: 'কাকতাড়ুয়ার মাধ্যমে তিনি সাইবার বুলিং ও অনলাইন হয়রানি প্রতিরোধে কাজ করেন, এবং শিক্ষার্থী, বিভিন্ন প্রতিষ্ঠান ও বাংলাদেশ পুলিশের সিআইডির ৪৫ জন কর্মকর্তাকে সাইবার সেফটি প্রশিক্ষণ দিয়েছেন।',
   },
 ]
 

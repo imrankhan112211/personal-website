@@ -21,6 +21,10 @@ export function personSchema(locale: Locale) {
     jobTitle: person.titleParts.map((p) => tr(p, locale)),
     description: tr(person.description, locale),
     ...(person.portrait ? { image: SITE_URL + person.portrait } : {}),
+    nationality: { '@type': 'Country', name: 'Bangladesh' },
+    birthPlace: { '@type': 'Place', name: person.birthPlace.en },
+    alumniOf: { '@type': 'CollegeOrUniversity', name: person.alumniOf },
+    knowsLanguage: ['bn', 'en'],
     ...(sameAs.length ? { sameAs } : {}),
     // Only awards actually received (never nominations)
     ...(() => {
@@ -30,16 +34,17 @@ export function personSchema(locale: Locale) {
     knowsAbout: [
       'Social media security',
       'Digital brand protection',
-      'Online business safety',
-      'Digital content protection',
-      'Online reputation management',
+      'Cyberbullying prevention',
+      'Online harassment response',
+      'Social commerce',
       'Cyber safety awareness',
       'Technology entrepreneurship',
+      'Business automation',
     ],
     // Verified venture roles (Founder / Co-founder)
     ...(() => {
       const orgs = ventures.filter((v) => v.roleVerified).map((v) => ({ '@type': 'Organization', name: v.name, ...(v.url ? { url: v.url } : {}) }))
-      return orgs.length ? { worksFor: orgs } : {}
+      return orgs.length ? { worksFor: orgs, founder: orgs } : {}
     })(),
   }
 }

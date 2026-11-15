@@ -27,8 +27,8 @@ export const ventures: Venture[] = [
     logo: '/logos/probfly-it.webp',
     url: 'https://probfly.com',
     description: {
-      en: 'Technology and digital solutions company focused on social media solutions, digital brand protection, business automation and related services.',
-      bn: 'সোশ্যাল মিডিয়া সলিউশন, ডিজিটাল ব্র্যান্ড সুরক্ষা, বিজনেস অটোমেশন ও সংশ্লিষ্ট সেবা নিয়ে কাজ করা একটি প্রযুক্তি ও ডিজিটাল সলিউশন প্রতিষ্ঠান।',
+      en: 'Technology company founded in 2021, providing social media solutions, digital brand protection, software and business automation to clients in Bangladesh and abroad.',
+      bn: '২০২১ সালে প্রতিষ্ঠিত প্রযুক্তি প্রতিষ্ঠান; দেশ-বিদেশের ক্লায়েন্টদের সোশ্যাল মিডিয়া সলিউশন, ডিজিটাল ব্র্যান্ড সুরক্ষা, সফটওয়্যার ও বিজনেস অটোমেশন সেবা দেয়।',
     },
     role: { en: 'Founder', bn: 'প্রতিষ্ঠাতা' },
     roleVerified: true,
@@ -40,8 +40,8 @@ export const ventures: Venture[] = [
     logo: '/logos/kaktaruaa.webp',
     url: 'https://kaktaruaa.org',
     description: {
-      en: 'Cyber safety and digital awareness initiative working on online safety, harassment prevention, education and digital protection.',
-      bn: 'অনলাইন নিরাপত্তা, হয়রানি প্রতিরোধ, শিক্ষা ও ডিজিটাল সুরক্ষা নিয়ে কাজ করা একটি সাইবার সেফটি ও ডিজিটাল সচেতনতা উদ্যোগ।',
+      en: 'Non-profit digital safety initiative working to prevent cyberbullying and online harassment and to support people facing blackmail, fraud and account hacking.',
+      bn: 'সাইবার বুলিং ও অনলাইন হয়রানি প্রতিরোধ এবং ব্ল্যাকমেইল, প্রতারণা ও অ্যাকাউন্ট হ্যাকিংয়ের শিকার মানুষকে সহায়তায় কাজ করা অলাভজনক ডিজিটাল নিরাপত্তা উদ্যোগ।',
     },
     role: { en: 'Founder', bn: 'প্রতিষ্ঠাতা' },
     roleVerified: true,
