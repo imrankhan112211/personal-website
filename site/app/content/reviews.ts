@@ -125,3 +125,22 @@ export const publicPosts: PublicPost[] = [
 ]
 
 export const asOf = '2026-11-14'
+
+/**
+ * "Trusted by" strip under the homepage hero: organisations and well-known names, in display order.
+ * Names must match `publicPosts` (the logo/photo and link come from there). Owner approved logo use (Nov 2026).
+ */
+export const trustedBy: { name: string; label?: string }[] = [
+  { name: 'Rumor Scanner' },
+  { name: 'Cablgram' },
+  { name: 'Science Bee' },
+  { name: 'Odd Signature' },
+  { name: 'Emaan', label: 'Emaan' },
+  { name: 'Hatman Cooking' },
+  { name: 'Bibi Russell' },
+  { name: 'Pori Moni' },
+  { name: 'Tanjim Saiara Totini' },
+  { name: 'Ratul Sinha' },
+  { name: 'Piran Khan' },
+  { name: 'Puja Chery' },
+]

@@ -46,6 +46,7 @@ export const ui = s({
   'hero.founder': { en: 'Founder, Probfly IT & Kaktaruaa', bn: 'প্রতিষ্ঠাতা, Probfly IT ও কাকতাড়ুয়া' },
   'hero.cofounder': { en: 'Co-founder, Zurvis.io', bn: 'সহ-প্রতিষ্ঠাতা, Zurvis.io' },
   'hero.award': { en: 'The Diana Award 2026', bn: 'দ্য ডায়ানা অ্যাওয়ার্ড ২০২৬' },
+  'trusted.title': { en: 'Trusted by creators, brands and organisations', bn: 'যাঁদের আস্থা পেয়েছি: ক্রিয়েটর, ব্র্যান্ড ও প্রতিষ্ঠান' },
   'home.hero.eyebrow': { en: 'Official website', bn: 'অফিসিয়াল ওয়েবসাইট' },
   'home.about.eyebrow': { en: 'Profile', bn: 'পরিচিতি' },
   'home.about.title': { en: 'Who is Abdullah Al Imran?', bn: 'আব্দুল্লাহ আল ইমরান কে?' },

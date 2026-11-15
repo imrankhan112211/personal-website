@@ -4,6 +4,7 @@ import { Hero } from '~/components/sections/home/Hero'
 import { HomeMedia } from '~/components/sections/home/HomeMedia'
 import { HomeReviews } from '~/components/sections/home/HomeReviews'
 import { Recognition } from '~/components/sections/home/Recognition'
+import { TrustedBy } from '~/components/sections/home/TrustedBy'
 import { WhatIDo } from '~/components/sections/home/WhatIDo'
 import { CtaBand } from '~/components/sections/shared/CtaBand'
 import { localeFromPath } from '~/i18n/locales'
@@ -20,6 +21,7 @@ export default function Home() {
     <main id="main">
       {/* 1 Who I am → 2 What I offer → 3 Who I've worked with → 4 Awards → 5 Press → CTA */}
       <Hero />
+      <TrustedBy />
       <About />
       <WhatIDo />
       <HomeReviews />
