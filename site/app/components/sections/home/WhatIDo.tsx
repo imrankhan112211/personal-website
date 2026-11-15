@@ -1,4 +1,4 @@
-import { ArrowRight, Briefcase, GraduationCap, Wrench } from 'lucide-react'
+import { ArrowRight, Briefcase, GraduationCap, Code2 } from 'lucide-react'
 import { ButtonLink } from '~/components/ui/Button'
 import { LocalLink } from '~/components/ui/LocalLink'
 import { SectionHeading } from '~/components/ui/SectionHeading'
@@ -6,7 +6,7 @@ import { services } from '~/content/home'
 import { useLocale } from '~/i18n/useLocale'
 import { cn } from '~/lib/utils'
 
-const icons = { consulting: Briefcase, training: GraduationCap, services: Wrench }
+const icons = { consulting: Briefcase, training: GraduationCap, services: Code2 }
 
 /** What I offer, each with a direct way to ask for it. */
 export function WhatIDo() {

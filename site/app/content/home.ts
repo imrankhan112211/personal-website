@@ -94,20 +94,21 @@ export const services: {
   title: Localized
   body: Localized
   points: Localized[]
-  cta: { key: 'cta.book' | 'cta.invite' | 'cta.service'; href: string }
+  cta: { key: 'cta.book' | 'cta.invite' | 'cta.project'; href: string }
 }[] = [
   {
     id: 'consulting',
     href: '/consulting/',
     title: { en: 'Consulting & Advisory', bn: 'পরামর্শ ও অ্যাডভাইজরি' },
     body: {
-      en: 'For individuals, public figures, creators and online businesses who need to secure, recover or protect their accounts and brand.',
-      bn: 'ব্যক্তি, পাবলিক ফিগার, ক্রিয়েটর ও অনলাইন ব্যবসার জন্য — যাঁদের অ্যাকাউন্ট ও ব্র্যান্ড সুরক্ষিত রাখা, ফিরিয়ে আনা বা রক্ষা করা দরকার।',
+      en: 'Strategic advice for businesses, brands and public figures on staying secure and in control across social media and online platforms.',
+      bn: 'ব্যবসা, ব্র্যান্ড ও পাবলিক ফিগারদের জন্য সোশ্যাল মিডিয়া ও অনলাইন প্ল্যাটফর্মে নিরাপদ ও নিয়ন্ত্রণে থাকার কৌশলগত পরামর্শ।',
     },
     points: [
-      { en: 'Account security & recovery guidance', bn: 'অ্যাকাউন্ট নিরাপত্তা ও পুনরুদ্ধারে দিকনির্দেশনা' },
-      { en: 'Page verification & brand protection', bn: 'পেজ ভেরিফিকেশন ও ব্র্যান্ড সুরক্ষা' },
-      { en: 'Impersonation & content protection', bn: 'ছদ্মবেশ ও কনটেন্ট সুরক্ষা' },
+      { en: 'Business & brand protection', bn: 'বিজনেস ও ব্র্যান্ড সুরক্ষা' },
+      { en: 'Social media solutions & incident response', bn: 'সোশ্যাল মিডিয়া সলিউশন ও ইনসিডেন্ট রেসপন্স' },
+      { en: 'Social commerce technical advisory', bn: 'সোশ্যাল কমার্সের টেকনিক্যাল অ্যাডভাইজরি' },
+      { en: 'Cyber harassment & blackmail response', bn: 'সাইবার হয়রানি ও ব্ল্যাকমেইল মোকাবিলা' },
     ],
     cta: { key: 'cta.book', href: '/contact/?type=consulting' },
   },
@@ -122,23 +123,23 @@ export const services: {
     points: [
       { en: 'Workshops for teams and staff', bn: 'টিম ও কর্মীদের জন্য কর্মশালা' },
       { en: 'Awareness programmes for students', bn: 'শিক্ষার্থীদের জন্য সচেতনতা কার্যক্রম' },
-      { en: 'Sessions for law-enforcement & institutions', bn: 'আইনশৃঙ্খলা বাহিনী ও প্রতিষ্ঠানের জন্য সেশন' },
+      { en: 'Sessions for law enforcement & institutions', bn: 'আইনশৃঙ্খলা বাহিনী ও প্রতিষ্ঠানের জন্য সেশন' },
     ],
     cta: { key: 'cta.invite', href: '/contact/?type=training' },
   },
   {
     id: 'services',
-    href: '/consulting/',
-    title: { en: 'Services with My Team', bn: 'টিমের সঙ্গে সার্ভিস' },
+    href: '/ventures/',
+    title: { en: 'Technology Solutions', bn: 'টেকনোলজি সলিউশন' },
     body: {
-      en: 'Hands-on help delivered with my team: we take on the work of fixing, recovering and securing accounts and pages for you.',
-      bn: 'আমার টিমের সঙ্গে সরাসরি কাজ: আপনার অ্যাকাউন্ট ও পেজ ঠিক করা, ফিরিয়ে আনা ও সুরক্ষিত রাখার কাজ আমরা নিজেরাই করে দিই।',
+      en: 'Delivered with my teams at Probfly IT and Zurvis.io: software, SaaS and automation for businesses, and technical solutions for social media.',
+      bn: 'Probfly IT ও Zurvis.io-এর টিমের সঙ্গে: ব্যবসার জন্য সফটওয়্যার, SaaS ও অটোমেশন, এবং সোশ্যাল মিডিয়ার টেকনিক্যাল সলিউশন।',
     },
     points: [
-      { en: 'Hacked or disabled account & page recovery', bn: 'হ্যাক বা ডিজেবল হওয়া অ্যাকাউন্ট ও পেজ পুনরুদ্ধার' },
-      { en: 'Page & profile verification', bn: 'পেজ ও প্রোফাইল ভেরিফিকেশন' },
-      { en: 'Monetization, copyright & restriction issues', bn: 'মনিটাইজেশন, কপিরাইট ও রেস্ট্রিকশন সমস্যা' },
+      { en: 'Software & SaaS development', bn: 'সফটওয়্যার ও SaaS ডেভেলপমেন্ট' },
+      { en: 'AI customer service & WhatsApp automation', bn: 'এআই কাস্টমার সার্ভিস ও WhatsApp অটোমেশন' },
+      { en: 'Social media technical solutions', bn: 'সোশ্যাল মিডিয়া টেকনিক্যাল সলিউশন' },
     ],
-    cta: { key: 'cta.service', href: '/contact/?type=service' },
+    cta: { key: 'cta.project', href: '/contact/?type=service' },
   },
 ]

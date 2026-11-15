@@ -3,7 +3,7 @@ import type { Localized } from '~/i18n/locales'
 export const inquiryTypes = [
   { id: 'general', label: { en: 'General inquiry', bn: 'সাধারণ জিজ্ঞাসা' } },
   { id: 'consulting', label: { en: 'Consulting request', bn: 'পরামর্শের অনুরোধ' } },
-  { id: 'service', label: { en: 'Service request (with my team)', bn: 'সার্ভিসের অনুরোধ (টিমের সঙ্গে)' } },
+  { id: 'service', label: { en: 'Technology solution / project', bn: 'টেকনোলজি সলিউশন / প্রজেক্ট' } },
   { id: 'training', label: { en: 'Training invitation', bn: 'প্রশিক্ষণের আমন্ত্রণ' } },
   { id: 'speaking', label: { en: 'Speaking invitation', bn: 'বক্তৃতার আমন্ত্রণ' } },
   { id: 'collaboration', label: { en: 'Business collaboration', bn: 'ব্যবসায়িক সহযোগিতা' } },
@@ -14,10 +14,10 @@ export type InquiryType = (typeof inquiryTypes)[number]['id']
 export const isInquiryType = (v: string | null): v is InquiryType => inquiryTypes.some((t) => t.id === v)
 
 export const consultingAreas: { id: string; label: Localized }[] = [
-  { id: 'social-media-security', label: { en: 'Social media security & account protection', bn: 'সোশ্যাল মিডিয়া নিরাপত্তা ও অ্যাকাউন্ট সুরক্ষা' } },
-  { id: 'brand-content', label: { en: 'Digital brand & content protection', bn: 'ডিজিটাল ব্র্যান্ড ও কনটেন্ট সুরক্ষা' } },
-  { id: 'business-risk', label: { en: 'Online business safety & risk', bn: 'অনলাইন ব্যবসার নিরাপত্তা ও ঝুঁকি' } },
-  { id: 'reputation', label: { en: 'Personal brand & digital reputation', bn: 'পার্সোনাল ব্র্যান্ড ও ডিজিটাল সুনাম' } },
+  { id: 'brand-protection', label: { en: 'Business & brand protection', bn: 'বিজনেস ও ব্র্যান্ড সুরক্ষা' } },
+  { id: 'social-media-solutions', label: { en: 'Social media solutions & incident response', bn: 'সোশ্যাল মিডিয়া সলিউশন ও ইনসিডেন্ট রেসপন্স' } },
+  { id: 'social-commerce', label: { en: 'Social commerce technical advisory', bn: 'সোশ্যাল কমার্সের টেকনিক্যাল অ্যাডভাইজরি' } },
+  { id: 'harassment', label: { en: 'Cyber harassment & blackmail response', bn: 'সাইবার হয়রানি ও ব্ল্যাকমেইল মোকাবিলা' } },
   { id: 'not-sure', label: { en: 'Not sure yet', bn: 'এখনও নিশ্চিত নই' } },
 ]
 
