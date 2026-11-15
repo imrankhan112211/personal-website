@@ -20,36 +20,32 @@ export function Hero() {
     <section aria-labelledby="hero-title" className="container-x pb-2 pt-4 md:pt-6">
       <div className="relative isolate overflow-hidden rounded-[var(--radius-card)] bg-[#0a0b0e] text-white">
         {/* spotlight behind the portrait */}
-        <span aria-hidden className="absolute left-1/2 top-[8%] -z-10 size-[64rem] -translate-x-1/2 rounded-full bg-[radial-gradient(closest-side,rgb(255_255_255/0.16),transparent)] min-[1360px]:left-[45%]" />
+        <span aria-hidden className="absolute left-1/2 top-[14%] -z-10 size-[58rem] -translate-x-1/2 rounded-full bg-[radial-gradient(closest-side,rgb(255_255_255/0.15),transparent)]" />
 
-        <div className="relative mx-auto flex max-w-[1400px] flex-col min-[1360px]:block min-[1360px]:min-h-[min(50rem,calc(100svh-7rem))]">
-          {/* full name */}
-          <h1 id="hero-title" lang="en" className="hero-name relative z-0 px-6 pt-8 text-[#f4f5f7] sm:px-10 min-[1360px]:absolute min-[1360px]:inset-0 min-[1360px]:px-12 min-[1360px]:pt-10">
-            <span className="block">Abdullah</span>
-            <span className="mt-1 flex flex-col items-end min-[1360px]:absolute min-[1360px]:right-12 min-[1360px]:top-[34%] min-[1360px]:mt-0">
-              <span className="hero-al">al</span>
-              <span>Imran</span>
-            </span>
+        <div className="relative mx-auto flex max-w-[1400px] flex-col lg:block lg:min-h-[min(46rem,calc(100svh-7rem))]">
+          {/* full name — one balanced line, centred above the portrait */}
+          <h1 id="hero-title" lang="en" className="hero-name relative z-0 px-6 pt-9 text-center text-[#f4f5f7] sm:px-10 lg:pt-10">
+            Abdullah <span className="hero-al">al</span> Imran
             {locale === 'bn' && <span className="sr-only" lang="bn">{l(person.name)}</span>}
           </h1>
 
-          {/* portrait */}
-          <div className="relative z-10 mt-2 flex justify-center sm:-mt-[4%] min-[1360px]:absolute min-[1360px]:bottom-0 min-[1360px]:left-[45%] min-[1360px]:mt-0 min-[1360px]:w-[min(36vw,33rem)] min-[1360px]:-translate-x-1/2">
+          {/* portrait, centred */}
+          <div className="relative z-10 mt-4 flex justify-center lg:absolute lg:bottom-0 lg:left-1/2 lg:mt-0 lg:w-[min(34vw,29rem)] lg:-translate-x-1/2">
             <img
               src={HERO_IMG}
               srcSet={`/images/abdullah-al-imran-hero-500.webp 500w, ${HERO_IMG} 1000w`}
-              sizes="(min-width: 1360px) 528px, 92vw"
+              sizes="(min-width: 1024px) 464px, 88vw"
               alt={l(person.name)}
               width={1000}
               height={1005}
               fetchPriority="high"
               decoding="async"
-              className="hero-portrait w-[min(92vw,30rem)] min-[1360px]:w-full"
+              className="hero-portrait w-[min(88vw,26rem)] lg:w-full"
             />
           </div>
 
-          {/* title, ventures, award */}
-          <div className="relative z-20 px-6 pt-6 sm:px-10 min-[1360px]:absolute min-[1360px]:bottom-28 min-[1360px]:left-12 min-[1360px]:max-w-[19rem] min-[1360px]:px-0 min-[1360px]:pt-0">
+          {/* title, ventures, award — left of the portrait on desktop */}
+          <div className="relative z-20 px-6 pt-6 sm:px-10 lg:absolute lg:bottom-28 lg:left-12 lg:w-[calc(50%-min(17vw,14.5rem)-4.5rem)] lg:max-w-[19rem] lg:px-0 lg:pt-0">
             <p className="font-display text-xl font-semibold leading-snug text-white md:text-2xl">{t('hero.title')}</p>
             <p className="mt-3 text-[0.9375rem] text-white/75">{t('hero.founder')}</p>
             <p className="text-[0.9375rem] text-white/75">{t('hero.cofounder')}</p>
@@ -59,7 +55,7 @@ export function Hero() {
           </div>
 
           {/* bottom bar: profiles (left) + actions (right) */}
-          <div className="relative z-20 mt-8 flex flex-col-reverse gap-5 border-t border-white/10 px-6 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-10 min-[1360px]:absolute min-[1360px]:inset-x-0 min-[1360px]:bottom-0 min-[1360px]:mt-0 min-[1360px]:border-0 min-[1360px]:bg-gradient-to-t min-[1360px]:from-[#0a0b0e] min-[1360px]:via-[#0a0b0e]/70 min-[1360px]:to-transparent min-[1360px]:px-12 min-[1360px]:pb-8 min-[1360px]:pt-14">
+          <div className="relative z-20 mt-8 flex flex-col-reverse gap-5 border-t border-white/10 px-6 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-10 lg:absolute lg:inset-x-0 lg:bottom-0 lg:mt-0 lg:border-0 lg:bg-gradient-to-t lg:from-[#0a0b0e] lg:via-[#0a0b0e]/70 lg:to-transparent lg:px-12 lg:pb-8 lg:pt-14">
             <ul className="flex items-center gap-2" aria-label={t('bio.socials')}>
               {socials.map((s) => {
                 const Icon = icons[s.id as keyof typeof icons]

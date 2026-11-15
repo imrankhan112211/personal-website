@@ -160,28 +160,20 @@ html[lang="bn"] .t-eyebrow { letter-spacing: 0.04em; text-transform: none; font-
 .prose-article th, .prose-article td { border-bottom: 1px solid var(--line); padding: 0.6em 0.8em; text-align: left; }
 .prose-article hr { border: 0; border-top: 1px solid var(--line); margin: 2.5em 0; }
 
-/* Home hero: full name in a large italic serif, split across the stage */
+/* Home hero: full name on one line, italic serif, sized to sit in proportion above the portrait */
 .hero-name {
   font-family: var(--font-serif) !important;
   font-style: italic;
   font-weight: 400;
-  font-size: clamp(4.5rem, 21vw, 15rem);
-  line-height: 0.88;
-  letter-spacing: -0.035em !important;
-  text-shadow: 0 0 48px rgb(255 255 255 / 0.14);
+  font-size: clamp(2.6rem, 10.5vw, 7.25rem);
+  line-height: 1;
+  letter-spacing: -0.02em !important;
+  white-space: nowrap;
+  text-shadow: 0 0 40px rgb(255 255 255 / 0.12);
 }
 .hero-al {
-  font-family: var(--font-sans);
-  font-style: normal;
-  font-size: clamp(0.875rem, 1.6vw, 1.25rem);
-  font-weight: 500;
-  letter-spacing: 0.4em;
-  text-transform: uppercase;
+  font-size: 0.62em;
   opacity: 0.7;
-  text-shadow: none;
-  margin-bottom: 0.35rem;
-  margin-right: 0.15em;
+  margin: 0 0.06em;
 }
 .hero-portrait { filter: drop-shadow(0 0 32px rgb(255 255 255 / 0.10)); }
-@media (min-width: 768px) { .hero-name { font-size: min(13vw, 10.5rem); } }
-@media (min-width: 1360px) { .hero-name { font-size: min(15vw, 15rem); } }
