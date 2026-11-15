@@ -16,7 +16,7 @@ const explore: { key: UiKey; href: string }[] = [
   { key: 'nav.recognition', href: '/recognition/' },
   { key: 'nav.media', href: '/media/' },
   { key: 'nav.insights', href: '/blog/' },
-  { key: 'nav.resources', href: '/resources/' },
+  { key: 'nav.resources', href: '/courses/' },
 ]
 const work: { key: UiKey; href: string }[] = [
   { key: 'nav.consulting', href: '/consulting/' },

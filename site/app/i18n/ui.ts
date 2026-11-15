@@ -13,7 +13,7 @@ export const ui = s({
   'nav.recognition': { en: 'Recognition', bn: 'স্বীকৃতি' },
   'nav.media': { en: 'Media', bn: 'গণমাধ্যম' },
   'nav.insights': { en: 'Blog', bn: 'ব্লগ' },
-  'nav.resources': { en: 'Resources', bn: 'রিসোর্স' },
+  'nav.resources': { en: 'Courses & Books', bn: 'কোর্স ও বই' },
   'nav.contact': { en: 'Contact', bn: 'যোগাযোগ' },
   'nav.more': { en: 'More', bn: 'আরও' },
   'nav.menu': { en: 'Menu', bn: 'মেনু' },
@@ -283,11 +283,17 @@ export const ui = s({
   'ins.back': { en: 'All articles', bn: 'সব লেখা' },
 
   // Resources
-  'res.eyebrow': { en: 'Books & resources', bn: 'বই ও রিসোর্স' },
-  'res.lead': { en: 'A library of books, guides, courses and training materials on digital safety — being prepared.', bn: 'ডিজিটাল নিরাপত্তা নিয়ে বই, গাইড, কোর্স ও প্রশিক্ষণ সামগ্রীর একটি লাইব্রেরি — প্রস্তুত হচ্ছে।' },
+  'res.eyebrow': { en: 'Courses & Books', bn: 'কোর্স ও বই' },
+  'res.title': { en: 'Learn from real cases.', bn: 'বাস্তব অভিজ্ঞতা থেকে শিখুন।' },
+  'res.lead': { en: 'Recorded courses, e-books and free guides on social media security, brand protection and running a safer online business.', bn: 'সোশ্যাল মিডিয়া নিরাপত্তা, ব্র্যান্ড সুরক্ষা ও নিরাপদে অনলাইন ব্যবসা পরিচালনা নিয়ে রেকর্ডেড কোর্স, ই-বুক ও ফ্রি গাইড।' },
   'res.soon': { en: 'Coming soon', bn: 'শিগগির আসছে' },
-  'res.notify.title': { en: 'Want to know when resources are released?', bn: 'রিসোর্স প্রকাশিত হলে জানতে চান?' },
-  'res.notify.body': { en: 'Send a short note and you’ll be told when the first guides and programmes are available.', bn: 'একটি ছোট বার্তা পাঠান — প্রথম গাইড ও কর্মসূচি প্রকাশিত হলে আপনাকে জানানো হবে।' },
+  'res.soon.title': { en: 'The first courses and e-books are being prepared.', bn: 'প্রথম কোর্স ও ই-বুকগুলো তৈরি হচ্ছে।' },
+  'res.notify.body': { en: 'Want to know when they are released?', bn: 'প্রকাশিত হলে জানতে চান?' },
+  'res.notify.cta': { en: 'Let me know', bn: 'আমাকে জানান' },
+  'res.enroll': { en: 'Enroll', bn: 'ভর্তি হোন' },
+  'res.buy': { en: 'Buy', bn: 'কিনুন' },
+  'res.download': { en: 'Download', bn: 'ডাউনলোড' },
+  'res.free': { en: 'Free', bn: 'ফ্রি' },
 
   // Contact
   'contact.eyebrow': { en: 'Contact', bn: 'যোগাযোগ' },

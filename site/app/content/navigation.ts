@@ -8,6 +8,7 @@ export const primaryNav: NavItem[] = [
   { key: 'nav.consulting', href: '/consulting/' },
   { key: 'nav.training', href: '/training/' },
   { key: 'nav.ventures', href: '/ventures/' },
+  { key: 'nav.resources', href: '/courses/' },
   { key: 'nav.insights', href: '/blog/' },
 ]
 
@@ -17,7 +18,6 @@ export const moreNav: NavItem[] = [
   { key: 'nav.impact', href: '/impact/' },
   { key: 'nav.recognition', href: '/recognition/' },
   { key: 'nav.media', href: '/media/' },
-  { key: 'nav.resources', href: '/resources/' },
   { key: 'nav.contact', href: '/contact/' },
 ]
 
