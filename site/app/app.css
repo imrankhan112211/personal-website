@@ -16,8 +16,8 @@
   --accent: #1c5fd0;
   --accent-strong: #1549a6;
   --accent-soft: #e6effc;
-  --lime: #c8f169;
-  --on-lime: #1d2600;
+  --lime: #d8b46a; /* champagne gold (token name kept for compatibility) */
+  --on-lime: #2b2008;
   --on-ink: #f4f6fa;
   --on-ink-muted: #aab8d0;
   --on-ink-line: rgb(255 255 255 / 0.12);
@@ -27,7 +27,7 @@
   --amber-soft: #fbf1dc;
   /* founder palette — section fills */
   --fill-navy: linear-gradient(145deg, #0a1428 0%, #12264a 60%, #17336a 100%);
-  --fill-blue: linear-gradient(145deg, #154aa8 0%, #1a58c4 55%, #1f64d4 100%);
+  --fill-blue: linear-gradient(145deg, #1a2c4f 0%, #22395f 55%, #2a4675 100%); /* deep steel blue */
   --fill-sky: linear-gradient(145deg, #e3eefc 0%, #eef4fd 55%, #f5f1fa 100%);
 }
 
@@ -175,3 +175,4 @@ html[lang="bn"] .t-eyebrow { letter-spacing: 0.04em; text-transform: none; font-
 .fill-navy { background: var(--fill-navy); color: #fff; }
 .fill-blue { background: var(--fill-blue); color: #fff; }
 .fill-sky { background: var(--fill-sky); }
+.fill-gold { background: linear-gradient(150deg, #ecd6a3 0%, #d8b46a 55%, #c79d4f 100%); }

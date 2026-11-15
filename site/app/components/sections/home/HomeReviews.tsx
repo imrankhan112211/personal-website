@@ -37,7 +37,7 @@ export function HomeReviews() {
           <ButtonLink to="/impact/#testimonials" variant="outline" className="self-start">{t('rev.home.cta')} <ArrowRight aria-hidden /></ButtonLink>
         </div>
 
-        <div className="reveal tile flex flex-col justify-between gap-6 bg-lime p-7 text-on-lime md:p-9">
+        <div className="reveal tile fill-gold flex flex-col justify-between gap-6 p-7 text-on-lime md:p-9">
           <p className="text-sm font-semibold">{t('rev.wall.title')}</p>
           <div>
             <p className="font-display text-6xl font-bold tracking-tight">{num(publicPosts.length)}</p>

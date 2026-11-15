@@ -11,7 +11,7 @@ const icons = { consulting: Briefcase, training: Presentation, services: Code2 }
 /** One fill per card: navy (consulting), royal blue (training), sky (technology). */
 const looks = [
   { card: 'on-ink fill-navy', icon: 'bg-white/10 text-lime', muted: 'text-on-ink-muted', dot: 'bg-lime', btn: 'light' as const, link: 'text-white' },
-  { card: 'on-ink fill-blue', icon: 'bg-white/15 text-white', muted: 'text-white/90', dot: 'bg-white', btn: 'light' as const, link: 'text-white' },
+  { card: 'on-ink fill-blue', icon: 'bg-white/10 text-lime', muted: 'text-on-ink-muted', dot: 'bg-lime', btn: 'light' as const, link: 'text-white' },
   { card: 'fill-sky ring-1 ring-inset ring-accent/15', icon: 'bg-white text-accent', muted: 'text-muted', dot: 'bg-accent', btn: 'primary' as const, link: 'text-ink' },
 ]
 

@@ -9,9 +9,9 @@ export function About() {
   return (
     <section aria-labelledby="about-title" className="container-x py-2">
       <div className="bento lg:grid-cols-3">
-        <div className="reveal tile on-ink fill-blue flex flex-col justify-between gap-8 p-7 md:p-10">
+        <div className="reveal tile on-ink fill-navy relative overflow-hidden flex flex-col justify-between gap-8 p-7 md:p-10">
           <div>
-            <p className="t-eyebrow text-white">{t('home.about.eyebrow')}</p>
+            <p className="t-eyebrow text-lime">{t('home.about.eyebrow')}</p>
             <h2 id="about-title" className="t-h2 mt-5 text-white">{t('home.about.title')}</h2>
           </div>
           <ButtonLink to="/about/" variant="light" className="self-start">{t('cta.more_about')} <ArrowRight aria-hidden /></ButtonLink>
