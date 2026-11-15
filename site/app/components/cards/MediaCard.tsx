@@ -45,7 +45,7 @@ export function MediaCard({ m, compact = false }: { m: MediaItem; compact?: bool
 
   if (compact) {
     return (
-      <a href={m.url} target="_blank" rel="noopener noreferrer" className="tile tile-hover group flex h-full items-center gap-4 overflow-hidden bg-mist p-3">
+      <a href={m.url} target="_blank" rel="noopener noreferrer" className="tile tile-hover group flex h-full items-center gap-4 overflow-hidden bg-white p-3 ring-1 ring-accent/10">
         {thumb}
         <span className="min-w-0 flex-1 py-1 pr-1">
           <span className="text-xs font-semibold uppercase tracking-wider text-accent">{m.outlet}</span>

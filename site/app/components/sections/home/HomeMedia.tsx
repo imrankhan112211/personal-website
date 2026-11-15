@@ -21,7 +21,7 @@ export function HomeMedia() {
   if (!latest.length) return null
   return (
     <section aria-labelledby="media-title" className="container-x pb-2 pt-16 md:pt-24">
-      <div className="tile p-7 md:p-12">
+      <div className="tile fill-sky p-7 md:p-12">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <SectionHeading id="media-title" eyebrow={t('home.media.eyebrow')} title={t('home.media.title')} />
           <ButtonLink to="/media/" variant="outline">{t('cta.media')} <ArrowRight aria-hidden /></ButtonLink>

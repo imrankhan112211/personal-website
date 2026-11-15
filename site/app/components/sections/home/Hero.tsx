@@ -26,7 +26,7 @@ export function Hero() {
             <h1 id="hero-title" className="mt-5 font-display text-[clamp(2.4rem,5.4vw,4.4rem)] font-extrabold leading-[1.02] tracking-[-0.03em] text-ink">
               {l(person.name)}
             </h1>
-            <p className="mt-4 max-w-xl text-lg font-medium text-[#1b6fc1] md:text-xl">{t('hero.title')}</p>
+            <p className="mt-4 max-w-xl text-lg font-semibold text-[#1556a3] md:text-xl">{t('hero.title')}</p>
             <p className="mt-3 max-w-xl text-[0.9375rem] leading-relaxed text-text">
               <span className="block sm:inline">{t('hero.founder')}</span>
               <span aria-hidden className="hidden sm:inline"> · </span>

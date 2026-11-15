@@ -3,28 +3,32 @@
 /* ───────────── Design tokens — see docs/ARCHITECTURE.md §4 ───────────── */
 :root {
   /* Design E — Modern founder bento */
-  --ink: #0b0d12;
-  --ink-2: #161a22;
-  --ink-3: #2a303c;
-  --paper: #eef0f4;
+  --ink: #0a1428;
+  --ink-2: #12213d;
+  --ink-3: #243659;
+  --paper: #edf1f7;
   --surface: #ffffff;
-  --mist: #e6e9ef;
+  --mist: #e7edf5;
   --line: #e1e4ea;
   --line-strong: #c9ced7;
   --text: #12151c;
   --text-muted: #555d6b;
-  --accent: #4f46e5;
-  --accent-strong: #4338ca;
-  --accent-soft: #eef0ff;
+  --accent: #1c5fd0;
+  --accent-strong: #1549a6;
+  --accent-soft: #e6effc;
   --lime: #c8f169;
   --on-lime: #1d2600;
   --on-ink: #f4f6fa;
-  --on-ink-muted: #a7afbe;
+  --on-ink-muted: #aab8d0;
   --on-ink-line: rgb(255 255 255 / 0.12);
   --success: #1f7a4d;
   --success-soft: #e6f4ec;
   --amber: #8a5a00;
   --amber-soft: #fbf1dc;
+  /* founder palette — section fills */
+  --fill-navy: linear-gradient(145deg, #0a1428 0%, #12264a 60%, #17336a 100%);
+  --fill-blue: linear-gradient(145deg, #154aa8 0%, #1a58c4 55%, #1f64d4 100%);
+  --fill-sky: linear-gradient(145deg, #e3eefc 0%, #eef4fd 55%, #f5f1fa 100%);
 }
 
 @theme inline {
@@ -166,3 +170,8 @@ html[lang="bn"] .t-eyebrow { letter-spacing: 0.04em; text-transform: none; font-
     radial-gradient(55% 75% at 72% 35%, rgb(255 255 255 / 0.85), transparent 70%),
     linear-gradient(105deg, #cfe6f7 0%, #e4f0fa 40%, #f3eef5 75%, #eaf3fb 100%);
 }
+
+/* founder palette fills (used on homepage sections) */
+.fill-navy { background: var(--fill-navy); color: #fff; }
+.fill-blue { background: var(--fill-blue); color: #fff; }
+.fill-sky { background: var(--fill-sky); }
