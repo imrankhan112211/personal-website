@@ -4,74 +4,75 @@ import { ctaLinks } from '~/content/navigation'
 import { person } from '~/content/person'
 import { useLocale } from '~/i18n/useLocale'
 
-const HERO_IMG = '/images/abdullah-al-imran-hero-1000.webp'
+const HERO_IMG = '/images/abdullah-al-imran-hero-840.webp'
 
 /**
- * Hero: dark stage with the full name set in a large italic serif, split across the frame
- * ("Abdullah" top-left, a small "al", "Imran" to the right) and a black-and-white portrait in front.
- * The name itself is the page <h1>. Below: title, ventures, award, profiles and the two main actions.
- * Desktop layers everything on one stage; small screens stack name → portrait → text.
+ * Hero, modelled on the owner's own banner: light blue stage, colour portrait (speaking at an event),
+ * "Abdullah" set bold and condensed to the left of the head, "al Imran" to the right, topic chips beneath.
+ * On wide screens the name, chips and portrait share one scalable composition (sized in container units);
+ * on small screens they stack. The name is the page <h1>.
  */
 export function Hero() {
   const { t, l, locale } = useLocale()
   const socials = person.socials.filter((s) => s.url && s.id in icons)
+  const chips = ['hero.chip.social', 'hero.chip.safety', 'hero.chip.brand', 'hero.chip.cyber'] as const
 
   return (
     <section aria-labelledby="hero-title" className="container-x pb-2 pt-4 md:pt-6">
-      <div className="relative isolate overflow-hidden rounded-[var(--radius-card)] bg-[#0a0b0e] text-white">
-        {/* spotlight behind the portrait */}
-        <span aria-hidden className="absolute left-1/2 top-[14%] -z-10 size-[58rem] -translate-x-1/2 rounded-full bg-[radial-gradient(closest-side,rgb(255_255_255/0.15),transparent)]" />
-
-        <div className="relative mx-auto flex max-w-[1400px] flex-col lg:block lg:min-h-[min(46rem,calc(100svh-7rem))]">
-          {/* full name — one balanced line, centred above the portrait */}
-          <h1 id="hero-title" lang="en" className="hero-name relative z-0 px-6 pt-9 text-center text-[#f4f5f7] sm:px-10 lg:pt-10">
-            Abdullah <span className="hero-al">al</span> Imran
+      <div className="hero-stage relative isolate overflow-hidden rounded-[var(--radius-card)] text-ink">
+        {/* composition: name + chips + portrait */}
+        <div className="hero-comp relative mx-auto max-w-[1400px]">
+          <h1 id="hero-title" lang="en" className="hero-name relative z-0 px-6 pt-8 text-center lg:static lg:p-0">
+            <span className="hero-first block lg:absolute">Abdullah</span>
+            <span className="hero-last block lg:absolute">
+              <span className="hero-al">al</span> Imran
+            </span>
             {locale === 'bn' && <span className="sr-only" lang="bn">{l(person.name)}</span>}
           </h1>
 
-          {/* portrait, centred */}
-          <div className="relative z-10 mt-4 flex justify-center lg:absolute lg:bottom-0 lg:left-1/2 lg:mt-0 lg:w-[min(34vw,29rem)] lg:-translate-x-1/2">
+          <ul className="hero-chips relative z-20 mx-auto mt-5 grid w-fit grid-cols-2 gap-1.5 px-6 lg:absolute lg:mt-0 lg:px-0" aria-label={t('hero.chips')}>
+            {chips.map((c) => <li key={c} className="hero-chip">{t(c)}</li>)}
+          </ul>
+
+          <div className="relative z-10 mt-4 flex justify-center lg:absolute lg:mt-0 lg:block hero-photo">
             <img
               src={HERO_IMG}
-              srcSet={`/images/abdullah-al-imran-hero-500.webp 500w, ${HERO_IMG} 1000w`}
-              sizes="(min-width: 1024px) 464px, 88vw"
+              srcSet={`/images/abdullah-al-imran-hero-420.webp 420w, ${HERO_IMG} 840w`}
+              sizes="(min-width: 1024px) 42vw, 92vw"
               alt={l(person.name)}
-              width={1000}
-              height={1005}
+              width={840}
+              height={640}
               fetchPriority="high"
               decoding="async"
-              className="hero-portrait w-[min(88vw,26rem)] lg:w-full"
+              className="w-[min(92vw,30rem)] lg:w-full"
             />
           </div>
+        </div>
 
-          {/* title, ventures, award — left of the portrait on desktop */}
-          <div className="relative z-20 px-6 pt-6 sm:px-10 lg:absolute lg:bottom-28 lg:left-12 lg:w-[calc(50%-min(17vw,14.5rem)-4.5rem)] lg:max-w-[19rem] lg:px-0 lg:pt-0">
-            <p className="font-display text-xl font-semibold leading-snug text-white md:text-2xl">{t('hero.title')}</p>
-            <p className="mt-3 text-[0.9375rem] text-white/75">{t('hero.founder')}</p>
-            <p className="text-[0.9375rem] text-white/75">{t('hero.cofounder')}</p>
-            <p className="mt-4 inline-flex items-center gap-2 rounded-full border border-white/20 px-3 py-1 text-xs font-medium text-white/85">
-              <span className="size-1.5 rounded-full bg-lime" /> {t('hero.award')}
+        {/* title, ventures, award + actions */}
+        <div className="relative z-20 mx-auto grid max-w-[1400px] gap-6 border-t border-[#1b6fc1]/15 bg-white/55 px-6 py-6 backdrop-blur sm:px-10 lg:grid-cols-[1fr_auto] lg:items-center lg:px-12 lg:py-7">
+          <div>
+            <p className="font-display text-lg font-semibold leading-snug text-ink md:text-xl">{t('hero.title')}</p>
+            <p className="mt-1 text-[0.9375rem] text-text">
+              {t('hero.founder')} · {t('hero.cofounder')}
+              <span className="ml-2 inline-flex translate-y-[-1px] items-center gap-1.5 rounded-full bg-lime px-2.5 py-0.5 align-middle text-xs font-semibold text-on-lime">{t('hero.award')}</span>
             </p>
           </div>
-
-          {/* bottom bar: profiles (left) + actions (right) */}
-          <div className="relative z-20 mt-8 flex flex-col-reverse gap-5 border-t border-white/10 px-6 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-10 lg:absolute lg:inset-x-0 lg:bottom-0 lg:mt-0 lg:border-0 lg:bg-gradient-to-t lg:from-[#0a0b0e] lg:via-[#0a0b0e]/70 lg:to-transparent lg:px-12 lg:pb-8 lg:pt-14">
-            <ul className="flex items-center gap-2" aria-label={t('bio.socials')}>
+          <div className="flex flex-wrap items-center gap-3">
+            <ul className="mr-2 flex items-center gap-2" aria-label={t('bio.socials')}>
               {socials.map((s) => {
                 const Icon = icons[s.id as keyof typeof icons]
                 return (
                   <li key={s.id}>
-                    <a href={s.url!} target="_blank" rel="me noopener noreferrer" aria-label={s.label} className="grid size-10 place-items-center rounded-full bg-white/10 text-white/85 transition-colors hover:bg-white hover:text-ink">
+                    <a href={s.url!} target="_blank" rel="me noopener noreferrer" aria-label={s.label} className="grid size-10 place-items-center rounded-full bg-white text-ink ring-1 ring-line transition-colors hover:bg-ink hover:text-white">
                       <Icon />
                     </a>
                   </li>
                 )
               })}
             </ul>
-            <div className="flex flex-wrap items-center gap-3">
-              <ButtonLink to={ctaLinks.consulting} className="bg-white text-ink hover:bg-lime hover:text-on-lime">{t('cta.book')} <ArrowRight aria-hidden /></ButtonLink>
-              <ButtonLink to={ctaLinks.training} variant="outline" className="border-white/30 text-white hover:border-white hover:bg-white/10">{t('cta.invite')}</ButtonLink>
-            </div>
+            <ButtonLink to={ctaLinks.consulting}>{t('cta.book')} <ArrowRight aria-hidden /></ButtonLink>
+            <ButtonLink to={ctaLinks.training} variant="outline" className="bg-white">{t('cta.invite')}</ButtonLink>
           </div>
         </div>
       </div>

@@ -160,20 +160,41 @@ html[lang="bn"] .t-eyebrow { letter-spacing: 0.04em; text-transform: none; font-
 .prose-article th, .prose-article td { border-bottom: 1px solid var(--line); padding: 0.6em 0.8em; text-align: left; }
 .prose-article hr { border: 0; border-top: 1px solid var(--line); margin: 2.5em 0; }
 
-/* Home hero: full name on one line, italic serif, sized to sit in proportion above the portrait */
+/* Home hero (modelled on the owner's banner) */
+.hero-stage {
+  background:
+    radial-gradient(60% 80% at 62% 30%, rgb(255 255 255 / 0.85), transparent 70%),
+    linear-gradient(105deg, #cfe6f7 0%, #e4f0fa 40%, #f3eef5 75%, #eaf3fb 100%);
+}
 .hero-name {
-  font-family: var(--font-serif) !important;
-  font-style: italic;
-  font-weight: 400;
-  font-size: clamp(2.6rem, 10.5vw, 7.25rem);
-  line-height: 1;
-  letter-spacing: -0.02em !important;
+  font-family: "Oswald Variable", "Arial Narrow", sans-serif !important;
+  font-weight: 650;
+  letter-spacing: -0.01em !important;
+  line-height: 0.95;
+  color: #1b6fc1;
+  text-shadow: 2px 2px 0 #fff, 4px 4px 0 rgb(27 111 193 / 0.18);
+  font-size: clamp(3rem, 17vw, 5.5rem);
+}
+.hero-last { font-size: 0.62em; margin-top: 0.1em; }
+.hero-al { font-size: 0.7em; font-weight: 500; opacity: 0.85; }
+.hero-chip {
+  border: 1px solid rgb(27 111 193 / 0.45);
+  background: rgb(255 255 255 / 0.65);
+  color: #134f8c;
+  border-radius: 0.5rem;
+  padding: 0.3rem 0.75rem;
+  font-family: "Oswald Variable", "Arial Narrow", sans-serif;
+  font-size: 0.95rem;
+  text-align: center;
   white-space: nowrap;
-  text-shadow: 0 0 40px rgb(255 255 255 / 0.12);
 }
-.hero-al {
-  font-size: 0.62em;
-  opacity: 0.7;
-  margin: 0 0.06em;
+@media (min-width: 1024px) {
+  /* one composition, everything sized in container units so it scales as a unit */
+  .hero-comp { container-type: inline-size; aspect-ratio: 2000 / 780; }
+  .hero-photo { left: 36%; width: 47%; bottom: 0; }
+  .hero-name { font-size: 8.6cqw; }
+  .hero-first { right: 48.5%; top: 17%; }
+  .hero-last { left: 69%; top: 41%; font-size: 0.6em; margin: 0; z-index: 20; }
+  .hero-chips { right: 56%; top: 52%; gap: 0.5cqw; }
+  .hero-chip { font-size: 1.35cqw; padding: 0.35cqw 0.9cqw; border-radius: 0.5cqw; }
 }
-.hero-portrait { filter: drop-shadow(0 0 32px rgb(255 255 255 / 0.10)); }
