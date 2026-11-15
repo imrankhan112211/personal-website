@@ -3,6 +3,7 @@ import type { Localized } from '~/i18n/locales'
 export const inquiryTypes = [
   { id: 'general', label: { en: 'General inquiry', bn: 'সাধারণ জিজ্ঞাসা' } },
   { id: 'consulting', label: { en: 'Consulting request', bn: 'পরামর্শের অনুরোধ' } },
+  { id: 'service', label: { en: 'Service request (with my team)', bn: 'সার্ভিসের অনুরোধ (টিমের সঙ্গে)' } },
   { id: 'training', label: { en: 'Training invitation', bn: 'প্রশিক্ষণের আমন্ত্রণ' } },
   { id: 'speaking', label: { en: 'Speaking invitation', bn: 'বক্তৃতার আমন্ত্রণ' } },
   { id: 'collaboration', label: { en: 'Business collaboration', bn: 'ব্যবসায়িক সহযোগিতা' } },

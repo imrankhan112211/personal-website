@@ -89,12 +89,12 @@ export const impactAreas = [
 
 /** Homepage services: what a visitor can ask for, each with its own call to action. */
 export const services: {
-  id: 'consulting' | 'training' | 'speaking'
+  id: 'consulting' | 'training' | 'services'
   href: string
   title: Localized
   body: Localized
   points: Localized[]
-  cta: { key: 'cta.book' | 'cta.invite' | 'cta.speak'; href: string }
+  cta: { key: 'cta.book' | 'cta.invite' | 'cta.service'; href: string }
 }[] = [
   {
     id: 'consulting',
@@ -127,18 +127,18 @@ export const services: {
     cta: { key: 'cta.invite', href: '/contact/?type=training' },
   },
   {
-    id: 'speaking',
-    href: '/training/',
-    title: { en: 'Speaking & Media', bn: 'বক্তৃতা ও গণমাধ্যম' },
+    id: 'services',
+    href: '/consulting/',
+    title: { en: 'Services with My Team', bn: 'টিমের সঙ্গে সার্ভিস' },
     body: {
-      en: 'Talks, panels and media commentary on cyber safety, social media and technology — in English or Bengali.',
-      bn: 'সাইবার নিরাপত্তা, সোশ্যাল মিডিয়া ও প্রযুক্তি নিয়ে বক্তৃতা, প্যানেল আলোচনা ও গণমাধ্যমে মতামত — বাংলা বা ইংরেজিতে।',
+      en: 'Hands-on help delivered with my team: we take on the work of fixing, recovering and securing accounts and pages for you.',
+      bn: 'আমার টিমের সঙ্গে সরাসরি কাজ: আপনার অ্যাকাউন্ট ও পেজ ঠিক করা, ফিরিয়ে আনা ও সুরক্ষিত রাখার কাজ আমরা নিজেরাই করে দিই।',
     },
     points: [
-      { en: 'Conference & event talks', bn: 'সম্মেলন ও অনুষ্ঠানে বক্তৃতা' },
-      { en: 'Panel discussions', bn: 'প্যানেল আলোচনা' },
-      { en: 'TV, print & online interviews', bn: 'টিভি, পত্রিকা ও অনলাইন সাক্ষাৎকার' },
+      { en: 'Hacked or disabled account & page recovery', bn: 'হ্যাক বা ডিজেবল হওয়া অ্যাকাউন্ট ও পেজ পুনরুদ্ধার' },
+      { en: 'Page & profile verification', bn: 'পেজ ও প্রোফাইল ভেরিফিকেশন' },
+      { en: 'Monetization, copyright & restriction issues', bn: 'মনিটাইজেশন, কপিরাইট ও রেস্ট্রিকশন সমস্যা' },
     ],
-    cta: { key: 'cta.speak', href: '/contact/?type=speaking' },
+    cta: { key: 'cta.service', href: '/contact/?type=service' },
   },
 ]
