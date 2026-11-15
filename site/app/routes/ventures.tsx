@@ -10,14 +10,14 @@ import { metaFor } from '~/lib/page'
 import { organizationSchema } from '~/lib/schema'
 
 export function meta({ location }: Route.MetaArgs) {
-  const orgs = ventures.filter((v) => v.url).map((v) => organizationSchema({ name: v.name, url: v.url!, description: v.description.en, founder: v.roleVerified }))
+  const orgs = ventures.filter((v) => v.url).map((v) => organizationSchema({ name: v.name, url: v.url!, description: v.description.en, founder: v.roleVerified, foundingDate: v.founded, coFounders: v.coFounders }))
   return metaFor('ventures', location.pathname, orgs)
 }
 
 const statusTone = { active: 'success', developing: 'amber', confirm: 'neutral' } as const
 
 export default function Ventures() {
-  const { t, l } = useLocale()
+  const { t, l, locale } = useLocale()
   return (
     <main id="main">
       <PageHero crumbs={[{ label: t('nav.ventures') }]} eyebrow={t('home.ventures.eyebrow')} title={t('home.ventures.title')} lead={t('ventures.lead')}>
@@ -69,6 +69,8 @@ export default function Ventures() {
                       <ul className="grid gap-2">{v.activities.map((a) => <li key={a.en} className="flex gap-3"><span aria-hidden className="mt-3 h-px w-3 shrink-0 bg-accent" />{l(a)}</li>)}</ul>
                     ) : <Placeholder label="[INSERT KEY ACTIVITIES]" />}
                   </Detail>}
+                  {v.founded && <Detail label={t('label.founded')}>{v.founded.toLocaleString(locale === 'bn' ? 'bn-BD' : 'en', { useGrouping: false })}</Detail>}
+                  {v.coFounders?.length ? <Detail label={t('label.cofounders')}>{v.coFounders.join(', ')}</Detail> : null}
                   <Detail label={t('label.status')}>{t(`status.${v.status}`)}</Detail>
                   </dl>
                 </div>

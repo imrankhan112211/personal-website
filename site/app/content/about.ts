@@ -29,8 +29,8 @@ export const aboutChapters: AboutChapter[] = [
     title: { en: 'Where it started.', bn: 'যেখান থেকে শুরু।' },
     body: [
       {
-        en: 'Imran was born in Patuakhali, Bangladesh, and grew up in Chattogram, Dhaka and Rajendrapur Cantonment in Gazipur. He completed his secondary and higher secondary education in Rajendrapur and earned a bachelor’s degree in Bengali literature from Netrokona University.',
-        bn: 'ইমরানের জন্ম বাংলাদেশের পটুয়াখালীতে। বেড়ে উঠেছেন চট্টগ্রাম, ঢাকা ও গাজীপুরের রাজেন্দ্রপুর ক্যান্টনমেন্টে। রাজেন্দ্রপুরে মাধ্যমিক ও উচ্চমাধ্যমিক শেষ করে নেত্রকোনা বিশ্ববিদ্যালয় থেকে বাংলা সাহিত্যে স্নাতক ডিগ্রি অর্জন করেন।',
+        en: 'Imran was born in Patuakhali, Bangladesh, and grew up in Chattogram, Dhaka and Rajendrapur Cantonment in Gazipur. He completed his secondary and higher secondary education in Rajendrapur and earned a bachelor’s degree in Bengali literature from Netrokona University, completing it in early 2024.',
+        bn: 'ইমরানের জন্ম বাংলাদেশের পটুয়াখালীতে। বেড়ে উঠেছেন চট্টগ্রাম, ঢাকা ও গাজীপুরের রাজেন্দ্রপুর ক্যান্টনমেন্টে। রাজেন্দ্রপুরে মাধ্যমিক ও উচ্চমাধ্যমিক শেষ করে নেত্রকোনা বিশ্ববিদ্যালয় থেকে বাংলা সাহিত্যে স্নাতক ডিগ্রি অর্জন করেন (২০২৪ সালের শুরুতে সম্পন্ন)।',
       },
       {
         en: 'His interest in helping others began in childhood. Seeing online volunteer efforts, such as social media campaigns to find blood donors, showed him that technology could be used to help people at scale. He began by helping acquaintances solve social media problems, work that later grew into his companies and his non-profit.',
@@ -44,8 +44,8 @@ export const aboutChapters: AboutChapter[] = [
     title: { en: 'From solving social media problems to building companies.', bn: 'সোশ্যাল মিডিয়া সমস্যার সমাধান থেকে প্রতিষ্ঠান গড়া।' },
     body: [
       {
-        en: 'In 2021 Imran founded Probfly IT, describing it as a “problem-solving IT company”. By 2022 the company was serving clients in Bangladesh as well as in India, Sri Lanka and the United States, with services spanning social media solutions, web development and digital brand protection.',
-        bn: '২০২১ সালে ইমরান Probfly IT প্রতিষ্ঠা করেন, যাকে তিনি একটি “প্রবলেম সলভিং আইটি কোম্পানি” হিসেবে বর্ণনা করেন। ২০২২ সালের মধ্যে প্রতিষ্ঠানটি বাংলাদেশের পাশাপাশি ভারত, শ্রীলঙ্কা ও যুক্তরাষ্ট্রের ক্লায়েন্টদের সেবা দিতে শুরু করে; সেবার মধ্যে ছিল সোশ্যাল মিডিয়া সলিউশন, ওয়েব ডেভেলপমেন্ট ও ডিজিটাল ব্র্যান্ড সুরক্ষা।',
+        en: 'In 2021 Imran founded Probfly IT with co-founder Azimul Islam Sheblu, describing it as a “problem-solving IT company”. By 2022 the company was serving clients in Bangladesh as well as in India, Sri Lanka and the United States, with services spanning social media solutions, web development and digital brand protection. Today Probfly IT has an office in Dhaka and a registered LLC in the United States.',
+        bn: '২০২১ সালে ইমরান সহ-প্রতিষ্ঠাতা আজিমুল ইসলাম শিবলুর সঙ্গে Probfly IT প্রতিষ্ঠা করেন, যাকে তিনি একটি “প্রবলেম সলভিং আইটি কোম্পানি” হিসেবে বর্ণনা করেন। ২০২২ সালের মধ্যে প্রতিষ্ঠানটি বাংলাদেশের পাশাপাশি ভারত, শ্রীলঙ্কা ও যুক্তরাষ্ট্রের ক্লায়েন্টদের সেবা দিতে শুরু করে; সেবার মধ্যে ছিল সোশ্যাল মিডিয়া সলিউশন, ওয়েব ডেভেলপমেন্ট ও ডিজিটাল ব্র্যান্ড সুরক্ষা। বর্তমানে Probfly IT-এর অফিস ঢাকায়, আর যুক্তরাষ্ট্রে একটি নিবন্ধিত LLC রয়েছে।',
       },
       {
         en: 'He has since worked with public figures, creators, media organisations and businesses on social media security and brand protection, and is regularly quoted in the Bangladeshi media on issues such as copyright-strike abuse, online harassment and social media safety.',
@@ -59,8 +59,8 @@ export const aboutChapters: AboutChapter[] = [
     title: { en: 'Four ventures, one focus: a safer digital world.', bn: 'চারটি উদ্যোগ, এক লক্ষ্য: নিরাপদ ডিজিটাল বিশ্ব।' },
     body: [
       {
-        en: 'Imran is the founder of Probfly IT (technology and social media solutions), Kaktaruaa (non-profit digital safety initiative) and Erazee (unwanted content removal and online risk response), and a co-founder of Zurvis.io (AI customer service and WhatsApp automation for businesses).',
-        bn: 'ইমরান Probfly IT (প্রযুক্তি ও সোশ্যাল মিডিয়া সলিউশন), কাকতাড়ুয়া (অলাভজনক ডিজিটাল নিরাপত্তা উদ্যোগ) ও Erazee (অনাকাঙ্ক্ষিত কনটেন্ট অপসারণ ও অনলাইন ঝুঁকি মোকাবিলা)-এর প্রতিষ্ঠাতা এবং Zurvis.io (ব্যবসার জন্য এআই কাস্টমার সার্ভিস ও WhatsApp অটোমেশন)-এর সহ-প্রতিষ্ঠাতা।',
+        en: 'Imran is the founder of Probfly IT (2021; technology and social media solutions), Kaktaruaa (2023; non-profit digital safety initiative) and Erazee (2025; unwanted content removal and online risk response), and a co-founder of Zurvis.io (2026; AI customer service and WhatsApp automation for businesses). Azimul Islam Sheblu is his co-founder at Probfly IT and Zurvis.io.',
+        bn: 'ইমরান Probfly IT (২০২১; প্রযুক্তি ও সোশ্যাল মিডিয়া সলিউশন), কাকতাড়ুয়া (২০২৩; অলাভজনক ডিজিটাল নিরাপত্তা উদ্যোগ) ও Erazee (২০২৫; অনাকাঙ্ক্ষিত কনটেন্ট অপসারণ ও অনলাইন ঝুঁকি মোকাবিলা)-এর প্রতিষ্ঠাতা এবং Zurvis.io (২০২৬; ব্যবসার জন্য এআই কাস্টমার সার্ভিস ও WhatsApp অটোমেশন)-এর সহ-প্রতিষ্ঠাতা। Probfly IT ও Zurvis.io-তে তাঁর সহ-প্রতিষ্ঠাতা আজিমুল ইসলাম শিবলু।',
       },
     ],
   },
@@ -70,8 +70,8 @@ export const aboutChapters: AboutChapter[] = [
     title: { en: 'A safer internet is a shared responsibility.', bn: 'নিরাপদ ইন্টারনেট সবার দায়িত্ব।' },
     body: [
       {
-        en: 'Kaktaruaa began as an effort to prevent cyberbullying and online harassment among students, raising awareness about fake accounts, defamatory “expose” posts and “crush and confession” pages. It later expanded to support people facing online blackmail, fraud, identity-related harassment and account hacking.',
-        bn: 'কাকতাড়ুয়ার যাত্রা শুরু হয় শিক্ষার্থীদের মধ্যে সাইবার বুলিং ও অনলাইন হয়রানি প্রতিরোধের লক্ষ্যে — ভুয়া অ্যাকাউন্ট, মানহানিকর “এক্সপোজ” পোস্ট এবং “ক্রাশ অ্যান্ড কনফেশন” পেজ নিয়ে সচেতনতা তৈরির মাধ্যমে। পরে ব্ল্যাকমেইল, অনলাইন প্রতারণা, পরিচয়-সংক্রান্ত হয়রানি ও অ্যাকাউন্ট হ্যাকিংয়ের শিকার মানুষকেও সহায়তা দিতে শুরু করে।',
+        en: 'Founded in 2023, Kaktaruaa began as an effort to prevent cyberbullying and online harassment among students, raising awareness about fake accounts, defamatory “expose” posts and “crush and confession” pages. It later expanded to support people facing online blackmail, fraud, identity-related harassment and account hacking.',
+        bn: '২০২৩ সালে কাকতাড়ুয়ার যাত্রা শুরু হয় শিক্ষার্থীদের মধ্যে সাইবার বুলিং ও অনলাইন হয়রানি প্রতিরোধের লক্ষ্যে — ভুয়া অ্যাকাউন্ট, মানহানিকর “এক্সপোজ” পোস্ট এবং “ক্রাশ অ্যান্ড কনফেশন” পেজ নিয়ে সচেতনতা তৈরির মাধ্যমে। পরে ব্ল্যাকমেইল, অনলাইন প্রতারণা, পরিচয়-সংক্রান্ত হয়রানি ও অ্যাকাউন্ট হ্যাকিংয়ের শিকার মানুষকেও সহায়তা দিতে শুরু করে।',
       },
       {
         en: 'According to figures Imran shared with the press in 2026, around 1,200 women have taken Kaktaruaa’s free online courses, its school programmes have reached 2,000–3,000 students across five schools, and 4,000–5,000 people have used the digital safety tools on its website. In November 2024 Kaktaruaa held the seminar “First Aid of Social Media Problems” at the EMK Center in Dhaka, with Cultural Classicists and Probfly IT.',
@@ -134,8 +134,8 @@ export const profileFaqs: { q: Localized; a: Localized }[] = [
   {
     q: { en: 'What companies has Abdullah Al Imran founded?', bn: 'আব্দুল্লাহ আল ইমরান কোন কোন প্রতিষ্ঠান গড়েছেন?' },
     a: {
-      en: 'He founded Probfly IT (2021), the non-profit Kaktaruaa and Erazee, and co-founded Zurvis.io, an AI customer service and WhatsApp automation platform.',
-      bn: 'তিনি Probfly IT (২০২১), অলাভজনক উদ্যোগ কাকতাড়ুয়া ও Erazee প্রতিষ্ঠা করেছেন এবং এআই কাস্টমার সার্ভিস ও WhatsApp অটোমেশন প্ল্যাটফর্ম Zurvis.io-এর সহ-প্রতিষ্ঠাতা।',
+      en: 'He founded Probfly IT (2021), the non-profit Kaktaruaa (2023) and Erazee (2025), and co-founded Zurvis.io (2026), an AI customer service and WhatsApp automation platform.',
+      bn: 'তিনি Probfly IT (২০২১), অলাভজনক উদ্যোগ কাকতাড়ুয়া (২০২৩) ও Erazee (২০২৫) প্রতিষ্ঠা করেছেন এবং এআই কাস্টমার সার্ভিস ও WhatsApp অটোমেশন প্ল্যাটফর্ম Zurvis.io (২০২৬)-এর সহ-প্রতিষ্ঠাতা।',
     },
   },
   {

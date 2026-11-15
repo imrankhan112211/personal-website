@@ -29,6 +29,8 @@ export const ui = s({
   'cta.contact': { en: 'Contact Me', bn: 'যোগাযোগ করুন' },
   'cta.more_about': { en: 'More about me', bn: 'আমার সম্পর্কে আরও' },
   'cta.project': { en: 'Discuss a Project', bn: 'প্রজেক্ট নিয়ে কথা বলুন' },
+  'label.founded': { en: 'Founded', bn: 'প্রতিষ্ঠা' },
+  'label.cofounders': { en: 'Co-founder', bn: 'সহ-প্রতিষ্ঠাতা' },
   'cta.learn_more': { en: 'Learn more', bn: 'বিস্তারিত' },
   'cta.training': { en: 'Explore Training & Invite Me', bn: 'প্রশিক্ষণ দেখুন ও আমন্ত্রণ জানান' },
   'cta.all_ventures': { en: 'All ventures', bn: 'সব উদ্যোগ' },

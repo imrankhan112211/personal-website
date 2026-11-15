@@ -96,13 +96,14 @@ export function profilePageSchema(locale: Locale, path: string) {
   }
 }
 
-export function organizationSchema(o: { name: string; url: string; description: string; founder?: boolean }) {
+export function organizationSchema(o: { name: string; url: string; description: string; founder?: boolean; foundingDate?: number; coFounders?: string[] }) {
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: o.name,
     url: o.url,
     description: o.description,
-    ...(o.founder ? { founder: { '@id': PERSON_ID } } : {}),
+    ...(o.foundingDate ? { foundingDate: String(o.foundingDate) } : {}),
+    ...(o.founder ? { founder: [{ '@id': PERSON_ID }, ...(o.coFounders ?? []).map((name) => ({ '@type': 'Person', name }))] } : {}),
   }
 }

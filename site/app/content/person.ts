@@ -43,8 +43,8 @@ export const person = {
   nationality: { en: 'Bangladeshi', bn: 'বাংলাদেশি' } satisfies Localized,
   birthPlace: { en: 'Patuakhali, Bangladesh', bn: 'পটুয়াখালী, বাংলাদেশ' } satisfies Localized,
   education: {
-    en: 'BA in Bengali literature, Netrokona University',
-    bn: 'বাংলা সাহিত্যে স্নাতক, নেত্রকোনা বিশ্ববিদ্যালয়',
+    en: 'BA in Bengali literature, Netrokona University (2024)',
+    bn: 'বাংলা সাহিত্যে স্নাতক, নেত্রকোনা বিশ্ববিদ্যালয় (২০২৪)',
   } satisfies Localized,
   alumniOf: 'Netrokona University',
   /** Main portrait (made by `npm run images`) */

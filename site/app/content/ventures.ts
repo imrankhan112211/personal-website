@@ -15,6 +15,10 @@ export type Venture = {
   status: VentureStatus
   /** Why it exists. null = [INSERT VERIFIED PURPOSE] */
   purpose?: Localized | null
+  /** Year founded (confirmed by the owner). */
+  founded?: number
+  /** Other co-founders, by full name. */
+  coFounders?: string[]
   /** Key activities. Empty = [INSERT KEY ACTIVITIES] */
   activities?: Localized[]
 }
@@ -23,12 +27,14 @@ export type Venture = {
 export const ventures: Venture[] = [
   {
     slug: 'probfly-it',
+    founded: 2021,
+    coFounders: ['Azimul Islam Sheblu'],
     name: 'Probfly IT',
     logo: '/logos/probfly-it.webp',
     url: 'https://probfly.com',
     description: {
-      en: 'Technology company founded in 2021, providing social media solutions, digital brand protection, software and business automation to clients in Bangladesh and abroad.',
-      bn: '২০২১ সালে প্রতিষ্ঠিত প্রযুক্তি প্রতিষ্ঠান; দেশ-বিদেশের ক্লায়েন্টদের সোশ্যাল মিডিয়া সলিউশন, ডিজিটাল ব্র্যান্ড সুরক্ষা, সফটওয়্যার ও বিজনেস অটোমেশন সেবা দেয়।',
+      en: 'Technology company providing social media solutions, digital brand protection, software and business automation, with an office in Dhaka and a US-registered LLC.',
+      bn: 'সোশ্যাল মিডিয়া সলিউশন, ডিজিটাল ব্র্যান্ড সুরক্ষা, সফটওয়্যার ও বিজনেস অটোমেশন সেবা দেওয়া প্রযুক্তি প্রতিষ্ঠান; অফিস ঢাকায়, আর যুক্তরাষ্ট্রে নিবন্ধিত একটি LLC রয়েছে।',
     },
     role: { en: 'Founder', bn: 'প্রতিষ্ঠাতা' },
     roleVerified: true,
@@ -36,6 +42,7 @@ export const ventures: Venture[] = [
   },
   {
     slug: 'kaktaruaa',
+    founded: 2023,
     name: 'Kaktaruaa',
     logo: '/logos/kaktaruaa.webp',
     url: 'https://kaktaruaa.org',
@@ -49,6 +56,7 @@ export const ventures: Venture[] = [
   },
   {
     slug: 'erazee',
+    founded: 2025,
     name: 'Erazee',
     logo: '/logos/erazee.webp',
     url: null,
@@ -62,6 +70,8 @@ export const ventures: Venture[] = [
   },
   {
     slug: 'zurvis',
+    founded: 2026,
+    coFounders: ['Azimul Islam Sheblu'],
     name: 'Zurvis.io',
     logo: '/logos/zurvis.webp',
     url: 'https://zurvis.io',
