@@ -20,40 +20,59 @@ export const credentials: { label: Localized; detail?: Localized }[] = [
  */
 export const peopleTrained = 3000
 
-/** "The problem" — three situations that cost a business money, each with how it gets fixed. */
-export const problems: { id: string; icon: 'lock' | 'masks' | 'message'; title: Localized; cost: Localized; fix: Localized; href: string }[] = [
+/** "The problem" — three problems businesses face, each answered by one solution area with its options. */
+export const problems: { id: string; icon: 'growth' | 'masks' | 'users'; area: Localized; title: Localized; cost: Localized; solutions: Localized[]; href: string }[] = [
   {
-    id: 'assets',
-    icon: 'lock',
-    title: { en: 'Your page, ad account or Business Manager gets restricted', bn: 'পেজ, অ্যাড অ্যাকাউন্ট বা বিজনেস ম্যানেজার রেস্ট্রিক্টেড' },
+    id: 'business',
+    icon: 'growth',
+    area: { en: 'Business solutions', bn: 'বিজনেস সলিউশন' },
+    title: { en: 'Your online business is stuck — or one problem away from stopping', bn: 'অনলাইন ব্যবসা আটকে আছে — বা একটি সমস্যাতেই থেমে যেতে পারে' },
     cost: {
-      en: 'Ads stop, orders stop, and the audience you paid to build is out of reach — every day it stays down costs you sales.',
-      bn: 'বিজ্ঞাপন বন্ধ, অর্ডার বন্ধ, টাকা খরচ করে গড়া অডিয়েন্স নাগালের বাইরে — যত দিন বন্ধ থাকে, তত দিন বিক্রি হারান।',
+      en: 'Restricted pages and ad accounts, ads that don’t pay back and replies that come too late all turn into lost sales.',
+      bn: 'রেস্ট্রিক্টেড পেজ ও অ্যাড অ্যাকাউন্ট, খরচ তুলতে না পারা বিজ্ঞাপন আর দেরিতে উত্তর — সবই শেষে হারানো বিক্রি।',
     },
-    fix: { en: 'Incident response, recovery strategy and an asset structure that doesn’t hang on one account.', bn: 'ইনসিডেন্ট রেসপন্স, পুনরুদ্ধারের কৌশল, আর এমন অ্যাসেট কাঠামো যা একটি অ্যাকাউন্টের ওপর নির্ভর করে না।' },
-    href: '/consulting/#social-media-solutions',
+    solutions: [
+      { en: 'Social media solutions — pages, ad accounts and Business Manager', bn: 'সোশ্যাল মিডিয়া সলিউশন — পেজ, অ্যাড অ্যাকাউন্ট ও বিজনেস ম্যানেজার' },
+      { en: 'Growth and media buying', bn: 'গ্রোথ ও মিডিয়া বায়িং' },
+      { en: 'Software, SaaS and web development', bn: 'সফটওয়্যার, SaaS ও ওয়েব ডেভেলপমেন্ট' },
+      { en: 'AI customer service and WhatsApp automation (Zurvis.io, WhatsFly)', bn: 'এআই কাস্টমার সার্ভিস ও WhatsApp অটোমেশন (Zurvis.io, WhatsFly)' },
+      { en: 'Social commerce setup and advisory', bn: 'সোশ্যাল কমার্স সেটআপ ও পরামর্শ' },
+    ],
+    href: '/contact/?type=service',
   },
   {
     id: 'brand',
     icon: 'masks',
-    title: { en: 'Your brand is copied or impersonated', bn: 'আপনার ব্র্যান্ড নকল বা ছদ্মবেশে ব্যবহার হচ্ছে' },
+    area: { en: 'Brand protection', bn: 'ব্র্যান্ড সুরক্ষা' },
+    title: { en: 'Your brand is copied, faked or misused', bn: 'আপনার ব্র্যান্ড নকল, ভুয়া বা অপব্যবহার হচ্ছে' },
     cost: {
-      en: 'Fake pages and sellers take your customers’ money in your name, and the complaints — and lost trust — land on you.',
+      en: 'Fake pages and sellers take your customers’ money in your name, and the complaints — and the lost trust — land on you.',
       bn: 'ভুয়া পেজ আর বিক্রেতারা আপনার নামে গ্রাহকের টাকা নেয়, আর অভিযোগ ও আস্থা হারানোর দায় এসে পড়ে আপনার ওপর।',
     },
-    fix: { en: 'Brand protection: takedowns, trademark and copyright routes, and ongoing monitoring.', bn: 'ব্র্যান্ড সুরক্ষা: টেকডাউন, ট্রেডমার্ক ও কপিরাইটের পথ, আর নিয়মিত নজরদারি।' },
+    solutions: [
+      { en: 'Impersonation and fake page protection', bn: 'ছদ্মবেশ ও ভুয়া পেজ থেকে সুরক্ষা' },
+      { en: 'Copyright and trademark enforcement', bn: 'কপিরাইট ও ট্রেডমার্ক প্রয়োগ' },
+      { en: 'Counterfeit and unauthorised content takedowns', bn: 'নকল পণ্য ও অনুমতিহীন কনটেন্ট সরানো' },
+      { en: 'Brand monitoring and reputation management', bn: 'ব্র্যান্ড মনিটরিং ও সুনাম ব্যবস্থাপনা' },
+    ],
     href: '/consulting/#brand-protection',
   },
   {
-    id: 'messages',
-    icon: 'message',
-    title: { en: 'Customer messages pile up faster than your team can answer', bn: 'গ্রাহকের মেসেজ টিমের উত্তরের চেয়ে দ্রুত জমছে' },
+    id: 'awareness',
+    icon: 'users',
+    area: { en: 'Cyber awareness training', bn: 'সাইবার সচেতনতা প্রশিক্ষণ' },
+    title: { en: 'Your people are the easiest way in', bn: 'আপনার মানুষরাই সবচেয়ে সহজ প্রবেশপথ' },
     cost: {
-      en: 'Slow replies on WhatsApp, Messenger and Instagram mean lost leads and customers who buy somewhere else.',
-      bn: 'WhatsApp, Messenger ও Instagram-এ দেরিতে উত্তর মানে হারানো লিড, আর গ্রাহক অন্য কোথাও কিনে ফেলে।',
+      en: 'One clicked link or shared login code can hand over a page, an ad account or customer data — no hacking skill required.',
+      bn: 'একটি ক্লিক করা লিংক বা শেয়ার করা লগইন কোডেই পেজ, অ্যাড অ্যাকাউন্ট বা গ্রাহকের তথ্য হাতছাড়া হতে পারে — হ্যাকিং দক্ষতা লাগে না।',
     },
-    fix: { en: 'AI customer service and messaging automation through Zurvis.io and WhatsFly.', bn: 'Zurvis.io ও WhatsFly-এর মাধ্যমে এআই কাস্টমার সার্ভিস ও মেসেজিং অটোমেশন।' },
-    href: '/contact/?type=service',
+    solutions: [
+      { en: 'Webinars for entrepreneurs and creators', bn: 'উদ্যোক্তা ও ক্রিয়েটরদের জন্য ওয়েবিনার' },
+      { en: 'Security awareness workshops for teams', bn: 'টিমের জন্য নিরাপত্তা সচেতনতা কর্মশালা' },
+      { en: 'Seminars for students and schools', bn: 'শিক্ষার্থী ও শিক্ষাপ্রতিষ্ঠানের জন্য সেমিনার' },
+      { en: 'Briefings for institutions and law enforcement', bn: 'প্রতিষ্ঠান ও আইনশৃঙ্খলা বাহিনীর জন্য ব্রিফিং' },
+    ],
+    href: '/training/',
   },
 ]
 

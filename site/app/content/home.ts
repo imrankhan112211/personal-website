@@ -137,6 +137,7 @@ export const services: {
     },
     points: [
       { en: 'Software & SaaS development', bn: 'সফটওয়্যার ও SaaS ডেভেলপমেন্ট' },
+      { en: 'Growth and media buying', bn: 'গ্রোথ ও মিডিয়া বায়িং' },
       { en: 'AI customer service & WhatsApp automation', bn: 'এআই কাস্টমার সার্ভিস ও WhatsApp অটোমেশন' },
       { en: 'Social media technical solutions', bn: 'সোশ্যাল মিডিয়া টেকনিক্যাল সলিউশন' },
     ],
