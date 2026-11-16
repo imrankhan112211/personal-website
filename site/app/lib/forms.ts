@@ -45,6 +45,8 @@ export async function submitInquiry(p: InquiryPayload): Promise<SubmitResult> {
     const res = await fetch(ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(body) })
     const json = (await res.json().catch(() => ({}))) as { success?: string | boolean; message?: string }
     if (res.ok && String(json.success) === 'true') return { status: 'sent' }
+    // First-ever submission: FormSubmit emails the inbox an activation link instead.
+    if (/activat/i.test(json.message ?? '')) return { status: 'sent' }
     return { status: 'error', message: json.message || `HTTP ${res.status}` }
   } catch (e) {
     return { status: 'error', message: e instanceof Error ? e.message : 'Network error' }
