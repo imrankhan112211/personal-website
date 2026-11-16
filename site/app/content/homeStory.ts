@@ -21,10 +21,12 @@ export const credentials: { label: Localized; detail?: Localized }[] = [
 export const peopleTrained = 3000
 
 /** "The problem" — three problems businesses face, each answered by one solution area with its options. */
-export const problems: { id: string; icon: 'growth' | 'masks' | 'users'; area: Localized; title: Localized; cost: Localized; solutions: Localized[]; href: string }[] = [
+/** Icon names map to lucide icons in components/sections/home/Problem.tsx. */
+export type SolutionIcon = 'share' | 'growth' | 'code' | 'bot' | 'bag' | 'userx' | 'copyright' | 'filex' | 'radar' | 'headset' | 'video' | 'users' | 'cap' | 'landmark'
+export const problems: { id: string; icon: 'business' | 'brand' | 'cyber'; area: Localized; title: Localized; cost: Localized; solutions: (Localized & { icon: SolutionIcon })[]; href: string }[] = [
   {
     id: 'business',
-    icon: 'growth',
+    icon: 'business',
     area: { en: 'Business solutions', bn: 'বিজনেস সলিউশন' },
     title: { en: 'Your online business is stuck — or one problem away from stopping', bn: 'অনলাইন ব্যবসা আটকে আছে — বা একটি সমস্যাতেই থেমে যেতে পারে' },
     cost: {
@@ -32,17 +34,17 @@ export const problems: { id: string; icon: 'growth' | 'masks' | 'users'; area: L
       bn: 'রেস্ট্রিক্টেড পেজ ও অ্যাড অ্যাকাউন্ট, খরচ তুলতে না পারা বিজ্ঞাপন আর দেরিতে উত্তর — সবই শেষে হারানো বিক্রি।',
     },
     solutions: [
-      { en: 'Social media solutions — pages, ad accounts and Business Manager', bn: 'সোশ্যাল মিডিয়া সলিউশন — পেজ, অ্যাড অ্যাকাউন্ট ও বিজনেস ম্যানেজার' },
-      { en: 'Growth and media buying', bn: 'গ্রোথ ও মিডিয়া বায়িং' },
-      { en: 'Software, SaaS and web development', bn: 'সফটওয়্যার, SaaS ও ওয়েব ডেভেলপমেন্ট' },
-      { en: 'AI customer service and WhatsApp automation (Zurvis.io, WhatsFly)', bn: 'এআই কাস্টমার সার্ভিস ও WhatsApp অটোমেশন (Zurvis.io, WhatsFly)' },
-      { en: 'Social commerce setup and advisory', bn: 'সোশ্যাল কমার্স সেটআপ ও পরামর্শ' },
+      { icon: 'share', en: 'Social media solutions — pages, ad accounts and Business Manager', bn: 'সোশ্যাল মিডিয়া সলিউশন — পেজ, অ্যাড অ্যাকাউন্ট ও বিজনেস ম্যানেজার' },
+      { icon: 'growth', en: 'Growth and media buying', bn: 'গ্রোথ ও মিডিয়া বায়িং' },
+      { icon: 'code', en: 'Software, SaaS and web development', bn: 'সফটওয়্যার, SaaS ও ওয়েব ডেভেলপমেন্ট' },
+      { icon: 'bot', en: 'AI customer service and WhatsApp automation (Zurvis.io, WhatsFly)', bn: 'এআই কাস্টমার সার্ভিস ও WhatsApp অটোমেশন (Zurvis.io, WhatsFly)' },
+      { icon: 'bag', en: 'Social commerce setup and advisory', bn: 'সোশ্যাল কমার্স সেটআপ ও পরামর্শ' },
     ],
     href: '/contact/?type=service',
   },
   {
     id: 'brand',
-    icon: 'masks',
+    icon: 'brand',
     area: { en: 'Brand protection', bn: 'ব্র্যান্ড সুরক্ষা' },
     title: { en: 'Your brand is copied, faked or misused', bn: 'আপনার ব্র্যান্ড নকল, ভুয়া বা অপব্যবহার হচ্ছে' },
     cost: {
@@ -50,16 +52,16 @@ export const problems: { id: string; icon: 'growth' | 'masks' | 'users'; area: L
       bn: 'ভুয়া পেজ আর বিক্রেতারা আপনার নামে গ্রাহকের টাকা নেয়, আর অভিযোগ ও আস্থা হারানোর দায় এসে পড়ে আপনার ওপর।',
     },
     solutions: [
-      { en: 'Impersonation and fake page protection', bn: 'ছদ্মবেশ ও ভুয়া পেজ থেকে সুরক্ষা' },
-      { en: 'Copyright and trademark enforcement', bn: 'কপিরাইট ও ট্রেডমার্ক প্রয়োগ' },
-      { en: 'Counterfeit and unauthorised content takedowns', bn: 'নকল পণ্য ও অনুমতিহীন কনটেন্ট সরানো' },
-      { en: 'Brand monitoring and reputation management', bn: 'ব্র্যান্ড মনিটরিং ও সুনাম ব্যবস্থাপনা' },
+      { icon: 'userx', en: 'Impersonation and fake page protection', bn: 'ছদ্মবেশ ও ভুয়া পেজ থেকে সুরক্ষা' },
+      { icon: 'copyright', en: 'Copyright and trademark enforcement', bn: 'কপিরাইট ও ট্রেডমার্ক প্রয়োগ' },
+      { icon: 'filex', en: 'Counterfeit and unauthorised content takedowns', bn: 'নকল পণ্য ও অনুমতিহীন কনটেন্ট সরানো' },
+      { icon: 'radar', en: 'Brand monitoring and reputation management', bn: 'ব্র্যান্ড মনিটরিং ও সুনাম ব্যবস্থাপনা' },
     ],
     href: '/consulting/#brand-protection',
   },
   {
     id: 'cyber',
-    icon: 'users',
+    icon: 'cyber',
     area: { en: 'Cyber solutions', bn: 'সাইবার সলিউশন' },
     title: { en: 'You — or your people — are targeted online', bn: 'আপনি বা আপনার মানুষরা অনলাইনে টার্গেট হচ্ছেন' },
     cost: {
@@ -67,11 +69,11 @@ export const problems: { id: string; icon: 'growth' | 'masks' | 'users'; area: L
       bn: 'ব্ল্যাকমেইল, হয়রানি আর ফাঁস হওয়া কনটেন্ট দ্রুত বড় ক্ষতি করে, আর একটি ক্লিক করা লিংক বা শেয়ার করা কোডেই অ্যাকাউন্ট হাতছাড়া হতে পারে।',
     },
     solutions: [
-      { en: 'One-to-one consultation for blackmail, harassment and leaked content', bn: 'ব্ল্যাকমেইল, হয়রানি ও ফাঁস হওয়া কনটেন্টের জন্য ওয়ান-টু-ওয়ান পরামর্শ' },
-      { en: 'Webinars for entrepreneurs and creators', bn: 'উদ্যোক্তা ও ক্রিয়েটরদের জন্য ওয়েবিনার' },
-      { en: 'Security awareness workshops for teams', bn: 'টিমের জন্য নিরাপত্তা সচেতনতা কর্মশালা' },
-      { en: 'Seminars for students and schools', bn: 'শিক্ষার্থী ও শিক্ষাপ্রতিষ্ঠানের জন্য সেমিনার' },
-      { en: 'Briefings for institutions and law enforcement', bn: 'প্রতিষ্ঠান ও আইনশৃঙ্খলা বাহিনীর জন্য ব্রিফিং' },
+      { icon: 'headset', en: 'One-to-one consultation for blackmail, harassment and leaked content', bn: 'ব্ল্যাকমেইল, হয়রানি ও ফাঁস হওয়া কনটেন্টের জন্য ওয়ান-টু-ওয়ান পরামর্শ' },
+      { icon: 'video', en: 'Webinars for entrepreneurs and creators', bn: 'উদ্যোক্তা ও ক্রিয়েটরদের জন্য ওয়েবিনার' },
+      { icon: 'users', en: 'Security awareness workshops for teams', bn: 'টিমের জন্য নিরাপত্তা সচেতনতা কর্মশালা' },
+      { icon: 'cap', en: 'Seminars for students and schools', bn: 'শিক্ষার্থী ও শিক্ষাপ্রতিষ্ঠানের জন্য সেমিনার' },
+      { icon: 'landmark', en: 'Briefings for institutions and law enforcement', bn: 'প্রতিষ্ঠান ও আইনশৃঙ্খলা বাহিনীর জন্য ব্রিফিং' },
     ],
     href: '/consulting/#harassment',
   },
@@ -162,27 +164,31 @@ export const finalCta = {
 }
 
 /** Training page — who the sessions are for, each with its own enquiry link. */
-export const whoITrain: { id: string; title: Localized; body: Localized; cta: Localized }[] = [
+export const whoITrain: { id: string; icon: 'video' | 'users' | 'cap' | 'landmark'; title: Localized; body: Localized; cta: Localized }[] = [
   {
     id: 'entrepreneurs',
+    icon: 'video',
     title: { en: 'Entrepreneurs and creators', bn: 'উদ্যোক্তা ও ক্রিয়েটর' },
     body: { en: 'Webinars and workshops on protecting pages, ad accounts and income — and staying in control as you grow.', bn: 'পেজ, অ্যাড অ্যাকাউন্ট ও আয় সুরক্ষা নিয়ে ওয়েবিনার ও কর্মশালা — যাতে বড় হওয়ার সঙ্গে নিয়ন্ত্রণ না হারান।' },
     cta: { en: 'Host a webinar', bn: 'ওয়েবিনার আয়োজন করুন' },
   },
   {
     id: 'teams',
+    icon: 'users',
     title: { en: 'Businesses and teams', bn: 'ব্যবসা ও টিম' },
     body: { en: 'Protecting pages, Business Manager access, ad accounts and brand assets across a team.', bn: 'টিমজুড়ে পেজ, বিজনেস ম্যানেজার অ্যাক্সেস, অ্যাড অ্যাকাউন্ট ও ব্র্যান্ড অ্যাসেট সুরক্ষা।' },
     cta: { en: 'Train my team', bn: 'আমার টিমকে প্রশিক্ষণ দিন' },
   },
   {
     id: 'students',
+    icon: 'cap',
     title: { en: 'Students and schools', bn: 'শিক্ষার্থী ও শিক্ষাপ্রতিষ্ঠান' },
     body: { en: 'Seminars on cyberbullying, fake accounts, scams and staying safe on social media.', bn: 'সাইবার বুলিং, ভুয়া অ্যাকাউন্ট, প্রতারণা ও সোশ্যাল মিডিয়ায় নিরাপদ থাকা নিয়ে সেমিনার।' },
     cta: { en: 'Book a seminar', bn: 'সেমিনার বুক করুন' },
   },
   {
     id: 'institutions',
+    icon: 'landmark',
     title: { en: 'Institutions and law enforcement', bn: 'প্রতিষ্ঠান ও আইনশৃঙ্খলা বাহিনী' },
     body: { en: 'Practical briefings on how account takeovers, impersonation and recovery work.', bn: 'অ্যাকাউন্ট দখল, ছদ্মবেশ ও পুনরুদ্ধার বাস্তবে কীভাবে কাজ করে, তা নিয়ে ব্যবহারিক ব্রিফিং।' },
     cta: { en: 'Request a briefing', bn: 'ব্রিফিংয়ের অনুরোধ করুন' },

@@ -10,6 +10,7 @@ import { Eyebrow, SectionHeading } from '~/components/ui/SectionHeading'
 import { pageMeta } from '~/content/pageMeta'
 import { recognition } from '~/content/recognition'
 import { whoITrain } from '~/content/homeStory'
+import { solutionIcons } from '~/components/sections/home/Problem'
 import { collaborations, trainingAudiences, trainingCategories, trainingFormats, trainingGallery, trainingHeroPhotos } from '~/content/training'
 import { useLocale } from '~/i18n/useLocale'
 import { metaFor } from '~/lib/page'
@@ -70,7 +71,8 @@ export default function Training() {
           <ul className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {whoITrain.map((w) => (
               <li key={w.id} className="flex flex-col rounded-2xl bg-white/[0.06] p-6 ring-1 ring-inset ring-white/10">
-                <h3 className="font-display text-lg font-semibold text-white">{l(w.title)}</h3>
+                {(() => { const Icon = solutionIcons[w.icon]; return <span className="grid size-11 place-items-center rounded-xl bg-white/10 text-lime"><Icon aria-hidden className="size-5" /></span> })()}
+                <h3 className="mt-4 font-display text-lg font-semibold text-white">{l(w.title)}</h3>
                 <p className="mt-2 flex-1 text-[0.9375rem] text-on-ink-muted">{l(w.body)}</p>
                 <a href={`${href('/contact/')}?type=training&audience=${w.id}#message`} className="mt-5 inline-flex min-h-11 items-center gap-1.5 text-sm font-semibold text-lime hover:underline">
                   {l(w.cta)} <ArrowRight aria-hidden className="size-4" />
