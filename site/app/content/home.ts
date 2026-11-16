@@ -11,8 +11,8 @@ export const aboutIntro: Localized[] = [
     bn: '২০২১ সালে Probfly IT প্রতিষ্ঠার পর থেকে তিনি ব্যবসা, ব্র্যান্ড, মিডিয়া প্রতিষ্ঠান ও পাবলিক ফিগারদের সঙ্গে সোশ্যাল মিডিয়া নিরাপত্তা ও ব্র্যান্ড সুরক্ষা নিয়ে কাজ করছেন; বর্তমানে Probfly IT ও Zurvis.io-এর টিমের সঙ্গে সফটওয়্যার ও অটোমেশন পণ্য তৈরি করছেন।',
   },
   {
-    en: 'Through Kaktaruaa he works to prevent cyberbullying and online harassment, and he has delivered cyber safety training for students, institutions and 45 officers of Bangladesh Police’s CID.',
-    bn: 'কাকতাড়ুয়ার মাধ্যমে তিনি সাইবার বুলিং ও অনলাইন হয়রানি প্রতিরোধে কাজ করেন, এবং শিক্ষার্থী, বিভিন্ন প্রতিষ্ঠান ও বাংলাদেশ পুলিশের সিআইডির ৪৫ জন কর্মকর্তাকে সাইবার সেফটি প্রশিক্ষণ দিয়েছেন।',
+    en: 'He trains entrepreneurs, businesses and students through workshops, webinars and seminars, and through Kaktaruaa works to prevent cyberbullying and online harassment.',
+    bn: 'তিনি কর্মশালা, ওয়েবিনার ও সেমিনারের মাধ্যমে উদ্যোক্তা, ব্যবসা ও শিক্ষার্থীদের প্রশিক্ষণ দেন, এবং কাকতাড়ুয়ার মাধ্যমে সাইবার বুলিং ও অনলাইন হয়রানি প্রতিরোধে কাজ করেন।',
   },
 ]
 

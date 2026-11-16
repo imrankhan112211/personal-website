@@ -10,49 +10,50 @@ import type { Localized } from '~/i18n/locales'
 export const credentials: { label: Localized; detail?: Localized }[] = [
   { label: { en: 'The Diana Award 2026', bn: 'দ্য ডায়ানা অ্যাওয়ার্ড ২০২৬' } },
   { label: { en: 'TEDx DRMC Youth speaker', bn: 'TEDx DRMC Youth বক্তা' } },
-  { label: { en: 'Trained 45 CID officers, 2023', bn: 'সিআইডির ৪৫ কর্মকর্তাকে প্রশিক্ষণ, ২০২৩' } },
+  { label: { en: 'Trainer for entrepreneurs, businesses and students', bn: 'উদ্যোক্তা, ব্যবসা ও শিক্ষার্থীদের প্রশিক্ষক' } },
   { label: { en: 'Probfly IT, UK registered trademark', bn: 'Probfly IT, যুক্তরাজ্যে নিবন্ধিত ট্রেডমার্ক' } },
 ]
 
-/** Countries with clients (Dhaka Tribune, 24 Mar 2022, plus Bangladesh). */
-export const clientCountries: Localized[] = [
-  { en: 'Bangladesh', bn: 'বাংলাদেশ' },
-  { en: 'India', bn: 'ভারত' },
-  { en: 'Sri Lanka', bn: 'শ্রীলঙ্কা' },
-  { en: 'United States', bn: 'যুক্তরাষ্ট্র' },
-]
+/**
+ * People trained across sessions, webinars and free courses — a conservative floor from figures shared with the press (Nov 2026):
+ * ~1,200 women in Kaktaruaa's free online courses + 2,000–3,000 students in school programmes + 45 officers = 3,245+ → shown as 3,000+.
+ */
+export const peopleTrained = 3000
 
-/** Students reached through Kaktaruaa school programmes (figure shared with the press, Nov 2026). */
-export const studentsReached = 2000
-
-/** "The problem" — the three situations people come with. */
-export const problems: { id: string; icon: 'lock' | 'masks' | 'shield'; title: Localized; body: Localized }[] = [
+/** "The problem" — three situations that cost a business money, each with how it gets fixed. */
+export const problems: { id: string; icon: 'lock' | 'masks' | 'message'; title: Localized; cost: Localized; fix: Localized; href: string }[] = [
   {
-    id: 'account',
+    id: 'assets',
     icon: 'lock',
-    title: { en: 'Your account or page is hacked, restricted or disabled', bn: 'অ্যাকাউন্ট বা পেজ হ্যাক, রেস্ট্রিক্টেড বা ডিজেবল' },
-    body: {
-      en: 'Years of audience and income can disappear overnight, and the platform’s help pages rarely tell you what actually works.',
-      bn: 'বছরের পর বছরের অডিয়েন্স ও আয় এক রাতে হারিয়ে যেতে পারে, আর প্ল্যাটফর্মের হেল্প পেজে কী আসলে কাজ করে তা খুব কমই বলা থাকে।',
+    title: { en: 'Your page, ad account or Business Manager gets restricted', bn: 'পেজ, অ্যাড অ্যাকাউন্ট বা বিজনেস ম্যানেজার রেস্ট্রিক্টেড' },
+    cost: {
+      en: 'Ads stop, orders stop, and the audience you paid to build is out of reach — every day it stays down costs you sales.',
+      bn: 'বিজ্ঞাপন বন্ধ, অর্ডার বন্ধ, টাকা খরচ করে গড়া অডিয়েন্স নাগালের বাইরে — যত দিন বন্ধ থাকে, তত দিন বিক্রি হারান।',
     },
+    fix: { en: 'Incident response, recovery strategy and an asset structure that doesn’t hang on one account.', bn: 'ইনসিডেন্ট রেসপন্স, পুনরুদ্ধারের কৌশল, আর এমন অ্যাসেট কাঠামো যা একটি অ্যাকাউন্টের ওপর নির্ভর করে না।' },
+    href: '/consulting/#social-media-solutions',
   },
   {
     id: 'brand',
     icon: 'masks',
-    title: { en: 'Someone is impersonating your brand', bn: 'কেউ আপনার ব্র্যান্ডের ছদ্মবেশ নিচ্ছে' },
-    body: {
-      en: 'Fake pages and copied content mislead your customers, take your sales and damage the trust you have built.',
-      bn: 'ভুয়া পেজ আর কপি করা কনটেন্ট আপনার গ্রাহকদের বিভ্রান্ত করে, বিক্রি কেড়ে নেয় আর গড়ে তোলা আস্থা নষ্ট করে।',
+    title: { en: 'Your brand is copied or impersonated', bn: 'আপনার ব্র্যান্ড নকল বা ছদ্মবেশে ব্যবহার হচ্ছে' },
+    cost: {
+      en: 'Fake pages and sellers take your customers’ money in your name, and the complaints — and lost trust — land on you.',
+      bn: 'ভুয়া পেজ আর বিক্রেতারা আপনার নামে গ্রাহকের টাকা নেয়, আর অভিযোগ ও আস্থা হারানোর দায় এসে পড়ে আপনার ওপর।',
     },
+    fix: { en: 'Brand protection: takedowns, trademark and copyright routes, and ongoing monitoring.', bn: 'ব্র্যান্ড সুরক্ষা: টেকডাউন, ট্রেডমার্ক ও কপিরাইটের পথ, আর নিয়মিত নজরদারি।' },
+    href: '/consulting/#brand-protection',
   },
   {
-    id: 'harassment',
-    icon: 'shield',
-    title: { en: 'You are facing harassment, blackmail or leaked content', bn: 'হয়রানি, ব্ল্যাকমেইল বা ব্যক্তিগত কনটেন্ট ফাঁস' },
-    body: {
-      en: 'The first hours matter most. Knowing what to do — and what not to do — changes the outcome.',
-      bn: 'প্রথম কয়েক ঘণ্টাই সবচেয়ে গুরুত্বপূর্ণ। কী করবেন আর কী করবেন না, তা জানা থাকলে ফলাফল বদলে যায়।',
+    id: 'messages',
+    icon: 'message',
+    title: { en: 'Customer messages pile up faster than your team can answer', bn: 'গ্রাহকের মেসেজ টিমের উত্তরের চেয়ে দ্রুত জমছে' },
+    cost: {
+      en: 'Slow replies on WhatsApp, Messenger and Instagram mean lost leads and customers who buy somewhere else.',
+      bn: 'WhatsApp, Messenger ও Instagram-এ দেরিতে উত্তর মানে হারানো লিড, আর গ্রাহক অন্য কোথাও কিনে ফেলে।',
     },
+    fix: { en: 'AI customer service and messaging automation through Zurvis.io and WhatsFly.', bn: 'Zurvis.io ও WhatsFly-এর মাধ্যমে এআই কাস্টমার সার্ভিস ও মেসেজিং অটোমেশন।' },
+    href: '/contact/?type=service',
   },
 ]
 
@@ -143,27 +144,27 @@ export const finalCta = {
 /** Training page — who the sessions are for, each with its own enquiry link. */
 export const whoITrain: { id: string; title: Localized; body: Localized; cta: Localized }[] = [
   {
-    id: 'students',
-    title: { en: 'Students', bn: 'শিক্ষার্থী' },
-    body: { en: 'Cyberbullying, fake accounts, scams and staying safe on social media.', bn: 'সাইবার বুলিং, ভুয়া অ্যাকাউন্ট, প্রতারণা ও সোশ্যাল মিডিয়ায় নিরাপদ থাকা।' },
-    cta: { en: 'Book a school session', bn: 'স্কুল সেশন বুক করুন' },
-  },
-  {
-    id: 'institutions',
-    title: { en: 'Schools and institutions', bn: 'শিক্ষাপ্রতিষ্ঠান ও সংগঠন' },
-    body: { en: 'Awareness programmes for teachers, parents, NGOs and community organisations.', bn: 'শিক্ষক, অভিভাবক, এনজিও ও সামাজিক সংগঠনের জন্য সচেতনতা কার্যক্রম।' },
-    cta: { en: 'Plan a programme', bn: 'কার্যক্রম পরিকল্পনা করুন' },
-  },
-  {
-    id: 'law-enforcement',
-    title: { en: 'Police and law enforcement', bn: 'পুলিশ ও আইনশৃঙ্খলা বাহিনী' },
-    body: { en: 'How account takeovers, impersonation and recovery work in practice — as delivered to 45 CID officers.', bn: 'অ্যাকাউন্ট দখল, ছদ্মবেশ ও পুনরুদ্ধার বাস্তবে কীভাবে কাজ করে — যেমনটা সিআইডির ৪৫ কর্মকর্তাকে শেখানো হয়েছে।' },
-    cta: { en: 'Request a briefing', bn: 'ব্রিফিংয়ের অনুরোধ করুন' },
+    id: 'entrepreneurs',
+    title: { en: 'Entrepreneurs and creators', bn: 'উদ্যোক্তা ও ক্রিয়েটর' },
+    body: { en: 'Webinars and workshops on protecting pages, ad accounts and income — and staying in control as you grow.', bn: 'পেজ, অ্যাড অ্যাকাউন্ট ও আয় সুরক্ষা নিয়ে ওয়েবিনার ও কর্মশালা — যাতে বড় হওয়ার সঙ্গে নিয়ন্ত্রণ না হারান।' },
+    cta: { en: 'Host a webinar', bn: 'ওয়েবিনার আয়োজন করুন' },
   },
   {
     id: 'teams',
     title: { en: 'Businesses and teams', bn: 'ব্যবসা ও টিম' },
     body: { en: 'Protecting pages, Business Manager access, ad accounts and brand assets across a team.', bn: 'টিমজুড়ে পেজ, বিজনেস ম্যানেজার অ্যাক্সেস, অ্যাড অ্যাকাউন্ট ও ব্র্যান্ড অ্যাসেট সুরক্ষা।' },
     cta: { en: 'Train my team', bn: 'আমার টিমকে প্রশিক্ষণ দিন' },
+  },
+  {
+    id: 'students',
+    title: { en: 'Students and schools', bn: 'শিক্ষার্থী ও শিক্ষাপ্রতিষ্ঠান' },
+    body: { en: 'Seminars on cyberbullying, fake accounts, scams and staying safe on social media.', bn: 'সাইবার বুলিং, ভুয়া অ্যাকাউন্ট, প্রতারণা ও সোশ্যাল মিডিয়ায় নিরাপদ থাকা নিয়ে সেমিনার।' },
+    cta: { en: 'Book a seminar', bn: 'সেমিনার বুক করুন' },
+  },
+  {
+    id: 'institutions',
+    title: { en: 'Institutions and law enforcement', bn: 'প্রতিষ্ঠান ও আইনশৃঙ্খলা বাহিনী' },
+    body: { en: 'Practical briefings on how account takeovers, impersonation and recovery work.', bn: 'অ্যাকাউন্ট দখল, ছদ্মবেশ ও পুনরুদ্ধার বাস্তবে কীভাবে কাজ করে, তা নিয়ে ব্যবহারিক ব্রিফিং।' },
+    cta: { en: 'Request a briefing', bn: 'ব্রিফিংয়ের অনুরোধ করুন' },
   },
 ]

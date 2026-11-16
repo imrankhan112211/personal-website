@@ -1,11 +1,12 @@
-import { ArrowRight, Lock, ShieldAlert, VenetianMask } from 'lucide-react'
+import { ArrowRight, Lock, MessagesSquare, VenetianMask } from 'lucide-react'
+import { LocalLink } from '~/components/ui/LocalLink'
 import { ButtonLink } from '~/components/ui/Button'
 import { SectionHeading } from '~/components/ui/SectionHeading'
 import { problems } from '~/content/homeStory'
 import { ctaLinks } from '~/content/navigation'
 import { useLocale } from '~/i18n/useLocale'
 
-const icons = { lock: Lock, masks: VenetianMask, shield: ShieldAlert }
+const icons = { lock: Lock, masks: VenetianMask, message: MessagesSquare }
 
 /** The three situations people usually arrive with. */
 export function Problem() {
@@ -20,7 +21,14 @@ export function Problem() {
             <li key={p.id} className="reveal tile flex flex-col p-7 md:p-9">
               <span className="grid size-12 place-items-center rounded-2xl bg-accent-soft text-accent"><Icon aria-hidden className="size-6" /></span>
               <h3 className="t-h3 mt-7 text-ink">{l(p.title)}</h3>
-              <p className="mt-3 text-muted">{l(p.body)}</p>
+              <p className="mt-3 text-muted">{l(p.cost)}</p>
+              <div className="mt-6 flex-1 rounded-2xl bg-accent-soft p-4">
+                <p className="label-caps text-xs font-semibold uppercase tracking-[0.14em] text-accent">{t('problem.fix')}</p>
+                <p className="mt-1.5 text-[0.9375rem] text-ink">{l(p.fix)}</p>
+              </div>
+              <LocalLink to={p.href} className="mt-5 inline-flex min-h-11 items-center gap-1.5 text-sm font-semibold text-ink hover:text-accent">
+                {t('problem.cta')} <ArrowRight aria-hidden className="size-4" />
+              </LocalLink>
             </li>
           )
         })}

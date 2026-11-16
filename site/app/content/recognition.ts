@@ -61,6 +61,6 @@ export const recognition: Recognition[] = [
     },
     image: '/images/cid-training-2023-1600.webp',
     sourceUrl: null,
-    featured: true,
+    featured: false, // kept on the Recognition and Training pages, not highlighted on the homepage
   },
 ]

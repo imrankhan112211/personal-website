@@ -1,5 +1,6 @@
 import { Award, Check } from 'lucide-react'
-import { clientCountries, credentials, studentsReached } from '~/content/homeStory'
+import { credentials, peopleTrained } from '~/content/homeStory'
+import { ventures } from '~/content/ventures'
 import { media } from '~/content/media'
 import { publicPosts } from '~/content/reviews'
 import { useLocale } from '~/i18n/useLocale'
@@ -11,8 +12,8 @@ export function CredentialsBand() {
   const stats = [
     { value: num(publicPosts.length), label: t('stats.thanks') },
     { value: num(media.length), label: t('stats.media') },
-    { value: `${num(studentsReached)}+`, label: t('stats.students') },
-    { value: num(clientCountries.length), label: t('stats.countries') },
+    { value: `${num(peopleTrained)}+`, label: t('stats.trained') },
+    { value: num(ventures.length), label: t('stats.ventures') },
   ]
   return (
     <section aria-label={t('stats.label')} className="container-x pb-2 pt-4">
@@ -35,9 +36,6 @@ export function CredentialsBand() {
             </div>
           ))}
         </dl>
-        <p className="relative mt-6 text-center text-xs text-on-ink-muted">
-          {t('stats.countries.list')}: {clientCountries.map((c) => l(c)).join(' · ')}
-        </p>
       </div>
     </section>
   )
