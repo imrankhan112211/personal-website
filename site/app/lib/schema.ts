@@ -96,7 +96,7 @@ export function profilePageSchema(locale: Locale, path: string) {
   }
 }
 
-export function organizationSchema(o: { name: string; url: string; description: string; founder?: boolean; foundingDate?: number; coFounders?: string[] }) {
+export function organizationSchema(o: { name: string; url: string; description: string; founder?: boolean; foundingDate?: number; coFounders?: string[]; alsoKnownAs?: { name: string; url: string }[] }) {
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
@@ -104,6 +104,7 @@ export function organizationSchema(o: { name: string; url: string; description: 
     url: o.url,
     description: o.description,
     ...(o.foundingDate ? { foundingDate: String(o.foundingDate) } : {}),
+    ...(o.alsoKnownAs?.length ? { alternateName: o.alsoKnownAs.map((a) => a.name), sameAs: o.alsoKnownAs.map((a) => a.url) } : {}),
     ...(o.founder ? { founder: [{ '@id': PERSON_ID }, ...(o.coFounders ?? []).map((name) => ({ '@type': 'Person', name }))] } : {}),
   }
 }

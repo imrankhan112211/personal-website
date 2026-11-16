@@ -13,7 +13,7 @@ export const ui = s({
   'nav.recognition': { en: 'Recognition', bn: 'স্বীকৃতি' },
   'nav.media': { en: 'Media', bn: 'গণমাধ্যম' },
   'nav.insights': { en: 'Blog', bn: 'ব্লগ' },
-  'nav.resources': { en: 'Courses & Books', bn: 'কোর্স ও বই' },
+  'nav.resources': { en: 'Learning', bn: 'লার্নিং' },
   'nav.contact': { en: 'Contact', bn: 'যোগাযোগ' },
   'nav.more': { en: 'More', bn: 'আরও' },
   'nav.menu': { en: 'Menu', bn: 'মেনু' },
@@ -313,7 +313,7 @@ export const ui = s({
   'ins.back': { en: 'All articles', bn: 'সব লেখা' },
 
   // Resources
-  'res.eyebrow': { en: 'Courses & Books', bn: 'কোর্স ও বই' },
+  'res.eyebrow': { en: 'Learning', bn: 'লার্নিং' },
   'res.title': { en: 'Learn from real cases.', bn: 'বাস্তব অভিজ্ঞতা থেকে শিখুন।' },
   'res.lead': { en: 'Recorded courses, e-books and free guides on social media security, brand protection and running a safer online business.', bn: 'সোশ্যাল মিডিয়া নিরাপত্তা, ব্র্যান্ড সুরক্ষা ও নিরাপদে অনলাইন ব্যবসা পরিচালনা নিয়ে রেকর্ডেড কোর্স, ই-বুক ও ফ্রি গাইড।' },
   'res.soon': { en: 'Coming soon', bn: 'শিগগির আসছে' },

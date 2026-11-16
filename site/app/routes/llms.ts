@@ -1,6 +1,6 @@
-import { shortBio } from '~/content/about'
+import { profileFaqs, shortBio } from '~/content/about'
+import { framework, problems } from '~/content/homeStory'
 import { articles } from '~/content/articles'
-import { expertise } from '~/content/home'
 import { media } from '~/content/media'
 import { person, SITE_URL } from '~/content/person'
 import { recognition } from '~/content/recognition'
@@ -25,10 +25,14 @@ export function loader() {
     ...(person.email ? [`- Contact: ${person.email}`] : []),
     '',
     '## Ventures',
-    ...ventures.map((v) => `- ${v.name}${v.role && v.roleVerified ? ` (${v.role.en})` : ''}: ${v.description.en}${v.url ? ` ${v.url}` : ''}`),
+    ...ventures.map((v) => `- ${v.name}${v.role && v.roleVerified ? ` (${v.role.en})` : ''}: ${v.description.en}${v.url ? ` ${v.url}` : ''}${v.alsoKnownAs?.length ? ` (also: ${v.alsoKnownAs.map((a) => `${a.name} ${a.url}`).join(', ')})` : ''}`),
     '',
-    '## Areas of expertise',
-    ...expertise.map((e) => `- ${e.title.en}: ${e.body.en}`),
+    '## Services',
+    `Organised as the Digital Trust Framework: ${framework.map((f) => `${f.name.en} — ${f.line.en}`).join(' ')}`,
+    ...problems.map((p) => `- ${p.area.en}: ${p.solutions.map((x) => x.en).join('; ')}.`),
+    '',
+    '## Frequently asked questions',
+    ...profileFaqs.flatMap((f) => [`### ${f.q.en}`, f.a.en]),
     '',
     '## Recognition',
     ...recognition.map((r) => `- ${r.title.en} — ${r.organization.en}${r.date ? ` (${r.date})` : ''}${r.description ? `: ${r.description.en}` : ''}${r.sourceUrl ? ` Source: ${r.sourceUrl}` : ''}`),
@@ -36,10 +40,11 @@ export function loader() {
     '## Key pages',
     `- [Biography](${u('/about/biography/')}): official reference biography`,
     `- [About](${u('/about/')})`,
-    `- [Consulting](${u('/consulting/')}): social media security, digital brand protection and online business advisory`,
-    `- [Training](${u('/training/')}): cyber safety and social media safety training`,
+    `- [Consulting](${u('/consulting/')}): business and brand protection, social media solutions and incident response, social commerce, cyber harassment and blackmail response`,
+    `- [Training](${u('/training/')}): webinars, workshops, seminars and briefings on cyber safety for entrepreneurs, teams, students and institutions`,
     `- [Ventures](${u('/ventures/')})`,
     `- [Media coverage](${u('/media/')})`,
+    `- [Learning](${u('/learning/')}): courses, e-books and free guides (coming soon)`,
     `- [Blog](${u('/blog/')}): articles`,
     `- [Contact](${u('/contact/')})`,
     `- Bengali version: ${u('/bn/')}`,

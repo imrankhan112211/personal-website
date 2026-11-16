@@ -3,6 +3,7 @@ import { ctaLinks } from '~/content/navigation'
 import { person } from '~/content/person'
 import { ventures } from '~/content/ventures'
 import { useLocale } from '~/i18n/useLocale'
+import { withUtm } from '~/lib/utm'
 import type { UiKey } from '~/i18n/ui'
 import { Placeholder } from '../ui/Placeholder'
 import { LocalLink } from '../ui/LocalLink'
@@ -16,7 +17,7 @@ const explore: { key: UiKey; href: string }[] = [
   { key: 'nav.recognition', href: '/recognition/' },
   { key: 'nav.media', href: '/media/' },
   { key: 'nav.insights', href: '/blog/' },
-  { key: 'nav.resources', href: '/courses/' },
+  { key: 'nav.resources', href: '/learning/' },
 ]
 const work: { key: UiKey; href: string }[] = [
   { key: 'nav.consulting', href: '/consulting/' },
@@ -62,7 +63,7 @@ export function Footer() {
             {ventures.map((v) => (
               <li key={v.slug}>
                 {v.url ? (
-                  <a href={v.url} target="_blank" rel="noopener noreferrer" className={linkCls}>
+                  <a href={withUtm(v.url, 'footer')} target="_blank" rel="noopener noreferrer" className={linkCls}>
                     {v.name}<ArrowUpRight aria-hidden className="ml-1 size-3.5" />
                   </a>
                 ) : (

@@ -21,7 +21,7 @@ export function buildMeta({ locale, path, title, description, image, type = 'web
   const fullTitle = path === '/' ? pageTitle : `${pageTitle} — ${name}`
   const desc = tr(description, locale)
   const url = SITE_URL + localizePath(path, locale)
-  const img = image ? SITE_URL + image : `${SITE_URL}/og-default.png`
+  const img = image ? SITE_URL + image : `${SITE_URL}/og-default.jpg`
 
   return [
     { title: fullTitle },

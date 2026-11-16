@@ -1,6 +1,6 @@
-# কোর্স ও বই যোগ করার নিয়ম (Courses & Books)
+# কোর্স ও বই যোগ করার নিয়ম (Learning)
 
-পেজ: `abdullahalimran.com/courses/`। কিছু যোগ না করা পর্যন্ত পেজে "Coming soon" দেখায়।
+পেজ: `abdullahalimran.com/learning/`। কিছু যোগ না করা পর্যন্ত পেজে "Coming soon" দেখায়।
 
 ## সবচেয়ে সহজ উপায়
 
@@ -45,4 +45,4 @@
 ## যা স্বয়ংক্রিয়ভাবে হয়
 
 - প্রতিটা আইটেমের জন্য Google-এর জন্য Course বা Book structured data তৈরি হয় (দাম, ভাষা, লেখকসহ)।
-- পুরনো `/resources/` লিংক নিজে থেকে `/courses/`-এ চলে যায় (হোস্টিংয়ের পর)।
+- পুরনো `/resources/` লিংক নিজে থেকে `/learning/`-এ চলে যায় (হোস্টিংয়ের পর)।

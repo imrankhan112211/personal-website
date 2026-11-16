@@ -1,8 +1,10 @@
 # Old blog address → new (Insights was renamed to Blog, Nov 2026)
 /insights/*     /blog/:splat     301
 /bn/insights/*  /bn/blog/:splat  301
-/resources/     /courses/        301
-/bn/resources/  /bn/courses/     301
+/resources/     /learning/       301
+/bn/resources/  /bn/learning/    301
+/courses/       /learning/       301
+/bn/courses/    /bn/learning/    301
 
 # Netlify / Cloudflare Pages: unknown paths get the branded 404 via the SPA fallback.
 /*  /__spa-fallback.html  404

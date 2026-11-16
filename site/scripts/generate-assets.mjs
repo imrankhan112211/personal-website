@@ -1,7 +1,6 @@
 /**
  * Generates the default social share image and app icons into /public.
  * Run: npm run assets   (re-run after changing name/title/colours)
- * Replace public/og-default.png with a designed image that includes the approved portrait when available.
  */
 import sharp from 'sharp'
 import { mkdir } from 'node:fs/promises'
@@ -12,7 +11,7 @@ const out = fileURLToPath(outUrl)
 const file = (n) => fileURLToPath(new URL(n, outUrl))
 await mkdir(out, { recursive: true })
 
-const ink = '#0E1726', ink2 = '#1B2638', accent = '#2B59C3', sky = '#9DB7F5'
+const ink = '#0A1428', ink2 = '#12264A', accent = '#1C5FD0', sky = '#AAB8D0', gold = '#D8B46A'
 const font = "'Helvetica Neue', Helvetica, Arial, sans-serif"
 
 const grid = (w, h, step) => {
@@ -32,11 +31,11 @@ const og = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" vi
   <rect x="72" y="72" width="60" height="60" rx="15" fill="white"/>
   <text x="102" y="111" text-anchor="middle" font-family="${font}" font-weight="800" font-size="24" fill="${ink}" letter-spacing="-1">AI</text>
   <text x="152" y="110" font-family="${font}" font-weight="500" font-size="20" fill="${sky}" letter-spacing="3">ABDULLAHALIMRAN.COM</text>
-  <text x="72" y="300" font-family="${font}" font-weight="800" font-size="76" fill="white" letter-spacing="-2.5">Abdullah Al Imran</text>
-  <text x="72" y="356" font-family="${font}" font-weight="500" font-size="27" fill="#A9B3C4">Technology Entrepreneur · Cyber Safety Advocate</text>
-  <text x="72" y="394" font-family="${font}" font-weight="500" font-size="27" fill="#A9B3C4">Trainer · Consultant</text>
-  <rect x="72" y="452" width="200" height="40" rx="20" fill="#C8F169"/>
-  <text x="172" y="478" text-anchor="middle" font-family="${font}" font-weight="700" font-size="18" fill="#1D2600">Diana Award 2026</text>
+  <text x="72" y="300" font-family="${font}" font-weight="800" font-size="70" fill="white" letter-spacing="-2.5">Abdullah Al Imran</text>
+  <text x="72" y="356" font-family="${font}" font-weight="500" font-size="27" fill="${sky}">Technology Entrepreneur · Cyber Safety Advocate</text>
+  <text x="72" y="394" font-family="${font}" font-weight="500" font-size="27" fill="${sky}">Founder, Probfly IT and Kaktaruaa</text>
+  <rect x="72" y="452" width="232" height="40" rx="20" fill="${gold}"/>
+  <text x="188" y="478" text-anchor="middle" font-family="${font}" font-weight="700" font-size="18" fill="#2B2008">The Diana Award 2026</text>
   <text x="72" y="548" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="27" fill="white">Advocating for a safer digital world through</text>
   <text x="72" y="584" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="27" fill="white">technology, awareness and digital protection.</text>
 </svg>`
@@ -49,17 +48,21 @@ const icon = (size, pad = 0) => {
 </svg>`
 }
 
-// Portrait panel on the right (uses the processed portrait from `npm run images`, if present)
-const portraitPath = file('images/abdullah-al-imran-portrait-960.webp')
+// Portrait panel on the right: the homepage hero cut-out on the site's light-blue gradient
+const heroPath = file('images/abdullah-al-imran-hero-840.webp')
 const layers = []
 try {
-  const panel = await sharp(portraitPath).resize(400, 630, { fit: 'cover', position: 'top' }).toBuffer()
-  const mask = Buffer.from('<svg width="400" height="630"><rect x="0" y="0" width="400" height="630" rx="0" fill="white"/></svg>')
-  layers.push({ input: await sharp(panel).composite([{ input: mask, blend: 'dest-in' }]).toBuffer(), left: 800, top: 0 })
-} catch { /* no portrait yet — text-only card */ }
-await sharp(Buffer.from(og)).composite(layers).png({ compressionLevel: 9 }).toFile(file('og-default.png'))
+  const bg = Buffer.from(`<svg width="420" height="630"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#cfe6f7"/><stop offset="0.6" stop-color="#e4f0fa"/><stop offset="1" stop-color="#f3eef5"/></linearGradient></defs><rect width="420" height="630" fill="url(#g)"/></svg>`)
+  const big = await sharp(heroPath).resize({ height: 500 }).toBuffer()
+  const bm = await sharp(big).metadata()
+  const person = await sharp(big).extract({ left: Math.max(0, Math.round(bm.width * 0.56 - 210)), top: 0, width: 420, height: 500 }).toBuffer()
+  const pm = await sharp(person).metadata()
+  const panel = await sharp(bg).composite([{ input: person, left: Math.round((420 - pm.width) / 2), top: 630 - pm.height }]).png().toBuffer()
+  layers.push({ input: panel, left: 780, top: 0 })
+} catch { /* no hero image yet — text-only card */ }
+await sharp(Buffer.from(og)).composite(layers).flatten({ background: ink }).jpeg({ quality: 84, mozjpeg: true }).toFile(file('og-default.jpg'))
 for (const [name, size, pad] of [['favicon-32.png', 32, 0], ['apple-touch-icon.png', 180, 0], ['icon-192.png', 192, 0], ['icon-512.png', 512, 0], ['icon-maskable-512.png', 512, 80]]) {
   const svg = name === 'apple-touch-icon.png' || name.includes('maskable') ? icon(size, pad).replace(/rx="\d+"/, 'rx="0"') : icon(size, pad)
   await sharp(Buffer.from(svg)).png().toFile(file(name))
 }
-console.log('Generated og-default.png and icons in public/')
+console.log('Generated og-default.jpg and icons in public/')

@@ -8,7 +8,7 @@ export const primaryNav: NavItem[] = [
   { key: 'nav.consulting', href: '/consulting/' },
   { key: 'nav.training', href: '/training/' },
   { key: 'nav.ventures', href: '/ventures/' },
-  { key: 'nav.resources', href: '/courses/' },
+  { key: 'nav.resources', href: '/learning/' },
   { key: 'nav.insights', href: '/blog/' },
 ]
 

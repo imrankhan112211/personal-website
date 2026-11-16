@@ -16,6 +16,7 @@ import { LocalLink } from '~/components/ui/LocalLink'
 import { ventures } from '~/content/ventures'
 import { localeFromPath } from '~/i18n/locales'
 import { useLocale } from '~/i18n/useLocale'
+import { withUtm } from '~/lib/utm'
 import { metaFor } from '~/lib/page'
 import { profilePageSchema } from '~/lib/schema'
 import { cn } from '~/lib/utils'
@@ -85,7 +86,7 @@ export default function Biography() {
                 <li key={v.slug} className="rounded-2xl border border-line p-5">
                   <p className="flex flex-wrap items-center gap-3 font-display font-semibold text-ink">
                     {v.name}
-                    {v.url && <a href={v.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-0.5 text-sm font-normal text-accent hover:underline">{new URL(v.url).host}<ArrowUpRight aria-hidden className="size-3.5" /></a>}
+                    {v.url && <a href={withUtm(v.url, 'biography')} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-0.5 text-sm font-normal text-accent hover:underline">{new URL(v.url).host}<ArrowUpRight aria-hidden className="size-3.5" /></a>}
                   </p>
                   <p className="mt-1 text-[0.9375rem] text-muted">{l(v.description)}</p>
                   <p className="mt-3 text-sm">{v.role && v.roleVerified ? l(v.role) : <Placeholder label="[CONFIRM OFFICIAL ROLE]" />}</p>

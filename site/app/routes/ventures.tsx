@@ -6,11 +6,12 @@ import { Badge, StatusDot } from '~/components/ui/Badge'
 import { Placeholder, SHOW_PLACEHOLDERS } from '~/components/ui/Placeholder'
 import { ventures } from '~/content/ventures'
 import { useLocale } from '~/i18n/useLocale'
+import { withUtm } from '~/lib/utm'
 import { metaFor } from '~/lib/page'
 import { organizationSchema } from '~/lib/schema'
 
 export function meta({ location }: Route.MetaArgs) {
-  const orgs = ventures.filter((v) => v.url).map((v) => organizationSchema({ name: v.name, url: v.url!, description: v.description.en, founder: v.roleVerified, foundingDate: v.founded, coFounders: v.coFounders }))
+  const orgs = ventures.filter((v) => v.url).map((v) => organizationSchema({ name: v.name, url: v.url!, description: v.description.en, founder: v.roleVerified, foundingDate: v.founded, coFounders: v.coFounders, alsoKnownAs: v.alsoKnownAs }))
   return metaFor('ventures', location.pathname, orgs)
 }
 
@@ -48,10 +49,16 @@ export default function Ventures() {
                     <h2 id={`${v.slug}-t`} className={`t-h2 mt-2 ${i % 2 ? 'text-ink' : 'text-white'}`}>{v.name}</h2>
                     <div className="mt-6">
                       {v.url ? (
-                        <a href={v.url} target="_blank" rel="noopener noreferrer" className={`inline-flex min-h-11 items-center gap-2 font-medium underline underline-offset-[6px] ${i % 2 ? 'text-ink decoration-line-strong hover:text-accent' : 'text-white decoration-white/30 hover:decoration-white'}`}>
+                        <a href={withUtm(v.url)} target="_blank" rel="noopener noreferrer" className={`inline-flex min-h-11 items-center gap-2 font-medium underline underline-offset-[6px] ${i % 2 ? 'text-ink decoration-line-strong hover:text-accent' : 'text-white decoration-white/30 hover:decoration-white'}`}>
                           {new URL(v.url).host} <ArrowUpRight aria-hidden className="size-4" /><span className="sr-only">({t('ventures.website')})</span>
                         </a>
-                      ) : (
+                      ) : null}
+                      {v.alsoKnownAs?.map((a) => (
+                        <a key={a.url} href={withUtm(a.url)} target="_blank" rel="noopener noreferrer" className={`ml-5 inline-flex min-h-11 items-center gap-2 font-medium underline underline-offset-[6px] ${i % 2 ? 'text-ink decoration-line-strong hover:text-accent' : 'text-white decoration-white/30 hover:decoration-white'}`}>
+                          {new URL(a.url).host} <ArrowUpRight aria-hidden className="size-4" />
+                        </a>
+                      ))}
+                      {!v.url && (
                         <span className={i % 2 ? 'text-sm text-muted' : 'text-sm text-on-ink-muted'}>{t('ventures.nosite')}</span>
                       )}
                     </div>

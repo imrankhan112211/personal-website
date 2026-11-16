@@ -10,7 +10,7 @@ export const pages = [
   { path: '/recognition/', file: 'routes/recognition.tsx', id: 'recognition' },
   { path: '/media/', file: 'routes/media.tsx', id: 'media' },
   { path: '/blog/', file: 'routes/insights.tsx', id: 'insights' },
-  { path: '/courses/', file: 'routes/courses.tsx', id: 'resources' },
+  { path: '/learning/', file: 'routes/courses.tsx', id: 'resources' },
   { path: '/contact/', file: 'routes/contact.tsx', id: 'contact' },
   { path: '/privacy/', file: 'routes/privacy.tsx', id: 'privacy' },
   { path: '/terms/', file: 'routes/terms.tsx', id: 'terms' },
