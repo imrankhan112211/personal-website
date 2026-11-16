@@ -58,21 +58,22 @@ export const problems: { id: string; icon: 'growth' | 'masks' | 'users'; area: L
     href: '/consulting/#brand-protection',
   },
   {
-    id: 'awareness',
+    id: 'cyber',
     icon: 'users',
-    area: { en: 'Cyber awareness training', bn: 'সাইবার সচেতনতা প্রশিক্ষণ' },
-    title: { en: 'Your people are the easiest way in', bn: 'আপনার মানুষরাই সবচেয়ে সহজ প্রবেশপথ' },
+    area: { en: 'Cyber solutions', bn: 'সাইবার সলিউশন' },
+    title: { en: 'You — or your people — are targeted online', bn: 'আপনি বা আপনার মানুষরা অনলাইনে টার্গেট হচ্ছেন' },
     cost: {
-      en: 'One clicked link or shared login code can hand over a page, an ad account or customer data — no hacking skill required.',
-      bn: 'একটি ক্লিক করা লিংক বা শেয়ার করা লগইন কোডেই পেজ, অ্যাড অ্যাকাউন্ট বা গ্রাহকের তথ্য হাতছাড়া হতে পারে — হ্যাকিং দক্ষতা লাগে না।',
+      en: 'Blackmail, harassment and leaked content do real damage fast, and one clicked link or shared code can hand over an account.',
+      bn: 'ব্ল্যাকমেইল, হয়রানি আর ফাঁস হওয়া কনটেন্ট দ্রুত বড় ক্ষতি করে, আর একটি ক্লিক করা লিংক বা শেয়ার করা কোডেই অ্যাকাউন্ট হাতছাড়া হতে পারে।',
     },
     solutions: [
+      { en: 'One-to-one consultation for blackmail, harassment and leaked content', bn: 'ব্ল্যাকমেইল, হয়রানি ও ফাঁস হওয়া কনটেন্টের জন্য ওয়ান-টু-ওয়ান পরামর্শ' },
       { en: 'Webinars for entrepreneurs and creators', bn: 'উদ্যোক্তা ও ক্রিয়েটরদের জন্য ওয়েবিনার' },
       { en: 'Security awareness workshops for teams', bn: 'টিমের জন্য নিরাপত্তা সচেতনতা কর্মশালা' },
       { en: 'Seminars for students and schools', bn: 'শিক্ষার্থী ও শিক্ষাপ্রতিষ্ঠানের জন্য সেমিনার' },
       { en: 'Briefings for institutions and law enforcement', bn: 'প্রতিষ্ঠান ও আইনশৃঙ্খলা বাহিনীর জন্য ব্রিফিং' },
     ],
-    href: '/training/',
+    href: '/consulting/#harassment',
   },
 ]
 

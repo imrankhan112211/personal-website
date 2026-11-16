@@ -1,4 +1,4 @@
-import { ArrowRight, Check, TrendingUp, Users, VenetianMask } from 'lucide-react'
+import { ArrowRight, Check, ShieldAlert, TrendingUp, VenetianMask } from 'lucide-react'
 import { LocalLink } from '~/components/ui/LocalLink'
 import { ButtonLink } from '~/components/ui/Button'
 import { SectionHeading } from '~/components/ui/SectionHeading'
@@ -6,7 +6,7 @@ import { problems } from '~/content/homeStory'
 import { ctaLinks } from '~/content/navigation'
 import { useLocale } from '~/i18n/useLocale'
 
-const icons = { growth: TrendingUp, masks: VenetianMask, users: Users }
+const icons = { growth: TrendingUp, masks: VenetianMask, users: ShieldAlert }
 
 /** The three situations people usually arrive with. */
 export function Problem() {
