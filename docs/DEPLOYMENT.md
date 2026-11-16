@@ -30,3 +30,15 @@ The CSP allows `'unsafe-inline'` for scripts because React Router inlines a smal
 2. Test structured data with Google's Rich Results Test and validator.schema.org (homepage, `/about/biography/`, `/consulting/`).
 3. Add `sameAs` profile URLs in `app/content/person.ts` once official profiles are confirmed. They are the strongest signal linking your social accounts to this site.
 4. Re-run `npm run assets` after changing the name, title or colours, or replace `public/og-default.png` with a designed share image that uses the approved portrait.
+
+## Cloudflare Pages: exact settings
+
+| Setting | Value |
+|---|---|
+| Framework preset | None |
+| Build command | `npm run build` |
+| Build output directory | `site/build/client` |
+| Root directory | *(leave empty, repository root)* |
+| Node version | 22 (from `.nvmrc`; or set env `NODE_VERSION=22`) |
+
+The root `npm run build` installs the site's own dependencies (`site/`) and then builds. `404.html` is created automatically after the build, and `_headers` / `_redirects` are copied from `site/public/`.
