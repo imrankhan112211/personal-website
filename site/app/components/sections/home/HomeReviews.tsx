@@ -1,68 +1,48 @@
-import { ArrowRight, ArrowUpRight, Play } from 'lucide-react'
+import { ArrowRight, ArrowUpRight, Quote } from 'lucide-react'
 import { ButtonLink } from '~/components/ui/Button'
-import { Eyebrow } from '~/components/ui/SectionHeading'
+import { SectionHeading } from '~/components/ui/SectionHeading'
 import { Avatar } from '~/components/ui/Avatar'
 import reviewImages from '~/content/reviewImages.json'
-import { publicPosts, trustedBy, videoReviews } from '~/content/reviews'
+import { quotes } from '~/content/homeStory'
+import { publicPosts, videoReviews } from '~/content/reviews'
 import { useLocale } from '~/i18n/useLocale'
 
-const images = reviewImages as { posts: Record<string, string>; avatars?: Record<string, string>; videos: Record<string, string> }
+const images = reviewImages as { avatars?: Record<string, string> }
 
-const parseCount = (v: string) => parseFloat(v) * (v.endsWith('M') ? 1e6 : v.endsWith('K') ? 1e3 : 1)
-
+/** Client quotes, word for word from their public posts, each linking to the original. */
 export function HomeReviews() {
-  const { t, locale } = useLocale()
+  const { t, l, locale } = useLocale()
   const num = (n: number) => n.toLocaleString(locale === 'bn' ? 'bn-BD' : 'en')
-  const top = [...videoReviews].sort((a, b) => parseCount(b.views) - parseCount(a.views)).slice(0, 2)
-  const posts = publicPosts.reduce((s, p) => s + p.urls.length, 0)
+  const items = quotes.map((q) => ({ ...q, post: publicPosts.find((p) => p.name === q.name) })).filter((q) => q.post)
 
   return (
     <section aria-labelledby="reviews-title" className="container-x pb-2 pt-16 md:pt-24">
-      <div className="bento lg:grid-cols-4">
-        <div className="reveal tile flex flex-col justify-between gap-8 p-7 md:p-9 lg:col-span-2">
-          <div>
-            <Eyebrow>{t('home.clients.eyebrow')}</Eyebrow>
-            <h2 id="reviews-title" className="t-h2 mt-5">{t('rev.home.title')}</h2>
-          </div>
-          <ul className="flex flex-wrap gap-2">
-            {publicPosts.filter((p) => !trustedBy.some((x) => x.name === p.name)).slice(0, 12).map((p) => (
-              <li key={p.name}>
-                <a href={p.urls[0]} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-10 items-center gap-2 rounded-full bg-mist py-1 pl-1 pr-3 text-[0.8125rem] text-ink transition-colors hover:bg-accent hover:text-white">
-                  <Avatar name={p.name} src={images.avatars?.[p.name]} className="size-8 rounded-full text-[0.7rem]" />
-                  {p.name}
-                </a>
-              </li>
-            ))}
-          </ul>
-          <ButtonLink to="/impact/#testimonials" variant="outline" className="self-start">{t('rev.home.cta')} <ArrowRight aria-hidden /></ButtonLink>
-        </div>
-
-        <div className="reveal tile fill-gold flex flex-col justify-between gap-6 p-7 text-on-lime md:p-9">
-          <p className="text-sm font-semibold">{t('rev.wall.title')}</p>
-          <div>
-            <p className="font-display text-6xl font-bold tracking-tight">{num(publicPosts.length)}</p>
-            <p className="mt-1 font-medium">{t('rev.count.people')}</p>
-            <p className="mt-3 text-sm opacity-80">{num(posts)} {t('rev.count.posts')} · {num(videoReviews.length)} {t('rev.videos.title').toLowerCase()}</p>
-          </div>
-        </div>
-
-        <ul className="reveal grid gap-3 md:gap-4">
-          {top.map((v) => (
-            <li key={v.url} className="h-full">
-              <a href={v.url} target="_blank" rel="noopener noreferrer" className="tile tile-hover on-ink group flex h-full flex-col justify-between gap-4 bg-ink p-6 text-white">
-                <span className="flex items-center justify-between">
-                  <span className="grid size-10 place-items-center rounded-full bg-white text-ink"><Play aria-hidden className="ml-0.5 size-4" /></span>
-                  <ArrowUpRight aria-hidden className="size-5 text-on-ink-muted" />
-                </span>
-                <span>
-                  <span className="font-display text-2xl font-bold">{v.views} <span className="text-base font-medium text-on-ink-muted">{t('rev.views')}</span></span>
-                  <span lang={v.language} className="mt-1 block text-sm text-on-ink-muted">{v.author ?? `“${v.caption}”`}</span>
-                </span>
-              </a>
-            </li>
-          ))}
-        </ul>
+      <div className="flex flex-wrap items-end justify-between gap-6 px-1">
+        <SectionHeading id="reviews-title" eyebrow={t('home.clients.eyebrow')} title={t('rev.home.title')} />
+        <ButtonLink to="/impact/#testimonials" variant="outline">
+          {t('rev.home.cta')} ({num(publicPosts.length)} · {num(videoReviews.length)} {t('rev.videos.title').toLowerCase()}) <ArrowRight aria-hidden />
+        </ButtonLink>
       </div>
+      <ul className="bento mt-10 md:grid-cols-2 xl:grid-cols-3">
+        {items.map((q) => (
+          <li key={q.name} className="reveal">
+            <figure className="tile flex h-full flex-col p-7">
+              <Quote aria-hidden className="size-7 text-lime" />
+              <blockquote lang={q.lang} className="mt-4 flex-1 font-display text-[1.0625rem] font-medium leading-relaxed text-ink">“{q.quote}”</blockquote>
+              <figcaption className="mt-6 flex items-center gap-3 border-t border-line pt-5">
+                <Avatar name={q.name} src={images.avatars?.[q.name]} className="size-11 shrink-0 rounded-full text-sm" />
+                <span className="min-w-0 flex-1">
+                  <span className="block font-semibold text-ink">{q.name}</span>
+                  <span className="block text-sm text-muted">{l(q.context)}</span>
+                </span>
+                <a href={q.post!.urls[0]} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center gap-1 text-sm font-medium text-accent hover:underline">
+                  {t('rev.view')}<span className="sr-only"> — {q.name}</span> <ArrowUpRight aria-hidden className="size-4" />
+                </a>
+              </figcaption>
+            </figure>
+          </li>
+        ))}
+      </ul>
     </section>
   )
 }

@@ -1,0 +1,34 @@
+import { ArrowRight, Lock, ShieldAlert, VenetianMask } from 'lucide-react'
+import { ButtonLink } from '~/components/ui/Button'
+import { SectionHeading } from '~/components/ui/SectionHeading'
+import { problems } from '~/content/homeStory'
+import { ctaLinks } from '~/content/navigation'
+import { useLocale } from '~/i18n/useLocale'
+
+const icons = { lock: Lock, masks: VenetianMask, shield: ShieldAlert }
+
+/** The three situations people usually arrive with. */
+export function Problem() {
+  const { t, l } = useLocale()
+  return (
+    <section aria-labelledby="problem-title" className="container-x pb-2 pt-16 md:pt-24">
+      <SectionHeading id="problem-title" eyebrow={t('problem.eyebrow')} title={t('problem.title')} className="mb-10 px-1" />
+      <ul className="bento md:grid-cols-3">
+        {problems.map((p) => {
+          const Icon = icons[p.icon]
+          return (
+            <li key={p.id} className="reveal tile flex flex-col p-7 md:p-9">
+              <span className="grid size-12 place-items-center rounded-2xl bg-accent-soft text-accent"><Icon aria-hidden className="size-6" /></span>
+              <h3 className="t-h3 mt-7 text-ink">{l(p.title)}</h3>
+              <p className="mt-3 text-muted">{l(p.body)}</p>
+            </li>
+          )
+        })}
+      </ul>
+      <div className="mt-6 flex flex-wrap items-center justify-between gap-4 rounded-[var(--radius-card)] bg-accent-soft px-6 py-5 md:px-9">
+        <p className="font-display text-lg font-semibold text-ink">{t('problem.bridge')}</p>
+        <ButtonLink to={ctaLinks.consulting}>{t('cta.book')} <ArrowRight aria-hidden /></ButtonLink>
+      </div>
+    </section>
+  )
+}

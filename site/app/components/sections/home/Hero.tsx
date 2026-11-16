@@ -20,10 +20,7 @@ export function Hero() {
         <div className="mx-auto grid max-w-[1400px] items-end gap-2 lg:grid-cols-[1.05fr_1fr] lg:gap-6">
           {/* text */}
           <div className="relative z-10 self-center px-6 pb-2 pt-10 sm:px-10 lg:py-16 lg:pl-14 lg:pr-0">
-            <p className="inline-flex items-center gap-2 rounded-full bg-white/80 px-3 py-1.5 text-xs font-semibold text-ink ring-1 ring-[#1b6fc1]/15">
-              <span className="size-1.5 rounded-full bg-lime ring-2 ring-lime/40" /> {t('hero.award')}
-            </p>
-            <h1 id="hero-title" className="mt-5 font-display text-[clamp(2.4rem,5.4vw,4.4rem)] font-extrabold leading-[1.02] tracking-[-0.03em] text-ink">
+            <h1 id="hero-title" className="font-display text-[clamp(2.4rem,5.4vw,4.4rem)] font-extrabold leading-[1.02] tracking-[-0.03em] text-ink">
               {l(person.name)}
             </h1>
             <p className="mt-4 max-w-xl text-lg font-semibold text-[#1556a3] md:text-xl">{t('hero.title')}</p>

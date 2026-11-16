@@ -15,7 +15,7 @@ export function TrustedBy() {
   return (
     <section aria-labelledby="trusted-title" className="container-x pb-2 pt-4">
       <div className="tile px-6 py-7 md:px-10">
-        <h2 id="trusted-title" className="text-center text-sm font-semibold uppercase tracking-[0.14em] text-muted">{t('trusted.title')}</h2>
+        <h2 id="trusted-title" className="text-center text-sm font-semibold label-caps uppercase tracking-[0.14em] text-muted">{t('trusted.title')}</h2>
         <ul className="mt-6 grid grid-cols-4 gap-x-2 gap-y-4 md:grid-cols-6 xl:grid-cols-12">
           {items.map((it) => (
             <li key={it.name}>

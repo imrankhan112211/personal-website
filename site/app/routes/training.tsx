@@ -9,6 +9,7 @@ import { ImageSlot, Placeholder, SHOW_PLACEHOLDERS } from '~/components/ui/Place
 import { Eyebrow, SectionHeading } from '~/components/ui/SectionHeading'
 import { pageMeta } from '~/content/pageMeta'
 import { recognition } from '~/content/recognition'
+import { whoITrain } from '~/content/homeStory'
 import { collaborations, trainingAudiences, trainingCategories, trainingFormats, trainingGallery, trainingHeroPhotos } from '~/content/training'
 import { useLocale } from '~/i18n/useLocale'
 import { metaFor } from '~/lib/page'
@@ -19,7 +20,7 @@ export function meta({ location }: Route.MetaArgs) {
 }
 
 export default function Training() {
-  const { t, l } = useLocale()
+  const { t, l, href } = useLocale()
   const highlights = [
     { r: recognition.find((r) => r.id === 'tedx-drmc-youth')!, icon: Mic, photo: '[INSERT APPROVED TEDx PHOTOGRAPH]', detail: '[INSERT TALK TITLE, DATE & VERIFIED DESCRIPTION]' },
     { r: recognition.find((r) => r.id === 'cid-police-training')!, icon: GraduationCap, photo: '[INSERT APPROVED CID TRAINING PHOTOGRAPH]', detail: '[CONFIRM SCOPE, TOPIC, AUDIENCE & DATE]' },
@@ -59,6 +60,24 @@ export default function Training() {
               </section>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Who I train */}
+      <section aria-labelledby="who-title" className="container-x pb-2 pt-3">
+        <div className="tile on-ink fill-navy p-7 md:p-12">
+          <SectionHeading id="who-title" tone="ink" eyebrow={t('train.who.eyebrow')} title={t('train.who.title')} className="[&>p:first-child]:text-lime" />
+          <ul className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {whoITrain.map((w) => (
+              <li key={w.id} className="flex flex-col rounded-2xl bg-white/[0.06] p-6 ring-1 ring-inset ring-white/10">
+                <h3 className="font-display text-lg font-semibold text-white">{l(w.title)}</h3>
+                <p className="mt-2 flex-1 text-[0.9375rem] text-on-ink-muted">{l(w.body)}</p>
+                <a href={`${href('/contact/')}?type=training&audience=${w.id}#message`} className="mt-5 inline-flex min-h-11 items-center gap-1.5 text-sm font-semibold text-lime hover:underline">
+                  {l(w.cta)} <ArrowRight aria-hidden className="size-4" />
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 

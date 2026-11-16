@@ -15,7 +15,7 @@
 | প্রতিষ্ঠান ১ | **Probfly IT** | ProbFly, Probefly, Probfly It LTD |
 | প্রতিষ্ঠান ২ | **Kaktaruaa** (বাংলা: **কাকতাড়ুয়া**) | Kaktarua, Kaktarua.org |
 | প্রতিষ্ঠান ৩ | **Erazee** | |
-| প্রতিষ্ঠান ৪ | **Zurvis.io** | Zurvis, Jarvis |
+| প্রতিষ্ঠান ৪ | **Zurvis.io** (WhatsFly নামেও: whatsfly.net) | Zurvis, Jarvis, Whatsfly |
 | পুরস্কার | **The Diana Award** (2026) | Diana Award, Princess Diana Award |
 
 ## ২. এক লাইনের পরিচিতি (সব জায়গায় প্রথম লাইন)
@@ -51,7 +51,8 @@
 | SSC ও HSC রাজেন্দ্রপুরে; বাংলা সাহিত্যে স্নাতক, নেত্রকোনা বিশ্ববিদ্যালয় (শেষ ২০২৪-এর শুরুতে) | Daily Bangladesh Update, 8 Nov 2026; সাল মালিকের নিশ্চিত তথ্য |
 | Probfly IT প্রতিষ্ঠা 2021, সহ-প্রতিষ্ঠাতা Azimul Islam Sheblu; 2022-এ ভারত, শ্রীলঙ্কা, যুক্তরাষ্ট্রে ক্লায়েন্ট | Dhaka Tribune, 24 Mar 2022; Daily Observer, 25 Mar 2022; Daily Ittefaq, 2 Apr 2022 |
 | Probfly IT: অফিস ঢাকায়, যুক্তরাষ্ট্রে নিবন্ধিত LLC | মালিকের নিশ্চিত তথ্য |
-| কাকতাড়ুয়া প্রতিষ্ঠা 2023 · Erazee 2025 · Zurvis.io 2026 (সহ-প্রতিষ্ঠাতা Azimul Islam Sheblu) | মালিকের নিশ্চিত তথ্য |
+| কাকতাড়ুয়া প্রতিষ্ঠা ১ জুলাই 2023 · Erazee 2025 · Zurvis.io / WhatsFly 2026 (সহ-প্রতিষ্ঠাতা Azimul Islam Sheblu) | মালিকের নিশ্চিত তথ্য; whatsfly.net |
+| Probfly IT: যুক্তরাজ্যে নিবন্ধিত ট্রেডমার্ক | মালিকের নিশ্চিত তথ্য *(নম্বর পাওয়া যায়নি; UK IPO রেজিস্টার CAPTCHA-সুরক্ষিত)* |
 | কাকতাড়ুয়া: অলাভজনক, শুরু শিক্ষার্থীদের সাইবার বুলিং প্রতিরোধে | Daily Inqilab, 10 Nov 2026; Rupali Bangladesh, 8 Nov 2026 |
 | কাকতাড়ুয়ার সংখ্যা: ~1,200 নারী (কোর্স), 5 স্কুল / 2,000–3,000 শিক্ষার্থী, 4,000–5,000 টুল ব্যবহারকারী *(ইমরানের দেওয়া তথ্য)* | Daily Bangladesh Update; Business Bangladesh; BV News 24 (Nov 2026) |
 | The Diana Award 2026, Roll of Honour (ঘোষণা 4 Nov 2026) | The Diana Award Roll of Honour; Somoy TV, 13 Nov 2026; openPR, 9 Nov 2026 |
@@ -91,3 +92,4 @@
 - TEDx বক্তৃতার ভিডিও অনলাইনে এলে তার লিংক।
 - CID প্রশিক্ষণের কোনো অফিসিয়াল পোস্ট, চিঠি বা খবর।
 - Probfly IT-এর US LLC-এর পুরো নিবন্ধিত নাম ও স্টেট (Organization schema ও Wikidata-র জন্য)।
+- UK ট্রেডমার্ক নম্বর (UK00…), যাতে ক্রেডেনশিয়ালে লিংক দেওয়া যায়।

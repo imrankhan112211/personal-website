@@ -1,5 +1,7 @@
 import type { Route } from './+types/home'
 import { About } from '~/components/sections/home/About'
+import { CredentialsBand } from '~/components/sections/home/CredentialsBand'
+import { Problem } from '~/components/sections/home/Problem'
 import { Hero } from '~/components/sections/home/Hero'
 import { HomeMedia } from '~/components/sections/home/HomeMedia'
 import { HomeReviews } from '~/components/sections/home/HomeReviews'
@@ -19,16 +21,18 @@ export function meta({ location }: Route.MetaArgs) {
 export default function Home() {
   return (
     <main id="main">
-      {/* 1 Who I am → 2 What I offer → 3 Who I've worked with → 4 Awards → 5 Press → CTA */}
+      {/* Hero → credentials + numbers → trusted by → problem → framework (services) → profile → client words → recognition → press → CTA */}
       <Hero />
+      <CredentialsBand />
       <TrustedBy />
-      <About />
+      <Problem />
       <WhatIDo />
+      <About />
       <HomeReviews />
       <Recognition />
       <HomeMedia />
       <div className="pt-14 md:pt-20" />
-      <CtaBand />
+      <CtaBand detailed />
     </main>
   )
 }

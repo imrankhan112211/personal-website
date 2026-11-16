@@ -17,6 +17,10 @@ export type Venture = {
   purpose?: Localized | null
   /** Year founded (confirmed by the owner). */
   founded?: number
+  /** Exact founding date when known (ISO). */
+  foundedDate?: string
+  /** Other names / sister brands of the same venture, with their sites. */
+  alsoKnownAs?: { name: string; url: string }[]
   /** Other co-founders, by full name. */
   coFounders?: string[]
   /** Key activities. Empty = [INSERT KEY ACTIVITIES] */
@@ -43,6 +47,7 @@ export const ventures: Venture[] = [
   {
     slug: 'kaktaruaa',
     founded: 2023,
+    foundedDate: '2023-07-01',
     name: 'Kaktaruaa',
     logo: '/logos/kaktaruaa.webp',
     url: 'https://kaktaruaa.org',
@@ -73,11 +78,12 @@ export const ventures: Venture[] = [
     founded: 2026,
     coFounders: ['Azimul Islam Sheblu'],
     name: 'Zurvis.io',
+    alsoKnownAs: [{ name: 'WhatsFly', url: 'https://whatsfly.net' }],
     logo: '/logos/zurvis.webp',
     url: 'https://zurvis.io',
     description: {
-      en: 'AI customer service and WhatsApp automation platform for businesses.',
-      bn: 'ব্যবসার জন্য এআই কাস্টমার সার্ভিস ও হোয়াটসঅ্যাপ অটোমেশন প্ল্যাটফর্ম।',
+      en: 'AI customer service and WhatsApp automation platform for businesses, also offered as WhatsFly, an official WhatsApp Business API platform.',
+      bn: 'ব্যবসার জন্য এআই কাস্টমার সার্ভিস ও হোয়াটসঅ্যাপ অটোমেশন প্ল্যাটফর্ম; WhatsFly নামেও পরিচিত, যা একটি অফিসিয়াল WhatsApp Business API প্ল্যাটফর্ম।',
     },
     role: { en: 'Co-founder', bn: 'সহ-প্রতিষ্ঠাতা' },
     roleVerified: true,

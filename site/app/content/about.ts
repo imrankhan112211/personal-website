@@ -59,8 +59,8 @@ export const aboutChapters: AboutChapter[] = [
     title: { en: 'Four ventures, one focus: a safer digital world.', bn: 'চারটি উদ্যোগ, এক লক্ষ্য: নিরাপদ ডিজিটাল বিশ্ব।' },
     body: [
       {
-        en: 'Imran is the founder of Probfly IT (2021; technology and social media solutions), Kaktaruaa (2023; non-profit digital safety initiative) and Erazee (2025; unwanted content removal and online risk response), and a co-founder of Zurvis.io (2026; AI customer service and WhatsApp automation for businesses). Azimul Islam Sheblu is his co-founder at Probfly IT and Zurvis.io.',
-        bn: 'ইমরান Probfly IT (২০২১; প্রযুক্তি ও সোশ্যাল মিডিয়া সলিউশন), কাকতাড়ুয়া (২০২৩; অলাভজনক ডিজিটাল নিরাপত্তা উদ্যোগ) ও Erazee (২০২৫; অনাকাঙ্ক্ষিত কনটেন্ট অপসারণ ও অনলাইন ঝুঁকি মোকাবিলা)-এর প্রতিষ্ঠাতা এবং Zurvis.io (২০২৬; ব্যবসার জন্য এআই কাস্টমার সার্ভিস ও WhatsApp অটোমেশন)-এর সহ-প্রতিষ্ঠাতা। Probfly IT ও Zurvis.io-তে তাঁর সহ-প্রতিষ্ঠাতা আজিমুল ইসলাম শিবলু।',
+        en: 'Imran is the founder of Probfly IT (2021; technology and social media solutions), Kaktaruaa (2023; non-profit digital safety initiative) and Erazee (2025; unwanted content removal and online risk response), and a co-founder of Zurvis.io (2026; AI customer service and WhatsApp automation for businesses, also offered as WhatsFly). Azimul Islam Sheblu is his co-founder at Probfly IT and Zurvis.io.',
+        bn: 'ইমরান Probfly IT (২০২১; প্রযুক্তি ও সোশ্যাল মিডিয়া সলিউশন), কাকতাড়ুয়া (২০২৩; অলাভজনক ডিজিটাল নিরাপত্তা উদ্যোগ) ও Erazee (২০২৫; অনাকাঙ্ক্ষিত কনটেন্ট অপসারণ ও অনলাইন ঝুঁকি মোকাবিলা)-এর প্রতিষ্ঠাতা এবং Zurvis.io (২০২৬; ব্যবসার জন্য এআই কাস্টমার সার্ভিস ও WhatsApp অটোমেশন, WhatsFly নামেও পরিচিত)-এর সহ-প্রতিষ্ঠাতা। Probfly IT ও Zurvis.io-তে তাঁর সহ-প্রতিষ্ঠাতা আজিমুল ইসলাম শিবলু।',
       },
     ],
   },
@@ -70,8 +70,8 @@ export const aboutChapters: AboutChapter[] = [
     title: { en: 'A safer internet is a shared responsibility.', bn: 'নিরাপদ ইন্টারনেট সবার দায়িত্ব।' },
     body: [
       {
-        en: 'Founded in 2023, Kaktaruaa began as an effort to prevent cyberbullying and online harassment among students, raising awareness about fake accounts, defamatory “expose” posts and “crush and confession” pages. It later expanded to support people facing online blackmail, fraud, identity-related harassment and account hacking.',
-        bn: '২০২৩ সালে কাকতাড়ুয়ার যাত্রা শুরু হয় শিক্ষার্থীদের মধ্যে সাইবার বুলিং ও অনলাইন হয়রানি প্রতিরোধের লক্ষ্যে — ভুয়া অ্যাকাউন্ট, মানহানিকর “এক্সপোজ” পোস্ট এবং “ক্রাশ অ্যান্ড কনফেশন” পেজ নিয়ে সচেতনতা তৈরির মাধ্যমে। পরে ব্ল্যাকমেইল, অনলাইন প্রতারণা, পরিচয়-সংক্রান্ত হয়রানি ও অ্যাকাউন্ট হ্যাকিংয়ের শিকার মানুষকেও সহায়তা দিতে শুরু করে।',
+        en: 'Founded on 1 July 2023, Kaktaruaa began as an effort to prevent cyberbullying and online harassment among students, raising awareness about fake accounts, defamatory “expose” posts and “crush and confession” pages. It later expanded to support people facing online blackmail, fraud, identity-related harassment and account hacking.',
+        bn: '২০২৩ সালের ১ জুলাই কাকতাড়ুয়ার যাত্রা শুরু হয় শিক্ষার্থীদের মধ্যে সাইবার বুলিং ও অনলাইন হয়রানি প্রতিরোধের লক্ষ্যে — ভুয়া অ্যাকাউন্ট, মানহানিকর “এক্সপোজ” পোস্ট এবং “ক্রাশ অ্যান্ড কনফেশন” পেজ নিয়ে সচেতনতা তৈরির মাধ্যমে। পরে ব্ল্যাকমেইল, অনলাইন প্রতারণা, পরিচয়-সংক্রান্ত হয়রানি ও অ্যাকাউন্ট হ্যাকিংয়ের শিকার মানুষকেও সহায়তা দিতে শুরু করে।',
       },
       {
         en: 'According to figures Imran shared with the press in 2026, around 1,200 women have taken Kaktaruaa’s free online courses, its school programmes have reached 2,000–3,000 students across five schools, and 4,000–5,000 people have used the digital safety tools on its website. In November 2024 Kaktaruaa held the seminar “First Aid of Social Media Problems” at the EMK Center in Dhaka, with Cultural Classicists and Probfly IT.',

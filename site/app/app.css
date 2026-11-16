@@ -176,3 +176,4 @@ html[lang="bn"] .t-eyebrow { letter-spacing: 0.04em; text-transform: none; font-
 .fill-blue { background: var(--fill-blue); color: #fff; }
 .fill-sky { background: var(--fill-sky); }
 .fill-gold { background: linear-gradient(150deg, #ecd6a3 0%, #d8b46a 55%, #c79d4f 100%); }
+html[lang="bn"] .label-caps { letter-spacing: 0 !important; text-transform: none !important; }
