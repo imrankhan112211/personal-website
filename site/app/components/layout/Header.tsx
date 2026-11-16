@@ -16,11 +16,11 @@ export function Wordmark({ tone = 'light' }: { tone?: 'light' | 'ink' }) {
       <span
         aria-hidden
         className={cn(
-          'grid size-9 place-items-center rounded-[10px] font-display text-[0.8rem] font-extrabold tracking-tight transition-transform duration-300 group-hover:-rotate-6',
-          tone === 'light' ? 'bg-ink text-white' : 'bg-white text-ink',
+          'grid size-10 shrink-0 place-items-center overflow-hidden rounded-full bg-gradient-to-br from-[#cfe6f7] to-[#f3eef5] ring-2 transition-transform duration-300 group-hover:scale-105',
+          tone === 'light' ? 'ring-white shadow-[0_4px_12px_-4px_rgb(10_20_40/0.35)]' : 'ring-white/20',
         )}
       >
-        {person.monogram}
+        <img src="/icon-192.png" alt="" width={40} height={40} className="size-full object-contain" />
       </span>
       <span className={cn("whitespace-nowrap font-display text-[1.0625rem] font-bold tracking-tight", tone === "light" && "lg:max-xl:sr-only")}>{l(person.name)}</span>
       <span className="sr-only"> — {t('nav.home')}</span>
