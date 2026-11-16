@@ -14,11 +14,11 @@ export function Problem() {
   return (
     <section aria-labelledby="problem-title" className="container-x pb-2 pt-16 md:pt-24">
       <SectionHeading id="problem-title" eyebrow={t('problem.eyebrow')} title={t('problem.title')} className="mb-10 px-1" />
-      <ul className="bento md:grid-cols-3">
+      <ul className="stagger bento md:grid-cols-3">
         {problems.map((p) => {
           const Icon = icons[p.icon]
           return (
-            <li key={p.id} className="reveal tile flex flex-col p-7 md:p-9">
+            <li key={p.id} className="lift tile flex flex-col p-7 md:p-9">
               <span className="flex items-center gap-3">
                 <span className="grid size-12 place-items-center rounded-2xl bg-accent-soft text-accent"><Icon aria-hidden className="size-6" /></span>
                 <span className="label-caps text-xs font-semibold uppercase tracking-[0.14em] text-accent">{l(p.area)}</span>

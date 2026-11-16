@@ -177,3 +177,46 @@ html[lang="bn"] .t-eyebrow { letter-spacing: 0.04em; text-transform: none; font-
 .fill-sky { background: var(--fill-sky); }
 .fill-gold { background: linear-gradient(150deg, #ecd6a3 0%, #d8b46a 55%, #c79d4f 100%); }
 html[lang="bn"] .label-caps { letter-spacing: 0 !important; text-transform: none !important; }
+
+/* ───────────── Commercial polish: motion + gradient accents ───────────── */
+/* Gradient highlight for a few key words in headings (wrap words in *asterisks* in the copy). */
+.text-gradient {
+  background: linear-gradient(100deg, #1a56c0 0%, #0d6b74 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.on-ink .text-gradient { background-image: linear-gradient(100deg, #f3dfae 0%, #d8b46a 100%); }
+
+@keyframes rise-in { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
+@keyframes photo-in { from { opacity: 0; transform: translateY(28px) scale(0.97); } to { opacity: 1; transform: none; } }
+@keyframes float-y { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes glow-drift { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(3%, -4%) scale(1.06); } }
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-enter > * { animation: rise-in 700ms var(--ease-out-soft) both; }
+  .hero-enter > *:nth-child(2) { animation-delay: 80ms; }
+  .hero-enter > *:nth-child(3) { animation-delay: 160ms; }
+  .hero-enter > *:nth-child(4) { animation-delay: 240ms; }
+  .hero-enter > *:nth-child(5) { animation-delay: 320ms; }
+  .hero-photo-enter { animation: photo-in 900ms 120ms var(--ease-out-soft) both; }
+  .float-slow { animation: float-y 6s ease-in-out infinite; }
+  .glow-drift { animation: glow-drift 14s ease-in-out infinite; }
+  .marquee-track { animation: marquee 38s linear infinite; }
+  .marquee:hover .marquee-track, .marquee:focus-within .marquee-track { animation-play-state: paused; }
+}
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    /* children of a stagger list reveal one after another as they scroll in */
+    .stagger > * { animation: reveal linear both; animation-timeline: view(); animation-range: entry 0% entry 38%; }
+    .stagger > *:nth-child(3n+2) { animation-range: entry 6% entry 46%; }
+    .stagger > *:nth-child(3n+3) { animation-range: entry 12% entry 54%; }
+  }
+}
+/* Marquee falls back to a wrapped, static list when motion is reduced */
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { flex-wrap: wrap; justify-content: center; width: auto !important; }
+  .marquee-dup { display: none; }
+}
+/* Card lift used on light cards */
+.lift { transition: transform 300ms var(--ease-out-soft), box-shadow 300ms var(--ease-out-soft); }
+.lift:hover { transform: translateY(-4px); box-shadow: 0 26px 60px -32px rgb(10 20 40 / 0.35); }

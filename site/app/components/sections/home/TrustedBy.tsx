@@ -16,20 +16,26 @@ export function TrustedBy() {
     <section aria-labelledby="trusted-title" className="container-x pb-2 pt-4">
       <div className="tile px-6 py-7 md:px-10">
         <h2 id="trusted-title" className="text-center text-sm font-semibold label-caps uppercase tracking-[0.14em] text-muted">{t('trusted.title')}</h2>
-        <ul className="mt-6 grid grid-cols-4 gap-x-2 gap-y-4 md:grid-cols-6 xl:grid-cols-12">
-          {items.map((it) => (
-            <li key={it.name}>
-              <a href={it.post!.urls[0]} target="_blank" rel="noopener noreferrer" className="group flex flex-col items-center gap-2 text-center">
-                <Avatar
-                  name={it.name}
-                  src={images.avatars?.[it.name]}
-                  className="size-12 rounded-full text-sm ring-2 ring-white grayscale-[35%] shadow-[0_6px_18px_-8px_rgb(10_20_40/0.35)] transition duration-300 group-hover:scale-105 group-hover:grayscale-0 sm:size-14 md:size-16"
-                />
-                <span className="line-clamp-2 text-[0.6875rem] font-medium sm:text-xs leading-tight text-text group-hover:text-accent">{it.label ?? it.name}</span>
-              </a>
-            </li>
-          ))}
-        </ul>
+        <div className="marquee mt-6 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_6%,black_94%,transparent)]">
+          <div className="marquee-track flex w-max gap-6 md:gap-10">
+            {[0, 1].map((copy) => (
+              <ul key={copy} className={copy ? 'marquee-dup flex gap-6 md:gap-10' : 'flex gap-6 md:gap-10'} aria-hidden={copy ? true : undefined}>
+                {items.map((it) => (
+                  <li key={it.name} className="w-20 shrink-0 md:w-24">
+                    <a href={it.post!.urls[0]} target="_blank" rel="noopener noreferrer" tabIndex={copy ? -1 : undefined} className="group flex flex-col items-center gap-2 text-center">
+                      <Avatar
+                        name={it.name}
+                        src={images.avatars?.[it.name]}
+                        className="size-14 rounded-full text-sm ring-2 ring-white grayscale-[35%] shadow-[0_6px_18px_-8px_rgb(10_20_40/0.35)] transition duration-300 group-hover:scale-105 group-hover:grayscale-0 md:size-16"
+                      />
+                      <span className="line-clamp-2 text-[0.6875rem] font-medium leading-tight text-text group-hover:text-accent sm:text-xs">{it.label ?? it.name}</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   )

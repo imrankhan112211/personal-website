@@ -23,10 +23,10 @@ export function HomeReviews() {
           {t('rev.home.cta')} ({num(publicPosts.length)} · {num(videoReviews.length)} {t('rev.videos.title').toLowerCase()}) <ArrowRight aria-hidden />
         </ButtonLink>
       </div>
-      <ul className="bento mt-10 md:grid-cols-2 xl:grid-cols-3">
+      <ul className="stagger bento mt-10 md:grid-cols-2 xl:grid-cols-3">
         {items.map((q) => (
-          <li key={q.name} className="reveal">
-            <figure className="tile flex h-full flex-col p-7">
+          <li key={q.name}>
+            <figure className="lift tile flex h-full flex-col p-7">
               <Quote aria-hidden className="size-7 text-lime" />
               <blockquote lang={q.lang} className="mt-4 flex-1 font-display text-[1.0625rem] font-medium leading-relaxed text-ink">“{q.quote}”</blockquote>
               <figcaption className="mt-6 flex items-center gap-3 border-t border-line pt-5">

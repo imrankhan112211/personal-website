@@ -3,6 +3,7 @@ import { ButtonLink } from '~/components/ui/Button'
 import { aboutIntro } from '~/content/home'
 import { person } from '~/content/person'
 import { useLocale } from '~/i18n/useLocale'
+import { Img } from '~/components/ui/Img'
 
 export function About() {
   const { t, l } = useLocale()
@@ -14,6 +15,9 @@ export function About() {
             <p className="t-eyebrow text-lime">{t('home.about.eyebrow')}</p>
             <h2 id="about-title" className="t-h2 mt-5 text-white">{t('home.about.title')}</h2>
           </div>
+          {person.portraitCasual && (
+            <Img src={person.portraitCasual} alt={l(person.name)} sizes="(min-width: 1024px) 25vw, 90vw" className="aspect-[4/3] w-full rounded-2xl object-cover object-top ring-1 ring-white/15" />
+          )}
           <ButtonLink to="/about/" variant="light" className="self-start">{t('cta.more_about')} <ArrowRight aria-hidden /></ButtonLink>
         </div>
         <div className="reveal tile p-7 md:p-10 lg:col-span-2">

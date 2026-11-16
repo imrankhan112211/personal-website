@@ -10,6 +10,12 @@ export function Eyebrow({ children, className, tone = 'light' }: { children: Rea
   )
 }
 
+/** Renders *words* in a title with the gradient accent; everything else stays plain text. */
+export function Highlight({ text }: { text: string }) {
+  const parts = text.split(/\*([^*]+)\*/g)
+  return <>{parts.map((p, i) => (i % 2 ? <span key={i} className="text-gradient">{p}</span> : p))}</>
+}
+
 export function SectionHeading({
   eyebrow,
   title,
@@ -30,7 +36,7 @@ export function SectionHeading({
   return (
     <div className={cn('reveal max-w-3xl', className)}>
       <Eyebrow tone={tone}>{eyebrow}</Eyebrow>
-      <H id={id} className="t-h2 mt-5">{title}</H>
+      <H id={id} className="t-h2 mt-5"><Highlight text={title} /></H>
       {children && <div className={cn('t-lead mt-5', tone === 'light' ? 'text-muted' : 'text-on-ink-muted')}>{children}</div>}
     </div>
   )

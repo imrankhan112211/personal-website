@@ -29,14 +29,14 @@ export function WhatIDo() {
       <SectionHeading id="do-title" eyebrow={t('home.do.eyebrow')} title={t('home.do.title')} className="mb-10 px-1">
         {t('framework.lead')}
       </SectionHeading>
-      <ul className="bento md:grid-cols-3">
+      <ul className="stagger bento md:grid-cols-3">
         {framework.map((p) => {
           const s = services.find((x) => x.id === p.service)!
           const Icon = icons[p.id]
           const k = looks[p.id]
           const vs = p.ventures.map((slug) => ventures.find((v) => v.slug === slug)).filter(Boolean)
           return (
-            <li key={p.id} className={cn('reveal tile flex flex-col p-7 md:p-9', k.card)}>
+            <li key={p.id} className={cn('lift tile flex flex-col p-7 md:p-9', k.card)}>
               <div className="flex items-center gap-3">
                 <span className={cn('grid size-12 place-items-center rounded-2xl', k.icon)}><Icon aria-hidden className="size-6" /></span>
                 <span className="font-display text-sm font-bold label-caps uppercase tracking-[0.16em]">{l(p.name)}</span>

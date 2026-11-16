@@ -26,7 +26,7 @@ export function HomeMedia() {
           <SectionHeading id="media-title" eyebrow={t('home.media.eyebrow')} title={t('home.media.title')} />
           <ButtonLink to="/media/" variant="outline">{t('cta.media')} <ArrowRight aria-hidden /></ButtonLink>
         </div>
-        <ul className="mt-10 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+        <ul className="stagger mt-10 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
           {latest.map((m) => <li key={m.id}><MediaCard m={m} compact /></li>)}
         </ul>
       </div>

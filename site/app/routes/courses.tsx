@@ -104,26 +104,45 @@ function ProductCard({ p }: { p: Product }) {
   )
 }
 
+const covers: Record<ProductKind, { fill: string; text: string }> = {
+  course: { fill: 'on-ink fill-navy', text: 'text-white' },
+  ebook: { fill: 'on-ink fill-blue', text: 'text-white' },
+  free: { fill: 'fill-gold', text: 'text-on-lime' },
+}
+
 function ComingSoon() {
   const { t, l } = useLocale()
   return (
     <section aria-labelledby="soon-t" className="tile p-7 md:p-12">
-      <p className="inline-flex rounded-full bg-lime px-3 py-1 text-xs font-semibold text-on-lime">{t('res.soon')}</p>
+      <p className="label-caps inline-flex rounded-full bg-lime px-3 py-1 text-xs font-semibold text-on-lime">{t('res.soon')}</p>
       <h2 id="soon-t" className="t-h2 mt-5 max-w-2xl text-ink">{t('res.soon.title')}</h2>
-      <ul className="mt-10 grid gap-3 md:grid-cols-3">
+      <ul className="stagger mt-10 grid gap-4 md:grid-cols-3">
         {productKinds.map((k) => {
           const Icon = icons[k.kind]
+          const c = covers[k.kind]
           return (
-            <li key={k.kind} className="rounded-2xl bg-mist p-6">
-              <Icon aria-hidden className="size-6 text-accent" />
-              <h3 className="mt-5 font-display text-lg font-semibold text-ink">{l(k.title)}</h3>
-              <p className="mt-1.5 text-sm text-muted">{l(k.body)}</p>
+            <li key={k.kind} className="lift overflow-hidden rounded-[var(--radius-card)] bg-mist">
+              {/* designed cover: no product names, just the category */}
+              <div aria-hidden className={`relative aspect-[4/3] overflow-hidden p-6 ${c.fill}`}>
+                <span className="glow-drift absolute -right-10 -top-10 size-40 rounded-full bg-white/15 blur-2xl" />
+                <Icon className={`relative size-10 ${c.text}`} />
+                <span className="absolute inset-x-6 bottom-6 grid gap-2">
+                  <span className="h-2 w-3/4 rounded-full bg-current opacity-25" />
+                  <span className="h-2 w-1/2 rounded-full bg-current opacity-20" />
+                  <span className="h-2 w-2/3 rounded-full bg-current opacity-15" />
+                </span>
+                <span className="absolute right-4 top-4 rounded-full bg-white/90 px-2.5 py-1 text-[0.6875rem] font-semibold text-ink">{t('res.soon')}</span>
+              </div>
+              <div className="p-6">
+                <h3 className="font-display text-lg font-semibold text-ink">{l(k.title)}</h3>
+                <p className="mt-1.5 text-sm text-muted">{l(k.body)}</p>
+              </div>
             </li>
           )
         })}
       </ul>
-      <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-line pt-8">
-        <p className="text-text">{t('res.notify.body')}</p>
+      <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 rounded-2xl bg-accent-soft px-6 py-5">
+        <p className="font-medium text-ink">{t('res.notify.body')}</p>
         <ButtonLink to="/contact/?type=general">{t('res.notify.cta')} <ArrowRight aria-hidden /></ButtonLink>
       </div>
     </section>
