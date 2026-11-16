@@ -5,11 +5,14 @@
   "scripts": {
     "setup": "npm --prefix site install",
     "dev": "npm --prefix site run dev",
-    "build": "npm --prefix site run build",
+    "build": "npm --prefix site ci --include=dev && npm --prefix site run build",
     "preview": "npm --prefix site run preview",
     "typecheck": "npm --prefix site run typecheck",
     "assets": "npm --prefix site run assets",
     "images": "npm --prefix site run images",
     "check": "npm --prefix site run check"
+  },
+  "engines": {
+    "node": ">=20"
   }
 }

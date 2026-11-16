@@ -6,5 +6,4 @@
 /courses/       /learning/       301
 /bn/courses/    /bn/learning/    301
 
-# Netlify / Cloudflare Pages: unknown paths get the branded 404 via the SPA fallback.
-/*  /__spa-fallback.html  404
+# Unknown paths: Cloudflare Pages and Netlify both serve build/client/404.html automatically (created by scripts/postbuild.mjs).
