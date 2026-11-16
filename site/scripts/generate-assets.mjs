@@ -61,8 +61,12 @@ try {
   layers.push({ input: panel, left: 780, top: 0 })
 } catch { /* no hero image yet — text-only card */ }
 await sharp(Buffer.from(og)).composite(layers).flatten({ background: ink }).jpeg({ quality: 84, mozjpeg: true }).toFile(file('og-default.jpg'))
-for (const [name, size, pad] of [['favicon-32.png', 32, 0], ['apple-touch-icon.png', 180, 0], ['icon-192.png', 192, 0], ['icon-512.png', 512, 0], ['icon-maskable-512.png', 512, 80]]) {
-  const svg = name === 'apple-touch-icon.png' || name.includes('maskable') ? icon(size, pad).replace(/rx="\d+"/, 'rx="0"') : icon(size, pad)
-  await sharp(Buffer.from(svg)).png().toFile(file(name))
+// Favicon + app icons: the full background-removed microphone photo (hero image), fitted whole into the square.
+const iconSrc = file('images/abdullah-al-imran-hero-840.webp')
+for (const [name, size, opaque] of [['favicon-32.png', 32, false], ['favicon-48.png', 48, false], ['apple-touch-icon.png', 180, true], ['icon-192.png', 192, false], ['icon-512.png', 512, false], ['icon-maskable-512.png', 512, true]]) {
+  const inner = name.includes('maskable') ? Math.round(size * 0.8) : size
+  const img = await sharp(iconSrc).resize(inner, inner, { fit: 'contain', background: { r: 0, g: 0, b: 0, alpha: 0 } }).png().toBuffer()
+  const bg = opaque ? { r: 255, g: 255, b: 255, alpha: 1 } : { r: 0, g: 0, b: 0, alpha: 0 }
+  await sharp({ create: { width: size, height: size, channels: 4, background: bg } }).composite([{ input: img, gravity: 'center' }]).png().toFile(file(name))
 }
 console.log('Generated og-default.jpg and icons in public/')

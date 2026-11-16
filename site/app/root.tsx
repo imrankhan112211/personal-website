@@ -20,8 +20,9 @@ import './app.css'
 export const links: Route.LinksFunction = () => [
   { rel: 'preload', href: interLatin, as: 'font', type: 'font/woff2', crossOrigin: 'anonymous' },
   { rel: 'preload', href: manropeLatin, as: 'font', type: 'font/woff2', crossOrigin: 'anonymous' },
-  { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' },
   { rel: 'icon', href: '/favicon-32.png', sizes: '32x32', type: 'image/png' },
+  { rel: 'icon', href: '/favicon-48.png', sizes: '48x48', type: 'image/png' },
+  { rel: 'icon', href: '/icon-192.png', sizes: '192x192', type: 'image/png' },
   { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },
   { rel: 'manifest', href: '/manifest.webmanifest' },
 ]
