@@ -8,17 +8,22 @@ import type { Localized } from '~/i18n/locales'
 
 /** Short credential line under the hero. */
 export const credentials: { label: Localized; detail?: Localized }[] = [
-  { label: { en: 'The Diana Award 2026', bn: 'দ্য ডায়ানা অ্যাওয়ার্ড ২০২৬' } },
   { label: { en: 'TEDx DRMC Youth speaker', bn: 'TEDx DRMC Youth বক্তা' } },
   { label: { en: 'Trainer for entrepreneurs, businesses and students', bn: 'উদ্যোক্তা, ব্যবসা ও শিক্ষার্থীদের প্রশিক্ষক' } },
   { label: { en: 'Probfly IT, UK registered trademark', bn: 'Probfly IT, যুক্তরাজ্যে নিবন্ধিত ট্রেডমার্ক' } },
 ]
 
 /**
- * People trained across sessions, webinars and free courses — a conservative floor from figures shared with the press (Nov 2026):
- * ~1,200 women in Kaktaruaa's free online courses + 2,000–3,000 students in school programmes + 45 officers = 3,245+ → shown as 3,000+.
+ * Headline numbers (owner-provided totals, Nov 2026). The site lists a verified subset of each —
+ * e.g. 99 linked thank-you posts and 26 linked media reports — so totals are shown with "+".
+ * People trained is a conservative floor from published figures (~1,200 + 2,000 + 45 = 3,245).
  */
-export const peopleTrained = 3000
+export const stats = {
+  thankedPublicly: 399,
+  mediaReports: 29,
+  peopleTrained: 3000,
+  ventures: 4,
+}
 
 /** "The problem" — three problems businesses face, each answered by one solution area with its options. */
 /** Icon names map to lucide icons in components/sections/home/Problem.tsx. */

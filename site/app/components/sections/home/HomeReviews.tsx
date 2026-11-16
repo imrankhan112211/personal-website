@@ -20,7 +20,7 @@ export function HomeReviews() {
       <div className="flex flex-wrap items-end justify-between gap-6 px-1">
         <SectionHeading id="reviews-title" eyebrow={t('home.clients.eyebrow')} title={t('rev.home.title')} />
         <ButtonLink to="/impact/#testimonials" variant="outline">
-          {t('rev.home.cta')} ({num(publicPosts.length)} · {num(videoReviews.length)} {t('rev.videos.title').toLowerCase()}) <ArrowRight aria-hidden />
+          {t('rev.home.cta')} <ArrowRight aria-hidden />
         </ButtonLink>
       </div>
       <ul className="stagger bento mt-10 md:grid-cols-2 xl:grid-cols-3">

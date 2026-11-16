@@ -1,8 +1,5 @@
-import { Award, Check } from 'lucide-react'
-import { credentials, peopleTrained } from '~/content/homeStory'
-import { ventures } from '~/content/ventures'
-import { media } from '~/content/media'
-import { publicPosts } from '~/content/reviews'
+import { Check } from 'lucide-react'
+import { credentials, stats as totals } from '~/content/homeStory'
 import { useLocale } from '~/i18n/useLocale'
 import { CountUp } from '~/components/ui/CountUp'
 
@@ -11,10 +8,10 @@ export function CredentialsBand() {
   const { t, l, locale } = useLocale()
   const num = (n: number) => n.toLocaleString(locale === 'bn' ? 'bn-BD' : 'en')
   const stats = [
-    { n: publicPosts.length, suffix: '', label: t('stats.thanks') },
-    { n: media.length, suffix: '', label: t('stats.media') },
-    { n: peopleTrained, suffix: '+', label: t('stats.trained') },
-    { n: ventures.length, suffix: '', label: t('stats.ventures') },
+    { n: totals.thankedPublicly, suffix: '+', label: t('stats.thanks') },
+    { n: totals.mediaReports, suffix: '+', label: t('stats.media') },
+    { n: totals.peopleTrained, suffix: '+', label: t('stats.trained') },
+    { n: totals.ventures, suffix: '+', label: t('stats.ventures') },
   ]
   return (
     <section aria-label={t('stats.label')} className="container-x pb-2 pt-4">
@@ -24,7 +21,7 @@ export function CredentialsBand() {
         <ul className="relative flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-on-ink-muted">
           {credentials.map((c, i) => (
             <li key={c.label.en} className="inline-flex items-center gap-2">
-              {i === 0 ? <Award aria-hidden className="size-4 text-lime" /> : <Check aria-hidden className="size-4 text-lime" />}
+              <Check aria-hidden className="size-4 text-lime" />
               <span className={i === 0 ? 'font-semibold text-white' : undefined}>{l(c.label)}</span>
             </li>
           ))}

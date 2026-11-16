@@ -42,12 +42,7 @@ export function WhatIDo() {
                 <span className="font-display text-sm font-bold label-caps uppercase tracking-[0.16em]">{l(p.name)}</span>
               </div>
               <h3 className="t-h3 mt-7">{l(s.title)}</h3>
-              <p className={cn('mt-3', k.muted)}>{l(p.line)}</p>
-              <ul className="mt-6 grid gap-2 text-[0.9375rem]">
-                {s.points.map((pt) => (
-                  <li key={pt.en} className="flex gap-2.5"><span aria-hidden className={cn('mt-2 size-1.5 shrink-0 rounded-full', k.dot)} />{l(pt)}</li>
-                ))}
-              </ul>
+              <p className={cn('mt-3 text-[1.0625rem] leading-relaxed', k.muted)}>{l(p.line)}</p>
               <div className={cn('mt-7 border-t pt-5', k.line)}>
                 <p className={cn('text-xs font-semibold label-caps uppercase tracking-[0.14em]', k.muted)}>{t('framework.through')}</p>
                 <ul className="mt-3 flex flex-wrap gap-2">

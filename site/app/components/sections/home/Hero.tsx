@@ -5,7 +5,8 @@ import { person } from '~/content/person'
 import { useLocale } from '~/i18n/useLocale'
 import { Avatar } from '~/components/ui/Avatar'
 import reviewImages from '~/content/reviewImages.json'
-import { publicPosts, trustedBy } from '~/content/reviews'
+import { trustedBy } from '~/content/reviews'
+import { stats } from '~/content/homeStory'
 
 const HERO_IMG = '/images/abdullah-al-imran-hero-840.webp'
 
@@ -73,7 +74,7 @@ export function Hero() {
                 {faces.map((n) => <Avatar key={n} name={n} src={avatars[n]} className="size-8 rounded-full text-[0.6rem] ring-2 ring-white" />)}
               </span>
               <span className="text-xs leading-tight text-text">
-                <span className="block font-display text-sm font-bold text-ink">{publicPosts.length.toLocaleString(locale === 'bn' ? 'bn-BD' : 'en')}+</span>
+                <span className="block font-display text-sm font-bold text-ink">{stats.thankedPublicly.toLocaleString(locale === 'bn' ? 'bn-BD' : 'en')}+</span>
                 {t('hero.trusted')}
               </span>
             </div>
