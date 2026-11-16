@@ -1,15 +1,11 @@
 /**
- * Form submission adapter.
- *
- * DEMO MODE: no backend is connected yet, so `submitInquiry` never sends data anywhere
- * and the UI says so explicitly. To go live, replace the body of `submitInquiry` with a
- * POST to a secure endpoint (e.g. a serverless function or a form service) that:
- *   - validates input again server-side,
- *   - checks the `website` honeypot and rate-limits,
- *   - sends over HTTPS only and never logs message bodies.
- * Then set FORMS_LIVE = true.
+ * Form submission: posts to FormSubmit (formsubmit.co), which emails each inquiry to
+ * the inbox below. No account or API key is needed. The very first submission sends a
+ * one-time activation email to that inbox; click "Activate" in it and every later
+ * message is delivered. To change the inbox, edit FORM_INBOX.
  */
-export const FORMS_LIVE = false
+export const FORM_INBOX = 'imran@probfly.com'
+const ENDPOINT = `https://formsubmit.co/ajax/${FORM_INBOX}`
 
 export type InquiryPayload = {
   type: string
@@ -25,12 +21,34 @@ export type InquiryPayload = {
   website?: string
 }
 
-export type SubmitResult = { status: 'demo' } | { status: 'sent' } | { status: 'error'; message: string }
+export type SubmitResult = { status: 'sent' } | { status: 'error'; message: string }
 
-export async function submitInquiry(_payload: InquiryPayload): Promise<SubmitResult> {
-  if (!FORMS_LIVE) return { status: 'demo' }
-  // return fetch('/api/inquiry', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(_payload) }) ...
-  return { status: 'error', message: 'Form endpoint not configured' }
+export async function submitInquiry(p: InquiryPayload): Promise<SubmitResult> {
+  if (p.website) return { status: 'sent' } // honeypot: pretend success, send nothing
+  const body = {
+    _subject: `Website inquiry (${p.type}) from ${p.name}`,
+    _replyto: p.email,
+    _template: 'table',
+    _captcha: 'false',
+    _honey: '',
+    'Inquiry type': p.type,
+    Name: p.name,
+    Email: p.email,
+    Organisation: p.organization || '-',
+    ...(p.area ? { 'Consulting area': p.area } : {}),
+    ...(p.audience ? { Audience: p.audience } : {}),
+    ...(p.date ? { 'Preferred date': p.date } : {}),
+    Message: p.message,
+    Page: typeof location !== 'undefined' ? location.href : '',
+  }
+  try {
+    const res = await fetch(ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(body) })
+    const json = (await res.json().catch(() => ({}))) as { success?: string | boolean; message?: string }
+    if (res.ok && String(json.success) === 'true') return { status: 'sent' }
+    return { status: 'error', message: json.message || `HTTP ${res.status}` }
+  } catch (e) {
+    return { status: 'error', message: e instanceof Error ? e.message : 'Network error' }
+  }
 }
 
 export type FieldErrors = Partial<Record<'name' | 'email' | 'message' | 'consent' | 'type', 'required' | 'email' | 'short'>>

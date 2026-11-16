@@ -131,12 +131,9 @@ export const ui = s({
   'form.err.short': { en: 'Please add a little more detail (at least 20 characters).', bn: 'আরেকটু বিস্তারিত লিখুন (অন্তত ২০ অক্ষর)।' },
   'form.err.consent': { en: 'Please confirm you agree before sending.', bn: 'পাঠানোর আগে সম্মতি নিশ্চিত করুন।' },
   'form.err.summary': { en: 'Please fix the highlighted fields.', bn: 'চিহ্নিত ঘরগুলো ঠিক করুন।' },
-  'form.demo.badge': { en: 'Demo form', bn: 'ডেমো ফর্ম' },
-  'form.demo.note': { en: 'This form is not connected yet. Submitting it checks your entries but does not send a message.', bn: 'এই ফর্মটি এখনও সংযুক্ত নয়। জমা দিলে তথ্য যাচাই হবে, তবে কোনো বার্তা পাঠানো হবে না।' },
-  'form.demo.title': { en: 'Your message has NOT been sent', bn: 'আপনার বার্তা পাঠানো হয়নি' },
-  'form.demo.body': { en: 'Your entries passed validation, but this form is a demo and is not connected to an inbox yet. Nothing was stored or delivered. Please use the direct contact details on this page for now.', bn: 'আপনার তথ্য সঠিকভাবে যাচাই হয়েছে, তবে এটি একটি ডেমো ফর্ম এবং এখনও কোনো ইনবক্সের সঙ্গে যুক্ত নয়। কোনো তথ্য সংরক্ষণ বা পাঠানো হয়নি। আপাতত এই পাতায় দেওয়া সরাসরি যোগাযোগের মাধ্যম ব্যবহার করুন।' },
-  'form.demo.reset': { en: 'Edit my message', bn: 'বার্তা সম্পাদনা করুন' },
-  'form.sent.title': { en: 'Thank you — your message was sent.', bn: 'ধন্যবাদ — আপনার বার্তা পাঠানো হয়েছে।' },
+  'form.sent.title': { en: 'Thank you — your message has been sent.', bn: 'ধন্যবাদ — আপনার বার্তা পাঠানো হয়েছে।' },
+  'form.sent.body': { en: 'I read every inquiry personally and usually reply within two working days.', bn: 'প্রতিটি বার্তা আমি নিজে পড়ি এবং সাধারণত দুই কর্মদিবসের মধ্যে উত্তর দিই।' },
+  'form.error': { en: 'Sorry, your message could not be sent. Please try again in a moment, or email me directly at', bn: 'দুঃখিত, বার্তাটি পাঠানো যায়নি। একটু পরে আবার চেষ্টা করুন, অথবা সরাসরি ইমেইল করুন:' },
 
   // About
   'about.eyebrow': { en: 'About', bn: 'পরিচিতি' },

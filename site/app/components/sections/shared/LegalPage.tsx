@@ -1,14 +1,14 @@
 import { PageHero } from '~/components/sections/shared/PageHero'
-import { Placeholder } from '~/components/ui/Placeholder'
-import { legalReviewNote } from '~/content/legal'
+import { LEGAL_UPDATED } from '~/content/legal'
+import { formatPartialDate } from '~/lib/dates'
 import type { Localized } from '~/i18n/locales'
 import { useLocale } from '~/i18n/useLocale'
 
 export function LegalPage({ title, sections }: { title: string; sections: { title: Localized; body: Localized[] }[] }) {
-  const { t, l } = useLocale()
+  const { t, l, locale } = useLocale()
   return (
     <main id="main">
-      <PageHero crumbs={[{ label: title }]} eyebrow={t('legal.updated')} title={title} lead={<Placeholder label={legalReviewNote} />} />
+      <PageHero crumbs={[{ label: title }]} eyebrow={`${t('legal.updated')}: ${formatPartialDate(LEGAL_UPDATED, locale)}`} title={title} />
       <div className="container-x py-16 md:py-20">
         <div className="mx-auto max-w-3xl">
           {sections.map((s, i) => (

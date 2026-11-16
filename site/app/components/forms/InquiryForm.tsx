@@ -1,12 +1,11 @@
-import { AlertTriangle, ArrowRight, Info } from 'lucide-react'
+import { AlertTriangle, ArrowRight, CheckCircle2 } from 'lucide-react'
 import { useEffect, useId, useRef, useState, type ReactNode } from 'react'
 import { useSearchParams } from 'react-router'
-import { Badge } from '~/components/ui/Badge'
 import { Button } from '~/components/ui/Button'
 import { LocalLink } from '~/components/ui/LocalLink'
 import { audienceTypes, consultingAreas, inquiryTypes, isInquiryType, type InquiryType } from '~/content/inquiry'
 import { useLocale } from '~/i18n/useLocale'
-import { submitInquiry, validateInquiry, type FieldErrors, type InquiryPayload } from '~/lib/forms'
+import { FORM_INBOX, submitInquiry, validateInquiry, type FieldErrors, type InquiryPayload } from '~/lib/forms'
 import { cn } from '~/lib/utils'
 
 const empty = (type: InquiryType): InquiryPayload => ({ type, name: '', email: '', organization: '', message: '', area: '', audience: '', date: '', consent: false, website: '' })
@@ -21,7 +20,7 @@ export function InquiryForm({ fixedType, defaultType = 'general', className }: {
   const [data, setData] = useState<InquiryPayload>(() => empty(fixedType ?? defaultType))
   const [errors, setErrors] = useState<FieldErrors>({})
   const [touched, setTouched] = useState<Record<string, boolean>>({})
-  const [state, setState] = useState<'idle' | 'checking' | 'demo' | 'sent' | 'error'>('idle')
+  const [state, setState] = useState<'idle' | 'checking' | 'sent' | 'error'>('idle')
   const resultRef = useRef<HTMLDivElement>(null)
   const summaryRef = useRef<HTMLDivElement>(null)
   const uid = useId()
@@ -66,18 +65,11 @@ export function InquiryForm({ fixedType, defaultType = 'general', className }: {
   }
   const showSummary = Object.keys(errors).length > 0 && Object.keys(touched).length >= 4
 
-  if (state === 'demo' || state === 'sent') {
+  if (state === 'sent') {
     return (
-      <div ref={resultRef} tabIndex={-1} role="status" className={cn('rounded-[var(--radius-card)] border p-7 outline-none md:p-9', state === 'demo' ? 'border-amber/40 bg-amber-soft' : 'border-success/30 bg-success-soft', className)}>
-        {state === 'demo' ? (
-          <>
-            <p className="flex items-center gap-2 font-display text-xl font-bold text-ink"><AlertTriangle aria-hidden className="size-5 text-amber" />{t('form.demo.title')}</p>
-            <p className="mt-3 text-text">{t('form.demo.body')}</p>
-            <Button variant="outline" className="mt-6" onClick={() => setState('idle')}>{t('form.demo.reset')}</Button>
-          </>
-        ) : (
-          <p className="font-display text-xl font-bold text-ink">{t('form.sent.title')}</p>
-        )}
+      <div ref={resultRef} tabIndex={-1} role="status" className={cn('rounded-[var(--radius-card)] border border-success/30 bg-success-soft p-7 outline-none md:p-9', className)}>
+        <p className="flex items-center gap-2 font-display text-xl font-bold text-ink"><CheckCircle2 aria-hidden className="size-5 text-success" />{t('form.sent.title')}</p>
+        <p className="mt-3 text-text">{t('form.sent.body')}</p>
       </div>
     )
   }
@@ -87,11 +79,13 @@ export function InquiryForm({ fixedType, defaultType = 'general', className }: {
   const isTraining = type === 'training'
 
   return (
-    <form noValidate onSubmit={onSubmit} className={cn('rounded-[var(--radius-card)] border border-line bg-surface p-6 md:p-9', className)} aria-describedby={id('demo')}>
-      <div id={id('demo')} className="mb-8 flex gap-3 rounded-2xl bg-mist p-4 text-sm text-text">
-        <Info aria-hidden className="mt-0.5 size-4 shrink-0 text-accent" />
-        <p><Badge tone="amber" className="mr-2 align-middle">{t('form.demo.badge')}</Badge>{t('form.demo.note')}</p>
-      </div>
+    <form noValidate onSubmit={onSubmit} className={cn('rounded-[var(--radius-card)] border border-line bg-surface p-6 md:p-9', className)}>
+      {state === 'error' && (
+        <div ref={resultRef} tabIndex={-1} role="alert" className="mb-6 flex gap-3 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800 outline-none">
+          <AlertTriangle aria-hidden className="mt-0.5 size-4 shrink-0" />
+          <p>{t('form.error')} <a href={`mailto:${FORM_INBOX}`} className="font-semibold underline">{FORM_INBOX}</a></p>
+        </div>
+      )}
 
       {showSummary && (
         <div ref={summaryRef} tabIndex={-1} role="alert" className="mb-6 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm font-medium text-red-800 outline-none">

@@ -68,8 +68,8 @@
 
 ## ৪. লাইভের আগে অবশ্যই করতে হবে
 
-1. **হোস্টিং ও ডোমেইন:** `site/build/client` ফোল্ডারটা Netlify বা Cloudflare Pages-এ তুলুন। ধাপগুলো `docs/DEPLOYMENT.md`-এ আছে।
-2. **যোগাযোগ ফর্ম চালু করা:** এখন ফর্ম "demo mode"-এ, কিছু পাঠায় না। Netlify Forms (বিনামূল্যে) বা Formspree দিয়ে `site/app/lib/forms.ts`-এ একটা জায়গা বদলালেই চালু হবে। **এটা না করলে ক্লায়েন্টের মেসেজ আসবে না।**
+1. **হোস্টিং ও ডোমেইন:** `site/build/client` ফোল্ডারটা Cloudflare Pages-এ লাইভ (হয়ে গেছে)। ধাপগুলো `docs/DEPLOYMENT.md`-এ আছে।
+2. **যোগাযোগ ফর্ম:** চালু (FormSubmit → imran@probfly.com)। প্রথম মেসেজ আসার পর ওই ইনবক্সে FormSubmit-এর একটা "Activate" ইমেইল আসবে, একবার ক্লিক করলেই পরের সব মেসেজ আসবে।
 3. **Google Search Console:** সাইট যোগ করে `sitemap.xml` জমা দিন।
 4. **Privacy ও Terms:** এখন `noindex` (Google-এ দেখায় না)। একবার পড়ে নিশ্চিত হলে index চালু করা যায়।
 
