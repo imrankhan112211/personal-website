@@ -63,8 +63,7 @@ export default function Media() {
             <p className="mt-2 max-w-xl text-on-ink-muted">{t('media.press.body')}</p>
           </div>
           <div className="flex flex-wrap gap-3">
-            <ButtonLink to="/contact/?type=media" variant="light">{t('media.press.cta')} <ArrowRight aria-hidden /></ButtonLink>
-            <ButtonLink to="/about/biography/" variant="outline-light">{t('nav.biography')}</ButtonLink>
+            <ButtonLink to="/about/biography/" variant="light">{t('media.press.cta')} <ArrowRight aria-hidden /></ButtonLink>
           </div>
         </aside>
       </div>

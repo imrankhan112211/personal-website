@@ -1,4 +1,4 @@
-import { Briefcase, GraduationCap, Handshake, KeyRound, Mail, MessageSquare, Mic, Newspaper, Code2 } from 'lucide-react'
+import { Briefcase, GraduationCap, Handshake, KeyRound, Mail, MessageSquare, Code2 } from 'lucide-react'
 import { Link, useSearchParams } from 'react-router'
 import type { Route } from './+types/contact'
 import { InquiryForm } from '~/components/forms/InquiryForm'
@@ -14,8 +14,8 @@ export function meta({ location }: Route.MetaArgs) {
   return metaFor('contact', location.pathname)
 }
 
-const icons: Record<InquiryType, typeof Mail> = { consulting: Briefcase, training: GraduationCap, speaking: Mic, service: Code2, media: Newspaper, collaboration: Handshake, general: MessageSquare }
-const order: InquiryType[] = ['consulting', 'training', 'service', 'media', 'collaboration', 'general']
+const icons: Record<InquiryType, typeof Mail> = { consulting: Briefcase, training: GraduationCap, service: Code2, collaboration: Handshake, general: MessageSquare }
+const order: InquiryType[] = ['consulting', 'training', 'service', 'collaboration', 'general']
 
 export default function Contact() {
   const { t, l } = useLocale()

@@ -133,8 +133,7 @@ export default function Biography() {
           </BioSection>
 
           <div className="mt-14 flex flex-wrap gap-3">
-            <ButtonLink to="/contact/?type=media">{t('media.press.cta')}</ButtonLink>
-            <ButtonLink to={ctaLinks.consulting} variant="outline">{t('cta.book')}</ButtonLink>
+            <ButtonLink to={ctaLinks.consulting}>{t('cta.book')}</ButtonLink>
           </div>
         </article>
       </div>

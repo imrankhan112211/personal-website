@@ -5,9 +5,7 @@ export const inquiryTypes = [
   { id: 'consulting', label: { en: 'Consulting request', bn: 'পরামর্শের অনুরোধ' } },
   { id: 'service', label: { en: 'Technology solution / project', bn: 'টেকনোলজি সলিউশন / প্রজেক্ট' } },
   { id: 'training', label: { en: 'Training invitation', bn: 'প্রশিক্ষণের আমন্ত্রণ' } },
-  { id: 'speaking', label: { en: 'Speaking invitation', bn: 'বক্তৃতার আমন্ত্রণ' } },
   { id: 'collaboration', label: { en: 'Business collaboration', bn: 'ব্যবসায়িক সহযোগিতা' } },
-  { id: 'media', label: { en: 'Media & interview request', bn: 'গণমাধ্যম ও সাক্ষাৎকারের অনুরোধ' } },
 ] as const satisfies readonly { id: string; label: Localized }[]
 
 export type InquiryType = (typeof inquiryTypes)[number]['id']

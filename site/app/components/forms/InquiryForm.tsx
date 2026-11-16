@@ -84,7 +84,7 @@ export function InquiryForm({ fixedType, defaultType = 'general', className }: {
 
   const type = data.type as InquiryType
   const isConsulting = type === 'consulting'
-  const isTraining = type === 'training' || type === 'speaking'
+  const isTraining = type === 'training'
 
   return (
     <form noValidate onSubmit={onSubmit} className={cn('rounded-[var(--radius-card)] border border-line bg-surface p-6 md:p-9', className)} aria-describedby={id('demo')}>

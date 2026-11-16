@@ -277,9 +277,9 @@ export const ui = s({
   'media.empty.title': { en: 'Coverage will be archived here.', bn: 'প্রকাশিত প্রতিবেদন এখানে সংরক্ষিত থাকবে।' },
   'media.empty.body': { en: 'Only real, published coverage is listed — each with the outlet, date and a link to the original article.', bn: 'শুধুমাত্র প্রকৃত ও প্রকাশিত প্রতিবেদনই তালিকাভুক্ত হবে — প্রতিটির সঙ্গে সংবাদমাধ্যম, তারিখ ও মূল প্রতিবেদনের লিংক।' },
   'media.none': { en: 'Nothing in this category yet.', bn: 'এই বিভাগে এখনও কিছু নেই।' },
-  'media.press.title': { en: 'For journalists', bn: 'সাংবাদিকদের জন্য' },
-  'media.press.body': { en: 'For interviews or comment, send a media request. The official biography can be used as a reference.', bn: 'সাক্ষাৎকার বা মন্তব্যের জন্য গণমাধ্যম অনুরোধ পাঠান। অফিসিয়াল জীবনী তথ্যসূত্র হিসেবে ব্যবহার করা যেতে পারে।' },
-  'media.press.cta': { en: 'Send a media request', bn: 'গণমাধ্যম অনুরোধ পাঠান' },
+  'media.press.title': { en: 'Need background on Abdullah Al Imran?', bn: 'আব্দুল্লাহ আল ইমরান সম্পর্কে তথ্য দরকার?' },
+  'media.press.body': { en: 'The official biography has verified facts, a ready-to-use short bio and links to his profiles.', bn: 'অফিসিয়াল জীবনীতে যাচাই করা তথ্য, ব্যবহারযোগ্য সংক্ষিপ্ত জীবনী ও প্রোফাইলের লিংক রয়েছে।' },
+  'media.press.cta': { en: 'Read the official biography', bn: 'অফিসিয়াল জীবনী পড়ুন' },
   'media.read': { en: 'Read on', bn: 'পড়ুন' },
 
   // Insights
