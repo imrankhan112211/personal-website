@@ -44,7 +44,6 @@ export function Reviews() {
             )
           })}
         </ul>
-        <p className="mt-4 text-xs text-muted">{t('rev.asof')}</p>
       </section>
 
       <section aria-labelledby="wall-title" className="rounded-[var(--radius-card)] bg-surface p-7 md:p-10">

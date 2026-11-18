@@ -83,7 +83,7 @@ export const ui = s({
   'home.ventures.title': { en: 'Building technology that protects.', bn: 'সুরক্ষার জন্য প্রযুক্তি গড়ে তোলা।' },
   'home.impact.eyebrow': { en: 'Selected work & impact', bn: 'নির্বাচিত কাজ ও প্রভাব' },
   'home.impact.title': { en: 'Work with people, businesses and communities.', bn: 'মানুষ, ব্যবসা ও কমিউনিটির সঙ্গে কাজ।' },
-  'home.impact.body': { en: 'A curated selection of client work and community impact, published only with permission.', bn: 'ক্লায়েন্টের কাজ ও কমিউনিটি প্রভাবের একটি বাছাই করা সংকলন — শুধুমাত্র অনুমতি সাপেক্ষে প্রকাশিত।' },
+  'home.impact.body': { en: 'Client work and community impact from Probfly IT and Kaktaruaa.', bn: 'প্রবফ্লাই আইটি ও কাকতাড়ুয়ার ক্লায়েন্টের কাজ ও কমিউনিটি প্রভাব।' },
   'home.recognition.eyebrow': { en: 'Awards & recognition', bn: 'পুরস্কার ও স্বীকৃতি' },
   'home.recognition.title': { en: 'Recognition *along the way*.', bn: 'পথচলায় পাওয়া *স্বীকৃতি*।' },
   'home.media.eyebrow': { en: 'Media coverage', bn: 'গণমাধ্যমে' },
@@ -143,12 +143,12 @@ export const ui = s({
   'about.recognition.eyebrow': { en: 'Recognition highlights', bn: 'উল্লেখযোগ্য স্বীকৃতি' },
   'about.recognition.title': { en: 'Selected recognition.', bn: 'নির্বাচিত স্বীকৃতি।' },
   'about.mission.eyebrow': { en: 'Professional mission', bn: 'পেশাগত লক্ষ্য' },
-  'about.profile.eyebrow': { en: 'Downloadable profile', bn: 'ডাউনলোডযোগ্য প্রোফাইল' },
-  'about.profile.title': { en: 'Need an official bio?', bn: 'অফিসিয়াল পরিচিতি প্রয়োজন?' },
-  'about.profile.body': { en: 'Journalists, researchers and event organisers can use the official biography page as a reference. A downloadable PDF profile will be added here.', bn: 'সাংবাদিক, গবেষক ও অনুষ্ঠান আয়োজকরা অফিসিয়াল জীবনী পাতাটি তথ্যসূত্র হিসেবে ব্যবহার করতে পারেন। ডাউনলোডযোগ্য পিডিএফ প্রোফাইল এখানে যুক্ত করা হবে।' },
+  'about.profile.eyebrow': { en: 'Biography', bn: 'জীবনী' },
+  'about.profile.title': { en: 'The full story', bn: 'পুরো গল্প' },
+  'about.profile.body': { en: 'Early life, career, ventures, awards and media coverage, in one place.', bn: 'শৈশব, কর্মজীবন, উদ্যোগ, পুরস্কার ও গণমাধ্যমের খবর — এক জায়গায়।' },
   'about.profile.pdf': { en: 'PDF profile — coming soon', bn: 'পিডিএফ প্রোফাইল — শিগগির আসছে' },
   'about.profile.download': { en: 'Download PDF profile', bn: 'পিডিএফ প্রোফাইল ডাউনলোড' },
-  'about.profile.bio': { en: 'Read the official biography', bn: 'অফিসিয়াল জীবনী পড়ুন' },
+  'about.profile.bio': { en: 'Read the biography', bn: 'জীবনী পড়ুন' },
 
   // Biography
   'bio.eyebrow': { en: 'Biography', bn: 'জীবনী' },
@@ -190,7 +190,7 @@ export const ui = s({
   'consult.formats.eyebrow': { en: 'Consultation formats', bn: 'পরামর্শের ধরন' },
   'consult.formats.title': { en: 'Ways to work together.', bn: 'একসঙ্গে কাজের উপায়।' },
   'consult.bounds.eyebrow': { en: 'Important to know', bn: 'যা জানা জরুরি' },
-  'consult.bounds.title': { en: 'Honest about what consulting can and can’t do.', bn: 'পরামর্শ কী পারে আর কী পারে না — স্পষ্টভাবে।' },
+  'consult.bounds.title': { en: 'Good to know before we start.', bn: 'শুরুর আগে জেনে রাখুন।' },
   'consult.faq.eyebrow': { en: 'FAQ', bn: 'সাধারণ প্রশ্ন' },
   'consult.faq.title': { en: 'Frequently asked questions.', bn: 'প্রায়ই জিজ্ঞাসিত প্রশ্ন।' },
   'consult.form.eyebrow': { en: 'Book a consultation', bn: 'পরামর্শের সময় নিন' },
@@ -225,7 +225,7 @@ export const ui = s({
 
   // Impact
   'impact.eyebrow': { en: 'Selected work & impact', bn: 'নির্বাচিত কাজ ও প্রভাব' },
-  'impact.lead': { en: 'A curated selection of client work and community impact. Client work is published only with permission; private conversations and client material are never shared.', bn: 'ক্লায়েন্টের কাজ ও কমিউনিটি প্রভাবের একটি বাছাই করা সংকলন। ক্লায়েন্টের কাজ শুধুমাত্র অনুমতি সাপেক্ষে প্রকাশ করা হয়; ব্যক্তিগত কথোপকথন বা ক্লায়েন্টের তথ্য কখনো প্রকাশ করা হয় না।' },
+  'impact.lead': { en: 'Client work, community programmes and the people and businesses who have thanked Probfly IT and Kaktaruaa publicly.', bn: 'ক্লায়েন্টের কাজ, কমিউনিটি কার্যক্রম, আর যাঁরা প্রকাশ্যে প্রবফ্লাই আইটি ও কাকতাড়ুয়াকে ধন্যবাদ জানিয়েছেন।' },
   'impact.clients.eyebrow': { en: 'Professional client portfolio', bn: 'পেশাগত ক্লায়েন্ট পোর্টফোলিও' },
   'impact.clients.title': { en: 'Who I work with.', bn: 'যাদের সঙ্গে কাজ করি।' },
   'impact.cases.title': { en: 'Case studies', bn: 'কেস স্টাডি' },
@@ -247,7 +247,7 @@ export const ui = s({
 
   // Recognition
   'rec.eyebrow': { en: 'Awards & recognition', bn: 'পুরস্কার ও স্বীকৃতি' },
-  'rec.lead': { en: 'An archive of awards, nominations, speaking and institutional recognition. Each entry is labelled exactly for what it is.', bn: 'পুরস্কার, মনোনয়ন, বক্তৃতা ও প্রাতিষ্ঠানিক স্বীকৃতির আর্কাইভ। প্রতিটি এন্ট্রি তার প্রকৃত ধরন অনুযায়ী চিহ্নিত।' },
+  'rec.lead': { en: 'Awards, speaking and institutional recognition.', bn: 'পুরস্কার, বক্তৃতা ও প্রাতিষ্ঠানিক স্বীকৃতি।' },
   'rec.group.awards': { en: 'Awards & nominations', bn: 'পুরস্কার ও মনোনয়ন' },
   'rec.group.speaking': { en: 'Speaking & professional recognition', bn: 'বক্তৃতা ও পেশাগত স্বীকৃতি' },
   'rec.group.training': { en: 'Training & institutional recognition', bn: 'প্রশিক্ষণ ও প্রাতিষ্ঠানিক স্বীকৃতি' },
@@ -263,7 +263,7 @@ export const ui = s({
 
   // Media
   'media.eyebrow': { en: 'Media coverage', bn: 'গণমাধ্যমে' },
-  'media.lead': { en: 'Published news articles, interviews and features about Abdullah Al Imran, each linked to its original source.', bn: 'আব্দুল্লাহ আল ইমরানকে নিয়ে প্রকাশিত সংবাদ, সাক্ষাৎকার ও ফিচার — প্রতিটি মূল উৎসের লিংকসহ।' },
+  'media.lead': { en: 'News articles, interviews and features about Abdullah Al Imran.', bn: 'আব্দুল্লাহ আল ইমরানকে নিয়ে সংবাদ, সাক্ষাৎকার ও ফিচার।' },
   'media.filter': { en: 'Filter by type', bn: 'ধরন অনুযায়ী দেখুন' },
   'media.all': { en: 'All', bn: 'সব' },
   'media.cat.news': { en: 'News', bn: 'সংবাদ' },
@@ -277,8 +277,8 @@ export const ui = s({
   'media.empty.body': { en: 'Only real, published coverage is listed — each with the outlet, date and a link to the original article.', bn: 'শুধুমাত্র প্রকৃত ও প্রকাশিত প্রতিবেদনই তালিকাভুক্ত হবে — প্রতিটির সঙ্গে সংবাদমাধ্যম, তারিখ ও মূল প্রতিবেদনের লিংক।' },
   'media.none': { en: 'Nothing in this category yet.', bn: 'এই বিভাগে এখনও কিছু নেই।' },
   'media.press.title': { en: 'Need background on Abdullah Al Imran?', bn: 'আব্দুল্লাহ আল ইমরান সম্পর্কে তথ্য দরকার?' },
-  'media.press.body': { en: 'The official biography has verified facts, a ready-to-use short bio and links to his profiles.', bn: 'অফিসিয়াল জীবনীতে যাচাই করা তথ্য, ব্যবহারযোগ্য সংক্ষিপ্ত জীবনী ও প্রোফাইলের লিংক রয়েছে।' },
-  'media.press.cta': { en: 'Read the official biography', bn: 'অফিসিয়াল জীবনী পড়ুন' },
+  'media.press.body': { en: 'His background, ventures, awards and profiles, in one place.', bn: 'তাঁর পরিচিতি, উদ্যোগ, পুরস্কার ও প্রোফাইল — এক জায়গায়।' },
+  'media.press.cta': { en: 'Read the biography', bn: 'জীবনী পড়ুন' },
   'media.read': { en: 'Read on', bn: 'পড়ুন' },
 
   // Insights
@@ -362,7 +362,7 @@ export const ui = s({
   'rev.reactions': { en: 'reactions', bn: 'রিঅ্যাকশন' },
   'rev.reel': { en: 'Facebook reel', bn: 'Facebook রিল' },
   'rev.wall.title': { en: 'Public thanks', bn: 'প্রকাশ্য ধন্যবাদ' },
-  'rev.wall.body': { en: 'Public Facebook posts by clients, creators and organisations. Each name opens the original post.', bn: 'ক্লায়েন্ট, ক্রিয়েটর ও প্রতিষ্ঠানের প্রকাশ্য Facebook পোস্ট। প্রতিটি নামে ক্লিক করলে মূল পোস্ট খুলবে।' },
+  'rev.wall.body': { en: 'Posts from clients, creators and organisations on Facebook.', bn: 'Facebook-এ ক্লায়েন্ট, ক্রিয়েটর ও প্রতিষ্ঠানের পোস্ট।' },
   'rev.count.people': { en: 'people and organisations shown here', bn: 'জন ব্যক্তি ও প্রতিষ্ঠান (এখানে দেখানো)' },
   'rev.count.posts': { en: 'public posts', bn: 'টি প্রকাশ্য পোস্ট' },
   'rev.asof': { en: 'Counts as shown on Facebook when added; they change over time.', bn: 'ভিউ ও রিঅ্যাকশনের সংখ্যা যোগ করার সময় Facebook-এ যেমন ছিল; সময়ের সঙ্গে বদলায়।' },

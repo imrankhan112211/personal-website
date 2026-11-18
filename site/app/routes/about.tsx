@@ -111,11 +111,7 @@ export default function About() {
             </div>
             <div className="flex flex-col gap-3">
               <ButtonLink to="/about/biography/">{t('about.profile.bio')} <ArrowRight aria-hidden /></ButtonLink>
-              {profilePdf ? (
-                <ButtonLink to={profilePdf} variant="outline" download>{t('about.profile.download')}</ButtonLink>
-              ) : (
-                <span aria-disabled className="inline-flex min-h-11 items-center justify-center rounded-full border border-dashed border-line-strong px-5 text-sm text-muted">{t('about.profile.pdf')}</span>
-              )}
+              {profilePdf && <ButtonLink to={profilePdf} variant="outline" download>{t('about.profile.download')}</ButtonLink>}
             </div>
           </div>
         </div>

@@ -29,19 +29,6 @@ export default function RecognitionPage() {
         eyebrow={t('rec.eyebrow')}
         title={t('rec.eyebrow')}
         lead={t('rec.lead')}
-        aside={
-          <div className="rounded-[var(--radius-card)] border border-line bg-surface p-6">
-            <h2 className="t-eyebrow text-muted">{t('rec.legend')}</h2>
-            <dl className="mt-5 grid gap-3">
-              {types.map((ty) => (
-                <div key={ty} className="grid grid-cols-[7.5rem_1fr] items-center gap-3 text-sm">
-                  <dt><Badge tone={recognitionTone[ty]}>{t(`rtype.${ty}`)}</Badge></dt>
-                  <dd className="text-muted">{t(`rec.legend.${ty}`)}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
-        }
       />
 
       <div className="container-x py-16 md:py-24">
