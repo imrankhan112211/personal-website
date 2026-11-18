@@ -59,7 +59,7 @@
 - Ventures (৪টা)
 - Learning
 - Blog
-- Impact (৯৯টা রিভিউ, ১০টা ভিডিও)
+- Impact (৯৮টা রিভিউ, ১০টা ভিডিও)
 - Recognition, Media (২৬টা)
 - Contact
 - Privacy, Terms
