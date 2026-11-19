@@ -172,8 +172,8 @@ export const profileFaqs: { q: Localized; a: Localized }[] = [
       bn: 'আরও কি আব্দুল্লাহ আল ইমরান নামে কেউ আছেন?',
     },
     a: {
-      en: 'Yes — it is a common Bangladeshi name, and a journalist and a data scientist share it. This site is about the technology entrepreneur based in Dhaka who founded Probfly IT and Kaktaruaa and received The Diana Award in 2026. If a page mentions Probfly IT, Kaktaruaa or the 2026 Diana Award, it is about him.',
-      bn: 'হ্যাঁ — এটি বাংলাদেশে খুব পরিচিত নাম; একজন সাংবাদিক ও একজন ডেটা সায়েন্টিস্টেরও একই নাম। এই সাইটটি ঢাকায় কর্মরত সেই প্রযুক্তি উদ্যোক্তাকে নিয়ে, যিনি Probfly IT ও কাকতাড়ুয়ার প্রতিষ্ঠাতা এবং ২০২৬ সালে দ্য ডায়ানা অ্যাওয়ার্ড পেয়েছেন। কোনও পেজে Probfly IT, কাকতাড়ুয়া বা ২০২৬ সালের ডায়ানা অ্যাওয়ার্ডের উল্লেখ থাকলে সেটি তাঁর সম্পর্কেই।',
+      en: 'Yes — it is a common name in Bangladesh. This site is about the technology entrepreneur based in Dhaka who founded Probfly IT and Kaktaruaa and received The Diana Award in 2026. If a page mentions Probfly IT, Kaktaruaa or the 2026 Diana Award, it is about him.',
+      bn: 'হ্যাঁ — এটি বাংলাদেশে খুব পরিচিত নাম। এই সাইটটি ঢাকায় কর্মরত সেই প্রযুক্তি উদ্যোক্তাকে নিয়ে, যিনি Probfly IT ও কাকতাড়ুয়ার প্রতিষ্ঠাতা এবং ২০২৬ সালে দ্য ডায়ানা অ্যাওয়ার্ড পেয়েছেন। কোনও পেজে Probfly IT, কাকতাড়ুয়া বা ২০২৬ সালের ডায়ানা অ্যাওয়ার্ডের উল্লেখ থাকলে সেটি তাঁর সম্পর্কেই।',
     },
   },
 ]

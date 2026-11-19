@@ -20,7 +20,7 @@ export const credentials: { label: Localized; detail?: Localized }[] = [
  */
 export const stats = {
   thankedPublicly: 399,
-  mediaReports: 32,
+  mediaReports: 31,
   peopleTrained: 3000,
   ventures: 4,
 }

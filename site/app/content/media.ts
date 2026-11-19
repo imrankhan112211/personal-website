@@ -21,11 +21,9 @@ export type MediaItem = {
 /**
  * Real, published coverage only — every item links to the original source.
  * Metadata (headline, outlet, date) was read from each page on 14 Nov 2026 (items added 19 Nov 2026 read that day).
- * somoynews.tv/news/2024-11-14/L5EKGPBN is live but sits behind a bot check: headline and date come from the
- * search-engine record of the page, not a direct read — open it once in a browser to confirm before relying on it.
  * Removed as unreachable (404): risingbd.com/positive-bangladesh/news/433708,
  * thebangladeshtoday.com/?p=43950, therisingcampus.com (EMK Center article).
- * Removed at owner's request: two political-commentary items (Daily Janakantha, Feb 2025)
+ * Removed at owner's request: openPR and MENAFN press releases (Nov 2026); two political-commentary items (Daily Janakantha, Feb 2025)
  * and a duplicate Somoy TV upload (youtu.be/4zSuC1e54Fo).
  */
 export const media: MediaItem[] = [
@@ -39,8 +37,6 @@ export const media: MediaItem[] = [
   { id: 'somoy-diana-2026', outlet: 'Somoy TV', headline: 'সাইবার সুরক্ষায় কাজ করে ডায়ানা এওয়ার্ড পেলেন আবদুল্লাহ আল ইমরান', language: 'bn', date: '2026-11-13', url: 'https://www.youtube.com/watch?v=T2DNJcjgurA', category: 'video', topic: 'diana-award' },
   { id: 'inqilab-diana-2026', outlet: 'Daily Inqilab', headline: 'ডায়ানা অ্যাওয়ার্ড পেলেন কাকতাড়ুয়ার আব্দুল্লাহ আল ইমরান', language: 'bn', date: '2026-11-10', url: 'https://dailyinqilab.com/national/news/961006', category: 'news', topic: 'diana-award' },
   { id: 'jagonews-diana-2026', outlet: 'Jago News 24', headline: 'ডায়ানা অ্যাওয়ার্ড পেলেন কাকতাড়ুয়ার আব্দুল্লাহ আল ইমরান', language: 'bn', date: '2026-11-09', url: 'https://www.jagonews24.com/miscellaneous/article/1177518', category: 'news', topic: 'diana-award' },
-  { id: 'openpr-diana-2026', outlet: 'openPR', headline: 'Abdullah Al Imran Receives Diana Award 2026 for Promoting Digital Safety in Bangladesh', language: 'en', date: '2026-11-09', url: 'https://www.openpr.com/news/4684841/abdullah-al-imran-receives-diana-award-2026-for-promoting', category: 'press-release', topic: 'diana-award' },
-  { id: 'menafn-diana-2026', outlet: 'MENAFN', headline: 'Abdullah Al Imran Receives 2026 Diana Award for Digital Safety Work in Bangladesh', language: 'en', date: '2026-11-08', url: 'https://menafn.com/1111931688/Abdullah-Al-Imran-Receives-2026-Diana-Award-for-Digital-Safety-Work-in-Bangladesh', category: 'press-release', topic: 'diana-award' },
   { id: 'dbu-diana-2026', outlet: 'Daily Bangladesh Update', headline: 'Kaktarua Founder Wins Diana Award', language: 'en', date: '2026-11-08', url: 'https://dailybangladeshupdate.com/entertainment/8589', category: 'news', topic: 'diana-award' },
   { id: 'businessbd-diana-2026', outlet: 'Business Bangladesh', headline: 'ডায়ানা অ্যাওয়ার্ড পেল কাকতাড়ুয়া', language: 'bn', date: '2026-11-08', url: 'https://businessbangladesh.com.bd/article/412112', category: 'news', topic: 'diana-award' },
   { id: 'rupali-diana-2026', outlet: 'Rupali Bangladesh', headline: 'ছোট উদ্যোগের বড় অর্জন, ডায়ানা অ্যাওয়ার্ড পেল কাকতাড়ুয়া', language: 'bn', date: '2026-11-08', url: 'https://www.rupalibangladesh.com/social-media-news/178639', category: 'news', topic: 'diana-award' },
@@ -58,7 +54,6 @@ export const media: MediaItem[] = [
   { id: 'observer-kaktaruaa-2024', outlet: 'Daily Observer', headline: "Imran's Kaktaruaa organized 'First Aid Of Social Media Problems' seminar", language: 'en', date: '2024-11-24', url: 'https://www.observerbd.com/news/499797', category: 'news', topic: 'kaktaruaa' },
   { id: 'prothomalo-nagorik-2024', outlet: 'Prothom Alo (Nagorik)', headline: 'সামাজিক যোগাযোগমাধ্যমে নিরাপত্তায় সচেতনতা সভা', language: 'bn', date: '2024-11-24', url: 'https://nagorik.prothomalo.com/reader/onyu8icvr9', category: 'news', topic: 'kaktaruaa' },
   { id: 'jagonews-seminar-2024', outlet: 'Jago News 24', headline: 'সোশ্যাল মিডিয়ার নিরাপত্তা নিয়ে সচেতনতামূলক সেমিনার', language: 'bn', date: '2024-11-23', url: 'https://www.jagonews24.com/technology/news/983678', category: 'news', topic: 'kaktaruaa' },
-  { id: 'somoynews-seminar-2024', outlet: 'Somoy News', headline: 'সোশ্যাল মিডিয়ার নিরাপত্তা নিয়ে রাজধানীতে সেমিনার', language: 'bn', date: '2024-11-14', url: 'https://www.somoynews.tv/news/2024-11-14/L5EKGPBN', category: 'news', topic: 'kaktaruaa' },
   { id: 'deshtv-2024', outlet: 'Desh TV', headline: 'সোশ্যাল মিডিয়া ব্যবহারে সচেতনতামূলক সভা', language: 'bn', date: '2024-11-14', url: 'https://www.desh.tv/social-media/48248', category: 'news', topic: 'awareness' },
   { id: 'bondhushava-2024', outlet: 'Bondhushava', headline: 'সামাজিক যোগাযোগমাধ্যমে নিরাপত্তা', language: 'bn', date: '2024-05-28', url: 'https://www.bondhushava.com/activities/m1cddgemmr', category: 'news', topic: 'awareness' },
 

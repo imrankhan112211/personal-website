@@ -33,7 +33,7 @@
 - **Person schema:** জন্মস্থান, শিক্ষা, জাতীয়তা, পুরস্কার, প্রতিষ্ঠিত প্রতিষ্ঠান আর ৬টা সোশ্যাল প্রোফাইল (sameAs)।
 - **Organization schema:** প্রতিটা ভেঞ্চারের জন্য, প্রতিষ্ঠার সাল আর সহ-প্রতিষ্ঠাতাসহ। Zurvis.io-এর সাথে WhatsFly-এর বিকল্প নামও দেওয়া আছে।
 - **"Who is Abdullah Al Imran?" প্রশ্নোত্তর:** Biography পেজে আর llms.txt-এ (FAQPage schema-সহ)। AI সহকারী আর Google-এর উত্তরের বক্সে এই ধরনের লেখাই বেশি উঠে আসে।
-- **৩২টা প্রকাশিত প্রতিবেদন:** প্রতিটা আসল উৎসে লিংক করা, আর ProfilePage schema-তে `subjectOf` হিসেবে দেওয়া।
+- **৩১টা প্রকাশিত প্রতিবেদন:** প্রতিটা আসল উৎসে লিংক করা, আর ProfilePage schema-তে `subjectOf` হিসেবে দেওয়া।
 - **ভেঞ্চারের লিংক:** সবগুলোতে UTM (`utm_source=abdullahalimran`) যোগ করা, যাতে Probfly, Zurvis, WhatsFly আর Kaktaruaa নিজেদের analytics-এ দেখতে পারে কত মানুষ এই সাইট থেকে গেছে।
 - **পুরনো লিংক:** `/insights/` → `/blog/` আর `/resources/`, `/courses/` → `/learning/` স্থায়ীভাবে (301) পুনর্নির্দেশিত।
 
@@ -60,7 +60,7 @@
 - Learning
 - Blog
 - Impact (৯৮টা রিভিউ, ১০টা ভিডিও)
-- Recognition, Media (৩২টা)
+- Recognition, Media (৩১টা)
 - Contact
 - Privacy, Terms
 
