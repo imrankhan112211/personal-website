@@ -79,8 +79,9 @@ export const person = {
    * Third-party pages that describe this same person. These are NOT shown as social links — they only
    * join Person.sameAs, which is how search engines reconcile one entity across the web and stop
    * merging him with other people of the same name. Add only pages that are genuinely about him.
-   * (An IMDb link returned 404 and an Amazon author page could not be confirmed as his, so neither is listed.)
+   * (An IMDb link returned 404 and is not listed. The Amazon author page was confirmed by the owner on 19 Nov 2026.)
    */
   referenceProfiles: [
+    { label: 'Amazon Author', url: 'https://www.amazon.com/stores/author/B092RF1LQ5' },
   ] as { label: string; url: string }[],
 }
