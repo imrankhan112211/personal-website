@@ -20,7 +20,7 @@ export type MediaItem = {
 
 /**
  * Real, published coverage only — every item links to the original source.
- * Metadata (headline, outlet, date) was read from each page on 14 Nov 2026.
+ * Metadata (headline, outlet, date) was read from each page on 14 Nov 2026 (items added 19 Nov 2026 read that day).
  * Removed as unreachable (404): risingbd.com/positive-bangladesh/news/433708,
  * thebangladeshtoday.com/?p=43950, therisingcampus.com (EMK Center article).
  * Removed at owner's request: two political-commentary items (Daily Janakantha, Feb 2025)
@@ -28,10 +28,16 @@ export type MediaItem = {
  */
 export const media: MediaItem[] = [
   // ── Diana Award 2026 ──
+  { id: 'tbsgraduates-kaktaruaa-2026', outlet: 'TBS Graduates (The Business Standard)', headline: 'How Imran\u2019s Kaktaruaa earned a Diana Award', language: 'en', date: '2026-11-17', url: 'https://tbsgraduates.net/interviews/how-imrans-kaktaruaa-earned-a-diana-award/', category: 'interview', topic: 'diana-award' },
+  { id: 'businessdaily-diana-2026', outlet: 'The Business Daily', headline: 'ডিজিটাল নিরাপত্তায় ইমরানের ‘কাকতাড়ুয়া’, ডায়ানা অ্যাওয়ার্ড ২০২৬ পেলেন বাংলাদেশের ১২ তরুণ', language: 'bn', date: '2026-11-16', url: 'https://www.thebusinessdaily.net/technology/news/23143', category: 'news', topic: 'diana-award' },
+  { id: 'somoy-facebook-2026', outlet: 'Somoy TV', headline: 'ফেসবুক কি মানুষের মাইন্ড রিড করতে পারে?', language: 'bn', date: '2026-11-16', url: 'https://www.youtube.com/watch?v=83NxHl0lP64', category: 'video', topic: 'commentary' },
+  { id: 'somoy-telegram-2026', outlet: 'Somoy TV', headline: 'টেলিগ্রাম এখন ভয়াবহ অপরাধের আখড়া!', language: 'bn', date: '2026-11-15', url: 'https://www.youtube.com/watch?v=KBhRhXa5SnQ', category: 'video', topic: 'commentary' },
+  { id: 'samakal-diana-2026', outlet: 'Samakal', headline: 'তরুণদের হাত ধরে সমাজ বদলের স্বপ্ন, ১২ বাংলাদেশি পেলেন আন্তর্জাতিক স্বীকৃতি', language: 'bn', date: '2026-11-15', url: 'https://samakal.com/sahos/article/383164', category: 'news', topic: 'diana-award' },
   { id: 'somoy-diana-2026', outlet: 'Somoy TV', headline: 'সাইবার সুরক্ষায় কাজ করে ডায়ানা এওয়ার্ড পেলেন আবদুল্লাহ আল ইমরান', language: 'bn', date: '2026-11-13', url: 'https://www.youtube.com/watch?v=T2DNJcjgurA', category: 'video', topic: 'diana-award' },
   { id: 'inqilab-diana-2026', outlet: 'Daily Inqilab', headline: 'ডায়ানা অ্যাওয়ার্ড পেলেন কাকতাড়ুয়ার আব্দুল্লাহ আল ইমরান', language: 'bn', date: '2026-11-10', url: 'https://dailyinqilab.com/national/news/961006', category: 'news', topic: 'diana-award' },
   { id: 'jagonews-diana-2026', outlet: 'Jago News 24', headline: 'ডায়ানা অ্যাওয়ার্ড পেলেন কাকতাড়ুয়ার আব্দুল্লাহ আল ইমরান', language: 'bn', date: '2026-11-09', url: 'https://www.jagonews24.com/miscellaneous/article/1177518', category: 'news', topic: 'diana-award' },
   { id: 'openpr-diana-2026', outlet: 'openPR', headline: 'Abdullah Al Imran Receives Diana Award 2026 for Promoting Digital Safety in Bangladesh', language: 'en', date: '2026-11-09', url: 'https://www.openpr.com/news/4684841/abdullah-al-imran-receives-diana-award-2026-for-promoting', category: 'press-release', topic: 'diana-award' },
+  { id: 'menafn-diana-2026', outlet: 'MENAFN', headline: 'Abdullah Al Imran Receives 2026 Diana Award for Digital Safety Work in Bangladesh', language: 'en', date: '2026-11-08', url: 'https://menafn.com/1111931688/Abdullah-Al-Imran-Receives-2026-Diana-Award-for-Digital-Safety-Work-in-Bangladesh', category: 'press-release', topic: 'diana-award' },
   { id: 'dbu-diana-2026', outlet: 'Daily Bangladesh Update', headline: 'Kaktarua Founder Wins Diana Award', language: 'en', date: '2026-11-08', url: 'https://dailybangladeshupdate.com/entertainment/8589', category: 'news', topic: 'diana-award' },
   { id: 'businessbd-diana-2026', outlet: 'Business Bangladesh', headline: 'ডায়ানা অ্যাওয়ার্ড পেল কাকতাড়ুয়া', language: 'bn', date: '2026-11-08', url: 'https://businessbangladesh.com.bd/article/412112', category: 'news', topic: 'diana-award' },
   { id: 'rupali-diana-2026', outlet: 'Rupali Bangladesh', headline: 'ছোট উদ্যোগের বড় অর্জন, ডায়ানা অ্যাওয়ার্ড পেল কাকতাড়ুয়া', language: 'bn', date: '2026-11-08', url: 'https://www.rupalibangladesh.com/social-media-news/178639', category: 'news', topic: 'diana-award' },
