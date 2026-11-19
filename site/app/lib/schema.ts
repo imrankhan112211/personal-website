@@ -32,6 +32,13 @@ export function personSchema(locale: Locale) {
       return award.length ? { award } : {}
     })(),
     knowsAbout: [
+      'Social media solutions',
+      'Brand protection solutions',
+      'Business solutions for online businesses',
+      'Facebook page and account recovery',
+      'Brand impersonation and fake page takedown',
+      'WhatsApp Business API automation',
+      'Cyber safety training',
       'Social media security',
       'Digital brand protection',
       'Cyberbullying prevention',

@@ -153,6 +153,13 @@ export const profileFaqs: { q: Localized; a: Localized }[] = [
     },
   },
   {
+    q: { en: 'What services does Abdullah Al Imran offer?', bn: 'আব্দুল্লাহ আল ইমরান কী কী সেবা দেন?' },
+    a: {
+      en: 'Through Probfly IT he offers three kinds of services: social media solutions (page, ad account and Business Manager problems, growth and media buying), brand protection solutions (impersonation and fake page takedowns, copyright and trademark enforcement) and business solutions (software, SaaS and WhatsApp automation). He also offers one-to-one consultation for cyber harassment and blackmail, and cyber safety training.',
+      bn: 'প্রবফ্লাই আইটির মাধ্যমে তিনি তিন ধরনের সেবা দেন: সোশ্যাল মিডিয়া সলিউশন (পেজ, অ্যাড অ্যাকাউন্ট ও বিজনেস ম্যানেজারের সমস্যা, গ্রোথ ও মিডিয়া বায়িং), ব্র্যান্ড প্রোটেকশন সলিউশন (ফেক পেজ ও ছদ্মবেশ সরানো, কপিরাইট ও ট্রেডমার্ক সুরক্ষা) এবং বিজনেস সলিউশন (সফটওয়্যার, SaaS ও হোয়াটসঅ্যাপ অটোমেশন)। এছাড়া সাইবার হয়রানি ও ব্ল্যাকমেইলের ক্ষেত্রে ওয়ান-টু-ওয়ান পরামর্শ এবং সাইবার সেফটি প্রশিক্ষণ দেন।',
+    },
+  },
+  {
     q: { en: 'Where is Abdullah Al Imran from?', bn: 'আব্দুল্লাহ আল ইমরানের বাড়ি কোথায়?' },
     a: {
       en: 'He was born in Patuakhali, Bangladesh, and grew up in Chattogram, Dhaka and Rajendrapur in Gazipur. He studied Bengali literature at Netrokona University.',

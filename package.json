@@ -10,7 +10,8 @@
     "typecheck": "npm --prefix site run typecheck",
     "assets": "npm --prefix site run assets",
     "images": "npm --prefix site run images",
-    "check": "npm --prefix site run check"
+    "check": "npm --prefix site run check",
+    "indexnow": "npm --prefix site run indexnow"
   },
   "engines": {
     "node": ">=20"
