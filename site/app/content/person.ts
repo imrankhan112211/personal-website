@@ -39,6 +39,17 @@ export const person = {
     en: 'Abdullah Al Imran is a Bangladeshi technology entrepreneur and cyber safety advocate, the founder of Probfly IT and Kaktaruaa, and a recipient of The Diana Award (2026).',
     bn: 'আব্দুল্লাহ আল ইমরান বাংলাদেশি প্রযুক্তি উদ্যোক্তা ও সাইবার সেফটি অ্যাডভোকেট, Probfly IT ও কাকতাড়ুয়ার প্রতিষ্ঠাতা এবং দ্য ডায়ানা অ্যাওয়ার্ড (২০২৬) প্রাপ্ত।',
   } satisfies Localized,
+  /**
+   * One sentence that tells this Abdullah Al Imran apart from other people with the same name
+   * (there is a Bangladeshi-Canadian journalist and a data scientist who share it).
+   * Feeds Person.disambiguatingDescription — the property search engines use to separate same-name entities.
+   */
+  disambiguatingDescription: {
+    en: 'The Bangladeshi technology entrepreneur based in Dhaka who founded Probfly IT (2021) and the cyber safety non-profit Kaktaruaa (2023), and received The Diana Award in 2026. Other people share this name; this is the Probfly IT and Kaktaruaa founder.',
+    bn: 'ঢাকায় কর্মরত বাংলাদেশি প্রযুক্তি উদ্যোক্তা, Probfly IT (২০২১) ও সাইবার সেফটি অলাভজনক প্রতিষ্ঠান কাকতাড়ুয়া (২০২৩)-এর প্রতিষ্ঠাতা এবং ২০২৬ সালে দ্য ডায়ানা অ্যাওয়ার্ড প্রাপ্ত। একই নামে আরও মানুষ আছেন; ইনি Probfly IT ও কাকতাড়ুয়ার প্রতিষ্ঠাতা।',
+  } satisfies Localized,
+  /** City of work — a plain, checkable signal that separates him from the same-name journalist based in Canada. */
+  workLocation: { en: 'Dhaka, Bangladesh', bn: 'ঢাকা, বাংলাদেশ' } satisfies Localized,
   /** Verified personal facts (published in national media, Nov 2026). Used in the Biography quick facts and Person schema. */
   nationality: { en: 'Bangladeshi', bn: 'বাংলাদেশি' } satisfies Localized,
   birthPlace: { en: 'Patuakhali, Bangladesh', bn: 'পটুয়াখালী, বাংলাদেশ' } satisfies Localized,
@@ -64,4 +75,13 @@ export const person = {
     { id: 'telegram', label: 'Telegram', url: 'https://t.me/abdullahalimrangroup' },
     { id: 'whatsapp', label: 'WhatsApp Channel', url: 'https://whatsapp.com/channel/0029VbCuEENAjPXVlAjBSO1b' },
   ] as { id: string; label: string; url: string | null }[],
+  /**
+   * Third-party pages that describe this same person. These are NOT shown as social links — they only
+   * join Person.sameAs, which is how search engines reconcile one entity across the web and stop
+   * merging him with other people of the same name. Add only pages that are genuinely about him.
+   */
+  referenceProfiles: [
+    { label: 'IMDb', url: 'https://www.imdb.com/name/nm12617735/' },
+    { label: 'Amazon Author', url: 'https://www.amazon.com/stores/author/B092RF1LQ5' },
+  ] as { label: string; url: string }[],
 }

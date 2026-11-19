@@ -9,7 +9,9 @@ const SITE_ID = `${SITE_URL}/#website`
 
 /** Person schema — only verified, visible facts. Empty fields are omitted. */
 export function personSchema(locale: Locale) {
-  const sameAs = person.socials.map((s) => s.url).filter(Boolean)
+  // Own accounts first, then third-party pages about him: sameAs is what search engines use to
+  // decide that all of these describe one entity, and not someone else with the same name.
+  const sameAs = [...person.socials.map((s) => s.url), ...person.referenceProfiles.map((r) => r.url)].filter(Boolean)
   return {
     '@context': 'https://schema.org',
     '@type': 'Person',
@@ -20,9 +22,11 @@ export function personSchema(locale: Locale) {
     url: SITE_URL + '/',
     jobTitle: person.titleParts.map((p) => tr(p, locale)),
     description: tr(person.description, locale),
+    disambiguatingDescription: tr(person.disambiguatingDescription, locale),
     ...(person.portrait ? { image: SITE_URL + person.portrait } : {}),
     nationality: { '@type': 'Country', name: 'Bangladesh' },
     birthPlace: { '@type': 'Place', name: person.birthPlace.en },
+    workLocation: { '@type': 'Place', name: person.workLocation.en },
     alumniOf: { '@type': 'CollegeOrUniversity', name: person.alumniOf },
     knowsLanguage: ['bn', 'en'],
     ...(sameAs.length ? { sameAs } : {}),

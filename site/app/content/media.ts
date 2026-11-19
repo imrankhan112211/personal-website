@@ -21,6 +21,8 @@ export type MediaItem = {
 /**
  * Real, published coverage only — every item links to the original source.
  * Metadata (headline, outlet, date) was read from each page on 14 Nov 2026 (items added 19 Nov 2026 read that day).
+ * somoynews.tv/news/2024-11-14/L5EKGPBN is live but sits behind a bot check: headline and date come from the
+ * search-engine record of the page, not a direct read — open it once in a browser to confirm before relying on it.
  * Removed as unreachable (404): risingbd.com/positive-bangladesh/news/433708,
  * thebangladeshtoday.com/?p=43950, therisingcampus.com (EMK Center article).
  * Removed at owner's request: two political-commentary items (Daily Janakantha, Feb 2025)
@@ -28,6 +30,7 @@ export type MediaItem = {
  */
 export const media: MediaItem[] = [
   // ── Diana Award 2026 ──
+  { id: 'somoy-ent-diana-2026', outlet: 'Somoy TV', headline: 'লাখো মানুষের উপকার করে ডায়ানা অ্যাওয়ার্ড পেল কাকতাড়ুয়া', language: 'bn', date: '2026-11-18', url: 'https://www.youtube.com/watch?v=aGVwFwhPcYo', category: 'video', topic: 'diana-award' },
   { id: 'tbsgraduates-kaktaruaa-2026', outlet: 'TBS Graduates (The Business Standard)', headline: 'How Imran\u2019s Kaktaruaa earned a Diana Award', language: 'en', date: '2026-11-17', url: 'https://tbsgraduates.net/interviews/how-imrans-kaktaruaa-earned-a-diana-award/', category: 'interview', topic: 'diana-award' },
   { id: 'businessdaily-diana-2026', outlet: 'The Business Daily', headline: 'ডিজিটাল নিরাপত্তায় ইমরানের ‘কাকতাড়ুয়া’, ডায়ানা অ্যাওয়ার্ড ২০২৬ পেলেন বাংলাদেশের ১২ তরুণ', language: 'bn', date: '2026-11-16', url: 'https://www.thebusinessdaily.net/technology/news/23143', category: 'news', topic: 'diana-award' },
   { id: 'somoy-facebook-2026', outlet: 'Somoy TV', headline: 'ফেসবুক কি মানুষের মাইন্ড রিড করতে পারে?', language: 'bn', date: '2026-11-16', url: 'https://www.youtube.com/watch?v=83NxHl0lP64', category: 'video', topic: 'commentary' },
@@ -55,6 +58,7 @@ export const media: MediaItem[] = [
   { id: 'observer-kaktaruaa-2024', outlet: 'Daily Observer', headline: "Imran's Kaktaruaa organized 'First Aid Of Social Media Problems' seminar", language: 'en', date: '2024-11-24', url: 'https://www.observerbd.com/news/499797', category: 'news', topic: 'kaktaruaa' },
   { id: 'prothomalo-nagorik-2024', outlet: 'Prothom Alo (Nagorik)', headline: 'সামাজিক যোগাযোগমাধ্যমে নিরাপত্তায় সচেতনতা সভা', language: 'bn', date: '2024-11-24', url: 'https://nagorik.prothomalo.com/reader/onyu8icvr9', category: 'news', topic: 'kaktaruaa' },
   { id: 'jagonews-seminar-2024', outlet: 'Jago News 24', headline: 'সোশ্যাল মিডিয়ার নিরাপত্তা নিয়ে সচেতনতামূলক সেমিনার', language: 'bn', date: '2024-11-23', url: 'https://www.jagonews24.com/technology/news/983678', category: 'news', topic: 'kaktaruaa' },
+  { id: 'somoynews-seminar-2024', outlet: 'Somoy News', headline: 'সোশ্যাল মিডিয়ার নিরাপত্তা নিয়ে রাজধানীতে সেমিনার', language: 'bn', date: '2024-11-14', url: 'https://www.somoynews.tv/news/2024-11-14/L5EKGPBN', category: 'news', topic: 'kaktaruaa' },
   { id: 'deshtv-2024', outlet: 'Desh TV', headline: 'সোশ্যাল মিডিয়া ব্যবহারে সচেতনতামূলক সভা', language: 'bn', date: '2024-11-14', url: 'https://www.desh.tv/social-media/48248', category: 'news', topic: 'awareness' },
   { id: 'bondhushava-2024', outlet: 'Bondhushava', headline: 'সামাজিক যোগাযোগমাধ্যমে নিরাপত্তা', language: 'bn', date: '2024-05-28', url: 'https://www.bondhushava.com/activities/m1cddgemmr', category: 'news', topic: 'awareness' },
 
