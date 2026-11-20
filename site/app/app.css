@@ -155,7 +155,17 @@ html[lang="bn"] .t-eyebrow { letter-spacing: 0; text-transform: none; font-size:
 .prose-article hr { border: 0; border-top: 1px solid var(--line); margin: 2.5em 0; }
 
 /* Home hero: light blue frame from the owner's banner */
-.hero-stage { background: #dfedf9; }
+.hero-stage {
+  background:
+    radial-gradient(55% 75% at 72% 35%, rgb(255 255 255 / 0.85), transparent 70%),
+    linear-gradient(105deg, #cfe6f7 0%, #e4f0fa 40%, #f3eef5 75%, #eaf3fb 100%);
+}
+/* Owner's choice (20 Nov 2026): the hero and the stats band under it keep their original look */
+.hero-stage .text-gradient {
+  background: linear-gradient(100deg, #1a56c0 0%, #0d6b74 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.band-navy { background: linear-gradient(145deg, #0a1428 0%, #12264a 60%, #17336a 100%); color: #fff; }
 
 /* founder palette fills (used on homepage sections) */
 .fill-navy { background: var(--fill-navy); color: #fff; }
@@ -169,6 +179,9 @@ html[lang="bn"] .t-eyebrow { letter-spacing: 0; text-transform: none; font-size:
 .text-gradient { color: var(--accent); }
 .on-ink .text-gradient { color: #e3c584; }
 
+@keyframes float-y { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+@keyframes glow-drift { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(3%, -4%) scale(1.06); } }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 @keyframes rise-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
 @keyframes photo-in { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
 
@@ -179,6 +192,11 @@ html[lang="bn"] .t-eyebrow { letter-spacing: 0; text-transform: none; font-size:
   .hero-enter > *:nth-child(4) { animation-delay: 150ms; }
   .hero-enter > *:nth-child(5) { animation-delay: 200ms; }
   .hero-photo-enter { animation: photo-in 500ms 100ms var(--ease-out-soft) both; }
+  .float-slow { animation: float-y 6s ease-in-out infinite; }
+  .glow-drift { animation: glow-drift 14s ease-in-out infinite; }
+  /* logo row: slow loop, pauses on hover or keyboard focus so every logo can be clicked */
+  .marquee-track { animation: marquee 60s linear infinite; }
+  .marquee:hover .marquee-track, .marquee:focus-within .marquee-track { animation-play-state: paused; }
 }
 @supports (animation-timeline: view()) {
   @media (prefers-reduced-motion: no-preference) {
@@ -186,9 +204,11 @@ html[lang="bn"] .t-eyebrow { letter-spacing: 0; text-transform: none; font-size:
     .stagger { animation: reveal linear both; animation-timeline: view(); animation-range: entry 0% entry 30%; }
   }
 }
-/* Logo row is a static, wrapped list (no looping marquee) */
-.marquee-track { flex-wrap: wrap; justify-content: center; width: auto !important; }
-.marquee-dup { display: none; }
+/* With reduced motion the logo row is a static, wrapped list */
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { flex-wrap: wrap; justify-content: center; width: auto !important; }
+  .marquee-dup { display: none; }
+}
 /* Card lift used on light cards */
 .lift { transition: box-shadow 160ms var(--ease-out-soft); }
 .lift:hover { box-shadow: 0 8px 24px rgb(0 0 0 / 0.08); }

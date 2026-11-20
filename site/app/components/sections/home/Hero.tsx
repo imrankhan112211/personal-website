@@ -3,6 +3,10 @@ import { ButtonLink } from '~/components/ui/Button'
 import { ctaLinks } from '~/content/navigation'
 import { person } from '~/content/person'
 import { useLocale } from '~/i18n/useLocale'
+import { Avatar } from '~/components/ui/Avatar'
+import reviewImages from '~/content/reviewImages.json'
+import { trustedBy } from '~/content/reviews'
+import { stats } from '~/content/homeStory'
 
 const HERO_IMG = '/images/abdullah-al-imran-hero-840.webp'
 
@@ -11,7 +15,9 @@ const HERO_IMG = '/images/abdullah-al-imran-hero-840.webp'
  * name, title, roles, award, actions and profiles on the left. Stacks on small screens.
  */
 export function Hero() {
-  const { t, l } = useLocale()
+  const { t, l, locale } = useLocale()
+  const avatars = (reviewImages as { avatars?: Record<string, string> }).avatars ?? {}
+  const faces = trustedBy.slice(0, 4).map((x) => x.name)
   const socials = person.socials.filter((s) => s.url && s.id in icons)
 
   return (
@@ -20,7 +26,7 @@ export function Hero() {
         <div className="mx-auto grid max-w-[1400px] items-end gap-2 lg:grid-cols-[1.05fr_1fr] lg:gap-6">
           {/* text */}
           <div className="hero-enter relative z-10 self-center px-6 pb-2 pt-10 sm:px-10 lg:py-16 lg:pl-14 lg:pr-0">
-            <h1 id="hero-title" className="font-display text-[clamp(2.4rem,5.4vw,4.4rem)] font-semibold leading-[1.02] tracking-[-0.03em] text-ink">
+            <h1 id="hero-title" className="font-display text-[clamp(2.4rem,5.4vw,4.4rem)] font-extrabold leading-[1.02] tracking-[-0.03em] text-ink">
               {l(person.name)}
             </h1>
             <p className="mt-4 max-w-xl text-lg font-semibold md:text-xl"><span className="text-gradient">{t('hero.title')}</span></p>
@@ -62,6 +68,16 @@ export function Hero() {
               decoding="async"
               className="hero-photo-enter w-[min(100%,34rem)] lg:w-full lg:max-w-[42rem]"
             />
+            {/* floating trust chip */}
+            <div className="float-slow absolute bottom-6 left-4 hidden items-center gap-3 rounded-2xl bg-white/90 py-2.5 pl-2.5 pr-4 shadow-[0_18px_40px_-20px_rgb(10_20_40/0.45)] ring-1 ring-white backdrop-blur sm:flex lg:bottom-10 lg:left-2">
+              <span className="flex -space-x-2.5">
+                {faces.map((n) => <Avatar key={n} name={n} src={avatars[n]} className="size-8 rounded-full text-[0.6rem] ring-2 ring-white" />)}
+              </span>
+              <span className="text-xs leading-tight text-text">
+                <span className="block font-display text-sm font-bold text-ink">{stats.thankedPublicly.toLocaleString(locale === 'bn' ? 'bn-BD' : 'en')}+</span>
+                {t('hero.trusted')}
+              </span>
+            </div>
           </div>
         </div>
       </div>
