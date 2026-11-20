@@ -26,9 +26,9 @@
   --amber: #8a5a00;
   --amber-soft: #fbf1dc;
   /* founder palette — section fills */
-  --fill-navy: linear-gradient(145deg, #0a1428 0%, #12264a 60%, #17336a 100%);
-  --fill-blue: linear-gradient(145deg, #1a2c4f 0%, #22395f 55%, #2a4675 100%); /* deep steel blue */
-  --fill-sky: linear-gradient(145deg, #e3eefc 0%, #eef4fd 55%, #f5f1fa 100%);
+  --fill-navy: #10213f;
+  --fill-blue: #22395f; /* deep steel blue */
+  --fill-sky: #eaf2fb;
 }
 
 @theme inline {
@@ -88,19 +88,19 @@ html[lang="bn"] { font-size: 106.25%; }
 html[lang="bn"] body { font-family: var(--font-bangla); line-height: 1.8; }
 html[lang="bn"] :is(h1, h2, h3, h4, .t-display, .t-h1, .t-h2, .t-h3) { font-family: var(--font-bangla); letter-spacing: 0 !important; line-height: 1.3; }
 html[lang="bn"] .t-serif { font-family: var(--font-bangla); font-style: normal; }
-html[lang="bn"] .t-eyebrow { letter-spacing: 0.04em; text-transform: none; font-size: 0.875rem; }
+html[lang="bn"] .t-eyebrow { letter-spacing: 0; text-transform: none; font-size: 0.875rem; }
 [lang="en"] { font-family: inherit; }
 /* Bengali text inside English pages (headlines, captions) */
 :where([lang="bn"]) { font-family: var(--font-bangla); }
 
 /* ───────────── Type scale (fluid) ───────────── */
-@utility t-display { font-family: var(--font-display); font-weight: 750; font-size: clamp(2.75rem, 1.6rem + 5.2vw, 5.5rem); line-height: 0.98; letter-spacing: -0.035em; }
-@utility t-h1 { font-family: var(--font-display); font-weight: 700; font-size: clamp(2.375rem, 1.7rem + 3vw, 4rem); line-height: 1.05; letter-spacing: -0.03em; }
-@utility t-h2 { font-family: var(--font-display); font-weight: 700; font-size: clamp(1.875rem, 1.4rem + 2vw, 3rem); line-height: 1.1; letter-spacing: -0.025em; }
-@utility t-h3 { font-family: var(--font-display); font-weight: 650; font-size: clamp(1.3125rem, 1.15rem + 0.5vw, 1.625rem); line-height: 1.25; letter-spacing: -0.015em; }
+@utility t-display { font-family: var(--font-display); font-weight: 600; font-size: clamp(2.75rem, 1.6rem + 5.2vw, 5.5rem); line-height: 0.98; letter-spacing: -0.035em; }
+@utility t-h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(2.375rem, 1.7rem + 3vw, 4rem); line-height: 1.05; letter-spacing: -0.03em; }
+@utility t-h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.875rem, 1.4rem + 2vw, 3rem); line-height: 1.1; letter-spacing: -0.025em; }
+@utility t-h3 { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.3125rem, 1.15rem + 0.5vw, 1.625rem); line-height: 1.25; letter-spacing: -0.015em; }
 @utility t-lead { font-size: clamp(1.125rem, 1.05rem + 0.3vw, 1.3125rem); line-height: 1.6; }
-@utility t-serif { font-family: var(--font-serif); font-style: italic; font-weight: 400; letter-spacing: -0.01em; }
-@utility t-eyebrow { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; }
+@utility t-serif { font-family: var(--font-serif); font-style: normal; font-weight: 400; letter-spacing: -0.01em; }
+@utility t-eyebrow { font-size: 0.875rem; font-weight: 500; letter-spacing: 0; text-transform: none; }
 
 /* ───────────── Layout ───────────── */
 @utility container-x { width: 100%; max-width: 1240px; margin-inline: auto; padding-inline: 1.25rem; @media (width >= 768px) { padding-inline: 2rem; } }
@@ -109,28 +109,18 @@ html[lang="bn"] .t-eyebrow { letter-spacing: 0.04em; text-transform: none; font-
 /* ───────────── Bento tiles ───────────── */
 @utility tile { border-radius: var(--radius-card); background: var(--surface); }
 @utility tile-hover {
-  transition: transform 300ms var(--ease-out-soft), box-shadow 300ms var(--ease-out-soft);
-  &:hover { transform: translateY(-3px); box-shadow: 0 22px 50px -28px rgb(11 13 18 / 0.35); }
+  transition: box-shadow 160ms var(--ease-out-soft), border-color 160ms var(--ease-out-soft);
+  &:hover { box-shadow: 0 8px 24px rgb(0 0 0 / 0.06); }
 }
 @utility bento { display: grid; gap: 0.75rem; @media (width >= 768px) { gap: 1rem; } }
 
 /* Subtle editorial texture: hairline grid fading out */
-.bg-hairline {
-  background-image:
-    linear-gradient(to right, rgb(14 23 38 / 0.045) 1px, transparent 1px),
-    linear-gradient(to bottom, rgb(14 23 38 / 0.045) 1px, transparent 1px);
-  background-size: 80px 80px;
-}
-.on-ink .bg-hairline, .bg-hairline-ink {
-  background-image:
-    linear-gradient(to right, rgb(255 255 255 / 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgb(255 255 255 / 0.05) 1px, transparent 1px);
-  background-size: 80px 80px;
-}
+/* hairline grid texture removed (decoration) */
+.bg-hairline, .bg-hairline-ink { background-image: none; }
 
 /* ───────────── Motion: CSS scroll-driven reveal (content always in HTML) ───────────── */
-@keyframes pop { from { opacity: 0; transform: translateY(18px) scale(0.98); } to { opacity: 1; transform: none; } }
-@keyframes reveal { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+@keyframes pop { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@keyframes reveal { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 @supports (animation-timeline: view()) {
   @media (prefers-reduced-motion: no-preference) {
     .reveal { animation: reveal linear both; animation-timeline: view(); animation-range: entry 0% entry 40%; }
@@ -165,58 +155,40 @@ html[lang="bn"] .t-eyebrow { letter-spacing: 0.04em; text-transform: none; font-
 .prose-article hr { border: 0; border-top: 1px solid var(--line); margin: 2.5em 0; }
 
 /* Home hero: light blue frame from the owner's banner */
-.hero-stage {
-  background:
-    radial-gradient(55% 75% at 72% 35%, rgb(255 255 255 / 0.85), transparent 70%),
-    linear-gradient(105deg, #cfe6f7 0%, #e4f0fa 40%, #f3eef5 75%, #eaf3fb 100%);
-}
+.hero-stage { background: #dfedf9; }
 
 /* founder palette fills (used on homepage sections) */
 .fill-navy { background: var(--fill-navy); color: #fff; }
 .fill-blue { background: var(--fill-blue); color: #fff; }
 .fill-sky { background: var(--fill-sky); }
-.fill-gold { background: linear-gradient(150deg, #ecd6a3 0%, #d8b46a 55%, #c79d4f 100%); }
-html[lang="bn"] .label-caps { letter-spacing: 0 !important; text-transform: none !important; }
+.fill-gold { background: #e3c789; }
+.label-caps { letter-spacing: 0 !important; text-transform: none !important; }
 
-/* ───────────── Commercial polish: motion + gradient accents ───────────── */
-/* Gradient highlight for a few key words in headings (wrap words in *asterisks* in the copy). */
-.text-gradient {
-  background: linear-gradient(100deg, #1a56c0 0%, #0d6b74 100%);
-  -webkit-background-clip: text; background-clip: text; color: transparent;
-}
-.on-ink .text-gradient { background-image: linear-gradient(100deg, #f3dfae 0%, #d8b46a 100%); }
+/* ───────────── Accents and motion (unslop pass: solid colour, one entrance, no loops) ───────────── */
+/* Accent for a few key words in headings (wrap words in *asterisks* in the copy). Solid, never a gradient. */
+.text-gradient { color: var(--accent); }
+.on-ink .text-gradient { color: #e3c584; }
 
-@keyframes rise-in { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
-@keyframes photo-in { from { opacity: 0; transform: translateY(28px) scale(0.97); } to { opacity: 1; transform: none; } }
-@keyframes float-y { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
-@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-@keyframes glow-drift { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(3%, -4%) scale(1.06); } }
+@keyframes rise-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+@keyframes photo-in { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
 
 @media (prefers-reduced-motion: no-preference) {
-  .hero-enter > * { animation: rise-in 700ms var(--ease-out-soft) both; }
-  .hero-enter > *:nth-child(2) { animation-delay: 80ms; }
-  .hero-enter > *:nth-child(3) { animation-delay: 160ms; }
-  .hero-enter > *:nth-child(4) { animation-delay: 240ms; }
-  .hero-enter > *:nth-child(5) { animation-delay: 320ms; }
-  .hero-photo-enter { animation: photo-in 900ms 120ms var(--ease-out-soft) both; }
-  .float-slow { animation: float-y 6s ease-in-out infinite; }
-  .glow-drift { animation: glow-drift 14s ease-in-out infinite; }
-  .marquee-track { animation: marquee 38s linear infinite; }
-  .marquee:hover .marquee-track, .marquee:focus-within .marquee-track { animation-play-state: paused; }
+  .hero-enter > * { animation: rise-in 400ms var(--ease-out-soft) both; }
+  .hero-enter > *:nth-child(2) { animation-delay: 50ms; }
+  .hero-enter > *:nth-child(3) { animation-delay: 100ms; }
+  .hero-enter > *:nth-child(4) { animation-delay: 150ms; }
+  .hero-enter > *:nth-child(5) { animation-delay: 200ms; }
+  .hero-photo-enter { animation: photo-in 500ms 100ms var(--ease-out-soft) both; }
 }
 @supports (animation-timeline: view()) {
   @media (prefers-reduced-motion: no-preference) {
-    /* children of a stagger list reveal one after another as they scroll in */
-    .stagger > * { animation: reveal linear both; animation-timeline: view(); animation-range: entry 0% entry 38%; }
-    .stagger > *:nth-child(3n+2) { animation-range: entry 6% entry 46%; }
-    .stagger > *:nth-child(3n+3) { animation-range: entry 12% entry 54%; }
+    /* a list fades in as one block (no per-card choreography) */
+    .stagger { animation: reveal linear both; animation-timeline: view(); animation-range: entry 0% entry 30%; }
   }
 }
-/* Marquee falls back to a wrapped, static list when motion is reduced */
-@media (prefers-reduced-motion: reduce) {
-  .marquee-track { flex-wrap: wrap; justify-content: center; width: auto !important; }
-  .marquee-dup { display: none; }
-}
+/* Logo row is a static, wrapped list (no looping marquee) */
+.marquee-track { flex-wrap: wrap; justify-content: center; width: auto !important; }
+.marquee-dup { display: none; }
 /* Card lift used on light cards */
-.lift { transition: transform 300ms var(--ease-out-soft), box-shadow 300ms var(--ease-out-soft); }
-.lift:hover { transform: translateY(-4px); box-shadow: 0 26px 60px -32px rgb(10 20 40 / 0.35); }
+.lift { transition: box-shadow 160ms var(--ease-out-soft); }
+.lift:hover { box-shadow: 0 8px 24px rgb(0 0 0 / 0.08); }

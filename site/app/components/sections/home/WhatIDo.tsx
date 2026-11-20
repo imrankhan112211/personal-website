@@ -39,12 +39,12 @@ export function WhatIDo() {
             <li key={p.id} className={cn('lift tile flex flex-col p-7 md:p-9', k.card)}>
               <div className="flex items-center gap-3">
                 <span className={cn('grid size-12 place-items-center rounded-2xl', k.icon)}><Icon aria-hidden className="size-6" /></span>
-                <span className="font-display text-sm font-bold label-caps uppercase tracking-[0.16em]">{l(p.name)}</span>
+                <span className="font-display text-sm font-semibold label-caps">{l(p.name)}</span>
               </div>
               <h3 className="t-h3 mt-7">{l(s.title)}</h3>
               <p className={cn('mt-3 text-[1.0625rem] leading-relaxed', k.muted)}>{l(p.line)}</p>
               <div className={cn('mt-7 border-t pt-5', k.line)}>
-                <p className={cn('text-xs font-semibold label-caps uppercase tracking-[0.14em]', k.muted)}>{t('framework.through')}</p>
+                <p className={cn('text-xs font-semibold label-caps', k.muted)}>{t('framework.through')}</p>
                 <ul className="mt-3 flex flex-wrap gap-2">
                   {vs.map((v) => (
                     <li key={v!.slug}>

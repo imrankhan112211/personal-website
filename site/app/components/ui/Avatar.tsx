@@ -20,6 +20,6 @@ export function Avatar({ name, src, className }: { name: string; src?: string; c
   return src ? (
     <img src={src} alt="" loading="lazy" decoding="async" className={cn('object-cover', className)} />
   ) : (
-    <span aria-hidden className={cn('grid place-items-center font-display font-bold', tone, className)}>{initials(name)}</span>
+    <span aria-hidden className={cn('grid place-items-center font-display font-semibold', tone, className)}>{initials(name)}</span>
   )
 }

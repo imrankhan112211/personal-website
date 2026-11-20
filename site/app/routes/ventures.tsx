@@ -40,7 +40,7 @@ export default function Ventures() {
                     {v.logo ? (
                       <img src={v.logo} alt={`${v.name} logo`} width={72} height={72} loading="lazy" className="size-18 rounded-2xl bg-white object-contain p-2" />
                     ) : (
-                      <span data-placeholder title="[INSERT OFFICIAL LOGO]" className={`grid size-18 place-items-center rounded-2xl border border-dashed font-display text-2xl font-bold ${i % 2 ? 'border-line-strong text-ink' : 'border-white/30 text-white'}`}>{v.name.slice(0, 1)}</span>
+                      <span data-placeholder title="[INSERT OFFICIAL LOGO]" className={`grid size-18 place-items-center rounded-2xl border border-dashed font-display text-2xl font-semibold ${i % 2 ? 'border-line-strong text-ink' : 'border-white/30 text-white'}`}>{v.name.slice(0, 1)}</span>
                     )}
                     <Badge tone={i % 2 ? statusTone[v.status] : 'ink'}><StatusDot />{t(`status.${v.status}`)}</Badge>
                   </div>
@@ -94,7 +94,7 @@ export default function Ventures() {
 function Detail({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <div className="grid gap-2 border-t border-line pt-5 sm:grid-cols-[10rem_1fr] sm:gap-6">
-      <dt className="text-xs font-semibold uppercase tracking-wider text-muted">{label}</dt>
+      <dt className="text-xs font-semibold text-muted">{label}</dt>
       <dd className="text-text">{children}</dd>
     </div>
   )

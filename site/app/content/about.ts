@@ -11,7 +11,7 @@ export const aboutChapters: AboutChapter[] = [
   {
     id: 'biography',
     eyebrow: { en: 'Profile', bn: 'পরিচিতি' },
-    title: { en: 'Technology entrepreneur and cyber safety advocate.', bn: 'প্রযুক্তি উদ্যোক্তা ও সাইবার সেফটি অ্যাডভোকেট।' },
+    title: { en: 'Technology entrepreneur and cyber safety advocate', bn: 'প্রযুক্তি উদ্যোক্তা ও সাইবার সেফটি অ্যাডভোকেট' },
     body: [
       {
         en: 'Abdullah Al Imran is a Bangladeshi technology entrepreneur and cyber safety advocate. He is the founder of Probfly IT, a technology company working on social media solutions, digital brand protection and software, and of Kaktaruaa, a non-profit digital safety initiative. He is also the founder of Erazee and a co-founder of Zurvis.io, an AI customer service and WhatsApp automation platform.',
@@ -26,7 +26,7 @@ export const aboutChapters: AboutChapter[] = [
   {
     id: 'background',
     eyebrow: { en: 'Early life & education', bn: 'শৈশব ও শিক্ষা' },
-    title: { en: 'Where it started.', bn: 'যেখান থেকে শুরু।' },
+    title: { en: 'Where it started', bn: 'যেখান থেকে শুরু' },
     body: [
       {
         en: 'Imran was born in Patuakhali, Bangladesh, and grew up in Chattogram, Dhaka and Rajendrapur Cantonment in Gazipur. He completed his secondary and higher secondary education in Rajendrapur and earned a bachelor’s degree in Bengali literature from Netrokona University, completing it in early 2024.',
@@ -41,7 +41,7 @@ export const aboutChapters: AboutChapter[] = [
   {
     id: 'journey',
     eyebrow: { en: 'Career', bn: 'কর্মজীবন' },
-    title: { en: 'From solving social media problems to building companies.', bn: 'সোশ্যাল মিডিয়া সমস্যার সমাধান থেকে প্রতিষ্ঠান গড়া।' },
+    title: { en: 'From solving social media problems to building companies', bn: 'সোশ্যাল মিডিয়া সমস্যার সমাধান থেকে প্রতিষ্ঠান গড়া' },
     body: [
       {
         en: 'In 2021 Imran founded Probfly IT with co-founder Azimul Islam Sheblu, describing it as a “problem-solving IT company”. By 2022 the company was serving clients in Bangladesh as well as in India, Sri Lanka and the United States, with services spanning social media solutions, web development and digital brand protection. Today Probfly IT has an office in Dhaka and a registered LLC in the United States.',
@@ -56,7 +56,7 @@ export const aboutChapters: AboutChapter[] = [
   {
     id: 'entrepreneurship',
     eyebrow: { en: 'Ventures', bn: 'উদ্যোগ' },
-    title: { en: 'Four ventures, one focus: a safer digital world.', bn: 'চারটি উদ্যোগ, এক লক্ষ্য: নিরাপদ ডিজিটাল বিশ্ব।' },
+    title: { en: 'Four ventures, one focus: a safer digital world', bn: 'চারটি উদ্যোগ, এক লক্ষ্য: নিরাপদ ডিজিটাল বিশ্ব' },
     body: [
       {
         en: 'Imran is the founder of Probfly IT (2021; technology and social media solutions), Kaktaruaa (2023; non-profit digital safety initiative) and Erazee (2025; unwanted content removal and online risk response), and a co-founder of Zurvis.io (2026; AI customer service and WhatsApp automation for businesses, also offered as WhatsFly). Azimul Islam Sheblu is his co-founder at Probfly IT and Zurvis.io.',
@@ -67,7 +67,7 @@ export const aboutChapters: AboutChapter[] = [
   {
     id: 'advocacy',
     eyebrow: { en: 'Kaktaruaa & cyber safety advocacy', bn: 'কাকতাড়ুয়া ও সাইবার সেফটি অ্যাডভোকেসি' },
-    title: { en: 'A safer internet is a shared responsibility.', bn: 'নিরাপদ ইন্টারনেট সবার দায়িত্ব।' },
+    title: { en: 'A safer internet is a shared responsibility', bn: 'নিরাপদ ইন্টারনেট সবার দায়িত্ব' },
     body: [
       {
         en: 'Founded on 1 July 2023, Kaktaruaa began as an effort to prevent cyberbullying and online harassment among students, raising awareness about fake accounts, defamatory “expose” posts and “crush and confession” pages. It later expanded to support people facing online blackmail, fraud, identity-related harassment and account hacking.',
@@ -82,7 +82,7 @@ export const aboutChapters: AboutChapter[] = [
   {
     id: 'experience',
     eyebrow: { en: 'Areas of work', bn: 'কাজের ক্ষেত্র' },
-    title: { en: 'Focused expertise.', bn: 'নির্দিষ্ট দক্ষতা।' },
+    title: { en: 'Focused expertise', bn: 'নির্দিষ্ট দক্ষতা' },
     body: [
       {
         en: 'His work covers business and brand protection, social media security and incident response, social commerce, cyber harassment and blackmail response, and software and automation for businesses. He does not provide network or infrastructure security services.',
@@ -93,7 +93,7 @@ export const aboutChapters: AboutChapter[] = [
   {
     id: 'training',
     eyebrow: { en: 'Training & speaking', bn: 'প্রশিক্ষণ ও বক্তৃতা' },
-    title: { en: 'Teaching people to protect themselves.', bn: 'মানুষকে নিজেকে সুরক্ষিত রাখতে শেখানো।' },
+    title: { en: 'Teaching people to protect themselves', bn: 'মানুষকে নিজেকে সুরক্ষিত রাখতে শেখানো' },
     body: [
       {
         en: 'In 2023 he trained 45 officers of the Criminal Investigation Department (CID) of Bangladesh Police on social media security, account recovery and the problems people face online. In 2025 he spoke at TEDx DRMC Youth with the talk “The Human Algorithm”.',

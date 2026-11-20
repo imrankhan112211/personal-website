@@ -39,12 +39,11 @@ export function Problem() {
             <li key={p.id} className="lift tile flex flex-col overflow-hidden">
               {/* coloured header: the solution area, clearly named */}
               <div className={cn('relative overflow-hidden px-7 py-7 md:px-8', k.head)}>
-                <span aria-hidden className="glow-drift pointer-events-none absolute -right-12 -top-12 size-40 rounded-full bg-white/15 blur-2xl" />
                 <div className="relative flex items-center gap-4">
                   <span className={cn('grid size-14 shrink-0 place-items-center rounded-2xl ring-1', dark ? 'bg-white/10 text-lime ring-white/15' : 'bg-white/55 text-[#4a3608] ring-white/60')}>
                     <AreaIcon aria-hidden className="size-7" />
                   </span>
-                  <h3 className={cn('font-display text-xl font-bold leading-tight', dark ? 'text-white' : 'text-[#2b2008]')}>{l(p.area)}</h3>
+                  <h3 className={cn('font-display text-xl font-semibold leading-tight', dark ? 'text-white' : 'text-[#2b2008]')}>{l(p.area)}</h3>
                 </div>
                 <p className={cn('relative mt-5 font-display text-lg font-semibold leading-snug', dark ? 'text-white' : 'text-[#2b2008]')}>{l(p.title)}</p>
                 <p className={cn('relative mt-2 text-[0.9375rem] leading-relaxed', dark ? 'text-on-ink-muted' : 'text-[#4a3608]')}>{l(p.cost)}</p>
@@ -52,7 +51,7 @@ export function Problem() {
 
               {/* solutions, each with its own icon */}
               <div className="flex flex-1 flex-col px-7 pb-7 pt-6 md:px-8">
-                <p className="label-caps text-xs font-semibold uppercase tracking-[0.14em] text-muted">{t('problem.fix')}</p>
+                <p className="label-caps text-xs font-semibold text-muted">{t('problem.fix')}</p>
                 <ul className="mt-3 divide-y divide-line">
                   {p.solutions.map((x) => {
                     const Icon = solutionIcons[x.icon]

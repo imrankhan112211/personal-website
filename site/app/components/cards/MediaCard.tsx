@@ -48,7 +48,7 @@ export function MediaCard({ m, compact = false }: { m: MediaItem; compact?: bool
       <a href={m.url} target="_blank" rel="noopener noreferrer" className="tile tile-hover group flex h-full items-center gap-4 overflow-hidden bg-white p-3 ring-1 ring-accent/10">
         {thumb}
         <span className="min-w-0 flex-1 py-1 pr-1">
-          <span className="text-xs font-semibold uppercase tracking-wider text-accent">{m.outlet}</span>
+          <span className="text-xs font-semibold text-accent">{m.outlet}</span>
           <span lang={m.language} className="mt-1 line-clamp-2 block font-display text-[0.95rem] font-semibold leading-snug text-ink group-hover:text-accent">{m.headline}</span>
           <time dateTime={m.date} className="mt-1 block text-xs text-muted">{formatPartialDate(m.date, locale)}</time>
         </span>

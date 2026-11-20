@@ -68,7 +68,7 @@ export function InquiryForm({ fixedType, defaultType = 'general', className }: {
   if (state === 'sent') {
     return (
       <div ref={resultRef} tabIndex={-1} role="status" className={cn('rounded-[var(--radius-card)] border border-success/30 bg-success-soft p-7 outline-none md:p-9', className)}>
-        <p className="flex items-center gap-2 font-display text-xl font-bold text-ink"><CheckCircle2 aria-hidden className="size-5 text-success" />{t('form.sent.title')}</p>
+        <p className="flex items-center gap-2 font-display text-xl font-semibold text-ink"><CheckCircle2 aria-hidden className="size-5 text-success" />{t('form.sent.title')}</p>
         <p className="mt-3 text-text">{t('form.sent.body')}</p>
       </div>
     )

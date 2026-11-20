@@ -16,7 +16,7 @@ export function ArticleCard({ a, featured = false, as: H = 'h3' }: { a: Article;
   const fmt = useDate()
   const cat = articleCategories.find((c) => c.slug === a.category)!
   return (
-    <article className={cn('group relative flex h-full flex-col overflow-hidden rounded-[var(--radius-card)] border border-line bg-surface transition-[box-shadow,transform] duration-300 hover:-translate-y-0.5 hover:shadow-[0_24px_60px_-30px_rgb(14_23_38/0.35)]', featured && 'lg:flex-row')}>
+    <article className={cn('group relative flex h-full flex-col overflow-hidden rounded-[var(--radius-card)] border border-line bg-surface transition-[box-shadow,transform] duration-300 hover:-translate-y-0.5 hover: shadow-[0_8px_24px_rgb(0_0_0/0.06)]', featured && 'lg:flex-row')}>
       {a.cover ? (
         <img src={a.cover} alt="" loading="lazy" className={cn('w-full object-cover', featured ? 'aspect-[16/10] lg:w-1/2' : 'aspect-[16/9]')} />
       ) : (
@@ -24,7 +24,7 @@ export function ArticleCard({ a, featured = false, as: H = 'h3' }: { a: Article;
       )}
       <div className={cn('flex flex-1 flex-col p-6', featured && 'md:p-10')}>
         <div className="flex flex-wrap items-center gap-2">
-          <span className="text-xs font-semibold uppercase tracking-wider text-accent">{l(cat.name)}</span>
+          <span className="text-xs font-semibold text-accent">{l(cat.name)}</span>
           {a.sample && <Badge tone="amber">{t('ins.sample')}</Badge>}
         </div>
         <H className={cn('mt-3 font-display font-semibold tracking-tight text-ink', featured ? 'text-2xl md:text-3xl' : 'text-xl')}>

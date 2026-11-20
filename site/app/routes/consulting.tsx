@@ -57,16 +57,16 @@ export default function Consulting() {
             {serviceCategories.map((c) => (
               <article key={c.id} id={c.id} aria-labelledby={`${c.id}-t`} className="reveal scroll-mt-28 grid gap-10 rounded-[28px] border border-line bg-surface p-7 md:p-10 lg:grid-cols-12 lg:gap-12">
                 <div className="lg:col-span-5">
-                  <span aria-hidden className="font-display text-5xl font-bold text-[#6b8bd6]">{c.number}</span>
+                  <span aria-hidden className="font-display text-5xl font-semibold text-[#6b8bd6]">{c.number}</span>
                   <h3 id={`${c.id}-t`} className="t-h3 mt-4 text-ink md:text-[1.75rem]">{l(c.title)}</h3>
                   <p className="mt-4 text-muted">{l(c.summary)}</p>
                   <div className="mt-8 rounded-2xl bg-mist p-5">
-                    <p className="text-xs font-semibold uppercase tracking-wider text-muted">{t('consult.for')}</p>
+                    <p className="text-xs font-semibold text-muted">{t('consult.for')}</p>
                     <p className="mt-2 text-[0.9375rem] text-text">{l(c.forWhom)}</p>
                   </div>
                 </div>
                 <div className="lg:col-span-7">
-                  <p className="text-xs font-semibold uppercase tracking-wider text-muted">{t('consult.services')}</p>
+                  <p className="text-xs font-semibold text-muted">{t('consult.services')}</p>
                   <ul className="mt-4 grid border-t border-line sm:grid-cols-2 sm:gap-x-8">
                     {c.services.map((s) => (
                       <li key={s.en} className="flex gap-3 border-b border-line py-3.5 text-[0.9375rem] text-ink">
@@ -74,7 +74,7 @@ export default function Consulting() {
                       </li>
                     ))}
                   </ul>
-                  <p className="mt-8 text-xs font-semibold uppercase tracking-wider text-muted">{t('consult.problems')}</p>
+                  <p className="mt-8 text-xs font-semibold text-muted">{t('consult.problems')}</p>
                   <ul className="mt-3 flex flex-wrap gap-2">
                     {c.problems.map((p) => <li key={p.en} className="rounded-full bg-accent-soft px-3.5 py-1.5 text-sm text-accent-strong">{l(p)}</li>)}
                   </ul>
@@ -93,7 +93,7 @@ export default function Consulting() {
             {process.map((s, i) => (
               <li key={i} className="reveal relative">
                 <div className="flex items-center gap-4">
-                  <span className="grid size-12 shrink-0 place-items-center rounded-full bg-ink font-display font-bold text-white">{i + 1}</span>
+                  <span className="grid size-12 shrink-0 place-items-center rounded-full bg-ink font-display font-semibold text-white">{i + 1}</span>
                   {i < process.length - 1 && <span aria-hidden className="hidden h-px flex-1 bg-line-strong md:block" />}
                 </div>
                 <h3 className="mt-6 font-display text-lg font-semibold text-ink">{l(s.title)}</h3>

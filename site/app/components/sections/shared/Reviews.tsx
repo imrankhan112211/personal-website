@@ -26,7 +26,7 @@ export function Reviews() {
               <li key={v.url}>
                 <a href={v.url} target="_blank" rel="noopener noreferrer" className="group relative flex aspect-[9/16] flex-col justify-end overflow-hidden rounded-2xl bg-ink text-white">
                   {thumb ? (
-                    <img src={thumb} alt="" loading="lazy" decoding="async" className="absolute inset-0 size-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                    <img src={thumb} alt="" loading="lazy" decoding="async" className="absolute inset-0 size-full object-cover transition-transform duration-500" />
                   ) : (
                     <span aria-hidden className="absolute inset-0 bg-[radial-gradient(120%_80%_at_80%_0%,var(--accent)_0%,transparent_60%)] opacity-80" />
                   )}
@@ -79,7 +79,7 @@ function PostGrid({ posts }: { posts: PublicPost[] }) {
         const img = images.posts[p.name]
         return (
           <li key={p.name} className={img ? 'row-span-2' : undefined}>
-            <a href={p.urls[0]} target="_blank" rel="noopener noreferrer" className="group flex h-full flex-col overflow-hidden rounded-2xl bg-mist transition-[transform,box-shadow] duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_40px_-24px_rgb(11_13_18/0.4)]">
+            <a href={p.urls[0]} target="_blank" rel="noopener noreferrer" className="group flex h-full flex-col overflow-hidden rounded-2xl bg-mist transition-[transform,box-shadow] duration-300 hover:-translate-y-0.5 hover: shadow-[0_8px_24px_rgb(0_0_0/0.06)]">
               {img && <img src={img} alt="" loading="lazy" decoding="async" className="aspect-square w-full object-cover" />}
               <span className={img ? 'flex flex-1 flex-col p-3' : 'flex flex-1 items-center gap-3 p-3'}>
                 {!img && <Avatar name={p.name} src={images.avatars?.[p.name]} className="size-11 shrink-0 rounded-full text-sm" />}

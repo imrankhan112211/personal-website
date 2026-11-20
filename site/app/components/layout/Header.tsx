@@ -16,13 +16,13 @@ export function Wordmark({ tone = 'light' }: { tone?: 'light' | 'ink' }) {
       <span
         aria-hidden
         className={cn(
-          'grid size-10 shrink-0 place-items-center overflow-hidden rounded-full bg-gradient-to-br from-[#cfe6f7] to-[#f3eef5] ring-2 transition-transform duration-300 group-hover:scale-105',
-          tone === 'light' ? 'ring-white shadow-[0_4px_12px_-4px_rgb(10_20_40/0.35)]' : 'ring-white/20',
+          'grid size-10 shrink-0 place-items-center overflow-hidden rounded-full bg-gradient-to-br from-[#cfe6f7] to-[#f3eef5] ring-2 transition-transform duration-300',
+          tone === 'light' ? 'ring-white shadow-[0_8px_24px_rgb(0_0_0/0.06)]' : 'ring-white/20',
         )}
       >
         <img src="/icon-192.png" alt="" width={40} height={40} className="size-full object-contain" />
       </span>
-      <span className={cn("whitespace-nowrap font-display text-[1.0625rem] font-bold tracking-tight", tone === "light" && "lg:max-xl:sr-only")}>{l(person.name)}</span>
+      <span className={cn("whitespace-nowrap font-display text-[1.0625rem] font-semibold tracking-tight", tone === "light" && "lg:max-xl:sr-only")}>{l(person.name)}</span>
       <span className="sr-only"> — {t('nav.home')}</span>
     </LocalLink>
   )
@@ -82,7 +82,7 @@ export function Header() {
       <div
         className={cn(
           'flex h-16 items-center justify-between gap-6 rounded-full pl-4 pr-2.5 transition-[background-color,box-shadow] duration-300',
-          scrolled || mobileOpen ? 'bg-surface/90 shadow-[0_12px_40px_-20px_rgb(11_13_18/0.35)] backdrop-blur-md' : 'bg-surface',
+          scrolled || mobileOpen ? 'bg-surface/90 shadow-[0_8px_24px_rgb(0_0_0/0.06)] backdrop-blur-md' : 'bg-surface',
         )}
       >
         <Wordmark />
@@ -109,7 +109,7 @@ export function Header() {
               <ul
                 id={moreId}
                 hidden={!moreOpen}
-                className="absolute right-0 top-[calc(100%+0.75rem)] w-60 rounded-2xl border border-line bg-surface p-2 shadow-[0_20px_50px_-20px_rgb(14_23_38/0.25)]"
+                className="absolute right-0 top-[calc(100%+0.75rem)] w-60 rounded-2xl border border-line bg-surface p-2 shadow-[0_8px_24px_rgb(0_0_0/0.06)]"
               >
                 {moreNav.map((n) => (
                   <li key={n.href}>
@@ -146,7 +146,7 @@ export function Header() {
       </div>
 
       {/* Mobile sheet */}
-      <div id={menuId} hidden={!mobileOpen} className="mx-5 mt-2 max-h-[calc(100dvh-6.5rem)] overflow-y-auto rounded-[var(--radius-card)] bg-surface shadow-[0_24px_60px_-24px_rgb(11_13_18/0.45)] md:mx-8 lg:hidden">
+      <div id={menuId} hidden={!mobileOpen} className="mx-5 mt-2 max-h-[calc(100dvh-6.5rem)] overflow-y-auto rounded-[var(--radius-card)] bg-surface shadow-[0_8px_24px_rgb(0_0_0/0.06)] md:mx-8 lg:hidden">
         <nav aria-label={t('nav.main')} className="container-x flex min-h-full flex-col py-6">
           <ul className="grid gap-0.5">
             {[{ key: 'nav.home' as const, href: '/' }, ...primaryNav, ...moreNav].map((n) => (

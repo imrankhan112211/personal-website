@@ -103,7 +103,7 @@ export default function ArticlePage({ loaderData }: Route.ComponentProps) {
             )}
             {fallback && locale === 'bn' && <p className="mt-6 rounded-xl bg-mist px-4 py-3 text-sm text-text" lang="bn">{t('ins.translation')}</p>}
             <div className="mx-auto mt-12 max-w-3xl text-center">
-              <LocalLink to={`/blog/category/${cat.slug}/`} className="text-sm font-semibold uppercase tracking-wider text-accent hover:underline">{l(cat.name)}</LocalLink>
+              <LocalLink to={`/blog/category/${cat.slug}/`} className="text-sm font-semibold text-accent hover:underline">{l(cat.name)}</LocalLink>
               <h1 className="t-h1 mt-4 text-ink">{c.title}</h1>
               {c.excerpt && <p className="t-lead mt-5 text-muted">{c.excerpt}</p>}
               <p className="mt-8 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-sm text-muted">
@@ -139,7 +139,7 @@ export default function ArticlePage({ loaderData }: Route.ComponentProps) {
               <div className="min-w-0 max-w-[68ch]">
                 {c.takeaways.length > 0 && (
                   <section aria-labelledby="takeaways-title" className="mb-10 rounded-2xl bg-lime/60 p-6">
-                    <h2 id="takeaways-title" className="font-display text-base font-bold text-on-lime">{t('ins.takeaways')}</h2>
+                    <h2 id="takeaways-title" className="font-display text-base font-semibold text-on-lime">{t('ins.takeaways')}</h2>
                     <ul className="mt-3 grid gap-2 text-[0.9875rem] text-on-lime">
                       {c.takeaways.map((k, i) => <li key={i} className="flex gap-2"><Check aria-hidden className="mt-1 size-4 shrink-0" />{k}</li>)}
                     </ul>
@@ -175,7 +175,7 @@ export default function ArticlePage({ loaderData }: Route.ComponentProps) {
 
                 <div className="on-ink mt-14 flex flex-wrap items-center justify-between gap-4 rounded-2xl bg-ink p-6 text-white">
                   <div>
-                    <p className="font-display text-lg font-bold">{t('ins.cta.title')}</p>
+                    <p className="font-display text-lg font-semibold">{t('ins.cta.title')}</p>
                     <p className="mt-1 text-sm text-on-ink-muted">{t('ins.cta.body')}</p>
                   </div>
                   <ButtonLink to={ctaLinks.consulting} variant="light">{t('cta.book')} <ArrowRight aria-hidden /></ButtonLink>

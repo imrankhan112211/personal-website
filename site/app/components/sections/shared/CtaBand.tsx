@@ -18,7 +18,7 @@ export function CtaBand({ detailed = false }: { detailed?: boolean }) {
           <p className="t-lead mx-auto mt-6 max-w-2xl text-on-ink-muted">{t('home.cta.body')}</p>
           {detailed && (
             <>
-              <p className="mt-10 text-sm font-semibold label-caps uppercase tracking-[0.14em] text-lime">{t('cta.covers')}</p>
+              <p className="mt-10 text-sm font-semibold label-caps text-lime">{t('cta.covers')}</p>
               <ul className="mx-auto mt-4 grid max-w-3xl gap-3 text-left sm:grid-cols-3">
                 {finalCta.covers.map((c) => (
                   <li key={c.en} className="flex gap-2.5 rounded-2xl bg-white/[0.06] p-4 text-[0.9375rem] text-white ring-1 ring-inset ring-white/10">

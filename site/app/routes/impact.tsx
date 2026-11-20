@@ -135,7 +135,7 @@ function CaseStudyCard({ c }: { c: CaseStudy }) {
       <dl className="mt-6 grid gap-5 md:grid-cols-2">
         {csFields.map((f) => (
           <div key={f.key} className="border-t border-line pt-4">
-            <dt className="text-xs font-semibold uppercase tracking-wider text-muted">{t(f.label)}</dt>
+            <dt className="text-xs font-semibold text-muted">{t(f.label)}</dt>
             <dd className="mt-2 text-text">{l(c[f.key] as { en: string; bn?: string })}</dd>
           </div>
         ))}

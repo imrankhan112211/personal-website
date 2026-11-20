@@ -130,7 +130,7 @@ export default function Biography() {
 function Fact({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <div>
-      <dt className="text-xs font-medium uppercase tracking-wider text-muted">{label}</dt>
+      <dt className="text-xs font-medium text-muted">{label}</dt>
       <dd className="mt-1 text-text">{children}</dd>
     </div>
   )

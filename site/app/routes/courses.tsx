@@ -91,7 +91,7 @@ function ProductCard({ p }: { p: Product }) {
           </ul>
         ) : null}
         <div className="mt-auto flex items-center justify-between gap-4 pt-7">
-          <p className="font-display text-2xl font-bold text-ink">
+          <p className="font-display text-2xl font-semibold text-ink">
             {p.price ? money(p.price) : t('res.free')}
             {p.oldPrice ? <s className="ml-2 text-base font-medium text-muted">{money(p.oldPrice)}</s> : null}
           </p>
@@ -124,7 +124,6 @@ function ComingSoon() {
             <li key={k.kind} className="lift overflow-hidden rounded-[var(--radius-card)] bg-mist">
               {/* designed cover: no product names, just the category */}
               <div aria-hidden className={`relative aspect-[4/3] overflow-hidden p-6 ${c.fill}`}>
-                <span className="glow-drift absolute -right-10 -top-10 size-40 rounded-full bg-white/15 blur-2xl" />
                 <Icon className={`relative size-10 ${c.text}`} />
                 <span className="absolute inset-x-6 bottom-6 grid gap-2">
                   <span className="h-2 w-3/4 rounded-full bg-current opacity-25" />
