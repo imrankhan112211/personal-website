@@ -43,7 +43,7 @@ function articleSchema(a: Article, locale: Locale) {
     author: { '@type': 'Person', '@id': `${SITE_URL}/#person`, name: person.name.en, url: `${SITE_URL}/about/biography/` },
     publisher: { '@id': `${SITE_URL}/#person` },
     mainEntityOfPage: SITE_URL + localizePath(`/blog/${a.slug}/`, locale),
-    ...(a.cover ? { image: SITE_URL + a.cover } : {}),
+    ...(a.cover ? { image: { '@type': 'ImageObject', url: SITE_URL + a.cover, ...(a.coverAlt ? { caption: a.coverAlt } : {}) } } : {}),
     articleSection: articleCategories.find((x) => x.slug === a.category)!.name.en,
   }
 }
@@ -120,7 +120,7 @@ export default function ArticlePage({ loaderData }: Route.ComponentProps) {
 
         <div className="container-x pb-2 pt-3">
           <div className="rounded-[var(--radius-card)] bg-surface px-6 py-10 md:px-12 md:py-14">
-            {a.cover && <img src={a.cover} alt="" className="mx-auto mb-12 aspect-[16/8] w-full max-w-5xl rounded-[20px] object-cover" />}
+            {a.cover && <img src={a.cover} alt={a.coverAlt ?? ''} width={1600} height={800} className="mx-auto mb-12 aspect-[16/8] w-full max-w-5xl rounded-[20px] object-cover" />}
             <div className="mx-auto grid max-w-5xl gap-12 lg:grid-cols-[14rem_1fr]">
               <aside>
                 <div className="lg:sticky lg:top-28">

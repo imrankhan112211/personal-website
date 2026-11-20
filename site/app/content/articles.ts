@@ -28,6 +28,8 @@ export type Article = {
   title: Localized
   excerpt: Localized
   cover: string | null
+  /** Alt text for the cover image (describes what it shows). */
+  coverAlt?: string
   category: ArticleCategory
   /** ISO date */
   published: string
@@ -123,6 +125,7 @@ function load(): Article[] {
       title: { en: (e.en ?? primary).content.title, bn: e.bn?.content.title },
       excerpt: { en: (e.en ?? primary).content.excerpt, bn: e.bn?.content.excerpt },
       cover: meta.cover ? String(meta.cover) : null,
+      coverAlt: meta.coverAlt ? String(meta.coverAlt) : undefined,
       category,
       published: toISO(meta.date ?? meta.published) || '2026-01-01',
       updated: toISO(meta.updated) || undefined,
