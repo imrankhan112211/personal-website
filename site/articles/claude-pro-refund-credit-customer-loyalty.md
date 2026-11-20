@@ -1,6 +1,6 @@
 ---
-title: "Claude Pro Refund: A Lesson in Customer Loyalty"
-description: I cancelled Claude Pro after a week and got US$15.33 back as credit for the unused days. Here is why a fair refund policy turns customers into loyal promoters.
+title: "Claude vs ChatGPT: How a $15 Credit Won Me Over"
+description: "Claude vs ChatGPT: I cancelled both paid plans after a week. Claude returned US$15.33 as credit, ChatGPT returned nothing. Why that made me a loyal Claude user."
 category: entrepreneurship
 date: 2026-11-20
 cover: /images/claude-pro-refund-credit-cover-1600.webp
