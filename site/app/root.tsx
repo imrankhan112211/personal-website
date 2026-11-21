@@ -29,8 +29,11 @@ export const links: Route.LinksFunction = () => [
 
 // Google Tag Manager. The `gtm.start` push is what fires GTM's "All Pages" / Initialization triggers;
 // GA4 tags inside GTM pick up client-side route changes via History Change (enhanced measurement).
+// GA4 is loaded directly with gtag.js (not through GTM) so the "Abdullah Al Imran" web stream always gets data.
+// Don't also add a GA4 tag for this same ID inside GTM, or every page view is counted twice.
 const GTM_ID = 'GTM-MD7D2H2P'
-const gtmBootstrap = `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());dataLayer.push({'gtm.start':new Date().getTime(),event:'gtm.js'});`
+const GA4_ID = 'G-45YP4ECF00'
+const gtmBootstrap = `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA4_ID}');dataLayer.push({'gtm.start':new Date().getTime(),event:'gtm.js'});`
 
 export function Layout({ children }: { children: React.ReactNode }) {
   const { pathname } = useLocation()
@@ -41,6 +44,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <script dangerouslySetInnerHTML={{ __html: gtmBootstrap }} />
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`} />
         <script async src={`https://www.googletagmanager.com/gtm.js?id=${GTM_ID}`} />
         <meta name="theme-color" content="#eef0f4" />
         <meta name="author" content="Abdullah Al Imran" />
