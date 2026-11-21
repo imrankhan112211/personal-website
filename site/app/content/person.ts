@@ -84,5 +84,7 @@ export const person = {
    */
   referenceProfiles: [
     { label: 'Amazon Author', url: 'https://www.amazon.com/stores/author/B092RF1LQ5' },
+    // Created by the owner on 21 Nov 2026 (occupation: entrepreneur). Not to be confused with Q135475093, a cricketer.
+    { label: 'Wikidata', url: 'https://www.wikidata.org/wiki/Q142233835' },
   ] as { label: string; url: string }[],
 }
