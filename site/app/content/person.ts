@@ -10,7 +10,8 @@ export const person = {
   name: { en: 'Abdullah Al Imran', bn: 'আব্দুল্লাহ আল ইমরান' } satisfies Localized,
   shortName: 'Imran',
   /** Other spellings people search for (used in Person.alternateName) — only real, used spellings. */
-  alternateNames: ['Abdullah Al-Imran', 'আব্দুল্লাহ আল ইমরান', 'আবদুল্লাহ আল ইমরান'],
+  // 'Abdullah Alimran' is the run-together spelling used by the domain and every social handle (abdullahalimran001).
+  alternateNames: ['Abdullah Al-Imran', 'Abdullah Alimran', 'আব্দুল্লাহ আল ইমরান', 'আবদুল্লাহ আল ইমরান'],
   monogram: 'AI',
   title: {
     en: 'Technology Entrepreneur | Cyber Safety Advocate | Trainer | Consultant',
