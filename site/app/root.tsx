@@ -27,6 +27,11 @@ export const links: Route.LinksFunction = () => [
   { rel: 'manifest', href: '/manifest.webmanifest' },
 ]
 
+// Google Tag Manager. The `gtm.start` push is what fires GTM's "All Pages" / Initialization triggers;
+// GA4 tags inside GTM pick up client-side route changes via History Change (enhanced measurement).
+const GTM_ID = 'GTM-MD7D2H2P'
+const gtmBootstrap = `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());dataLayer.push({'gtm.start':new Date().getTime(),event:'gtm.js'});`
+
 export function Layout({ children }: { children: React.ReactNode }) {
   const { pathname } = useLocation()
   const locale = localeFromPath(pathname)
@@ -35,6 +40,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script dangerouslySetInnerHTML={{ __html: gtmBootstrap }} />
+        <script async src={`https://www.googletagmanager.com/gtm.js?id=${GTM_ID}`} />
         <meta name="theme-color" content="#eef0f4" />
         <meta name="author" content="Abdullah Al Imran" />
         <Meta />
@@ -42,6 +49,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
         {locale === 'bn' && <link rel="preload" href={banglaRegular} as="font" type="font/woff2" crossOrigin="anonymous" />}
       </head>
       <body>
+        <noscript>
+          <iframe src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`} height="0" width="0" style={{ display: 'none', visibility: 'hidden' }} title="Google Tag Manager" />
+        </noscript>
         <a href="#main" className="sr-only z-[100] rounded-full bg-ink px-5 py-3 text-white focus:not-sr-only focus:fixed focus:left-4 focus:top-4">
           {ui['nav.skip'][locale]}
         </a>
